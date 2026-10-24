@@ -1,0 +1,8 @@
+Flowchart Tracker - versione portable
+
+In questa cartella l'app salva i progressi (progressi.json).
+Tieni la cartella "dati" accanto a FlowchartTracker.exe: se la sposti o la elimini,
+l'app torna a salvare in %APPDATA%\Flowchart Tracker.
+Per spostare il tracker su un altro PC o su una chiavetta, copia tutta la cartella FlowchartTracker.
+
+(Su Windows in un'altra lingua, al primo avvio questa cartella diventa "data", con un README in inglese.)

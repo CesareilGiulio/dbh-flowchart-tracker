@@ -27,15 +27,20 @@ capitolo e quali scelte servono per arrivarci.
 
 ## Download
 
-1. Vai alla pagina **Releases** di questo repository e scarica `FlowchartTracker.exe`.
-2. Avvialo: è portable, non serve installarlo.
+Dalla pagina **Releases** di questo repository scarica una delle due versioni (non serve installare nulla):
+
+- **`FlowchartTracker.exe`**: solo l'eseguibile; i progressi vanno in `%APPDATA%\Flowchart Tracker`.
+- **`FlowchartTracker-portable.zip`**: estrai la cartella dove vuoi (anche su una chiavetta). I progressi
+  restano lì dentro, nella sottocartella `dati`, quindi basta copiare la cartella per portarsi dietro
+  tutto.
 
 Funziona su Windows. L'eseguibile non è firmato digitalmente, quindi al primo avvio Windows SmartScreen
 può mostrare un avviso: scegli **Ulteriori informazioni → Esegui comunque**.
 
-I progressi sono salvati in `%APPDATA%\Flowchart Tracker\progressi.json`: l'exe si può tenere dove si
-preferisce (anche solo un collegamento sul desktop) e si può sostituire con una versione nuova senza
-perdere nulla.
+Con l'exe singolo i progressi sono salvati in `%APPDATA%\Flowchart Tracker\progressi.json`: l'exe si può
+tenere dove si preferisce (anche solo un collegamento sul desktop). In generale, se accanto all'exe c'è
+una cartella `dati` (o `data`), l'app salva lì; altrimenti in `%APPDATA%`. Con Windows in un'altra lingua
+cartella e file hanno nomi inglesi (`data\progress.json`). Per aggiornare basta sostituire l'exe.
 
 ### Dalla versione 1.x
 
@@ -93,9 +98,10 @@ An unofficial, offline desktop app to track the flowchart nodes you have unlocke
   percentage shown by the game, spoiler protection, JSON backup, light and dark theme.
 - A single native executable written in Rust, no embedded browser: about 25 MB of RAM.
 
-**Download:** get `FlowchartTracker.exe` from the **Releases** page. It is portable and Windows-only;
-the executable is not code-signed, so SmartScreen may ask you to confirm (**More info → Run anyway**).
-Progress is saved in `%APPDATA%\Flowchart Tracker\progressi.json`.
+**Download:** from the **Releases** page get either `FlowchartTracker.exe` (progress saved in
+`%APPDATA%\Flowchart Tracker\progress.json`) or `FlowchartTracker-portable.zip` (extract it anywhere;
+progress stays in its `data` folder, which is renamed from `dati` on first launch). Windows only, nothing to install. The executable is not
+code-signed, so SmartScreen may ask you to confirm (**More info → Run anyway**).
 
 **Coming from 1.x:** version 2.0 is a full rewrite and does not pick up 1.x data by itself. Use **Export**
 in the old version and **Import** in the new one.

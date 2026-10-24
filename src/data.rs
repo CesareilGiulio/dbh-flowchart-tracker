@@ -76,7 +76,7 @@ pub struct Progress {
 
 impl Progress {
     pub fn new(data: &[Option<Chapter>]) -> Self {
-        let lang = match sys_locale::get_locale() { Some(l) if l.to_lowercase().starts_with("it") => Lang::It, _ => Lang::En };
+        let lang = if system_italian() { Lang::It } else { Lang::En };
         Progress {
             chapters: data.iter().map(|c| ChapterProgress {
                 unlocked: c.as_ref().map_or(vec![], |c| c.sections.iter().map(|_| HashSet::new()).collect()),
@@ -159,14 +159,41 @@ impl Progress {
     }
 }
 
-/// %APPDATA%\Flowchart Tracker\progressi.json su Windows (FT_SAVE lo sostituisce, per i test).
+fn system_italian() -> bool {
+    sys_locale::get_locale().map_or(false, |l| l.to_lowercase().starts_with("it"))
+}
+
+const README_EN: &str = "Flowchart Tracker - portable version\r\n\r\n\
+The app saves your progress in this folder (progress.json).\r\n\
+Keep the \"data\" folder next to FlowchartTracker.exe: if you move or delete it,\r\n\
+the app goes back to saving in %APPDATA%\\Flowchart Tracker.\r\n\
+To move the tracker to another PC or a USB stick, copy the whole FlowchartTracker folder.\r\n";
+
+/// Dove si salvano i progressi:
+/// - versione portable: cartella `dati` (progressi.json) o `data` (progress.json) accanto all'exe.
+///   Lo zip contiene `dati`: al primo avvio su un sistema non in italiano, se è ancora vuota,
+///   diventa `data` (con il LEGGIMI in inglese);
+/// - altrimenti %APPDATA%\Flowchart Tracker, con il nome del file nella lingua del sistema
+///   (si tiene quello già esistente). FT_SAVE lo sostituisce, per i test.
 pub fn save_path() -> PathBuf {
     if let Ok(p) = std::env::var("FT_SAVE") { return PathBuf::from(p); }
+    if let Some(exe_dir) = std::env::current_exe().ok().and_then(|e| e.parent().map(PathBuf::from)) {
+        let (dati, data) = (exe_dir.join("dati"), exe_dir.join("data"));
+        if dati.is_dir() && !system_italian() && !data.exists() && !dati.join("progressi.json").exists()
+            && std::fs::rename(&dati, &data).is_ok() {
+            let _ = std::fs::remove_file(data.join("LEGGIMI.txt"));
+            let _ = std::fs::write(data.join("README.txt"), README_EN);
+        }
+        if dati.is_dir() { return dati.join("progressi.json"); }
+        if data.join("progress.json").exists() || (data.is_dir() && !system_italian()) { return data.join("progress.json"); }
+    }
     let base = std::env::var_os("APPDATA").map(PathBuf::from)
         .or_else(|| std::env::var_os("XDG_CONFIG_HOME").map(PathBuf::from))
         .or_else(|| std::env::var_os("HOME").map(|h| PathBuf::from(h).join(".config")))
-        .unwrap_or_else(|| PathBuf::from("."));
-    base.join("Flowchart Tracker").join("progressi.json")
+        .unwrap_or_else(|| PathBuf::from("."))
+        .join("Flowchart Tracker");
+    let (it, en) = (base.join("progressi.json"), base.join("progress.json"));
+    if it.exists() { it } else if en.exists() || !system_italian() { en } else { it }
 }
 
 pub fn read_json(path: &std::path::Path) -> Option<Value> {

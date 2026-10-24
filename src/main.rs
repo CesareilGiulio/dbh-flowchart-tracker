@@ -1,4 +1,4 @@
-//! Flowchart Tracker per Detroit: Become Human, versione nativa (senza browser).
+//! Flowchart Tracker per Detroit: Become Human: app nativa per Windows, senza browser.
 #![cfg_attr(windows, windows_subsystem = "windows")]
 
 mod data;
@@ -174,7 +174,7 @@ impl ApplicationHandler for Runner {
     }
 }
 
-/// Per i test: stampa le posizioni calcolate per tutti i percorsi, da confrontare con renderer/layout.js
+/// Per i test: stampa in JSON le posizioni calcolate per tutti i percorsi
 fn dump_layout() {
     let data = data::load_chapters();
     let mut out = serde_json::Map::new();

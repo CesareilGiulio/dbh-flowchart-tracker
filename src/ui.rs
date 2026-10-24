@@ -1,6 +1,5 @@
-//! Interfaccia: stesso aspetto e stesso funzionamento della versione Electron
-//! (renderer/index.html, style.css, app.js). Si ridisegna tutto a ogni evento e
-//! durante il disegno si registrano le zone cliccabili.
+//! Interfaccia. Si ridisegna tutto a ogni evento e durante il disegno si registrano le
+//! zone cliccabili (interfaccia "immediata").
 
 use crate::data::{self, Chapter, Kind, Lang, Progress};
 use crate::layout::{self, Layout, H as NH, W as NW};

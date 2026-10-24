@@ -15,29 +15,12 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run dist
-      - uses: actions/upload-artifact@v7
-        with:
-          name: FlowchartTracker
-          path: dist/FlowchartTracker.exe
-
-  # Versione nativa in Rust (senza browser): per ora solo da provare, la Release resta quella Electron
-  native:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v7
       - name: Compila
-        working-directory: native
         run: cargo build --release --locked
       - uses: actions/upload-artifact@v7
         with:
-          name: FlowchartTracker-nativo
-          path: native/target/release/FlowchartTracker.exe
+          name: FlowchartTracker
+          path: target/release/FlowchartTracker.exe
 
   release:
     if: startsWith(github.ref, 'refs/tags/v')

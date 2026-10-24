@@ -12,8 +12,8 @@ capitolo e quali scelte servono per arrivarci.
 
 - **Tutti i 32 capitoli**, trascritti a mano dai diagrammi del gioco, con il nome italiano e quello
   originale inglese di ogni nodo.
-- **Clic su un nodo** per segnarlo come sbloccato (o Invio/Spazio da tastiera). Passandoci sopra con il
-  mouse compaiono i due nomi e la nota del nodo.
+- **Clic su un nodo** per segnarlo come sbloccato. Passandoci sopra con il mouse compaiono i due nomi e
+  la nota del nodo. Rotellina per lo zoom, trascinamento per spostare il diagramma.
 - **Note sui requisiti**: quali scelte dei capitoli precedenti servono per sbloccare un ramo.
 - **Selettore del personaggio** nei capitoli con più diagrammi (Crossroads, Night of the Soul,
   Battle for Detroit), con i percorsi separati di ciascuno.
@@ -21,8 +21,9 @@ capitolo e quali scelte servono per arrivarci.
   scrivere a mano accanto.
 - **Nascondi nomi bloccati**, per evitare spoiler sui nodi non ancora visti.
 - **Backup** dei progressi in un file JSON, da esportare e reimportare.
-- **Offline**: l'app non si collega a internet. Tema chiaro e scuro automatico, interfaccia in italiano
-  e inglese.
+- **Leggera e offline**: un solo eseguibile nativo (scritto in Rust, senza browser integrato) che usa
+  circa 25 MB di RAM e non si collega a internet. Tema chiaro e scuro automatico, interfaccia in
+  italiano e inglese.
 
 ## Download
 
@@ -32,20 +33,29 @@ capitolo e quali scelte servono per arrivarci.
 Funziona su Windows. L'eseguibile non è firmato digitalmente, quindi al primo avvio Windows SmartScreen
 può mostrare un avviso: scegli **Ulteriori informazioni → Esegui comunque**.
 
-I progressi sono salvati sul computer, nella cartella `%APPDATA%\Flowchart Tracker`.
+I progressi sono salvati in `%APPDATA%\Flowchart Tracker\progressi.json`: l'exe si può tenere dove si
+preferisce (anche solo un collegamento sul desktop) e si può sostituire con una versione nuova senza
+perdere nulla.
+
+### Dalla versione 1.x
+
+La 2.0 è stata riscritta da zero e non legge i dati della 1.x in automatico. Per portare i progressi:
+nella versione vecchia usa **Esporta**, poi nella nuova **Importa** e scegli quel file. Le versioni 1.x
+restano scaricabili dalla pagina Releases.
 
 ## Compilare da sorgente
 
-Serve Node.js 22 o successivo.
+Serve [Rust](https://rustup.rs) (versione stabile).
 
 ```
-npm install
-npm start          # avvia l'app
-npm run dist       # crea dist/FlowchartTracker.exe (su Windows)
+cargo run --release      # compila e avvia l'app
+cargo build --release    # crea target/release/FlowchartTracker.exe
 ```
+
+I dati dei capitoli (`data/`) e i font vengono incorporati nell'eseguibile durante la compilazione.
 
 A ogni push GitHub Actions compila l'eseguibile e lo allega alla build. Quando si pubblica un tag `v*`
-(per esempio `v1.0.0`), lo stesso workflow crea la Release con `FlowchartTracker.exe`.
+(per esempio `v2.0.0`), lo stesso workflow crea la Release con `FlowchartTracker.exe`.
 
 ## Contribuire
 
@@ -54,10 +64,8 @@ Se un nodo è sbagliato, manca o è collegato male, apri una issue indicando il 
 collegamenti sono poco leggibili anche nel gioco: quei nodi hanno una nota che inizia con
 «Collegamento da verificare».
 
-Per correggere i dati direttamente: i diagrammi sono in `data/manual/`, un file JSON per capitolo.
-Dopo la modifica cambia il campo `"rev"` del file (per esempio da `"manual-1"` a `"manual-2"`): così l'app
-aggiorna il capitolo per chi la usa già, senza perdere i nodi sbloccati. I dettagli sono in
-[CONTRIBUTING.md](CONTRIBUTING.md).
+Per correggere i dati direttamente: i diagrammi sono in `data/manual/`, un file JSON per capitolo. I
+dettagli sono in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 I nomi italiani dei nodi sono **traduzioni non ufficiali**, non le etichette della versione italiana
 del gioco.
@@ -68,7 +76,8 @@ Progetto amatoriale e non ufficiale, non affiliato a Quantic Dream né a Sony In
 e non approvato da loro. *Detroit: Become Human* e i nomi di capitoli, personaggi ed eventi sono marchi
 dei rispettivi proprietari. Il repository non contiene immagini né altre risorse del gioco.
 
-Il codice è distribuito con [licenza MIT](LICENSE).
+Il codice è distribuito con [licenza MIT](LICENSE). Il font Inter incluso (`assets/`) è distribuito con
+la [SIL Open Font License](assets/OFL.txt).
 
 ---
 
@@ -82,12 +91,20 @@ An unofficial, offline desktop app to track the flowchart nodes you have unlocke
 - Click a node to mark it as unlocked; hover it to read its notes and requirements.
 - Character selector for chapters with several flowcharts, per-chapter percentage and a field for the
   percentage shown by the game, spoiler protection, JSON backup, light and dark theme.
+- A single native executable written in Rust, no embedded browser: about 25 MB of RAM.
 
 **Download:** get `FlowchartTracker.exe` from the **Releases** page. It is portable and Windows-only;
 the executable is not code-signed, so SmartScreen may ask you to confirm (**More info → Run anyway**).
+Progress is saved in `%APPDATA%\Flowchart Tracker\progressi.json`.
+
+**Coming from 1.x:** version 2.0 is a full rewrite and does not pick up 1.x data by itself. Use **Export**
+in the old version and **Import** in the new one.
+
+**Building:** install [Rust](https://rustup.rs) and run `cargo build --release`.
 
 **Mistakes:** open an issue with the chapter, the node and what is wrong. See
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Fan project, not affiliated with or endorsed by Quantic Dream or Sony Interactive Entertainment. All
-trademarks belong to their owners; no game assets are included. Code released under the MIT License.
+trademarks belong to their owners; no game assets are included. Code released under the MIT License;
+the bundled Inter font under the SIL Open Font License.

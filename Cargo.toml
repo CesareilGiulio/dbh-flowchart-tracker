@@ -2,7 +2,7 @@
 name = "flowchart-tracker"
 version = "2.0.0"
 edition = "2021"
-description = "Tracker offline dei diagrammi di Detroit: Become Human (versione nativa)"
+description = "Tracker offline dei diagrammi di Detroit: Become Human"
 license = "MIT"
 publish = false
 
@@ -21,6 +21,9 @@ sys-locale = "0.3"
 
 [target.'cfg(windows)'.dependencies]
 rfd = "0.17"
+
+[build-dependencies]
+serde_json = "1"
 
 [target.'cfg(windows)'.build-dependencies]
 winresource = "0.1"

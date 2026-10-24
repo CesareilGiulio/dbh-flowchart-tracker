@@ -1,4 +1,4 @@
-//! Disposizione dei diagrammi da sinistra a destra: stessa logica di renderer/layout.js.
+//! Disposizione dei diagrammi da sinistra a destra (metodo a livelli, "Sugiyama"):
 //! 1. colonne: ogni nodo va una colonna dopo il più lontano dei suoi genitori;
 //! 2. i collegamenti che saltano colonne ricevono una corsia propria (nodi fittizi);
 //! 3. l'ordine dentro ogni colonna è scelto per ridurre gli incroci;

@@ -23,11 +23,12 @@ After any change:
 
 1. If you added or changed a note, add its English translation to `scripts/notes_en.py` and run
    `python scripts/translate_notes.py`.
-2. Bump the chapter's `rev` (for example from `manual-1` to `manual-2`), so that the app updates the
-   chapter for existing users while keeping the nodes they have already unlocked.
+2. Bump the chapter's `rev` (for example from `manual-1` to `manual-2`) to keep track of the change.
+3. Run `cargo run --release` to check the result: the data files are embedded in the executable at
+   build time.
 
-The native version in `native/` (Rust) embeds the same data files at build time, so a data change
-applies to both. Its layout code (`native/src/layout.rs`) mirrors `renderer/layout.js`: keep them in sync.
+Saved progress refers to nodes by `id`, so do not change the id of an existing node: rename its
+`title`/`en` instead. A new node just gets a new id.
 
 Each node has `id`, `title` (Italian), `en` (English, as in the game), `type` (`checkpoint`, `choice`,
 `objective` or `ending`), `parents` (ids of the nodes it comes from) and optional `note` / `note_en`.
@@ -60,12 +61,13 @@ Dopo ogni modifica:
 
 1. Se hai aggiunto o cambiato una nota, aggiungi la traduzione inglese in `scripts/notes_en.py` e
    lancia `python scripts/translate_notes.py`.
-2. Aumenta il `rev` del capitolo (per esempio da `manual-1` a `manual-2`): così l'app aggiorna il
-   capitolo per chi la usa già, mantenendo i nodi sbloccati.
+2. Aumenta il `rev` del capitolo (per esempio da `manual-1` a `manual-2`), per tenere traccia della
+   modifica.
+3. Controlla il risultato con `cargo run --release`: i file dei dati vengono incorporati
+   nell'eseguibile durante la compilazione.
 
-La versione nativa in `native/` (Rust) incorpora gli stessi file di dati durante la compilazione,
-quindi una correzione vale per entrambe. Il codice della disposizione (`native/src/layout.rs`) è la
-traduzione di `renderer/layout.js`: vanno tenuti allineati.
+I progressi salvati fanno riferimento ai nodi tramite l'`id`: non cambiare l'id di un nodo esistente,
+modifica invece `title`/`en`. Un nodo nuovo riceve semplicemente un id nuovo.
 
 Ogni nodo ha `id`, `title` (italiano), `en` (inglese, come nel gioco), `type` (`checkpoint`, `choice`,
 `objective` o `ending`), `parents` (gli id dei nodi da cui arriva) e, facoltative, `note` / `note_en`.

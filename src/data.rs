@@ -1,7 +1,7 @@
 //! Dati dei capitoli (incorporati nell'exe) e progressi del giocatore.
 //!
-//! Il file dei progressi ha lo stesso formato dei backup della versione Electron
-//! («Esporta»): un backup fatto con quella versione si importa qui e viceversa.
+//! Il file dei progressi ha lo stesso formato dei backup («Esporta»), compatibile anche con
+//! quelli della versione 1.x (Electron).
 
 use serde::Deserialize;
 use serde_json::{json, Map, Value};
@@ -10,7 +10,7 @@ use std::path::PathBuf;
 
 include!(concat!(env!("OUT_DIR"), "/chapter_files.rs"));
 
-// CHAPTER_FILES e CHAPTERS ([numero, titolo, personaggi], letti da renderer/chapters.js) arrivano da build.rs
+// CHAPTER_FILES e CHAPTERS ([numero, titolo, personaggi], da data/chapters.json) arrivano da build.rs
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum Kind { Checkpoint, Choice, Objective, Ending }
@@ -95,7 +95,7 @@ impl Progress {
         (t, u, calc, shown)
     }
 
-    /// Legge un salvataggio o un backup (formato della versione Electron). I nodi si
+    /// Legge un salvataggio o un backup (anche quelli della versione 1.x). I nodi si
     /// riconoscono dall'id oppure, se l'id nel backup non c'è più, da percorso + titolo.
     pub fn apply_json(&mut self, data: &[Option<Chapter>], v: &Value) -> Result<(), String> {
         if v.get("v").and_then(Value::as_i64) != Some(2) || !v.get("chapters").map_or(false, Value::is_object) {
@@ -137,7 +137,7 @@ impl Progress {
         Ok(())
     }
 
-    /// Stesso formato dei backup della versione Electron, così si può importare là.
+    /// Stesso formato dei backup della versione 1.x, che quindi li può importare.
     pub fn to_json(&self, data: &[Option<Chapter>]) -> Value {
         let mut chs = Map::new();
         for (i, ch) in data.iter().enumerate() {

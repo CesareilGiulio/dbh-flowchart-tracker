@@ -1,7 +1,7 @@
 {
   "name": "flowchart-tracker",
   "productName": "Flowchart Tracker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unofficial offline tracker for the Detroit: Become Human flowcharts / Tracker non ufficiale dei diagrammi di Detroit: Become Human",
   "main": "main.js",
   "license": "MIT",
@@ -17,8 +17,19 @@
   "build": {
     "appId": "io.github.flowchart-tracker",
     "productName": "Flowchart Tracker",
-    "files": ["main.js", "preload.js", "renderer/**", "data/manual/**", "build/icon.png"],
-    "win": { "target": "portable", "icon": "build/icon.png" },
-    "portable": { "artifactName": "FlowchartTracker.exe" }
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "data/manual/**",
+      "build/icon.png"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.png"
+    },
+    "portable": {
+      "artifactName": "FlowchartTracker.exe"
+    }
   }
 }

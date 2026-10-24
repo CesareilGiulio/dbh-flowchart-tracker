@@ -6,6 +6,10 @@ const fs = require("fs");
 // lì dentro ci sono i progressi salvati dagli utenti.
 app.setPath("userData", path.join(app.getPath("appData"), "Flowchart Tracker"));
 
+// L'app disegna solo un diagramma SVG statico: il rendering software basta e
+// risparmia la memoria del processo GPU (circa 30 MB).
+app.disableHardwareAcceleration();
+
 // Capitoli trascritti dai diagrammi del gioco (data/manual/*.json)
 function loadChapters() {
   const out = { chapters: {} };
@@ -26,7 +30,7 @@ function createWindow() {
     width: 1440, height: 900, minWidth: 900, minHeight: 600,
     backgroundColor: "#08111a", autoHideMenuBar: true, title: "Flowchart Tracker",
     icon: path.join(__dirname, "build", "icon.png"),
-    webPreferences: { preload: path.join(__dirname, "preload.js"), contextIsolation: true, nodeIntegration: false, sandbox: true }
+    webPreferences: { preload: path.join(__dirname, "preload.js"), contextIsolation: true, nodeIntegration: false, sandbox: true, spellcheck: false }
   });
   // I link esterni si aprono nel browser; l'app non naviga mai fuori dai suoi file
   const external = url => { if (/^https:\/\//.test(url)) shell.openExternal(url); };

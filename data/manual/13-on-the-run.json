@@ -1,7 +1,7 @@
 {
  "chapter": 13,
  "rev": "manual-1",
- "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
  "sections": [
   {
    "name": "",
@@ -13,7 +13,8 @@
      "en": "Morning in Parking Lot",
      "type": "checkpoint",
      "parents": [],
-     "note": "Se in «Fugitives» Kara e Alice hanno dormito nell'auto abbandonata."
+     "note": "Se in «Fugitives» Kara e Alice hanno dormito nell'auto abbandonata.",
+     "note_en": "If Kara and Alice slept in the abandoned car in “Fugitives”."
     },
     {
      "id": "r-pl-asleep",
@@ -50,7 +51,8 @@
      "parents": [
       "r-pl-scissors"
      ],
-     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
     },
     {
      "id": "r-pl-brown",
@@ -117,7 +119,8 @@
      "parents": [
       "r-pl"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "r-pl-mag2",
@@ -127,7 +130,8 @@
      "parents": [
       "r-pl"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "r-pl-trunk",
@@ -155,7 +159,8 @@
      "parents": [
       "r-pl-crowbar"
      ],
-     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
     },
     {
      "id": "r-pl-neigh",
@@ -217,7 +222,8 @@
      "en": "Morning in Motel",
      "type": "checkpoint",
      "parents": [],
-     "note": "Se in «Fugitives» Kara e Alice hanno dormito al motel."
+     "note": "Se in «Fugitives» Kara e Alice hanno dormito al motel.",
+     "note_en": "If Kara and Alice slept at the motel in “Fugitives”."
     },
     {
      "id": "r-mr-talk",
@@ -245,7 +251,8 @@
      "parents": [
       "r-mr-bath"
      ],
-     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
     },
     {
      "id": "r-mr-brown",
@@ -340,7 +347,8 @@
      "parents": [
       "r-mr"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "r-mr-mag2",
@@ -350,7 +358,8 @@
      "parents": [
       "r-mr"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "r-mr-painting",
@@ -512,7 +521,8 @@
      "en": "Morning in Squat",
      "type": "checkpoint",
      "parents": [],
-     "note": "Se in «Fugitives» Kara e Alice hanno dormito nel rifugio di Ralph."
+     "note": "Se in «Fugitives» Kara e Alice hanno dormito nel rifugio di Ralph.",
+     "note_en": "If Kara and Alice slept at Ralph's hideout in “Fugitives”."
     },
     {
      "id": "r-sq",
@@ -531,7 +541,8 @@
      "parents": [
       "r-sq"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "r-sq-mag2",
@@ -541,7 +552,8 @@
      "parents": [
       "r-sq"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "r-sq-fire",
@@ -605,7 +617,8 @@
      "parents": [
       "r-sq-up"
      ],
-     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
     },
     {
      "id": "r-sq-brown",
@@ -663,7 +676,8 @@
      "parents": [
       "r-sq-up"
      ],
-     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
     },
     {
      "id": "r-sq-forgotgun",
@@ -1194,7 +1208,8 @@
       "r-o-other",
       "r-avoids"
      ],
-     "note": "Variante con Connor illeso."
+     "note": "Variante con Connor illeso.",
+     "note_en": "Variant with Connor unharmed."
     },
     {
      "id": "r-end-other2",
@@ -1205,7 +1220,8 @@
       "r-connorhit",
       "r-h-other"
      ],
-     "note": "Variante con Connor investito."
+     "note": "Variante con Connor investito.",
+     "note_en": "Variant with Connor hit by the car."
     },
     {
      "id": "r-end-died",

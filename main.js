@@ -1,45 +1,37 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const path = require("path");
 const fs = require("fs");
-const { scrapeAll } = require("./scraper");
 
-const userFile = () => path.join(app.getPath("userData"), "flowcharts.json");
-const bundledFile = path.join(__dirname, "data", "flowcharts.json");
+// La cartella dei dati resta "Flowchart Tracker" anche se un giorno cambia il nome del pacchetto:
+// lì dentro ci sono i progressi salvati dagli utenti.
+app.setPath("userData", path.join(app.getPath("appData"), "Flowchart Tracker"));
 
-function readData(file) {
-  try {
-    const d = JSON.parse(fs.readFileSync(file, "utf8"));
-    if (d && d.chapters && Object.keys(d.chapters).length) return d;
-  } catch {}
-  return null;
-}
-
-// I file in data/manual/ (trascritti dai diagrammi del gioco) hanno la precedenza sui dati della wiki
-function withManual(d) {
+// Capitoli trascritti dai diagrammi del gioco (data/manual/*.json)
+function loadChapters() {
+  const out = { chapters: {} };
   const dir = path.join(__dirname, "data", "manual");
-  try {
-    for (const f of fs.readdirSync(dir).filter(f => f.endsWith(".json"))) {
+  for (const f of fs.readdirSync(dir).filter(f => f.endsWith(".json")).sort()) {
+    try {
       const m = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
-      if (m && m.chapter && m.sections) d.chapters[m.chapter] = { rev: m.rev, manual: true, sections: m.sections };
-    }
-  } catch {}
-  return d;
+      if (m && m.chapter && m.sections) out.chapters[m.chapter] = { rev: m.rev, manual: true, sections: m.sections };
+    } catch (e) { console.error(`File non valido: ${f}`, e); }
+  }
+  return out;
 }
 
-ipcMain.handle("get-data", () => withManual(readData(userFile()) || readData(bundledFile) || { chapters: {} }));
-ipcMain.handle("refresh-data", async (e) => {
-  const d = await scrapeAll((m) => e.sender.send("scrape-progress", m));
-  if (Object.keys(d.chapters).length) fs.writeFileSync(userFile(), JSON.stringify(d));
-  return withManual(d);
-});
+ipcMain.handle("get-data", () => loadChapters());
 
 function createWindow() {
   const win = new BrowserWindow({
     width: 1440, height: 900, minWidth: 900, minHeight: 600,
     backgroundColor: "#08111a", autoHideMenuBar: true, title: "Flowchart Tracker",
-    webPreferences: { preload: path.join(__dirname, "preload.js"), contextIsolation: true, nodeIntegration: false }
+    icon: path.join(__dirname, "build", "icon.png"),
+    webPreferences: { preload: path.join(__dirname, "preload.js"), contextIsolation: true, nodeIntegration: false, sandbox: true }
   });
-  win.webContents.setWindowOpenHandler(({ url }) => { shell.openExternal(url); return { action: "deny" }; });
+  // I link esterni si aprono nel browser; l'app non naviga mai fuori dai suoi file
+  const external = url => { if (/^https:\/\//.test(url)) shell.openExternal(url); };
+  win.webContents.setWindowOpenHandler(({ url }) => { external(url); return { action: "deny" }; });
+  win.webContents.on("will-navigate", (e, url) => { e.preventDefault(); external(url); });
   win.loadFile(path.join(__dirname, "renderer", "index.html"));
 }
 

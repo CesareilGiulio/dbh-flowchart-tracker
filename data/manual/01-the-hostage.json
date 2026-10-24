@@ -1,57 +1,405 @@
 {
-  "chapter": 1,
-  "rev": "manual-1",
-  "source": "Struttura trascritta dal diagramma del gioco; nomi italiani da guide italiane, da verificare",
-  "sections": [
+ "chapter": 1,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
     {
-      "name": "",
-      "char": "C",
-      "nodes": [
-        { "id": "h-start", "title": "Inizio missione", "en": "Mission Start", "type": "checkpoint", "parents": [] },
-        { "id": "h-fish-save", "title": "Salva il pesce", "en": "Save Fish", "type": "choice", "parents": ["h-start"], "note": "Uscito dall'ascensore, a sinistra: il pesce caduto dall'acquario." },
-        { "id": "h-fish-leave", "title": "Lascia il pesce", "en": "Leave Fish", "type": "choice", "parents": ["h-start"], "note": "Alternativa a «Salva il pesce»." },
-        { "id": "h-allen", "title": "Parla con il capitano Allen", "en": "Talk to Capt. Allen", "type": "choice", "parents": ["h-start"] },
-
-        { "id": "h-clues", "title": "Cerca indizi", "en": "Search for Clues", "type": "objective", "parents": ["h-allen"] },
-        { "id": "h-father", "title": "Esamina il cadavere del padre", "en": "Investigate Father's Body", "type": "choice", "parents": ["h-clues"], "note": "In soggiorno: ricostruisci la sua morte." },
-        { "id": "h-cause", "title": "Scopri la causa dell'incidente", "en": "Learn Cause of Incident", "type": "choice", "parents": ["h-father"] },
-        { "id": "h-name", "title": "Scopri il nome del deviante", "en": "Learn Deviant's Name", "type": "choice", "parents": ["h-clues"], "note": "Tablet nella stanza di Emma. Serve per arrivare a «I cecchini sparano al deviante»." },
-        { "id": "h-guncase", "title": "Esamina la custodia della pistola", "en": "Investigate Gun Case", "type": "choice", "parents": ["h-clues"] },
-        { "id": "h-copbody", "title": "Esamina il cadavere del poliziotto", "en": "Investigate Cop's Body", "type": "choice", "parents": ["h-clues"] },
-        { "id": "h-gun-take", "title": "Prendi la pistola del poliziotto", "en": "Take Cop's Gun", "type": "choice", "parents": ["h-copbody"], "note": "Necessaria per le opzioni sulla pistola e per gli esiti con «Usa la pistola»." },
-        { "id": "h-gun-leave", "title": "Lascia la pistola del poliziotto", "en": "Leave Cop's Gun", "type": "choice", "parents": ["h-copbody"] },
-        { "id": "h-wasted", "title": "Tempo scaduto", "en": "Wasted Too Much Time", "type": "choice", "parents": ["h-clues"], "note": "Indaga troppo a lungo senza uscire." },
-        { "id": "h-outside", "title": "Esci in terrazza", "en": "Go Outside", "type": "choice", "parents": ["h-clues"] },
-        { "id": "h-swat", "title": "Agente SWAT ferito", "en": "SWAT Injured", "type": "choice", "parents": ["h-clues"] },
-
-        { "id": "h-confront", "title": "Affronta il deviante all'esterno", "en": "Confront Deviant Outside", "type": "checkpoint", "parents": ["h-outside", "h-wasted"] },
-        { "id": "h-negotiate", "title": "Negozia con il deviante", "en": "Negotiate with Deviant", "type": "objective", "parents": ["h-confront"] },
-        { "id": "h-friendly", "title": "Approccio cordiale", "en": "Friendly Approach", "type": "choice", "parents": ["h-negotiate"] },
-        { "id": "h-cold", "title": "Approccio distaccato", "en": "Cold Approach", "type": "choice", "parents": ["h-negotiate"] },
-        { "id": "h-failneg", "title": "Impossibile negoziare", "en": "Fail to Negotiate", "type": "choice", "parents": ["h-friendly", "h-cold"], "note": "Probabilità di successo troppo bassa." },
-        { "id": "h-heli-refuse", "title": "Rifiuta di allontanare l'elicottero", "en": "Refuse to Dismiss Helicopter", "type": "choice", "parents": ["h-negotiate"] },
-        { "id": "h-heli-dismiss", "title": "Allontana l'elicottero", "en": "Dismiss Helicopter", "type": "choice", "parents": ["h-negotiate"] },
-        { "id": "h-cop-leave", "title": "Lascia il poliziotto ferito", "en": "Leave Wounded Cop", "type": "choice", "parents": ["h-negotiate"] },
-        { "id": "h-cop-save", "title": "Salva il poliziotto ferito", "en": "Save Wounded Cop", "type": "choice", "parents": ["h-negotiate"], "note": "In terrazza, a sinistra dell'ingresso." },
-        { "id": "h-gun-honest", "title": "Confessa di avere la pistola", "en": "Be Honest About Gun", "type": "choice", "parents": ["h-negotiate"], "note": "Solo se hai preso la pistola del poliziotto." },
-        { "id": "h-gun-lie", "title": "Menti sulla pistola", "en": "Lie About Gun", "type": "choice", "parents": ["h-negotiate"], "note": "Solo se hai preso la pistola del poliziotto." },
-        { "id": "h-close", "title": "Avvicinati abbastanza", "en": "Get Close Enough", "type": "choice", "parents": ["h-negotiate"] },
-
-        { "id": "h-honest", "title": "Sii sincero con il deviante", "en": "Be Honest With Deviant", "type": "choice", "parents": ["h-negotiate"] },
-        { "id": "h-lie", "title": "Menti al deviante", "en": "Lie to Deviant", "type": "choice", "parents": ["h-negotiate"] },
-        { "id": "h-trust-fail", "title": "Fiducia non conquistata", "en": "Fail to Build Trust", "type": "choice", "parents": ["h-lie"] },
-        { "id": "h-trust-build", "title": "Fiducia conquistata", "en": "Build Trust", "type": "choice", "parents": ["h-lie"], "note": "Probabilità di successo al 100%: serve aver scoperto il nome del deviante." },
-        { "id": "h-sacrifice", "title": "Sacrificati", "en": "Sacrifice Self", "type": "choice", "parents": ["h-negotiate"] },
-        { "id": "h-usegun", "title": "Usa la pistola", "en": "Use Gun", "type": "choice", "parents": ["h-negotiate"], "note": "Solo se hai preso la pistola del poliziotto." },
-        { "id": "h-jump", "title": "Daniel salta con Emma", "en": "Deviant Jumps With Emma", "type": "choice", "parents": ["h-failneg", "h-honest", "h-trust-fail"] },
-
-        { "id": "h-end-late", "title": "Connor non raggiunge il deviante in tempo", "en": "Connor Failed to Reach Deviant in Time", "type": "ending", "parents": ["h-jump"], "note": "Fallisci il QTE finale: Emma muore." },
-        { "id": "h-end-fell", "title": "Connor si lancia per salvare Emma e cade", "en": "Connor Leapt for Emma and Fell", "type": "ending", "parents": ["h-jump"], "note": "Riesci nel QTE finale." },
-        { "id": "h-end-snipers", "title": "I cecchini sparano al deviante", "en": "Snipers Shot Deviant", "type": "ending", "parents": ["h-trust-build"] },
-        { "id": "h-end-protect", "title": "Connor muore per proteggere Emma", "en": "Connor Died Protecting Emma", "type": "ending", "parents": ["h-sacrifice"] },
-        { "id": "h-end-shotconnor", "title": "Il deviante spara a Connor", "en": "Deviant Shot Connor", "type": "ending", "parents": ["h-usegun"], "note": "Estrai la pistola ma non sparare, continua a intimidirlo." },
-        { "id": "h-end-shotdeviant", "title": "Connor spara al deviante", "en": "Connor Shot Deviant", "type": "ending", "parents": ["h-usegun"] }
-      ]
+     "id": "h-start",
+     "title": "Inizio missione",
+     "en": "Mission Start",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "h-fish-save",
+     "title": "Salva il pesce",
+     "en": "Save Fish",
+     "type": "choice",
+     "parents": [
+      "h-start"
+     ],
+     "note": "Uscito dall'ascensore, a sinistra: il pesce caduto dall'acquario.",
+     "note_en": "Out of the elevator, on the left: the fish that fell out of the aquarium."
+    },
+    {
+     "id": "h-fish-leave",
+     "title": "Lascia il pesce",
+     "en": "Leave Fish",
+     "type": "choice",
+     "parents": [
+      "h-start"
+     ],
+     "note": "Alternativa a «Salva il pesce».",
+     "note_en": "Alternative to “Save Fish”."
+    },
+    {
+     "id": "h-allen",
+     "title": "Parla con il capitano Allen",
+     "en": "Talk to Capt. Allen",
+     "type": "choice",
+     "parents": [
+      "h-start"
+     ]
+    },
+    {
+     "id": "h-clues",
+     "title": "Cerca indizi",
+     "en": "Search for Clues",
+     "type": "objective",
+     "parents": [
+      "h-allen"
+     ]
+    },
+    {
+     "id": "h-father",
+     "title": "Esamina il cadavere del padre",
+     "en": "Investigate Father's Body",
+     "type": "choice",
+     "parents": [
+      "h-clues"
+     ],
+     "note": "In soggiorno: ricostruisci la sua morte.",
+     "note_en": "In the living room: reconstruct his death."
+    },
+    {
+     "id": "h-cause",
+     "title": "Scopri la causa dell'incidente",
+     "en": "Learn Cause of Incident",
+     "type": "choice",
+     "parents": [
+      "h-father"
+     ]
+    },
+    {
+     "id": "h-name",
+     "title": "Scopri il nome del deviante",
+     "en": "Learn Deviant's Name",
+     "type": "choice",
+     "parents": [
+      "h-clues"
+     ],
+     "note": "Tablet nella stanza di Emma. Serve per arrivare a «I cecchini sparano al deviante».",
+     "note_en": "Tablet in Emma's room. Needed to reach “Snipers Shot Deviant”."
+    },
+    {
+     "id": "h-guncase",
+     "title": "Esamina la custodia della pistola",
+     "en": "Investigate Gun Case",
+     "type": "choice",
+     "parents": [
+      "h-clues"
+     ]
+    },
+    {
+     "id": "h-copbody",
+     "title": "Esamina il cadavere del poliziotto",
+     "en": "Investigate Cop's Body",
+     "type": "choice",
+     "parents": [
+      "h-clues"
+     ]
+    },
+    {
+     "id": "h-gun-take",
+     "title": "Prendi la pistola del poliziotto",
+     "en": "Take Cop's Gun",
+     "type": "choice",
+     "parents": [
+      "h-copbody"
+     ],
+     "note": "Necessaria per le opzioni sulla pistola e per gli esiti con «Usa la pistola».",
+     "note_en": "Needed for the gun options and for the outcomes with “Use Gun”."
+    },
+    {
+     "id": "h-gun-leave",
+     "title": "Lascia la pistola del poliziotto",
+     "en": "Leave Cop's Gun",
+     "type": "choice",
+     "parents": [
+      "h-copbody"
+     ]
+    },
+    {
+     "id": "h-wasted",
+     "title": "Tempo scaduto",
+     "en": "Wasted Too Much Time",
+     "type": "choice",
+     "parents": [
+      "h-clues"
+     ],
+     "note": "Indaga troppo a lungo senza uscire.",
+     "note_en": "Investigate for too long without leaving."
+    },
+    {
+     "id": "h-outside",
+     "title": "Esci in terrazza",
+     "en": "Go Outside",
+     "type": "choice",
+     "parents": [
+      "h-clues"
+     ]
+    },
+    {
+     "id": "h-swat",
+     "title": "Agente SWAT ferito",
+     "en": "SWAT Injured",
+     "type": "choice",
+     "parents": [
+      "h-clues"
+     ]
+    },
+    {
+     "id": "h-confront",
+     "title": "Affronta il deviante all'esterno",
+     "en": "Confront Deviant Outside",
+     "type": "checkpoint",
+     "parents": [
+      "h-outside",
+      "h-wasted"
+     ]
+    },
+    {
+     "id": "h-negotiate",
+     "title": "Negozia con il deviante",
+     "en": "Negotiate with Deviant",
+     "type": "objective",
+     "parents": [
+      "h-confront"
+     ]
+    },
+    {
+     "id": "h-friendly",
+     "title": "Approccio cordiale",
+     "en": "Friendly Approach",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-cold",
+     "title": "Approccio distaccato",
+     "en": "Cold Approach",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-failneg",
+     "title": "Impossibile negoziare",
+     "en": "Fail to Negotiate",
+     "type": "choice",
+     "parents": [
+      "h-friendly",
+      "h-cold"
+     ],
+     "note": "Probabilità di successo troppo bassa.",
+     "note_en": "Probability of success too low."
+    },
+    {
+     "id": "h-heli-refuse",
+     "title": "Rifiuta di allontanare l'elicottero",
+     "en": "Refuse to Dismiss Helicopter",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-heli-dismiss",
+     "title": "Allontana l'elicottero",
+     "en": "Dismiss Helicopter",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-cop-leave",
+     "title": "Lascia il poliziotto ferito",
+     "en": "Leave Wounded Cop",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-cop-save",
+     "title": "Salva il poliziotto ferito",
+     "en": "Save Wounded Cop",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ],
+     "note": "In terrazza, a sinistra dell'ingresso.",
+     "note_en": "On the terrace, left of the entrance."
+    },
+    {
+     "id": "h-gun-honest",
+     "title": "Confessa di avere la pistola",
+     "en": "Be Honest About Gun",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ],
+     "note": "Solo se hai preso la pistola del poliziotto.",
+     "note_en": "Only if you took the police officer's gun."
+    },
+    {
+     "id": "h-gun-lie",
+     "title": "Menti sulla pistola",
+     "en": "Lie About Gun",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ],
+     "note": "Solo se hai preso la pistola del poliziotto.",
+     "note_en": "Only if you took the police officer's gun."
+    },
+    {
+     "id": "h-close",
+     "title": "Avvicinati abbastanza",
+     "en": "Get Close Enough",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-honest",
+     "title": "Sii sincero con il deviante",
+     "en": "Be Honest With Deviant",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-lie",
+     "title": "Menti al deviante",
+     "en": "Lie to Deviant",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-trust-fail",
+     "title": "Fiducia non conquistata",
+     "en": "Fail to Build Trust",
+     "type": "choice",
+     "parents": [
+      "h-lie"
+     ]
+    },
+    {
+     "id": "h-trust-build",
+     "title": "Fiducia conquistata",
+     "en": "Build Trust",
+     "type": "choice",
+     "parents": [
+      "h-lie"
+     ],
+     "note": "Probabilità di successo al 100%: serve aver scoperto il nome del deviante.",
+     "note_en": "100% probability of success: you need to have found out the deviant's name."
+    },
+    {
+     "id": "h-sacrifice",
+     "title": "Sacrificati",
+     "en": "Sacrifice Self",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ]
+    },
+    {
+     "id": "h-usegun",
+     "title": "Usa la pistola",
+     "en": "Use Gun",
+     "type": "choice",
+     "parents": [
+      "h-negotiate"
+     ],
+     "note": "Solo se hai preso la pistola del poliziotto.",
+     "note_en": "Only if you took the police officer's gun."
+    },
+    {
+     "id": "h-jump",
+     "title": "Daniel salta con Emma",
+     "en": "Deviant Jumps With Emma",
+     "type": "choice",
+     "parents": [
+      "h-failneg",
+      "h-honest",
+      "h-trust-fail"
+     ]
+    },
+    {
+     "id": "h-end-late",
+     "title": "Connor non raggiunge il deviante in tempo",
+     "en": "Connor Failed to Reach Deviant in Time",
+     "type": "ending",
+     "parents": [
+      "h-jump"
+     ],
+     "note": "Fallisci il QTE finale: Emma muore.",
+     "note_en": "Fail the final QTE: Emma dies."
+    },
+    {
+     "id": "h-end-fell",
+     "title": "Connor si lancia per salvare Emma e cade",
+     "en": "Connor Leapt for Emma and Fell",
+     "type": "ending",
+     "parents": [
+      "h-jump"
+     ],
+     "note": "Riesci nel QTE finale.",
+     "note_en": "Succeed in the final QTE."
+    },
+    {
+     "id": "h-end-snipers",
+     "title": "I cecchini sparano al deviante",
+     "en": "Snipers Shot Deviant",
+     "type": "ending",
+     "parents": [
+      "h-trust-build"
+     ]
+    },
+    {
+     "id": "h-end-protect",
+     "title": "Connor muore per proteggere Emma",
+     "en": "Connor Died Protecting Emma",
+     "type": "ending",
+     "parents": [
+      "h-sacrifice"
+     ]
+    },
+    {
+     "id": "h-end-shotconnor",
+     "title": "Il deviante spara a Connor",
+     "en": "Deviant Shot Connor",
+     "type": "ending",
+     "parents": [
+      "h-usegun"
+     ],
+     "note": "Estrai la pistola ma non sparare, continua a intimidirlo.",
+     "note_en": "Draw the gun but don't shoot; keep intimidating him."
+    },
+    {
+     "id": "h-end-shotdeviant",
+     "title": "Connor spara al deviante",
+     "en": "Connor Shot Deviant",
+     "type": "ending",
+     "parents": [
+      "h-usegun"
+     ]
     }
-  ]
+   ]
+  }
+ ]
 }

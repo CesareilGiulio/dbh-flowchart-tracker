@@ -1,0 +1,3303 @@
+{
+ "chapter": 30,
+ "rev": "manual-2",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "Crossroads - Kara",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "ck-req-luther",
+     "title": "Luther sacrificato in «Midnight Train»",
+     "en": "Luther Sacrificed in 'Midnight Train'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "ck-drive1",
+     "title": "In auto verso Jericho con Alice",
+     "en": "Driving to Jericho With Alice",
+     "type": "checkpoint",
+     "parents": [
+      "ck-req-luther"
+     ]
+    },
+    {
+     "id": "ck-drive2",
+     "title": "In auto verso Jericho con Alice e Luther",
+     "en": "Driving to Jericho With Alice & Luther",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "ck-outside",
+     "title": "Guarda fuori",
+     "en": "Look Outside",
+     "type": "choice",
+     "parents": [
+      "ck-drive1",
+      "ck-drive2"
+     ]
+    },
+    {
+     "id": "ck-radio",
+     "title": "Cambia stazione radio",
+     "en": "Change Radio Station",
+     "type": "choice",
+     "parents": [
+      "ck-drive1",
+      "ck-drive2"
+     ]
+    },
+    {
+     "id": "ck-parking",
+     "title": "Parcheggio",
+     "en": "Parking Lot",
+     "type": "choice",
+     "parents": [
+      "ck-drive1",
+      "ck-drive2"
+     ]
+    },
+    {
+     "id": "ck-goodbye",
+     "title": "È ora di dirsi addio",
+     "en": "Time to Say Goodbye",
+     "type": "choice",
+     "parents": [
+      "ck-parking"
+     ]
+    },
+    {
+     "id": "ck-arrive",
+     "title": "Arrivo a Jericho",
+     "en": "Arrive at Jericho",
+     "type": "checkpoint",
+     "parents": [
+      "ck-goodbye"
+     ]
+    },
+    {
+     "id": "ck-board",
+     "title": "Sali sulla nave",
+     "en": "Board the Ship",
+     "type": "choice",
+     "parents": [
+      "ck-arrive"
+     ]
+    },
+    {
+     "id": "ck-warm",
+     "title": "Trova un posto caldo per Alice",
+     "en": "Find a Warm Place for Alice",
+     "type": "choice",
+     "parents": [
+      "ck-board"
+     ]
+    },
+    {
+     "id": "ck-upstairs",
+     "title": "Al piano di sopra",
+     "en": "Upstairs",
+     "type": "checkpoint",
+     "parents": [
+      "ck-warm"
+     ]
+    },
+    {
+     "id": "ck-mag1",
+     "title": "Leggi «Detroit in Chaos»",
+     "en": "Read \"Detroit in Chaos\"",
+     "type": "choice",
+     "parents": [
+      "ck-upstairs"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "ck-mag2",
+     "title": "Leggi «Terror in Detroit»",
+     "en": "Read \"Terror in Detroit\"",
+     "type": "choice",
+     "parents": [
+      "ck-upstairs"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "ck-markus",
+     "title": "Incontra Markus",
+     "en": "Meet Markus",
+     "type": "choice",
+     "parents": [
+      "ck-upstairs"
+     ]
+    },
+    {
+     "id": "ck-req-markus",
+     "title": "Markus morto in «Freedom March»",
+     "en": "Markus Died in 'Freedom March'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "ck-north",
+     "title": "Incontra North",
+     "en": "Meet North",
+     "type": "choice",
+     "parents": [
+      "ck-upstairs",
+      "ck-req-markus"
+     ]
+    },
+    {
+     "id": "ck-goback",
+     "title": "Torna da Alice",
+     "en": "Go Back to Alice",
+     "type": "choice",
+     "parents": [
+      "ck-markus",
+      "ck-north"
+     ]
+    },
+    {
+     "id": "ck-child",
+     "title": "Individua la bambina androide",
+     "en": "Spot the Android Child",
+     "type": "choice",
+     "parents": [
+      "ck-goback"
+     ]
+    },
+    {
+     "id": "ck-join",
+     "title": "Raggiungi Alice",
+     "en": "Join Alice",
+     "type": "choice",
+     "parents": [
+      "ck-child"
+     ]
+    },
+    {
+     "id": "ck-distant",
+     "title": "Resta distante",
+     "en": "Stay Distant",
+     "type": "choice",
+     "parents": [
+      "ck-join"
+     ]
+    },
+    {
+     "id": "ck-hug",
+     "title": "Abbraccia Alice",
+     "en": "Hug Alice",
+     "type": "choice",
+     "parents": [
+      "ck-join"
+     ]
+    },
+    {
+     "id": "ck-end-leftluther",
+     "title": "Kara, Alice e Luther hanno lasciato Jericho",
+     "en": "Kara, Alice & Luther Left Jericho",
+     "type": "ending",
+     "parents": [
+      "ck-distant",
+      "ck-hug"
+     ]
+    },
+    {
+     "id": "ck-end-left",
+     "title": "Kara e Alice hanno lasciato Jericho",
+     "en": "Kara & Alice Left Jericho",
+     "type": "ending",
+     "parents": [
+      "ck-distant",
+      "ck-hug"
+     ]
+    },
+    {
+     "id": "ck-aliceluther",
+     "title": "Alice se ne va con Luther",
+     "en": "Alice Leaves With Luther",
+     "type": "choice",
+     "parents": [
+      "ck-distant"
+     ]
+    },
+    {
+     "id": "ck-alicealone",
+     "title": "Alice se ne va da sola",
+     "en": "Alice Leaves Alone",
+     "type": "choice",
+     "parents": [
+      "ck-distant"
+     ]
+    },
+    {
+     "id": "ck-attack",
+     "title": "Jericho è sotto attacco",
+     "en": "Jericho Is Under Attack",
+     "type": "choice",
+     "parents": [
+      "ck-distant",
+      "ck-hug"
+     ]
+    },
+    {
+     "id": "ck-runaway1",
+     "title": "Scappa",
+     "en": "Run Away",
+     "type": "choice",
+     "parents": [
+      "ck-attack"
+     ],
+     "note": "Quando Jericho viene attaccata.",
+     "note_en": "When Jericho is attacked."
+    },
+    {
+     "id": "ck-findalice",
+     "title": "Trova Alice",
+     "en": "Find Alice",
+     "type": "choice",
+     "parents": [
+      "ck-attack"
+     ]
+    },
+    {
+     "id": "ck-end-alone",
+     "title": "Kara ha lasciato Jericho da sola",
+     "en": "Kara Left Jericho Alone",
+     "type": "ending",
+     "parents": [
+      "ck-aliceluther",
+      "ck-alicealone",
+      "ck-runaway1"
+     ]
+    },
+    {
+     "id": "ck-corridor",
+     "title": "Kara e Alice nel corridoio",
+     "en": "Kara & Alice in the Corridor",
+     "type": "checkpoint",
+     "parents": [
+      "ck-findalice",
+      "ck-hug"
+     ]
+    },
+    {
+     "id": "ck-escluther",
+     "title": "Fuggi con Luther",
+     "en": "Escape With Luther",
+     "type": "choice",
+     "parents": [
+      "ck-corridor"
+     ]
+    },
+    {
+     "id": "ck-searchexit",
+     "title": "Cerca un'uscita",
+     "en": "Search for Exit",
+     "type": "choice",
+     "parents": [
+      "ck-corridor"
+     ]
+    },
+    {
+     "id": "ck-lutheropens",
+     "title": "Luther apre la porta",
+     "en": "Luther Opens the Door",
+     "type": "choice",
+     "parents": [
+      "ck-escluther"
+     ]
+    },
+    {
+     "id": "ck-through1",
+     "title": "Passa dalla porta",
+     "en": "Go Through the Door",
+     "type": "choice",
+     "parents": [
+      "ck-lutheropens"
+     ],
+     "note": "Aperta da Luther.",
+     "note_en": "Opened by Luther."
+    },
+    {
+     "id": "ck-luthershot",
+     "title": "Luther viene colpito",
+     "en": "Luther Is Shot",
+     "type": "choice",
+     "parents": [
+      "ck-through1"
+     ]
+    },
+    {
+     "id": "ck-outoftime1",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "ck-escluther",
+      "ck-searchexit"
+     ],
+     "note": "Nel corridoio.",
+     "note_en": "In the corridor."
+    },
+    {
+     "id": "ck-wrongway1",
+     "title": "Strada sbagliata",
+     "en": "Wrong Way",
+     "type": "choice",
+     "parents": [
+      "ck-escluther",
+      "ck-searchexit"
+     ],
+     "note": "Nel corridoio.",
+     "note_en": "In the corridor."
+    },
+    {
+     "id": "ck-end-kalcapt1",
+     "title": "Kara, Alice e Luther catturati",
+     "en": "Kara, Alice & Luther Captured",
+     "type": "ending",
+     "parents": [
+      "ck-outoftime1",
+      "ck-wrongway1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Prima variante: nel corridoio.",
+     "note_en": "Key event (highlighted in yellow in the game). First variant: in the corridor."
+    },
+    {
+     "id": "ck-end-kacapt1",
+     "title": "Kara e Alice catturate",
+     "en": "Kara & Alice Captured",
+     "type": "ending",
+     "parents": [
+      "ck-outoftime1",
+      "ck-wrongway1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Prima variante: nel corridoio.",
+     "note_en": "Key event (highlighted in yellow in the game). First variant: in the corridor."
+    },
+    {
+     "id": "ck-androidopens",
+     "title": "Un androide apre la porta e viene colpito",
+     "en": "Android Opens Door and Is Shot",
+     "type": "choice",
+     "parents": [
+      "ck-searchexit"
+     ]
+    },
+    {
+     "id": "ck-through2",
+     "title": "Passa dalla porta",
+     "en": "Go Through the Door",
+     "type": "choice",
+     "parents": [
+      "ck-androidopens"
+     ],
+     "note": "Aperta dall'androide.",
+     "note_en": "Opened by the android."
+    },
+    {
+     "id": "ck-crossroad",
+     "title": "Kara e Alice al bivio",
+     "en": "Kara & Alice at Crossroad",
+     "type": "checkpoint",
+     "parents": [
+      "ck-luthershot",
+      "ck-through2"
+     ]
+    },
+    {
+     "id": "ck-outoftime2",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "ck-crossroad"
+     ],
+     "note": "Al bivio.",
+     "note_en": "At the crossroad."
+    },
+    {
+     "id": "ck-wrongway2",
+     "title": "Strada sbagliata",
+     "en": "Wrong Way",
+     "type": "choice",
+     "parents": [
+      "ck-crossroad"
+     ],
+     "note": "Al bivio.",
+     "note_en": "At the crossroad."
+    },
+    {
+     "id": "ck-end-kacapt2",
+     "title": "Kara e Alice catturate",
+     "en": "Kara & Alice Captured",
+     "type": "ending",
+     "parents": [
+      "ck-outoftime2",
+      "ck-wrongway2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Seconda variante: al bivio.",
+     "note_en": "Key event (highlighted in yellow in the game). Second variant: at the crossroad."
+    },
+    {
+     "id": "ck-runluther",
+     "title": "Corri da Luther",
+     "en": "Run to Luther",
+     "type": "choice",
+     "parents": [
+      "ck-crossroad"
+     ]
+    },
+    {
+     "id": "ck-leaveluther",
+     "title": "Lascia Luther",
+     "en": "Leave Luther",
+     "type": "choice",
+     "parents": [
+      "ck-runluther"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "ck-helpluther",
+     "title": "Aiuta Luther",
+     "en": "Help Luther",
+     "type": "choice",
+     "parents": [
+      "ck-runluther"
+     ]
+    },
+    {
+     "id": "ck-safety",
+     "title": "Porta Luther al sicuro",
+     "en": "Get Luther to Safety",
+     "type": "choice",
+     "parents": [
+      "ck-helpluther"
+     ]
+    },
+    {
+     "id": "ck-failluther",
+     "title": "Fallisci",
+     "en": "Fail",
+     "type": "choice",
+     "parents": [
+      "ck-helpluther"
+     ],
+     "note": "Nel portare Luther al sicuro.",
+     "note_en": "While carrying Luther to safety."
+    },
+    {
+     "id": "ck-caught",
+     "title": "Sorpresi da un soldato",
+     "en": "Caught by Soldier",
+     "type": "choice",
+     "parents": [
+      "ck-failluther"
+     ]
+    },
+    {
+     "id": "ck-end-kalcapt2",
+     "title": "Kara, Alice e Luther catturati",
+     "en": "Kara, Alice & Luther Captured",
+     "type": "ending",
+     "parents": [
+      "ck-caught"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Seconda variante: aiutando Luther.",
+     "note_en": "Key event (highlighted in yellow in the game). Second variant: helping Luther."
+    },
+    {
+     "id": "ck-hidden",
+     "title": "Lascia Luther nascosto",
+     "en": "Leave Luther Hidden",
+     "type": "choice",
+     "parents": [
+      "ck-safety"
+     ]
+    },
+    {
+     "id": "ck-runexit",
+     "title": "Corri verso l'uscita",
+     "en": "Run Toward Exit",
+     "type": "choice",
+     "parents": [
+      "ck-crossroad",
+      "ck-leaveluther",
+      "ck-hidden"
+     ]
+    },
+    {
+     "id": "ck-block",
+     "title": "I soldati sbarrano la strada",
+     "en": "Soldiers Block the Way",
+     "type": "choice",
+     "parents": [
+      "ck-runexit"
+     ]
+    },
+    {
+     "id": "ck-hide",
+     "title": "Nasconditi",
+     "en": "Hide",
+     "type": "choice",
+     "parents": [
+      "ck-block"
+     ]
+    },
+    {
+     "id": "ck-shelter",
+     "title": "Un androide cerca riparo",
+     "en": "Android Seeks Shelter",
+     "type": "choice",
+     "parents": [
+      "ck-hide"
+     ]
+    },
+    {
+     "id": "ck-opendoor",
+     "title": "Apri la porta",
+     "en": "Open the Door",
+     "type": "choice",
+     "parents": [
+      "ck-shelter"
+     ]
+    },
+    {
+     "id": "ck-keepclosed",
+     "title": "Tieni la porta chiusa",
+     "en": "Keep the Door Closed",
+     "type": "choice",
+     "parents": [
+      "ck-shelter"
+     ]
+    },
+    {
+     "id": "ck-entersshot",
+     "title": "L'androide entra ma viene colpito",
+     "en": "Android Enters but Is Shot",
+     "type": "choice",
+     "parents": [
+      "ck-opendoor"
+     ]
+    },
+    {
+     "id": "ck-captured",
+     "title": "Catturate",
+     "en": "Captured",
+     "type": "choice",
+     "parents": [
+      "ck-entersshot"
+     ]
+    },
+    {
+     "id": "ck-fightback",
+     "title": "Reagisci",
+     "en": "Fight Back",
+     "type": "choice",
+     "parents": [
+      "ck-entersshot"
+     ]
+    },
+    {
+     "id": "ck-end-kacapt3",
+     "title": "Kara e Alice catturate",
+     "en": "Kara & Alice Captured",
+     "type": "ending",
+     "parents": [
+      "ck-captured"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Terza variante: nella cabina.",
+     "note_en": "Key event (highlighted in yellow in the game). Third variant: in the cabin."
+    },
+    {
+     "id": "ck-shootmove",
+     "title": "I soldati sparano all'androide e se ne vanno",
+     "en": "Soldiers Shoot Android and Move On",
+     "type": "choice",
+     "parents": [
+      "ck-keepclosed"
+     ]
+    },
+    {
+     "id": "ck-cabin",
+     "title": "Esci dalla cabina",
+     "en": "Escape Cabin",
+     "type": "choice",
+     "parents": [
+      "ck-fightback",
+      "ck-shootmove"
+     ]
+    },
+    {
+     "id": "ck-flees",
+     "title": "Kara fugge",
+     "en": "Kara Flees",
+     "type": "checkpoint",
+     "parents": [
+      "ck-cabin"
+     ]
+    },
+    {
+     "id": "ck-try",
+     "title": "Prova a fuggire",
+     "en": "Try to Escape",
+     "type": "choice",
+     "parents": [
+      "ck-flees"
+     ]
+    },
+    {
+     "id": "ck-breach",
+     "title": "Quasi alla breccia",
+     "en": "Almost Reach the Breach",
+     "type": "choice",
+     "parents": [
+      "ck-try"
+     ]
+    },
+    {
+     "id": "ck-failrun",
+     "title": "Non riesci a correre",
+     "en": "Fail to Run",
+     "type": "choice",
+     "parents": [
+      "ck-try"
+     ]
+    },
+    {
+     "id": "ck-crowd",
+     "title": "I soldati sparano sulla folla",
+     "en": "Soldiers Shoot at the Crowd",
+     "type": "choice",
+     "parents": [
+      "ck-breach"
+     ]
+    },
+    {
+     "id": "ck-surrender1",
+     "title": "Arrenditi",
+     "en": "Surrender",
+     "type": "choice",
+     "parents": [
+      "ck-crowd"
+     ],
+     "note": "Davanti ai soldati che sparano sulla folla.",
+     "note_en": "As the soldiers fire on the crowd."
+    },
+    {
+     "id": "ck-runaway2",
+     "title": "Scappa",
+     "en": "Run Away",
+     "type": "choice",
+     "parents": [
+      "ck-crowd"
+     ],
+     "note": "Davanti ai soldati che sparano sulla folla.",
+     "note_en": "As the soldiers fire on the crowd."
+    },
+    {
+     "id": "ck-playdead1",
+     "title": "Fingiti morta",
+     "en": "Play Dead",
+     "type": "choice",
+     "parents": [
+      "ck-crowd"
+     ],
+     "note": "Davanti ai soldati che sparano sulla folla.",
+     "note_en": "As the soldiers fire on the crowd."
+    },
+    {
+     "id": "ck-s-face",
+     "title": "Affrontali",
+     "en": "Face",
+     "type": "choice",
+     "parents": [
+      "ck-surrender1"
+     ],
+     "note": "Dopo la resa.",
+     "note_en": "After surrendering."
+    },
+    {
+     "id": "ck-s-convince",
+     "title": "Convincili",
+     "en": "Convince",
+     "type": "choice",
+     "parents": [
+      "ck-surrender1"
+     ]
+    },
+    {
+     "id": "ck-s-obey",
+     "title": "Obbedisci",
+     "en": "Obey",
+     "type": "choice",
+     "parents": [
+      "ck-surrender1"
+     ]
+    },
+    {
+     "id": "ck-s-runaway",
+     "title": "Scappa",
+     "en": "Run Away",
+     "type": "choice",
+     "parents": [
+      "ck-surrender1"
+     ],
+     "note": "Dopo la resa.",
+     "note_en": "After surrendering."
+    },
+    {
+     "id": "ck-luthersac1",
+     "title": "Luther si sacrifica",
+     "en": "Luther Sacrifices Himself",
+     "type": "choice",
+     "parents": [
+      "ck-s-face"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Dopo la resa.",
+     "note_en": "Key event (highlighted in yellow in the game). After surrendering."
+    },
+    {
+     "id": "ck-struck",
+     "title": "Kara viene colpita",
+     "en": "Kara Is Struck",
+     "type": "choice",
+     "parents": [
+      "ck-s-convince"
+     ]
+    },
+    {
+     "id": "ck-alicein",
+     "title": "Alice interviene",
+     "en": "Alice Intervenes",
+     "type": "choice",
+     "parents": [
+      "ck-struck"
+     ]
+    },
+    {
+     "id": "ck-threatens",
+     "title": "Un soldato minaccia Kara e Alice",
+     "en": "Soldier Threatens Kara & Alice",
+     "type": "choice",
+     "parents": [
+      "ck-s-obey"
+     ]
+    },
+    {
+     "id": "ck-raise1",
+     "title": "Alza le mani",
+     "en": "Raise Arms",
+     "type": "choice",
+     "parents": [
+      "ck-threatens"
+     ],
+     "note": "Minacciate dal soldato.",
+     "note_en": "Threatened by the soldier."
+    },
+    {
+     "id": "ck-leg",
+     "title": "Kara viene colpita a una gamba",
+     "en": "Kara Is Shot in the Leg",
+     "type": "choice",
+     "parents": [
+      "ck-failrun",
+      "ck-runaway2",
+      "ck-s-runaway"
+     ]
+    },
+    {
+     "id": "ck-l-surrender",
+     "title": "Arrenditi",
+     "en": "Surrender",
+     "type": "choice",
+     "parents": [
+      "ck-leg"
+     ],
+     "note": "Ferita alla gamba.",
+     "note_en": "Wounded in the leg."
+    },
+    {
+     "id": "ck-l-face",
+     "title": "Affrontali",
+     "en": "Face",
+     "type": "choice",
+     "parents": [
+      "ck-leg"
+     ],
+     "note": "Ferita alla gamba.",
+     "note_en": "Wounded in the leg."
+    },
+    {
+     "id": "ck-l-crawl",
+     "title": "Striscia",
+     "en": "Crawl",
+     "type": "choice",
+     "parents": [
+      "ck-leg"
+     ]
+    },
+    {
+     "id": "ck-l-outoftime",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "ck-leg"
+     ],
+     "note": "Ferita alla gamba.",
+     "note_en": "Wounded in the leg."
+    },
+    {
+     "id": "ck-l-getup",
+     "title": "Rialzati",
+     "en": "Get Up",
+     "type": "choice",
+     "parents": [
+      "ck-leg"
+     ]
+    },
+    {
+     "id": "ck-l-playdead",
+     "title": "Fingiti morta",
+     "en": "Play Dead",
+     "type": "choice",
+     "parents": [
+      "ck-leg"
+     ],
+     "note": "Ferita alla gamba.",
+     "note_en": "Wounded in the leg."
+    },
+    {
+     "id": "ck-raise2",
+     "title": "Alza le mani",
+     "en": "Raise Arms",
+     "type": "choice",
+     "parents": [
+      "ck-l-surrender"
+     ],
+     "note": "Ferita alla gamba.",
+     "note_en": "Wounded in the leg."
+    },
+    {
+     "id": "ck-luthersac2",
+     "title": "Luther si sacrifica",
+     "en": "Luther Sacrifices Himself",
+     "type": "choice",
+     "parents": [
+      "ck-l-face"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Ferita alla gamba.",
+     "note_en": "Key event (highlighted in yellow in the game). Wounded in the leg."
+    },
+    {
+     "id": "ck-aliceshot",
+     "title": "Alice viene colpita",
+     "en": "Alice Is Shot",
+     "type": "choice",
+     "parents": [
+      "ck-l-crawl",
+      "ck-l-outoftime"
+     ]
+    },
+    {
+     "id": "ck-failsup",
+     "title": "Kara non riesce a rialzarsi",
+     "en": "Kara Fails to Get Up",
+     "type": "choice",
+     "parents": [
+      "ck-l-getup"
+     ]
+    },
+    {
+     "id": "ck-karashot",
+     "title": "Kara viene colpita",
+     "en": "Kara Is Shot",
+     "type": "choice",
+     "parents": [
+      "ck-failsup"
+     ]
+    },
+    {
+     "id": "ck-closer",
+     "title": "Avvicinati ad Alice",
+     "en": "Get Closer to Alice",
+     "type": "choice",
+     "parents": [
+      "ck-karashot"
+     ]
+    },
+    {
+     "id": "ck-end-died",
+     "title": "Kara e Alice sono morte nell'assalto",
+     "en": "Kara & Alice Died in the Assault",
+     "type": "ending",
+     "parents": [
+      "ck-aliceshot",
+      "ck-closer"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "ck-closein",
+     "title": "I soldati si avvicinano",
+     "en": "Soldiers Close In",
+     "type": "choice",
+     "parents": [
+      "ck-playdead1",
+      "ck-l-playdead"
+     ]
+    },
+    {
+     "id": "ck-defend",
+     "title": "Difendi Alice",
+     "en": "Defend Alice",
+     "type": "choice",
+     "parents": [
+      "ck-closein"
+     ]
+    },
+    {
+     "id": "ck-still",
+     "title": "Resta immobile",
+     "en": "Remain Still",
+     "type": "choice",
+     "parents": [
+      "ck-closein"
+     ]
+    },
+    {
+     "id": "ck-luthersac3",
+     "title": "Luther si sacrifica",
+     "en": "Luther Sacrifices Himself",
+     "type": "choice",
+     "parents": [
+      "ck-defend"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Quando i soldati si avvicinano.",
+     "note_en": "Key event (highlighted in yellow in the game). When the soldiers approach."
+    },
+    {
+     "id": "ck-end-kacapt4",
+     "title": "Kara e Alice catturate",
+     "en": "Kara & Alice Captured",
+     "type": "ending",
+     "parents": [
+      "ck-alicein",
+      "ck-raise1",
+      "ck-raise2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Quarta variante: alla breccia.",
+     "note_en": "Key event (highlighted in yellow in the game). Fourth variant: at the breach."
+    },
+    {
+     "id": "ck-leave",
+     "title": "Lascia Jericho",
+     "en": "Leave Jericho",
+     "type": "choice",
+     "parents": [
+      "ck-luthersac1",
+      "ck-luthersac2",
+      "ck-luthersac3",
+      "ck-still"
+     ]
+    },
+    {
+     "id": "ck-end-escaped",
+     "title": "Kara e Alice sono fuggite da Jericho",
+     "en": "Kara & Alice Escaped Jericho",
+     "type": "ending",
+     "parents": [
+      "ck-leave"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Crossroads - Connor",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "cc-start",
+     "title": "A Ferndale",
+     "en": "At Ferndale",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "cc-trail",
+     "title": "Segui le tracce di Jericho",
+     "en": "Follow Jericho Trail",
+     "type": "choice",
+     "parents": [
+      "cc-start"
+     ]
+    },
+    {
+     "id": "cc-ship1",
+     "title": "Sulla nave",
+     "en": "In the Ship",
+     "type": "checkpoint",
+     "parents": [
+      "cc-trail"
+     ],
+     "note": "Prima volta, all'arrivo.",
+     "note_en": "First time, on arrival."
+    },
+    {
+     "id": "cc-explore",
+     "title": "Esplora Jericho",
+     "en": "Explore Jericho",
+     "type": "objective",
+     "parents": [
+      "cc-ship1"
+     ]
+    },
+    {
+     "id": "cc-kara",
+     "title": "Individua Kara",
+     "en": "Spot Kara",
+     "type": "choice",
+     "parents": [
+      "cc-explore"
+     ]
+    },
+    {
+     "id": "cc-alice",
+     "title": "Individua Alice",
+     "en": "Spot Alice",
+     "type": "choice",
+     "parents": [
+      "cc-explore"
+     ]
+    },
+    {
+     "id": "cc-explosives",
+     "title": "Individua gli esplosivi",
+     "en": "Spot Explosives",
+     "type": "choice",
+     "parents": [
+      "cc-explore"
+     ]
+    },
+    {
+     "id": "cc-traci",
+     "title": "Individua la Traci",
+     "en": "Spot Traci",
+     "type": "choice",
+     "parents": [
+      "cc-explore"
+     ]
+    },
+    {
+     "id": "cc-rupert",
+     "title": "Individua Rupert",
+     "en": "Spot Rupert",
+     "type": "choice",
+     "parents": [
+      "cc-explore"
+     ]
+    },
+    {
+     "id": "cc-mag1",
+     "title": "Leggi «Detroit in Chaos»",
+     "en": "Read \"Detroit in Chaos\"",
+     "type": "choice",
+     "parents": [
+      "cc-explore"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "cc-mag2",
+     "title": "Leggi «Terror in Detroit»",
+     "en": "Read \"Terror in Detroit\"",
+     "type": "choice",
+     "parents": [
+      "cc-explore"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "cc-lucy",
+     "title": "Fermato da Lucy",
+     "en": "Stopped by Lucy",
+     "type": "choice",
+     "parents": [
+      "cc-explore"
+     ]
+    },
+    {
+     "id": "cc-cabin",
+     "title": "Di nuovo nella cabina del capitano",
+     "en": "Back in Captain's Cabin",
+     "type": "checkpoint",
+     "parents": [
+      "cc-lucy"
+     ]
+    },
+    {
+     "id": "cc-cabinnorth",
+     "title": "Di nuovo nella cabina del capitano con North",
+     "en": "Back in Captain's Cabin With North",
+     "type": "checkpoint",
+     "parents": [
+      "cc-lucy"
+     ]
+    },
+    {
+     "id": "cc-entercabin",
+     "title": "Entra nella cabina del capitano",
+     "en": "Enter Captain's Cabin",
+     "type": "choice",
+     "parents": [
+      "cc-cabin",
+      "cc-cabinnorth"
+     ]
+    },
+    {
+     "id": "cc-thrmarkus",
+     "title": "Minaccia Markus",
+     "en": "Threaten Markus",
+     "type": "choice",
+     "parents": [
+      "cc-entercabin"
+     ]
+    },
+    {
+     "id": "cc-thrnorth",
+     "title": "Minaccia North",
+     "en": "Threaten North",
+     "type": "choice",
+     "parents": [
+      "cc-entercabin"
+     ]
+    },
+    {
+     "id": "cc-confmarkus",
+     "title": "Affronta Markus",
+     "en": "Confront Markus",
+     "type": "choice",
+     "parents": [
+      "cc-thrmarkus"
+     ]
+    },
+    {
+     "id": "cc-confnorth",
+     "title": "Affronta North",
+     "en": "Confront North",
+     "type": "choice",
+     "parents": [
+      "cc-thrnorth"
+     ]
+    },
+    {
+     "id": "cc-machine",
+     "title": "Resta una macchina",
+     "en": "Remain a Machine",
+     "type": "choice",
+     "parents": [
+      "cc-confmarkus",
+      "cc-confnorth"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cc-deviant",
+     "title": "Diventa deviante",
+     "en": "Become Deviant",
+     "type": "choice",
+     "parents": [
+      "cc-confmarkus",
+      "cc-confnorth"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cc-attack1",
+     "title": "Jericho è sotto attacco",
+     "en": "Jericho Is Under Attack",
+     "type": "choice",
+     "parents": [
+      "cc-machine"
+     ],
+     "note": "Percorso di Connor macchina.",
+     "note_en": "Machine Connor path."
+    },
+    {
+     "id": "cc-mjumps",
+     "title": "Markus aggredisce Connor",
+     "en": "Markus Jumps Connor",
+     "type": "choice",
+     "parents": [
+      "cc-attack1"
+     ]
+    },
+    {
+     "id": "cc-njumps",
+     "title": "North aggredisce Connor",
+     "en": "North Jumps Connor",
+     "type": "choice",
+     "parents": [
+      "cc-attack1"
+     ]
+    },
+    {
+     "id": "cc-ship2",
+     "title": "Sulla nave",
+     "en": "In the Ship",
+     "type": "checkpoint",
+     "parents": [
+      "cc-mjumps",
+      "cc-njumps"
+     ],
+     "note": "Checkpoint del percorso di Connor macchina.",
+     "note_en": "Checkpoint on the machine Connor path."
+    },
+    {
+     "id": "cc-pmarkus",
+     "title": "Insegui Markus",
+     "en": "Pursue Markus",
+     "type": "choice",
+     "parents": [
+      "cc-ship2"
+     ]
+    },
+    {
+     "id": "cc-pnorth",
+     "title": "Insegui North",
+     "en": "Pursue North",
+     "type": "choice",
+     "parents": [
+      "cc-ship2"
+     ]
+    },
+    {
+     "id": "cc-cargo",
+     "title": "Stiva di carico",
+     "en": "Cargo Hall",
+     "type": "checkpoint",
+     "parents": [
+      "cc-pmarkus",
+      "cc-pnorth"
+     ]
+    },
+    {
+     "id": "cc-stopped",
+     "title": "Fermato da un soldato",
+     "en": "Stopped by Soldier",
+     "type": "choice",
+     "parents": [
+      "cc-cargo"
+     ]
+    },
+    {
+     "id": "cc-alibi",
+     "title": "Usa Perkins come alibi",
+     "en": "Perkins Alibi",
+     "type": "choice",
+     "parents": [
+      "cc-stopped"
+     ]
+    },
+    {
+     "id": "cc-persuade",
+     "title": "Prova a persuaderlo",
+     "en": "Attempt to Persuade",
+     "type": "choice",
+     "parents": [
+      "cc-stopped"
+     ]
+    },
+    {
+     "id": "cc-attack",
+     "title": "Attacca",
+     "en": "Attack",
+     "type": "choice",
+     "parents": [
+      "cc-stopped"
+     ]
+    },
+    {
+     "id": "cc-run",
+     "title": "Scappa",
+     "en": "Run",
+     "type": "choice",
+     "parents": [
+      "cc-stopped"
+     ]
+    },
+    {
+     "id": "cc-neutralize",
+     "title": "Neutralizza l'aggressore",
+     "en": "Neutralize Assailant",
+     "type": "choice",
+     "parents": [
+      "cc-attack"
+     ]
+    },
+    {
+     "id": "cc-failneut",
+     "title": "Non riesci a neutralizzare l'aggressore",
+     "en": "Fail to Neutralize Assailant",
+     "type": "choice",
+     "parents": [
+      "cc-attack"
+     ]
+    },
+    {
+     "id": "cc-soldiersshoot",
+     "title": "I soldati sparano a Connor",
+     "en": "Soldiers Shoot Connor",
+     "type": "choice",
+     "parents": [
+      "cc-run"
+     ]
+    },
+    {
+     "id": "cc-end-mdestroyed1",
+     "title": "Connor macchina è stato distrutto",
+     "en": "Machine Connor Was Destroyed",
+     "type": "ending",
+     "parents": [
+      "cc-failneut",
+      "cc-soldiersshoot"
+     ],
+     "note": "Prima variante: fermato dal soldato.",
+     "note_en": "First variant: stopped by the soldier."
+    },
+    {
+     "id": "cc-newc1",
+     "title": "CyberLife manderà un nuovo Connor",
+     "en": "CyberLife Will Send a New Connor",
+     "type": "choice",
+     "parents": [
+      "cc-end-mdestroyed1"
+     ]
+    },
+    {
+     "id": "cc-resume",
+     "title": "Riprendi l'inseguimento",
+     "en": "Resume Pursuit",
+     "type": "choice",
+     "parents": [
+      "cc-alibi",
+      "cc-persuade",
+      "cc-neutralize"
+     ]
+    },
+    {
+     "id": "cc-interrupts",
+     "title": "Connor interrompe e Markus lo spinge via",
+     "en": "Connor Interrupts and Markus Pushes Him Aside",
+     "type": "choice",
+     "parents": [
+      "cc-resume"
+     ]
+    },
+    {
+     "id": "cc-failgun",
+     "title": "Non raggiungi la pistola prima di Markus",
+     "en": "Fail to Reach Gun Before Markus",
+     "type": "choice",
+     "parents": [
+      "cc-interrupts"
+     ]
+    },
+    {
+     "id": "cc-reachgun",
+     "title": "Raggiungi la pistola prima di Markus",
+     "en": "Reach Gun Before Markus",
+     "type": "choice",
+     "parents": [
+      "cc-interrupts"
+     ]
+    },
+    {
+     "id": "cc-mshoots",
+     "title": "Markus spara a Connor",
+     "en": "Markus Shoots Connor",
+     "type": "choice",
+     "parents": [
+      "cc-failgun"
+     ]
+    },
+    {
+     "id": "cc-end-mdestroyed2",
+     "title": "Connor macchina è stato distrutto",
+     "en": "Machine Connor Was Destroyed",
+     "type": "ending",
+     "parents": [
+      "cc-mshoots"
+     ],
+     "note": "Seconda variante: Markus spara a Connor.",
+     "note_en": "Second variant: Markus shoots Connor."
+    },
+    {
+     "id": "cc-newc2",
+     "title": "CyberLife manderà un nuovo Connor",
+     "en": "CyberLife Will Send a New Connor",
+     "type": "choice",
+     "parents": [
+      "cc-end-mdestroyed2"
+     ]
+    },
+    {
+     "id": "cc-cshoots",
+     "title": "Connor spara a Markus",
+     "en": "Connor Shoots Markus",
+     "type": "choice",
+     "parents": [
+      "cc-reachgun"
+     ]
+    },
+    {
+     "id": "cc-end-killedmarkus",
+     "title": "Connor ha ucciso Markus",
+     "en": "Connor Killed Markus",
+     "type": "ending",
+     "parents": [
+      "cc-cshoots"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cc-corrconf",
+     "title": "Scontro nel corridoio",
+     "en": "Corridor Confrontation",
+     "type": "checkpoint",
+     "parents": [
+      "cc-resume"
+     ]
+    },
+    {
+     "id": "cc-josh",
+     "title": "Trova Josh",
+     "en": "Find Josh",
+     "type": "choice",
+     "parents": [
+      "cc-corrconf"
+     ]
+    },
+    {
+     "id": "cc-spotnorth",
+     "title": "Individua North",
+     "en": "Spot North",
+     "type": "choice",
+     "parents": [
+      "cc-josh"
+     ]
+    },
+    {
+     "id": "cc-madeit1",
+     "title": "Ce l'hai fatta",
+     "en": "Made It",
+     "type": "choice",
+     "parents": [
+      "cc-spotnorth"
+     ],
+     "note": "Inseguendo North.",
+     "note_en": "While chasing North."
+    },
+    {
+     "id": "cc-shotsoldier",
+     "title": "Colpito da un soldato",
+     "en": "Shot by Soldier",
+     "type": "choice",
+     "parents": [
+      "cc-spotnorth"
+     ]
+    },
+    {
+     "id": "cc-northescaped",
+     "title": "North è fuggita",
+     "en": "North Escaped",
+     "type": "choice",
+     "parents": [
+      "cc-madeit1"
+     ]
+    },
+    {
+     "id": "cc-soldierkills",
+     "title": "Un soldato uccide Connor",
+     "en": "Soldier Kills Connor",
+     "type": "choice",
+     "parents": [
+      "cc-shotsoldier"
+     ]
+    },
+    {
+     "id": "cc-end-mdestroyed3",
+     "title": "Connor macchina è stato distrutto",
+     "en": "Machine Connor Was Destroyed",
+     "type": "ending",
+     "parents": [
+      "cc-soldierkills"
+     ],
+     "note": "Terza variante: ucciso da un soldato.",
+     "note_en": "Third variant: killed by a soldier."
+    },
+    {
+     "id": "cc-newc3",
+     "title": "CyberLife manderà un nuovo Connor",
+     "en": "CyberLife Will Send a New Connor",
+     "type": "choice",
+     "parents": [
+      "cc-end-mdestroyed3"
+     ]
+    },
+    {
+     "id": "cc-warnmarkus",
+     "title": "Avverti Markus",
+     "en": "Warn Markus",
+     "type": "choice",
+     "parents": [
+      "cc-deviant"
+     ]
+    },
+    {
+     "id": "cc-warnnorth",
+     "title": "Avverti North",
+     "en": "Warn North",
+     "type": "choice",
+     "parents": [
+      "cc-deviant"
+     ]
+    },
+    {
+     "id": "cc-attack2",
+     "title": "Jericho è sotto attacco",
+     "en": "Jericho Is Under Attack",
+     "type": "choice",
+     "parents": [
+      "cc-warnmarkus",
+      "cc-warnnorth"
+     ],
+     "note": "Percorso di Connor deviante.",
+     "note_en": "Deviant Connor path."
+    },
+    {
+     "id": "cc-dcorr1",
+     "title": "Connor deviante nel corridoio",
+     "en": "Deviant Connor in Corridor",
+     "type": "checkpoint",
+     "parents": [
+      "cc-attack2"
+     ],
+     "note": "Checkpoint.",
+     "note_en": "Checkpoint."
+    },
+    {
+     "id": "cc-joindev",
+     "title": "Unisciti ai devianti",
+     "en": "Join Deviants",
+     "type": "choice",
+     "parents": [
+      "cc-dcorr1"
+     ]
+    },
+    {
+     "id": "cc-hold",
+     "title": "Dirigiti verso la stiva",
+     "en": "Make for the Hold",
+     "type": "choice",
+     "parents": [
+      "cc-joindev"
+     ]
+    },
+    {
+     "id": "cc-lucy2",
+     "title": "Incontra Lucy",
+     "en": "Meet Lucy",
+     "type": "choice",
+     "parents": [
+      "cc-hold"
+     ]
+    },
+    {
+     "id": "cc-wrongway",
+     "title": "Connor sbaglia strada",
+     "en": "Connor Goes Wrong Way",
+     "type": "choice",
+     "parents": [
+      "cc-hold"
+     ]
+    },
+    {
+     "id": "cc-outoftime1",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "cc-hold"
+     ],
+     "note": "Verso la stiva.",
+     "note_en": "Towards the hold."
+    },
+    {
+     "id": "cc-soldiershoots",
+     "title": "Un soldato spara a Connor",
+     "en": "Soldier Shoots Connor",
+     "type": "choice",
+     "parents": [
+      "cc-wrongway",
+      "cc-outoftime1"
+     ]
+    },
+    {
+     "id": "cc-bridge",
+     "title": "Il ponte crolla",
+     "en": "Bridge Collapses",
+     "type": "choice",
+     "parents": [
+      "cc-lucy2"
+     ]
+    },
+    {
+     "id": "cc-dcorr2",
+     "title": "Connor deviante nel corridoio",
+     "en": "Deviant Connor in Corridor",
+     "type": "checkpoint",
+     "parents": [
+      "cc-bridge"
+     ],
+     "note": "Dopo il crollo del ponte.",
+     "note_en": "After the walkway collapses."
+    },
+    {
+     "id": "cc-sneak",
+     "title": "Supera i soldati di nascosto",
+     "en": "Sneak Past Soldiers",
+     "type": "choice",
+     "parents": [
+      "cc-dcorr2"
+     ]
+    },
+    {
+     "id": "cc-threaten",
+     "title": "I soldati minacciano gli androidi",
+     "en": "Soldiers Threaten Androids",
+     "type": "choice",
+     "parents": [
+      "cc-sneak"
+     ]
+    },
+    {
+     "id": "cc-stayaway",
+     "title": "Stai lontano",
+     "en": "Stay Away",
+     "type": "choice",
+     "parents": [
+      "cc-threaten"
+     ]
+    },
+    {
+     "id": "cc-intervene",
+     "title": "Intervieni",
+     "en": "Intervene",
+     "type": "choice",
+     "parents": [
+      "cc-threaten"
+     ]
+    },
+    {
+     "id": "cc-executed",
+     "title": "Gli androidi vengono giustiziati",
+     "en": "Androids Are Executed",
+     "type": "choice",
+     "parents": [
+      "cc-stayaway"
+     ]
+    },
+    {
+     "id": "cc-killsoldiers",
+     "title": "Uccidi i soldati",
+     "en": "Kill the Soldiers",
+     "type": "choice",
+     "parents": [
+      "cc-intervene"
+     ]
+    },
+    {
+     "id": "cc-getshot",
+     "title": "Vieni colpito",
+     "en": "Get Shot",
+     "type": "choice",
+     "parents": [
+      "cc-intervene"
+     ]
+    },
+    {
+     "id": "cc-escape1",
+     "title": "Gli androidi fuggono",
+     "en": "Androids Escape",
+     "type": "choice",
+     "parents": [
+      "cc-killsoldiers"
+     ],
+     "note": "Dopo aver ucciso i soldati.",
+     "note_en": "After killing the soldiers."
+    },
+    {
+     "id": "cc-wounded1",
+     "title": "Connor è ferito",
+     "en": "Connor Is Wounded",
+     "type": "choice",
+     "parents": [
+      "cc-getshot"
+     ],
+     "note": "Dopo essere intervenuto.",
+     "note_en": "After intervening."
+    },
+    {
+     "id": "cc-shot1",
+     "title": "Connor viene colpito",
+     "en": "Connor Is Shot",
+     "type": "choice",
+     "parents": [
+      "cc-getshot"
+     ],
+     "note": "Dopo essere intervenuto.",
+     "note_en": "After intervening."
+    },
+    {
+     "id": "cc-nextcorr",
+     "title": "Corridoio successivo",
+     "en": "Next Corridor",
+     "type": "choice",
+     "parents": [
+      "cc-executed",
+      "cc-escape1"
+     ]
+    },
+    {
+     "id": "cc-coming",
+     "title": "Arrivano i soldati",
+     "en": "Soldiers Coming",
+     "type": "choice",
+     "parents": [
+      "cc-nextcorr"
+     ]
+    },
+    {
+     "id": "cc-jumpsoldiers",
+     "title": "Salta sui soldati",
+     "en": "Jump Soldiers",
+     "type": "choice",
+     "parents": [
+      "cc-coming"
+     ]
+    },
+    {
+     "id": "cc-climb",
+     "title": "Arrampicati accanto ai soldati",
+     "en": "Climb Beside Soldiers",
+     "type": "choice",
+     "parents": [
+      "cc-coming"
+     ]
+    },
+    {
+     "id": "cc-losetime",
+     "title": "Perdi troppo tempo",
+     "en": "Lose Too Much Time",
+     "type": "choice",
+     "parents": [
+      "cc-coming"
+     ]
+    },
+    {
+     "id": "cc-wounded2",
+     "title": "Connor è ferito",
+     "en": "Connor Is Wounded",
+     "type": "choice",
+     "parents": [
+      "cc-jumpsoldiers"
+     ],
+     "note": "Nel corridoio successivo.",
+     "note_en": "In the next corridor."
+    },
+    {
+     "id": "cc-shot2",
+     "title": "Connor viene colpito",
+     "en": "Connor Is Shot",
+     "type": "choice",
+     "parents": [
+      "cc-losetime"
+     ],
+     "note": "Nel corridoio successivo.",
+     "note_en": "In the next corridor."
+    },
+    {
+     "id": "cc-well",
+     "title": "Entra in un pozzo",
+     "en": "Enter a Well",
+     "type": "choice",
+     "parents": [
+      "cc-jumpsoldiers",
+      "cc-climb",
+      "cc-wounded1",
+      "cc-wounded2"
+     ]
+    },
+    {
+     "id": "cc-chased",
+     "title": "Gli androidi sono inseguiti dai soldati",
+     "en": "Androids Are Chased by Soldiers",
+     "type": "choice",
+     "parents": [
+      "cc-well"
+     ]
+    },
+    {
+     "id": "cc-androidsshot",
+     "title": "Gli androidi vengono colpiti",
+     "en": "Androids Are Shot",
+     "type": "choice",
+     "parents": [
+      "cc-chased"
+     ]
+    },
+    {
+     "id": "cc-reservoir",
+     "title": "Usa il serbatoio per stordire i soldati",
+     "en": "Use Reservoir to Knock Soldiers Out",
+     "type": "choice",
+     "parents": [
+      "cc-chased"
+     ]
+    },
+    {
+     "id": "cc-escape2",
+     "title": "Gli androidi fuggono",
+     "en": "Androids Escape",
+     "type": "choice",
+     "parents": [
+      "cc-reservoir"
+     ],
+     "note": "Dopo il serbatoio.",
+     "note_en": "After the reservoir."
+    },
+    {
+     "id": "cc-end-ddestroyed1",
+     "title": "Connor deviante è stato distrutto sulla nave",
+     "en": "Deviant Connor Was Destroyed on the Ship",
+     "type": "ending",
+     "parents": [
+      "cc-shot1",
+      "cc-shot2",
+      "cc-soldiershoots"
+     ],
+     "note": "Prima variante: nei corridoi.",
+     "note_en": "First variant: in the corridors."
+    },
+    {
+     "id": "cc-newc4",
+     "title": "CyberLife manderà un nuovo Connor",
+     "en": "CyberLife Will Send a New Connor",
+     "type": "choice",
+     "parents": [
+      "cc-end-ddestroyed1"
+     ]
+    },
+    {
+     "id": "cc-takeover",
+     "title": "Connor prende in mano la missione di Markus",
+     "en": "Connor Takes Over Markus' Mission",
+     "type": "choice",
+     "parents": [
+      "cc-dcorr1"
+     ],
+     "note": "Collegamento da verificare: la linea arriva da sinistra e non si legge da dove parte.",
+     "note_en": "Link to be verified: the line comes from the left and its origin can't be read."
+    },
+    {
+     "id": "cc-approach",
+     "title": "Avvicinati alla stiva",
+     "en": "Approach Hold",
+     "type": "choice",
+     "parents": [
+      "cc-takeover",
+      "cc-androidsshot",
+      "cc-escape2"
+     ]
+    },
+    {
+     "id": "cc-joshdying",
+     "title": "Josh sta morendo",
+     "en": "Josh Is Dying",
+     "type": "choice",
+     "parents": [
+      "cc-approach"
+     ]
+    },
+    {
+     "id": "cc-comfort",
+     "title": "Conforta Josh",
+     "en": "Comfort Josh",
+     "type": "choice",
+     "parents": [
+      "cc-joshdying"
+     ]
+    },
+    {
+     "id": "cc-inhold",
+     "title": "Nella stiva con Connor deviante",
+     "en": "In the Hold With Deviant Connor",
+     "type": "checkpoint",
+     "parents": [
+      "cc-comfort"
+     ]
+    },
+    {
+     "id": "cc-control",
+     "title": "Nella sala di controllo",
+     "en": "In Control Room",
+     "type": "choice",
+     "parents": [
+      "cc-inhold"
+     ]
+    },
+    {
+     "id": "cc-interrupt",
+     "title": "I soldati interrompono",
+     "en": "Soldiers Interrupt",
+     "type": "choice",
+     "parents": [
+      "cc-control"
+     ]
+    },
+    {
+     "id": "cc-neutthem",
+     "title": "Neutralizzali",
+     "en": "Neutralize Them",
+     "type": "choice",
+     "parents": [
+      "cc-interrupt"
+     ]
+    },
+    {
+     "id": "cc-fail",
+     "title": "Fallisci",
+     "en": "Fail",
+     "type": "choice",
+     "parents": [
+      "cc-interrupt"
+     ]
+    },
+    {
+     "id": "cc-shotdead",
+     "title": "Connor viene ucciso a colpi d'arma da fuoco",
+     "en": "Connor Is Shot Dead",
+     "type": "choice",
+     "parents": [
+      "cc-fail"
+     ]
+    },
+    {
+     "id": "cc-end-ddestroyed2",
+     "title": "Connor deviante è stato distrutto sulla nave",
+     "en": "Deviant Connor Was Destroyed on the Ship",
+     "type": "ending",
+     "parents": [
+      "cc-shotdead"
+     ],
+     "note": "Seconda variante: nella sala di controllo.",
+     "note_en": "Second variant: in the control room."
+    },
+    {
+     "id": "cc-newc5",
+     "title": "CyberLife manderà un nuovo Connor",
+     "en": "CyberLife Will Send a New Connor",
+     "type": "choice",
+     "parents": [
+      "cc-end-ddestroyed2"
+     ]
+    },
+    {
+     "id": "cc-arm",
+     "title": "Arma l'esplosivo",
+     "en": "Arm Explosive",
+     "type": "choice",
+     "parents": [
+      "cc-neutthem"
+     ]
+    },
+    {
+     "id": "cc-dcorr3",
+     "title": "Connor deviante nel corridoio",
+     "en": "Deviant Connor in Corridor",
+     "type": "checkpoint",
+     "parents": [
+      "cc-arm"
+     ],
+     "note": "Dopo aver armato l'esplosivo.",
+     "note_en": "After arming the explosives."
+    },
+    {
+     "id": "cc-jointhe",
+     "title": "Raggiungi gli altri",
+     "en": "Join the Others",
+     "type": "choice",
+     "parents": [
+      "cc-dcorr3"
+     ]
+    },
+    {
+     "id": "cc-try",
+     "title": "Prova a fuggire",
+     "en": "Try to Escape",
+     "type": "choice",
+     "parents": [
+      "cc-jointhe"
+     ]
+    },
+    {
+     "id": "cc-outoftime2",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "cc-try"
+     ],
+     "note": "Nella fuga finale.",
+     "note_en": "In the final escape."
+    },
+    {
+     "id": "cc-madeit2",
+     "title": "Ce l'hai fatta",
+     "en": "Made It",
+     "type": "choice",
+     "parents": [
+      "cc-try"
+     ],
+     "note": "Nella fuga finale.",
+     "note_en": "In the final escape."
+    },
+    {
+     "id": "cc-northjumps",
+     "title": "North salta",
+     "en": "North Jumps",
+     "type": "choice",
+     "parents": [
+      "cc-madeit2"
+     ]
+    },
+    {
+     "id": "cc-simonher",
+     "title": "Simon salta con lei",
+     "en": "Simon Jumps With Her",
+     "type": "choice",
+     "parents": [
+      "cc-northjumps"
+     ]
+    },
+    {
+     "id": "cc-end-ddestroyed3",
+     "title": "Connor deviante è stato distrutto sulla nave",
+     "en": "Deviant Connor Was Destroyed on the Ship",
+     "type": "ending",
+     "parents": [
+      "cc-outoftime2"
+     ],
+     "note": "Terza variante: tempo scaduto nella fuga.",
+     "note_en": "Third variant: out of time during the escape."
+    },
+    {
+     "id": "cc-newc6",
+     "title": "CyberLife manderà un nuovo Connor",
+     "en": "CyberLife Will Send a New Connor",
+     "type": "choice",
+     "parents": [
+      "cc-end-ddestroyed3"
+     ]
+    },
+    {
+     "id": "cc-connorjumps",
+     "title": "Connor salta",
+     "en": "Connor Jumps",
+     "type": "choice",
+     "parents": [
+      "cc-madeit2"
+     ]
+    },
+    {
+     "id": "cc-simonhim",
+     "title": "Simon salta con lui",
+     "en": "Simon Jumps With Him",
+     "type": "choice",
+     "parents": [
+      "cc-connorjumps"
+     ]
+    },
+    {
+     "id": "cc-northhim",
+     "title": "North salta con lui",
+     "en": "North Jumps With Him",
+     "type": "choice",
+     "parents": [
+      "cc-connorjumps"
+     ]
+    },
+    {
+     "id": "cc-joins",
+     "title": "Connor si unisce agli altri",
+     "en": "Connor Joins the Others",
+     "type": "choice",
+     "parents": [
+      "cc-dcorr1",
+      "cc-jointhe"
+     ]
+    },
+    {
+     "id": "cc-help",
+     "title": "Aiuta Markus",
+     "en": "Help Markus",
+     "type": "choice",
+     "parents": [
+      "cc-joins"
+     ]
+    },
+    {
+     "id": "cc-failhelp",
+     "title": "Non riesci ad aiutare Markus",
+     "en": "Fail to Help Markus",
+     "type": "choice",
+     "parents": [
+      "cc-joins"
+     ]
+    },
+    {
+     "id": "cc-jumpothers",
+     "title": "Connor salta con gli altri",
+     "en": "Connor Jumps With the Others",
+     "type": "choice",
+     "parents": [
+      "cc-help"
+     ]
+    },
+    {
+     "id": "cc-end-ddestroyed4",
+     "title": "Connor deviante è stato distrutto sulla nave",
+     "en": "Deviant Connor Was Destroyed on the Ship",
+     "type": "ending",
+     "parents": [
+      "cc-failhelp"
+     ],
+     "note": "Quarta variante: non riesci ad aiutare Markus.",
+     "note_en": "Fourth variant: you fail to help Markus."
+    },
+    {
+     "id": "cc-newc7",
+     "title": "CyberLife manderà un nuovo Connor",
+     "en": "CyberLife Will Send a New Connor",
+     "type": "choice",
+     "parents": [
+      "cc-end-ddestroyed4"
+     ]
+    },
+    {
+     "id": "cc-end-escaped",
+     "title": "Connor è fuggito con la gente di Jericho",
+     "en": "Connor Escaped With Jericho's People",
+     "type": "ending",
+     "parents": [
+      "cc-connorjumps",
+      "cc-simonhim",
+      "cc-northhim",
+      "cc-jumpothers"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Crossroads - Markus",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "cm-cabin",
+     "title": "Cabina del capitano",
+     "en": "Captain's Cabin",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "cm-req-died",
+     "title": "Markus morto in «Freedom March»",
+     "en": "Markus Died in 'Freedom March'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cm-cabinnorth",
+     "title": "Cabina del capitano con North",
+     "en": "Captain's Cabin With North",
+     "type": "checkpoint",
+     "parents": [
+      "cm-req-died"
+     ],
+     "note": "Inizio alternativo se Markus è morto in «Freedom March».",
+     "note_en": "Alternative start if Markus died in “Freedom March”."
+    },
+    {
+     "id": "cm-jn",
+     "title": "Josh e North discutono",
+     "en": "Josh and North Discuss",
+     "type": "choice",
+     "parents": [
+      "cm-cabinnorth"
+     ]
+    },
+    {
+     "id": "cm-jsn",
+     "title": "Josh, Simon e North discutono",
+     "en": "Josh, Simon and North Discuss",
+     "type": "choice",
+     "parents": [
+      "cm-cabinnorth"
+     ]
+    },
+    {
+     "id": "cm-end-north",
+     "title": "North è rimasta sola con i suoi pensieri",
+     "en": "North Stayed Alone With Her Thoughts",
+     "type": "ending",
+     "parents": [
+      "cm-jn",
+      "cm-jsn"
+     ]
+    },
+    {
+     "id": "cm-counsel1",
+     "title": "Consulta Simon, Josh e North",
+     "en": "Counsel With Simon, Josh and North",
+     "type": "choice",
+     "parents": [
+      "cm-cabin"
+     ]
+    },
+    {
+     "id": "cm-counsel2",
+     "title": "Consulta Josh e North",
+     "en": "Counsel With Josh and North",
+     "type": "choice",
+     "parents": [
+      "cm-cabin"
+     ]
+    },
+    {
+     "id": "cm-ousted",
+     "title": "Markus viene estromesso",
+     "en": "Markus Ousted",
+     "type": "choice",
+     "parents": [
+      "cm-counsel1",
+      "cm-counsel2"
+     ]
+    },
+    {
+     "id": "cm-rooftop",
+     "title": "Su un tetto",
+     "en": "On a Rooftop",
+     "type": "checkpoint",
+     "parents": [
+      "cm-ousted"
+     ]
+    },
+    {
+     "id": "cm-attack2",
+     "title": "Jericho è sotto attacco",
+     "en": "Jericho Is Under Attack",
+     "type": "choice",
+     "parents": [
+      "cm-rooftop"
+     ],
+     "note": "Visto dal tetto.",
+     "note_en": "Seen from the roof."
+    },
+    {
+     "id": "cm-forever",
+     "title": "Vattene per sempre",
+     "en": "Leave Forever",
+     "type": "choice",
+     "parents": [
+      "cm-attack2"
+     ]
+    },
+    {
+     "id": "cm-goback",
+     "title": "Torna a Jericho",
+     "en": "Go Back to Jericho",
+     "type": "choice",
+     "parents": [
+      "cm-attack2"
+     ]
+    },
+    {
+     "id": "cm-end-leftjericho",
+     "title": "Markus ha lasciato Jericho",
+     "en": "Markus Left Jericho",
+     "type": "ending",
+     "parents": [
+      "cm-forever"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cm-discuss",
+     "title": "Parla con North",
+     "en": "Discuss With North",
+     "type": "choice",
+     "parents": [
+      "cm-counsel1",
+      "cm-counsel2"
+     ]
+    },
+    {
+     "id": "cm-kiss",
+     "title": "Bacia North",
+     "en": "Kiss North",
+     "type": "choice",
+     "parents": [
+      "cm-discuss"
+     ]
+    },
+    {
+     "id": "cm-nokiss",
+     "title": "Non baciare North",
+     "en": "Don't Kiss North",
+     "type": "choice",
+     "parents": [
+      "cm-discuss"
+     ]
+    },
+    {
+     "id": "cm-northleaves",
+     "title": "North lascia Markus da solo",
+     "en": "North Leaves Markus Alone",
+     "type": "choice",
+     "parents": [
+      "cm-kiss",
+      "cm-nokiss"
+     ]
+    },
+    {
+     "id": "cm-end-alone",
+     "title": "Markus è rimasto solo con i suoi pensieri",
+     "en": "Markus Stayed Alone With His Thoughts",
+     "type": "ending",
+     "parents": [
+      "cm-northleaves"
+     ]
+    },
+    {
+     "id": "cm-watches",
+     "title": "Connor guarda North andarsene",
+     "en": "Connor Watches North Leave",
+     "type": "choice",
+     "parents": [
+      "cm-northleaves"
+     ]
+    },
+    {
+     "id": "cm-attack1",
+     "title": "Jericho è sotto attacco",
+     "en": "Jericho Is Under Attack",
+     "type": "choice",
+     "parents": [
+      "cm-watches"
+     ],
+     "note": "Dopo che North se ne va.",
+     "note_en": "After North leaves."
+    },
+    {
+     "id": "cm-corr1",
+     "title": "Nel corridoio con Markus",
+     "en": "In the Corridor With Markus",
+     "type": "checkpoint",
+     "parents": [
+      "cm-attack1"
+     ],
+     "note": "Checkpoint.",
+     "note_en": "Checkpoint."
+    },
+    {
+     "id": "cm-team",
+     "title": "Incontra la tua squadra",
+     "en": "Meet Your Team",
+     "type": "choice",
+     "parents": [
+      "cm-corr1"
+     ]
+    },
+    {
+     "id": "cm-try1",
+     "title": "Prova a fuggire",
+     "en": "Try to Escape",
+     "type": "choice",
+     "parents": [
+      "cm-team"
+     ],
+     "note": "Prima fuga.",
+     "note_en": "First escape."
+    },
+    {
+     "id": "cm-lucy",
+     "title": "Incontra Lucy",
+     "en": "Meet Lucy",
+     "type": "choice",
+     "parents": [
+      "cm-try1"
+     ]
+    },
+    {
+     "id": "cm-bridge",
+     "title": "Un ponte crolla sotto Markus",
+     "en": "A Bridge Breaks Under Markus",
+     "type": "choice",
+     "parents": [
+      "cm-lucy"
+     ]
+    },
+    {
+     "id": "cm-wrongway",
+     "title": "Strada sbagliata",
+     "en": "Wrong Way",
+     "type": "choice",
+     "parents": [
+      "cm-try1"
+     ]
+    },
+    {
+     "id": "cm-outoftime",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "cm-try1"
+     ]
+    },
+    {
+     "id": "cm-soldiersshoot",
+     "title": "I soldati sparano a Markus",
+     "en": "Soldiers Shoot Markus",
+     "type": "choice",
+     "parents": [
+      "cm-wrongway",
+      "cm-outoftime"
+     ]
+    },
+    {
+     "id": "cm-wounded1",
+     "title": "Markus è ferito",
+     "en": "Markus Is Wounded",
+     "type": "choice",
+     "parents": [
+      "cm-soldiersshoot"
+     ]
+    },
+    {
+     "id": "cm-killmarkus",
+     "title": "I soldati uccidono Markus",
+     "en": "Soldiers Kill Markus",
+     "type": "choice",
+     "parents": [
+      "cm-soldiersshoot"
+     ]
+    },
+    {
+     "id": "cm-end-killed1",
+     "title": "Markus è stato ucciso e gran parte di Jericho catturata",
+     "en": "Markus Killed and Most of Jericho Captured",
+     "type": "ending",
+     "parents": [
+      "cm-killmarkus"
+     ],
+     "note": "Prima variante: nella prima fuga.",
+     "note_en": "First variant: in the first escape."
+    },
+    {
+     "id": "cm-mcorr",
+     "title": "Markus nel corridoio",
+     "en": "Markus in the Corridor",
+     "type": "checkpoint",
+     "parents": [
+      "cm-bridge",
+      "cm-goback",
+      "cm-wounded1"
+     ]
+    },
+    {
+     "id": "cm-sneak",
+     "title": "Aggira i soldati",
+     "en": "Sneak Around the Soldiers",
+     "type": "choice",
+     "parents": [
+      "cm-mcorr"
+     ]
+    },
+    {
+     "id": "cm-threaten",
+     "title": "I soldati minacciano gli androidi",
+     "en": "Soldiers Threaten Androids",
+     "type": "choice",
+     "parents": [
+      "cm-sneak"
+     ]
+    },
+    {
+     "id": "cm-stayaway1",
+     "title": "Stai lontano",
+     "en": "Stay Away",
+     "type": "choice",
+     "parents": [
+      "cm-threaten"
+     ],
+     "note": "Con i soldati che minacciano gli androidi.",
+     "note_en": "With the soldiers threatening the androids."
+    },
+    {
+     "id": "cm-intervene1",
+     "title": "Intervieni",
+     "en": "Intervene",
+     "type": "choice",
+     "parents": [
+      "cm-threaten"
+     ],
+     "note": "Con i soldati che minacciano gli androidi.",
+     "note_en": "With the soldiers threatening the androids."
+    },
+    {
+     "id": "cm-killed",
+     "title": "Gli androidi vengono uccisi",
+     "en": "Androids Are Killed",
+     "type": "choice",
+     "parents": [
+      "cm-stayaway1"
+     ]
+    },
+    {
+     "id": "cm-deal",
+     "title": "Occupati dei soldati",
+     "en": "Deal With Soldiers",
+     "type": "choice",
+     "parents": [
+      "cm-intervene1"
+     ]
+    },
+    {
+     "id": "cm-getshot",
+     "title": "Vieni colpito",
+     "en": "Get Shot",
+     "type": "choice",
+     "parents": [
+      "cm-intervene1"
+     ]
+    },
+    {
+     "id": "cm-wounded2",
+     "title": "Markus ferito",
+     "en": "Markus Wounded",
+     "type": "choice",
+     "parents": [
+      "cm-getshot"
+     ],
+     "note": "Intervenendo.",
+     "note_en": "By intervening."
+    },
+    {
+     "id": "cm-collapses1",
+     "title": "Markus crolla",
+     "en": "Markus Collapses",
+     "type": "choice",
+     "parents": [
+      "cm-getshot"
+     ],
+     "note": "Intervenendo.",
+     "note_en": "By intervening."
+    },
+    {
+     "id": "cm-end-killed2",
+     "title": "Markus è stato ucciso e gran parte di Jericho catturata",
+     "en": "Markus Killed and Most of Jericho Captured",
+     "type": "ending",
+     "parents": [
+      "cm-collapses1"
+     ],
+     "note": "Seconda variante: intervenendo.",
+     "note_en": "Second variant: by intervening."
+    },
+    {
+     "id": "cm-escape1",
+     "title": "Gli androidi fuggono",
+     "en": "Androids Escape",
+     "type": "choice",
+     "parents": [
+      "cm-deal",
+      "cm-wounded2"
+     ],
+     "note": "Dopo l'intervento.",
+     "note_en": "After the intervention."
+    },
+    {
+     "id": "cm-progress",
+     "title": "Passa al corridoio successivo",
+     "en": "Progress to the Next Corridor",
+     "type": "choice",
+     "parents": [
+      "cm-killed",
+      "cm-escape1"
+     ]
+    },
+    {
+     "id": "cm-coming",
+     "title": "I soldati vengono verso Markus",
+     "en": "Soldiers Coming Markus' Way",
+     "type": "choice",
+     "parents": [
+      "cm-progress"
+     ]
+    },
+    {
+     "id": "cm-jump",
+     "title": "Salta sui soldati",
+     "en": "Jump Soldiers",
+     "type": "choice",
+     "parents": [
+      "cm-coming"
+     ]
+    },
+    {
+     "id": "cm-climb",
+     "title": "Arrampicati via",
+     "en": "Climb Away",
+     "type": "choice",
+     "parents": [
+      "cm-coming"
+     ]
+    },
+    {
+     "id": "cm-timeout",
+     "title": "Tempo scaduto",
+     "en": "Time Out",
+     "type": "choice",
+     "parents": [
+      "cm-coming"
+     ]
+    },
+    {
+     "id": "cm-wounded3",
+     "title": "Markus ferito",
+     "en": "Markus Wounded",
+     "type": "choice",
+     "parents": [
+      "cm-jump"
+     ],
+     "note": "Saltando sui soldati.",
+     "note_en": "By jumping on the soldiers."
+    },
+    {
+     "id": "cm-collapses2",
+     "title": "Markus crolla",
+     "en": "Markus Collapses",
+     "type": "choice",
+     "parents": [
+      "cm-timeout"
+     ],
+     "note": "Tempo scaduto.",
+     "note_en": "Out of time."
+    },
+    {
+     "id": "cm-end-killed3",
+     "title": "Markus è stato ucciso e gran parte di Jericho catturata",
+     "en": "Markus Killed and Most of Jericho Captured",
+     "type": "ending",
+     "parents": [
+      "cm-collapses2"
+     ],
+     "note": "Terza variante: soldati in arrivo.",
+     "note_en": "Third variant: soldiers incoming."
+    },
+    {
+     "id": "cm-well",
+     "title": "Entra in un pozzo",
+     "en": "Enter a Well",
+     "type": "choice",
+     "parents": [
+      "cm-jump",
+      "cm-climb",
+      "cm-wounded3"
+     ]
+    },
+    {
+     "id": "cm-chased",
+     "title": "Gli androidi sono inseguiti dai soldati",
+     "en": "Androids Are Chased by Soldiers",
+     "type": "choice",
+     "parents": [
+      "cm-well"
+     ]
+    },
+    {
+     "id": "cm-shot",
+     "title": "Gli androidi vengono colpiti",
+     "en": "Androids Are Shot",
+     "type": "choice",
+     "parents": [
+      "cm-chased"
+     ]
+    },
+    {
+     "id": "cm-knock",
+     "title": "Stordisci i soldati",
+     "en": "Knock Soldiers Out",
+     "type": "choice",
+     "parents": [
+      "cm-chased"
+     ]
+    },
+    {
+     "id": "cm-escape2",
+     "title": "Gli androidi fuggono",
+     "en": "Androids Escape",
+     "type": "choice",
+     "parents": [
+      "cm-knock"
+     ],
+     "note": "Dopo aver stordito i soldati.",
+     "note_en": "After stunning the soldiers."
+    },
+    {
+     "id": "cm-approach",
+     "title": "Avvicinati alla stiva",
+     "en": "Approach the Hold",
+     "type": "choice",
+     "parents": [
+      "cm-shot",
+      "cm-escape2"
+     ]
+    },
+    {
+     "id": "cm-joshfight",
+     "title": "Josh combatte con un soldato",
+     "en": "Josh Fighting a Soldier",
+     "type": "choice",
+     "parents": [
+      "cm-approach"
+     ]
+    },
+    {
+     "id": "cm-intervene2",
+     "title": "Intervieni",
+     "en": "Intervene",
+     "type": "choice",
+     "parents": [
+      "cm-joshfight"
+     ],
+     "note": "Per aiutare Josh.",
+     "note_en": "To help Josh."
+    },
+    {
+     "id": "cm-stayaway2",
+     "title": "Stai lontano",
+     "en": "Stay Away",
+     "type": "choice",
+     "parents": [
+      "cm-joshfight"
+     ],
+     "note": "Mentre Josh combatte.",
+     "note_en": "While Josh fights."
+    },
+    {
+     "id": "cm-neutsoldiers",
+     "title": "Neutralizza i soldati",
+     "en": "Neutralize Soldiers",
+     "type": "choice",
+     "parents": [
+      "cm-intervene2"
+     ]
+    },
+    {
+     "id": "cm-upperhand",
+     "title": "Perdi il vantaggio",
+     "en": "Lose the Upper Hand",
+     "type": "choice",
+     "parents": [
+      "cm-intervene2"
+     ]
+    },
+    {
+     "id": "cm-joshescapes",
+     "title": "Josh fugge",
+     "en": "Josh Escapes",
+     "type": "choice",
+     "parents": [
+      "cm-neutsoldiers"
+     ]
+    },
+    {
+     "id": "cm-collapses3",
+     "title": "Markus crolla",
+     "en": "Markus Collapses",
+     "type": "choice",
+     "parents": [
+      "cm-upperhand"
+     ],
+     "note": "Aiutando Josh.",
+     "note_en": "While helping Josh."
+    },
+    {
+     "id": "cm-joshshotby",
+     "title": "Josh viene colpito dal soldato",
+     "en": "Josh Is Shot by the Soldier",
+     "type": "choice",
+     "parents": [
+      "cm-upperhand"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cm-end-killed4",
+     "title": "Markus è stato ucciso e gran parte di Jericho catturata",
+     "en": "Markus Killed and Most of Jericho Captured",
+     "type": "ending",
+     "parents": [
+      "cm-collapses3",
+      "cm-joshshotby"
+     ],
+     "note": "Quarta variante: aiutando Josh.",
+     "note_en": "Fourth variant: helping Josh."
+    },
+    {
+     "id": "cm-joshsac",
+     "title": "Josh si sacrifica",
+     "en": "Josh Sacrifices Himself",
+     "type": "choice",
+     "parents": [
+      "cm-intervene2"
+     ]
+    },
+    {
+     "id": "cm-comfort",
+     "title": "Conforta Josh",
+     "en": "Comfort Josh",
+     "type": "choice",
+     "parents": [
+      "cm-joshsac"
+     ]
+    },
+    {
+     "id": "cm-soldiershotjosh",
+     "title": "Un soldato ha sparato a Josh",
+     "en": "Soldier Shot Josh",
+     "type": "choice",
+     "parents": [
+      "cm-stayaway2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cm-hold",
+     "title": "Nella stiva con Markus",
+     "en": "In the Hold With Markus",
+     "type": "checkpoint",
+     "parents": [
+      "cm-joshescapes",
+      "cm-comfort",
+      "cm-soldiershotjosh"
+     ]
+    },
+    {
+     "id": "cm-engine",
+     "title": "Entra nella vecchia sala macchine",
+     "en": "Enter Old Engine Control Room",
+     "type": "choice",
+     "parents": [
+      "cm-hold"
+     ]
+    },
+    {
+     "id": "cm-interrupts",
+     "title": "Connor interrompe e Markus lo spinge via",
+     "en": "Connor Interrupts and Markus Pushes Him Aside",
+     "type": "choice",
+     "parents": [
+      "cm-engine"
+     ]
+    },
+    {
+     "id": "cm-failgun",
+     "title": "Non raggiungi la pistola",
+     "en": "Fail to Reach the Gun",
+     "type": "choice",
+     "parents": [
+      "cm-interrupts"
+     ]
+    },
+    {
+     "id": "cm-reachgun",
+     "title": "Raggiungi la pistola",
+     "en": "Reach the Gun",
+     "type": "choice",
+     "parents": [
+      "cm-interrupts"
+     ]
+    },
+    {
+     "id": "cm-cshoots",
+     "title": "Connor spara a Markus",
+     "en": "Connor Shoots Markus",
+     "type": "choice",
+     "parents": [
+      "cm-failgun"
+     ]
+    },
+    {
+     "id": "cm-end-connorkilled",
+     "title": "Connor ha ucciso Markus",
+     "en": "Connor Killed Markus",
+     "type": "ending",
+     "parents": [
+      "cm-cshoots"
+     ]
+    },
+    {
+     "id": "cm-mshoots",
+     "title": "Markus spara a Connor",
+     "en": "Markus Shoots Connor",
+     "type": "choice",
+     "parents": [
+      "cm-reachgun"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cm-interrupt",
+     "title": "I soldati interrompono",
+     "en": "Soldiers Interrupt",
+     "type": "choice",
+     "parents": [
+      "cm-engine"
+     ]
+    },
+    {
+     "id": "cm-neutthem",
+     "title": "Neutralizzali",
+     "en": "Neutralize Them",
+     "type": "choice",
+     "parents": [
+      "cm-interrupt"
+     ]
+    },
+    {
+     "id": "cm-failneut",
+     "title": "Non riesci a neutralizzarli",
+     "en": "Fail to Neutralize Them",
+     "type": "choice",
+     "parents": [
+      "cm-interrupt"
+     ]
+    },
+    {
+     "id": "cm-shotdead",
+     "title": "Markus viene ucciso a colpi d'arma da fuoco",
+     "en": "Markus Is Shot Dead",
+     "type": "choice",
+     "parents": [
+      "cm-failneut"
+     ]
+    },
+    {
+     "id": "cm-end-killed5",
+     "title": "Markus è stato ucciso e gran parte di Jericho catturata",
+     "en": "Markus Killed and Most of Jericho Captured",
+     "type": "ending",
+     "parents": [
+      "cm-shotdead"
+     ],
+     "note": "Quinta variante: nella sala macchine.",
+     "note_en": "Fifth variant: in the engine room."
+    },
+    {
+     "id": "cm-countdown",
+     "title": "Avvia il conto alla rovescia",
+     "en": "Trigger the Countdown",
+     "type": "choice",
+     "parents": [
+      "cm-mshoots",
+      "cm-neutthem"
+     ]
+    },
+    {
+     "id": "cm-corr2",
+     "title": "Nel corridoio con Markus",
+     "en": "In the Corridor With Markus",
+     "type": "checkpoint",
+     "parents": [
+      "cm-countdown"
+     ],
+     "note": "Dopo il conto alla rovescia.",
+     "note_en": "After the countdown."
+    },
+    {
+     "id": "cm-jointhe",
+     "title": "Raggiungi gli altri",
+     "en": "Join the Others",
+     "type": "choice",
+     "parents": [
+      "cm-corr2"
+     ]
+    },
+    {
+     "id": "cm-try2",
+     "title": "Prova a fuggire",
+     "en": "Try to Escape",
+     "type": "choice",
+     "parents": [
+      "cm-jointhe"
+     ],
+     "note": "Fuga finale.",
+     "note_en": "Final escape."
+    },
+    {
+     "id": "cm-losetime",
+     "title": "Perdi troppo tempo",
+     "en": "Lose Too Much Time",
+     "type": "choice",
+     "parents": [
+      "cm-try2"
+     ]
+    },
+    {
+     "id": "cm-northshot",
+     "title": "North viene colpita",
+     "en": "North Is Shot",
+     "type": "choice",
+     "parents": [
+      "cm-try2"
+     ]
+    },
+    {
+     "id": "cm-choosesave",
+     "title": "Scegli di salvare North",
+     "en": "Choose to Save North",
+     "type": "choice",
+     "parents": [
+      "cm-northshot"
+     ]
+    },
+    {
+     "id": "cm-runaway",
+     "title": "Scappa",
+     "en": "Run Away",
+     "type": "choice",
+     "parents": [
+      "cm-northshot"
+     ]
+    },
+    {
+     "id": "cm-failsave",
+     "title": "Non riesci a salvare North",
+     "en": "Fail to Save North",
+     "type": "choice",
+     "parents": [
+      "cm-choosesave"
+     ]
+    },
+    {
+     "id": "cm-savenorth",
+     "title": "Salva North",
+     "en": "Save North",
+     "type": "choice",
+     "parents": [
+      "cm-choosesave"
+     ]
+    },
+    {
+     "id": "cm-rescues",
+     "title": "Connor salva Markus",
+     "en": "Connor Rescues Markus",
+     "type": "choice",
+     "parents": [
+      "cm-failsave"
+     ]
+    },
+    {
+     "id": "cm-protects",
+     "title": "Connor protegge Markus e North",
+     "en": "Connor Protects Markus and North",
+     "type": "choice",
+     "parents": [
+      "cm-savenorth"
+     ]
+    },
+    {
+     "id": "cm-killsoldiers",
+     "title": "Uccidi i soldati",
+     "en": "Kill the Soldiers",
+     "type": "choice",
+     "parents": [
+      "cm-rescues",
+      "cm-protects"
+     ]
+    },
+    {
+     "id": "cm-die",
+     "title": "Muori per guadagnare tempo",
+     "en": "Die Buying Some Time",
+     "type": "choice",
+     "parents": [
+      "cm-rescues",
+      "cm-protects"
+     ]
+    },
+    {
+     "id": "cm-runexit",
+     "title": "Corri verso l'uscita",
+     "en": "Run to Exit",
+     "type": "choice",
+     "parents": [
+      "cm-savenorth"
+     ]
+    },
+    {
+     "id": "cm-getsshot",
+     "title": "Markus viene colpito",
+     "en": "Markus Gets Shot",
+     "type": "choice",
+     "parents": [
+      "cm-losetime",
+      "cm-die"
+     ]
+    },
+    {
+     "id": "cm-northescapes",
+     "title": "North fugge",
+     "en": "North Escapes",
+     "type": "choice",
+     "parents": [
+      "cm-getsshot"
+     ]
+    },
+    {
+     "id": "cm-connorher",
+     "title": "Connor salta con lei",
+     "en": "Connor Jumps With Her",
+     "type": "choice",
+     "parents": [
+      "cm-northescapes"
+     ]
+    },
+    {
+     "id": "cm-simonher",
+     "title": "Simon salta con lei",
+     "en": "Simon Jumps With Her",
+     "type": "choice",
+     "parents": [
+      "cm-northescapes"
+     ]
+    },
+    {
+     "id": "cm-joshher",
+     "title": "Josh salta con lei",
+     "en": "Josh Jumps With Her",
+     "type": "choice",
+     "parents": [
+      "cm-northescapes"
+     ]
+    },
+    {
+     "id": "cm-end-buying",
+     "title": "Markus è morto per far guadagnare tempo a Jericho",
+     "en": "Markus Died Buying Time for Jericho",
+     "type": "ending",
+     "parents": [
+      "cm-northescapes"
+     ]
+    },
+    {
+     "id": "cm-mjumps",
+     "title": "Markus salta",
+     "en": "Markus Jumps",
+     "type": "choice",
+     "parents": [
+      "cm-runexit",
+      "cm-killsoldiers",
+      "cm-runaway"
+     ]
+    },
+    {
+     "id": "cm-simonhim",
+     "title": "Simon salta con lui",
+     "en": "Simon Jumps With Him",
+     "type": "choice",
+     "parents": [
+      "cm-mjumps"
+     ]
+    },
+    {
+     "id": "cm-joshhim",
+     "title": "Josh salta con lui",
+     "en": "Josh Jumps With Him",
+     "type": "choice",
+     "parents": [
+      "cm-mjumps"
+     ]
+    },
+    {
+     "id": "cm-northhim",
+     "title": "North salta con lui",
+     "en": "North Jumps With Him",
+     "type": "choice",
+     "parents": [
+      "cm-mjumps"
+     ]
+    },
+    {
+     "id": "cm-connorhim",
+     "title": "Connor salta con lui",
+     "en": "Connor Jumps With Him",
+     "type": "choice",
+     "parents": [
+      "cm-mjumps"
+     ]
+    },
+    {
+     "id": "cm-end-fled",
+     "title": "Markus è fuggito con la sua gente",
+     "en": "Markus Fled With His People",
+     "type": "ending",
+     "parents": [
+      "cm-mjumps"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "chapter": 2,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "op-done",
+     "title": "Capitolo giocato",
+     "en": "Chapter Played",
+     "type": "checkpoint",
+     "parents": [],
+     "note": "Opening non ha un diagramma nel gioco: segna questo nodo quando hai giocato il capitolo.",
+     "note_en": "Opening has no flowchart in the game: mark this node once you have played the chapter."
+    }
+   ]
+  }
+ ]
+}

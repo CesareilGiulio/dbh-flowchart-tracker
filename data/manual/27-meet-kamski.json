@@ -1,0 +1,364 @@
+{
+ "chapter": 27,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "mk-req-died",
+     "title": "Connor morto in «Public Enemy»",
+     "en": "Connor Died in 'Public Enemy'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mk-wait",
+     "title": "Aspetta Hank",
+     "en": "Wait for Hank",
+     "type": "checkpoint",
+     "parents": [
+      "mk-req-died"
+     ],
+     "note": "Inizio alternativo se Connor è morto in «Public Enemy».",
+     "note_en": "Alternative start if Connor died in “Public Enemy”."
+    },
+    {
+     "id": "mk-notpleased",
+     "title": "Hank non è contento di vedere Connor",
+     "en": "Hank Isn't Pleased to See Connor",
+     "type": "choice",
+     "parents": [
+      "mk-wait"
+     ]
+    },
+    {
+     "id": "mk-arrive",
+     "title": "Arrivo con Hank",
+     "en": "Arrive With Hank",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "mk-getout",
+     "title": "Scendi dall'auto",
+     "en": "Get Out of Car",
+     "type": "choice",
+     "parents": [
+      "mk-arrive"
+     ]
+    },
+    {
+     "id": "mk-req-killed",
+     "title": "Poliziotti uccisi in «Capitol Park»",
+     "en": "Cops Killed in 'Capitol Park'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mk-chrisdead",
+     "title": "Scopri che Chris è morto",
+     "en": "Learn Chris Is Dead",
+     "type": "choice",
+     "parents": [
+      "mk-getout",
+      "mk-req-killed"
+     ]
+    },
+    {
+     "id": "mk-req-spared",
+     "title": "Poliziotti risparmiati in «Capitol Park»",
+     "en": "Cops Spared in 'Capitol Park'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mk-chrisalive",
+     "title": "Scopri che Chris è sopravvissuto",
+     "en": "Learn Chris Survived",
+     "type": "choice",
+     "parents": [
+      "mk-getout",
+      "mk-req-spared"
+     ]
+    },
+    {
+     "id": "mk-follow",
+     "title": "Segui Hank a casa di Kamski",
+     "en": "Follow Hank to Kamski's Place",
+     "type": "choice",
+     "parents": [
+      "mk-notpleased",
+      "mk-getout",
+      "mk-chrisdead",
+      "mk-chrisalive"
+     ]
+    },
+    {
+     "id": "mk-door",
+     "title": "Chloe apre la porta",
+     "en": "Chloe Answers Door",
+     "type": "choice",
+     "parents": [
+      "mk-follow"
+     ]
+    },
+    {
+     "id": "mk-lobby",
+     "title": "Entra nell'atrio",
+     "en": "Enter Lobby",
+     "type": "choice",
+     "parents": [
+      "mk-door"
+     ]
+    },
+    {
+     "id": "mk-getkamski",
+     "title": "Chloe va a chiamare Kamski",
+     "en": "Chloe Goes to Get Kamski",
+     "type": "choice",
+     "parents": [
+      "mk-lobby"
+     ]
+    },
+    {
+     "id": "mk-waitk",
+     "title": "Aspetta Kamski",
+     "en": "Wait for Kamski",
+     "type": "objective",
+     "parents": [
+      "mk-getkamski"
+     ]
+    },
+    {
+     "id": "mk-mag1",
+     "title": "Leggi «Space Tourism»",
+     "en": "Read \"Space Tourism\"",
+     "type": "choice",
+     "parents": [
+      "mk-waitk"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "mk-portrait",
+     "title": "Analizza il ritratto",
+     "en": "Analyze Portrait",
+     "type": "choice",
+     "parents": [
+      "mk-waitk"
+     ]
+    },
+    {
+     "id": "mk-painting",
+     "title": "Analizza il dipinto",
+     "en": "Analyze Painting",
+     "type": "choice",
+     "parents": [
+      "mk-waitk"
+     ]
+    },
+    {
+     "id": "mk-sculpture",
+     "title": "Analizza la scultura",
+     "en": "Analyze Sculpture",
+     "type": "choice",
+     "parents": [
+      "mk-waitk"
+     ]
+    },
+    {
+     "id": "mk-talkhank",
+     "title": "Parla con Hank",
+     "en": "Talk to Hank",
+     "type": "choice",
+     "parents": [
+      "mk-waitk"
+     ]
+    },
+    {
+     "id": "mk-mag2",
+     "title": "Leggi «Fortune Teller»",
+     "en": "Read \"Fortune Teller\"",
+     "type": "choice",
+     "parents": [
+      "mk-waitk"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "mk-returns",
+     "title": "Chloe ritorna",
+     "en": "Chloe Returns",
+     "type": "choice",
+     "parents": [
+      "mk-waitk"
+     ]
+    },
+    {
+     "id": "mk-meet",
+     "title": "Incontra Kamski",
+     "en": "Meet Kamski",
+     "type": "choice",
+     "parents": [
+      "mk-returns"
+     ]
+    },
+    {
+     "id": "mk-question",
+     "title": "Fai domande a Kamski",
+     "en": "Question Kamski",
+     "type": "choice",
+     "parents": [
+      "mk-meet"
+     ]
+    },
+    {
+     "id": "mk-test",
+     "title": "Il test di Kamski",
+     "en": "Kamski Test",
+     "type": "choice",
+     "parents": [
+      "mk-meet",
+      "mk-question"
+     ]
+    },
+    {
+     "id": "mk-shoot",
+     "title": "Spara a Chloe",
+     "en": "Shoot Chloe",
+     "type": "choice",
+     "parents": [
+      "mk-test"
+     ]
+    },
+    {
+     "id": "mk-spare",
+     "title": "Risparmia Chloe",
+     "en": "Spare Chloe",
+     "type": "choice",
+     "parents": [
+      "mk-test"
+     ]
+    },
+    {
+     "id": "mk-agrees",
+     "title": "Kamski accetta di rispondere a una domanda",
+     "en": "Kamski Agrees to Answer One Question",
+     "type": "choice",
+     "parents": [
+      "mk-shoot"
+     ]
+    },
+    {
+     "id": "mk-virus",
+     "title": "Chiedi del virus",
+     "en": "Ask About Virus",
+     "type": "choice",
+     "parents": [
+      "mk-agrees"
+     ]
+    },
+    {
+     "id": "mk-ra9",
+     "title": "Chiedi di rA9",
+     "en": "Ask About rA9",
+     "type": "choice",
+     "parents": [
+      "mk-agrees"
+     ]
+    },
+    {
+     "id": "mk-jericho",
+     "title": "Chiedi di Jericho",
+     "en": "Ask About Jericho",
+     "type": "choice",
+     "parents": [
+      "mk-agrees"
+     ]
+    },
+    {
+     "id": "mk-cryptic",
+     "title": "Kamski è criptico",
+     "en": "Kamski Is Cryptic",
+     "type": "choice",
+     "parents": [
+      "mk-virus",
+      "mk-ra9"
+     ]
+    },
+    {
+     "id": "mk-offers",
+     "title": "Kamski offre la chiave di Jericho tramite Chloe",
+     "en": "Kamski Offers Jericho Key Through Chloe",
+     "type": "choice",
+     "parents": [
+      "mk-jericho"
+     ]
+    },
+    {
+     "id": "mk-download",
+     "title": "Scarica la chiave di Jericho",
+     "en": "Download Jericho Key",
+     "type": "choice",
+     "parents": [
+      "mk-offers"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mk-leave1",
+     "title": "Lascia la casa di Kamski",
+     "en": "Leave Kamski's House",
+     "type": "choice",
+     "parents": [
+      "mk-cryptic",
+      "mk-download"
+     ],
+     "note": "Dopo aver sparato a Chloe.",
+     "note_en": "After shooting Chloe."
+    },
+    {
+     "id": "mk-end-disappointed",
+     "title": "Hank è rimasto deluso dalla decisione di Connor",
+     "en": "Hank Was Disappointed With Connor's Decision",
+     "type": "ending",
+     "parents": [
+      "mk-leave1"
+     ]
+    },
+    {
+     "id": "mk-leave2",
+     "title": "Lascia la casa di Kamski",
+     "en": "Leave Kamski's House",
+     "type": "choice",
+     "parents": [
+      "mk-spare"
+     ],
+     "note": "Dopo aver risparmiato Chloe.",
+     "note_en": "After sparing Chloe."
+    },
+    {
+     "id": "mk-end-right",
+     "title": "Hank ha pensato che Connor avesse fatto la scelta giusta",
+     "en": "Hank Thought Connor Made the Right Decision",
+     "type": "ending",
+     "parents": [
+      "mk-leave2"
+     ]
+    }
+   ]
+  }
+ ]
+}

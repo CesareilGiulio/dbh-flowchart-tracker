@@ -1,0 +1,805 @@
+{
+ "chapter": 24,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "pe-start",
+     "title": "Caduta nel giardino zen",
+     "en": "Fall in the Zen Garden",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "pe-amanda",
+     "title": "Parla con Amanda",
+     "en": "Talk to Amanda",
+     "type": "choice",
+     "parents": [
+      "pe-start"
+     ]
+    },
+    {
+     "id": "pe-inside",
+     "title": "Dentro la Stratford Tower",
+     "en": "Inside Stratford Tower",
+     "type": "checkpoint",
+     "parents": [
+      "pe-amanda"
+     ]
+    },
+    {
+     "id": "pe-coin",
+     "title": "Hank confisca la moneta",
+     "en": "Hank Confiscates Coin",
+     "type": "choice",
+     "parents": [
+      "pe-inside"
+     ]
+    },
+    {
+     "id": "pe-briefing",
+     "title": "Ascolta il resoconto",
+     "en": "Listen to Briefing",
+     "type": "choice",
+     "parents": [
+      "pe-inside"
+     ]
+    },
+    {
+     "id": "pe-mag1",
+     "title": "Leggi «Bleeding Blue»",
+     "en": "Read \"Bleeding Blue\"",
+     "type": "choice",
+     "parents": [
+      "pe-inside"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "pe-mag2",
+     "title": "Leggi «Clean Food Craze»",
+     "en": "Read \"Clean Food Craze\"",
+     "type": "choice",
+     "parents": [
+      "pe-inside"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "pe-corridors",
+     "title": "Indaga nei corridoi",
+     "en": "Investigate Corridors",
+     "type": "objective",
+     "parents": [
+      "pe-inside"
+     ]
+    },
+    {
+     "id": "pe-req-k1",
+     "title": "Ucciso durante «The Stratford Tower»",
+     "en": "Killed During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-guardphone",
+     "title": "Analizza la guardia vicino al telefono",
+     "en": "Analyze Guard Next to Phone",
+     "type": "choice",
+     "parents": [
+      "pe-corridors",
+      "pe-req-k1"
+     ]
+    },
+    {
+     "id": "pe-req-w1",
+     "title": "Ferito durante «The Stratford Tower»",
+     "en": "Wounded During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-simonblood",
+     "title": "Analizza il sangue blu di Simon",
+     "en": "Analyze Simon's Blue Blood",
+     "type": "choice",
+     "parents": [
+      "pe-corridors",
+      "pe-req-w1"
+     ]
+    },
+    {
+     "id": "pe-req-k2",
+     "title": "Ucciso durante «The Stratford Tower»",
+     "en": "Killed During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-employee",
+     "title": "Analizza l'impiegato morto",
+     "en": "Analyze Dead Employee",
+     "type": "choice",
+     "parents": [
+      "pe-corridors",
+      "pe-req-k2"
+     ]
+    },
+    {
+     "id": "pe-cctv",
+     "title": "Controlla le telecamere di sorveglianza",
+     "en": "Check CCTV",
+     "type": "choice",
+     "parents": [
+      "pe-corridors"
+     ]
+    },
+    {
+     "id": "pe-phone",
+     "title": "Analizza il telefono",
+     "en": "Analyze Phone",
+     "type": "choice",
+     "parents": [
+      "pe-corridors"
+     ]
+    },
+    {
+     "id": "pe-req-k3",
+     "title": "Ucciso durante «The Stratford Tower»",
+     "en": "Killed During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-armedguard",
+     "title": "Analizza la guardia armata",
+     "en": "Analyze Armed Guard",
+     "type": "choice",
+     "parents": [
+      "pe-corridors",
+      "pe-req-k3"
+     ]
+    },
+    {
+     "id": "pe-perkins",
+     "title": "Incontra Perkins",
+     "en": "Meet Perkins",
+     "type": "choice",
+     "parents": [
+      "pe-corridors"
+     ]
+    },
+    {
+     "id": "pe-room",
+     "title": "Indaga nella sala trasmissioni",
+     "en": "Investigate Broadcast Room",
+     "type": "objective",
+     "parents": [
+      "pe-perkins"
+     ]
+    },
+    {
+     "id": "pe-req-hostage",
+     "title": "Salvato durante «The Hostage»",
+     "en": "Saved During 'The Hostage'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-metcop",
+     "title": "Incontra il poliziotto dell'ostaggio",
+     "en": "Meet Cop From Hostage Situation",
+     "type": "choice",
+     "parents": [
+      "pe-room",
+      "pe-req-hostage"
+     ]
+    },
+    {
+     "id": "pe-corrholes",
+     "title": "Analizza i fori di proiettile nel corridoio",
+     "en": "Analyze Corridor Bullet Holes",
+     "type": "choice",
+     "parents": [
+      "pe-room"
+     ]
+    },
+    {
+     "id": "pe-req-swat",
+     "title": "Attaccato dalla SWAT durante «The Stratford Tower»",
+     "en": "Attacked by SWAT During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-roofholes",
+     "title": "Analizza i fori di proiettile all'accesso al tetto",
+     "en": "Analyze Roof Access Bullet Holes",
+     "type": "choice",
+     "parents": [
+      "pe-room",
+      "pe-req-swat"
+     ]
+    },
+    {
+     "id": "pe-screenholes",
+     "title": "Analizza i fori di proiettile nello schermo",
+     "en": "Analyze Screen Bullet Holes",
+     "type": "choice",
+     "parents": [
+      "pe-room",
+      "pe-req-swat"
+     ]
+    },
+    {
+     "id": "pe-wallblood",
+     "title": "Analizza il sangue blu sul muro",
+     "en": "Analyze Blue Blood on Wall",
+     "type": "choice",
+     "parents": [
+      "pe-room"
+     ]
+    },
+    {
+     "id": "pe-cap",
+     "title": "Analizza il cappellino",
+     "en": "Analyze Cap",
+     "type": "choice",
+     "parents": [
+      "pe-room"
+     ]
+    },
+    {
+     "id": "pe-video",
+     "title": "Guarda il video",
+     "en": "Watch Video",
+     "type": "choice",
+     "parents": [
+      "pe-room"
+     ]
+    },
+    {
+     "id": "pe-camera",
+     "title": "Controlla la telecamera",
+     "en": "Check Camera",
+     "type": "choice",
+     "parents": [
+      "pe-room"
+     ]
+    },
+    {
+     "id": "pe-req-died1",
+     "title": "Morto nella sala trasmissioni durante «The Stratford Tower»",
+     "en": "Died in Broadcast During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-destroyed1",
+     "title": "Analizza l'androide distrutto",
+     "en": "Analyze Destroyed Android",
+     "type": "choice",
+     "parents": [
+      "pe-room",
+      "pe-req-died1"
+     ],
+     "note": "Nella sala trasmissioni.",
+     "note_en": "In the broadcast room."
+    },
+    {
+     "id": "pe-req-w2",
+     "title": "Ferito durante «The Stratford Tower»",
+     "en": "Wounded During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-consoleblood",
+     "title": "Analizza il sangue blu sulla console",
+     "en": "Analyze Blue Blood on Console",
+     "type": "choice",
+     "parents": [
+      "pe-room",
+      "pe-req-w2"
+     ]
+    },
+    {
+     "id": "pe-decide",
+     "title": "Decidi di andartene",
+     "en": "Decide to Leave",
+     "type": "choice",
+     "parents": [
+      "pe-room"
+     ]
+    },
+    {
+     "id": "pe-end-left",
+     "title": "Connor e Hank hanno lasciato la scena del crimine",
+     "en": "Connor and Hank Left the Crime Scene",
+     "type": "ending",
+     "parents": [
+      "pe-decide"
+     ]
+    },
+    {
+     "id": "pe-gorooftop",
+     "title": "Sali sul tetto",
+     "en": "Go to Rooftop",
+     "type": "choice",
+     "parents": [
+      "pe-room"
+     ]
+    },
+    {
+     "id": "pe-rooftop",
+     "title": "Indaga sul tetto",
+     "en": "Investigate Rooftop",
+     "type": "objective",
+     "parents": [
+      "pe-gorooftop"
+     ]
+    },
+    {
+     "id": "pe-door",
+     "title": "Analizza la porta",
+     "en": "Analyze Door",
+     "type": "choice",
+     "parents": [
+      "pe-rooftop"
+     ]
+    },
+    {
+     "id": "pe-bag",
+     "title": "Analizza la borsa",
+     "en": "Analyze Bag",
+     "type": "choice",
+     "parents": [
+      "pe-rooftop"
+     ]
+    },
+    {
+     "id": "pe-req-died2",
+     "title": "Morto sul tetto durante «The Stratford Tower»",
+     "en": "Died on Rooftop During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-destroyed2",
+     "title": "Analizza l'androide distrutto",
+     "en": "Analyze Destroyed Android",
+     "type": "choice",
+     "parents": [
+      "pe-rooftop",
+      "pe-req-died2"
+     ],
+     "note": "Sul tetto.",
+     "note_en": "On the roof."
+    },
+    {
+     "id": "pe-req-w3",
+     "title": "Ferito durante «The Stratford Tower»",
+     "en": "Wounded During 'Statford Tower'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-roofblood",
+     "title": "Analizza il sangue blu",
+     "en": "Analyze Blue Blood",
+     "type": "choice",
+     "parents": [
+      "pe-rooftop",
+      "pe-req-w3"
+     ]
+    },
+    {
+     "id": "pe-footprints",
+     "title": "Trova le impronte",
+     "en": "Find Footprints",
+     "type": "choice",
+     "parents": [
+      "pe-rooftop"
+     ]
+    },
+    {
+     "id": "pe-weapon",
+     "title": "Analizza l'arma",
+     "en": "Analyze Weapon",
+     "type": "choice",
+     "parents": [
+      "pe-rooftop"
+     ]
+    },
+    {
+     "id": "pe-findsimon",
+     "title": "Trova Simon",
+     "en": "Find Simon",
+     "type": "choice",
+     "parents": [
+      "pe-rooftop"
+     ]
+    },
+    {
+     "id": "pe-s-rush",
+     "title": "Corri verso il deviante",
+     "en": "Rush Deviant",
+     "type": "choice",
+     "parents": [
+      "pe-findsimon"
+     ],
+     "note": "Sul tetto, con Simon.",
+     "note_en": "On the roof, with Simon."
+    },
+    {
+     "id": "pe-s-cover",
+     "title": "Resta al riparo",
+     "en": "Stay in Cover",
+     "type": "choice",
+     "parents": [
+      "pe-findsimon"
+     ]
+    },
+    {
+     "id": "pe-s-shot",
+     "title": "Colpito da Simon",
+     "en": "Shot by Simon",
+     "type": "choice",
+     "parents": [
+      "pe-s-rush"
+     ]
+    },
+    {
+     "id": "pe-s-reach",
+     "title": "Raggiungi Simon",
+     "en": "Reach Simon",
+     "type": "choice",
+     "parents": [
+      "pe-s-rush"
+     ]
+    },
+    {
+     "id": "pe-s-swat1",
+     "title": "Simon viene distrutto dalla SWAT",
+     "en": "Simon Is Destroyed by SWAT",
+     "type": "choice",
+     "parents": [
+      "pe-s-shot"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-end-diedsimon",
+     "title": "Connor è morto correndo verso Simon",
+     "en": "Connor Died Running Toward Simon",
+     "type": "ending",
+     "parents": [
+      "pe-s-swat1"
+     ]
+    },
+    {
+     "id": "pe-s-flash",
+     "title": "Flash dalla memoria di Simon",
+     "en": "Flash From Simon's Memory",
+     "type": "choice",
+     "parents": [
+      "pe-s-reach"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-s-selfdestr",
+     "title": "Simon si autodistrugge",
+     "en": "Simon Self-Destructs",
+     "type": "choice",
+     "parents": [
+      "pe-s-flash"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-end-trauma",
+     "title": "Connor è rimasto traumatizzato",
+     "en": "Connor Was Traumatized",
+     "type": "ending",
+     "parents": [
+      "pe-s-selfdestr"
+     ]
+    },
+    {
+     "id": "pe-s-swat2",
+     "title": "Simon viene distrutto dalla SWAT",
+     "en": "Simon Is Destroyed by SWAT",
+     "type": "choice",
+     "parents": [
+      "pe-s-cover"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-end-unscathed",
+     "title": "Hank e Connor sono sopravvissuti illesi",
+     "en": "Hank and Connor Survived Unscathed",
+     "type": "ending",
+     "parents": [
+      "pe-s-swat2"
+     ]
+    },
+    {
+     "id": "pe-kitchen",
+     "title": "Entra in cucina",
+     "en": "Enter the Kitchen",
+     "type": "choice",
+     "parents": [
+      "pe-room"
+     ]
+    },
+    {
+     "id": "pe-interrogate",
+     "title": "Interroga gli androidi",
+     "en": "Interrogate Androids",
+     "type": "choice",
+     "parents": [
+      "pe-kitchen"
+     ]
+    },
+    {
+     "id": "pe-notfound",
+     "title": "Deviante non trovato",
+     "en": "Deviant Not Found",
+     "type": "choice",
+     "parents": [
+      "pe-interrogate"
+     ]
+    },
+    {
+     "id": "pe-found",
+     "title": "Trova il deviante",
+     "en": "Find Deviant",
+     "type": "choice",
+     "parents": [
+      "pe-interrogate"
+     ]
+    },
+    {
+     "id": "pe-attacks",
+     "title": "Il deviante attacca",
+     "en": "Deviant Attacks",
+     "type": "choice",
+     "parents": [
+      "pe-found"
+     ]
+    },
+    {
+     "id": "pe-outoftime",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "pe-attacks"
+     ]
+    },
+    {
+     "id": "pe-end-shutdown",
+     "title": "Connor si è spento",
+     "en": "Connor Shut Down",
+     "type": "ending",
+     "parents": [
+      "pe-outoftime"
+     ]
+    },
+    {
+     "id": "pe-knife",
+     "title": "Rimuovi il coltello",
+     "en": "Remove Knife",
+     "type": "choice",
+     "parents": [
+      "pe-attacks"
+     ]
+    },
+    {
+     "id": "pe-biocomp",
+     "title": "Recupera il biocomponente",
+     "en": "Recover Biocomponent",
+     "type": "choice",
+     "parents": [
+      "pe-knife"
+     ]
+    },
+    {
+     "id": "pe-losetime",
+     "title": "Perdi troppo tempo",
+     "en": "Lose Too Much Time",
+     "type": "choice",
+     "parents": [
+      "pe-biocomp"
+     ]
+    },
+    {
+     "id": "pe-swat1",
+     "title": "La SWAT distrugge il deviante",
+     "en": "SWAT Destroys Deviant",
+     "type": "choice",
+     "parents": [
+      "pe-losetime"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-chase",
+     "title": "Insegui il deviante",
+     "en": "Chase Deviant",
+     "type": "choice",
+     "parents": [
+      "pe-biocomp"
+     ]
+    },
+    {
+     "id": "pe-d-rush",
+     "title": "Corri verso il deviante",
+     "en": "Rush Deviant",
+     "type": "choice",
+     "parents": [
+      "pe-chase"
+     ],
+     "note": "Nell'inseguimento del deviante della cucina.",
+     "note_en": "While chasing the deviant from the kitchen."
+    },
+    {
+     "id": "pe-d-protect",
+     "title": "Proteggi Hank",
+     "en": "Protect Hank",
+     "type": "choice",
+     "parents": [
+      "pe-chase"
+     ]
+    },
+    {
+     "id": "pe-d-drawgun",
+     "title": "Estrai la pistola",
+     "en": "Draw Gun",
+     "type": "choice",
+     "parents": [
+      "pe-chase"
+     ]
+    },
+    {
+     "id": "pe-selfdestr",
+     "title": "Il deviante si autodistrugge",
+     "en": "Deviant Self-Destructs",
+     "type": "choice",
+     "parents": [
+      "pe-d-rush"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-killscop1",
+     "title": "Il deviante uccide il poliziotto dell'ostaggio",
+     "en": "Deviant Kills Cop From Hostage Situation",
+     "type": "choice",
+     "parents": [
+      "pe-swat1",
+      "pe-selfdestr"
+     ],
+     "note": "Solo se in «The Hostage» hai salvato il poliziotto ferito.",
+     "note_en": "Only if you saved the wounded officer in “The Hostage”."
+    },
+    {
+     "id": "pe-end-survived",
+     "title": "Connor e Hank sono sopravvissuti",
+     "en": "Connor and Hank Survived",
+     "type": "ending",
+     "parents": [
+      "pe-swat1",
+      "pe-selfdestr"
+     ]
+    },
+    {
+     "id": "pe-shootsconnor",
+     "title": "Il deviante spara a Connor",
+     "en": "Deviant Shoots Connor",
+     "type": "choice",
+     "parents": [
+      "pe-d-protect"
+     ]
+    },
+    {
+     "id": "pe-swat2",
+     "title": "La SWAT distrugge il deviante",
+     "en": "SWAT Destroys Deviant",
+     "type": "choice",
+     "parents": [
+      "pe-shootsconnor"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-killscop2",
+     "title": "Il deviante uccide il poliziotto dell'ostaggio",
+     "en": "Deviant Kills Cop From Hostage Situation",
+     "type": "choice",
+     "parents": [
+      "pe-swat2"
+     ],
+     "note": "Solo se in «The Hostage» hai salvato il poliziotto ferito.",
+     "note_en": "Only if you saved the wounded officer in “The Hostage”."
+    },
+    {
+     "id": "pe-end-sacrificed",
+     "title": "Connor si è sacrificato per Hank",
+     "en": "Connor Sacrificed Himself for Hank",
+     "type": "ending",
+     "parents": [
+      "pe-swat2"
+     ]
+    },
+    {
+     "id": "pe-shoot",
+     "title": "Spara al deviante",
+     "en": "Shoot Deviant",
+     "type": "choice",
+     "parents": [
+      "pe-d-drawgun"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "pe-rescuecop",
+     "title": "Salva il poliziotto",
+     "en": "Rescue Cop",
+     "type": "choice",
+     "parents": [
+      "pe-shoot"
+     ],
+     "note": "Solo se in «The Hostage» hai salvato il poliziotto ferito.",
+     "note_en": "Only if you saved the wounded officer in “The Hostage”."
+    },
+    {
+     "id": "pe-end-massacre",
+     "title": "Il massacro è stato evitato",
+     "en": "Massacre Prevented",
+     "type": "ending",
+     "parents": [
+      "pe-shoot"
+     ]
+    }
+   ]
+  }
+ ]
+}

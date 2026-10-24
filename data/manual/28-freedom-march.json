@@ -1,0 +1,664 @@
+{
+ "chapter": 28,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "fm-start",
+     "title": "Tempo per riflettere",
+     "en": "Time to Reflect",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "fm-alone",
+     "title": "Goditi un po' di solitudine",
+     "en": "Enjoy Time Alone",
+     "type": "objective",
+     "parents": [
+      "fm-start"
+     ]
+    },
+    {
+     "id": "fm-mirror",
+     "title": "Guarda lo specchio rotto",
+     "en": "Look at Broken Mirror",
+     "type": "choice",
+     "parents": [
+      "fm-alone"
+     ]
+    },
+    {
+     "id": "fm-beam",
+     "title": "Cammina sulla trave",
+     "en": "Walk on Beam",
+     "type": "choice",
+     "parents": [
+      "fm-alone"
+     ]
+    },
+    {
+     "id": "fm-piano",
+     "title": "Suona il pianoforte",
+     "en": "Play Piano",
+     "type": "choice",
+     "parents": [
+      "fm-beam"
+     ]
+    },
+    {
+     "id": "fm-mag1",
+     "title": "Leggi «Android Arson»",
+     "en": "Read \"Android Arson\"",
+     "type": "choice",
+     "parents": [
+      "fm-alone"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "fm-mag2",
+     "title": "Leggi «Eastern Space Race»",
+     "en": "Read \"Eastern Space Race\"",
+     "type": "choice",
+     "parents": [
+      "fm-alone"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "fm-north",
+     "title": "Arriva North",
+     "en": "North Arrives",
+     "type": "choice",
+     "parents": [
+      "fm-alone"
+     ]
+    },
+    {
+     "id": "fm-sharemem",
+     "title": "Condividi i ricordi",
+     "en": "Share Memories",
+     "type": "choice",
+     "parents": [
+      "fm-north"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "fm-northleaves",
+     "title": "North se ne va",
+     "en": "North Leaves",
+     "type": "choice",
+     "parents": [
+      "fm-north"
+     ]
+    },
+    {
+     "id": "fm-sharepast",
+     "title": "Racconta il tuo passato",
+     "en": "Share Past",
+     "type": "choice",
+     "parents": [
+      "fm-north"
+     ]
+    },
+    {
+     "id": "fm-hidepast",
+     "title": "Nascondi il tuo passato",
+     "en": "Hide Past",
+     "type": "choice",
+     "parents": [
+      "fm-north"
+     ]
+    },
+    {
+     "id": "fm-askpast",
+     "title": "Chiedi a North del suo passato",
+     "en": "Ask North About Past",
+     "type": "choice",
+     "parents": [
+      "fm-north"
+     ]
+    },
+    {
+     "id": "fm-leave",
+     "title": "Vattene",
+     "en": "Leave",
+     "type": "choice",
+     "parents": [
+      "fm-north"
+     ],
+     "note": "Nel dialogo con North.",
+     "note_en": "In the conversation with North."
+    },
+    {
+     "id": "fm-req-simon1",
+     "title": "Simon sopravvissuto in «Public Enemy»",
+     "en": "Simon Survived in 'Public Enemy'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "fm-reunited",
+     "title": "Riuniti a Jericho",
+     "en": "Reunited in Jericho",
+     "type": "checkpoint",
+     "parents": [
+      "fm-req-simon1"
+     ]
+    },
+    {
+     "id": "fm-forgives",
+     "title": "Simon perdona Markus",
+     "en": "Simon Forgives Markus",
+     "type": "choice",
+     "parents": [
+      "fm-reunited"
+     ]
+    },
+    {
+     "id": "fm-mall",
+     "title": "Nel centro commerciale",
+     "en": "In the Mall",
+     "type": "checkpoint",
+     "parents": [
+      "fm-north",
+      "fm-reunited",
+      "fm-forgives"
+     ]
+    },
+    {
+     "id": "fm-free",
+     "title": "Libera la tua gente",
+     "en": "Free Your People",
+     "type": "objective",
+     "parents": [
+      "fm-mall"
+     ]
+    },
+    {
+     "id": "fm-vendor",
+     "title": "Converti l'androide venditore",
+     "en": "Convert Android Vendor",
+     "type": "choice",
+     "parents": [
+      "fm-free"
+     ]
+    },
+    {
+     "id": "fm-personal1",
+     "title": "Converti l'androide personale",
+     "en": "Convert Personal Android",
+     "type": "choice",
+     "parents": [
+      "fm-free"
+     ],
+     "note": "Dentro il riquadro «Libera la tua gente».",
+     "note_en": "Inside the “Free Your People” box."
+    },
+    {
+     "id": "fm-security",
+     "title": "Converti l'androide della sicurezza",
+     "en": "Convert Security Android",
+     "type": "choice",
+     "parents": [
+      "fm-free"
+     ]
+    },
+    {
+     "id": "fm-cleaner",
+     "title": "Converti l'androide addetto alle pulizie",
+     "en": "Convert Android Cleaner",
+     "type": "choice",
+     "parents": [
+      "fm-free"
+     ]
+    },
+    {
+     "id": "fm-personal2",
+     "title": "Converti l'androide personale",
+     "en": "Convert Personal Android",
+     "type": "choice",
+     "parents": [
+      "fm-free"
+     ],
+     "note": "Fuori dal riquadro: quello con il proprietario.",
+     "note_en": "Outside the box: the one with the owner."
+    },
+    {
+     "id": "fm-aggressive",
+     "title": "Sii aggressivo con il proprietario",
+     "en": "Be Aggressive With Owner",
+     "type": "choice",
+     "parents": [
+      "fm-personal2"
+     ]
+    },
+    {
+     "id": "fm-calm",
+     "title": "Mantieni la calma con il proprietario",
+     "en": "Be Calm With Owner",
+     "type": "choice",
+     "parents": [
+      "fm-personal2"
+     ]
+    },
+    {
+     "id": "fm-parked",
+     "title": "Converti gli androidi parcheggiati",
+     "en": "Convert Parked Androids",
+     "type": "choice",
+     "parents": [
+      "fm-free"
+     ]
+    },
+    {
+     "id": "fm-prepare",
+     "title": "Prepara la marcia",
+     "en": "Prepare the March",
+     "type": "choice",
+     "parents": [
+      "fm-free"
+     ]
+    },
+    {
+     "id": "fm-delivery",
+     "title": "Converti gli androidi delle consegne",
+     "en": "Convert Delivery Androids",
+     "type": "choice",
+     "parents": [
+      "fm-prepare"
+     ]
+    },
+    {
+     "id": "fm-blockroad",
+     "title": "Gli androidi delle consegne bloccano la strada",
+     "en": "Delivery Androids Block the Road",
+     "type": "choice",
+     "parents": [
+      "fm-delivery"
+     ]
+    },
+    {
+     "id": "fm-manhole",
+     "title": "Apri il tombino",
+     "en": "Open Manhole",
+     "type": "choice",
+     "parents": [
+      "fm-blockroad"
+     ]
+    },
+    {
+     "id": "fm-startmarch",
+     "title": "Inizia la marcia",
+     "en": "Start the March",
+     "type": "checkpoint",
+     "parents": [
+      "fm-manhole"
+     ]
+    },
+    {
+     "id": "fm-ax400",
+     "title": "Converti l'AX400",
+     "en": "Convert AX400",
+     "type": "choice",
+     "parents": [
+      "fm-startmarch"
+     ]
+    },
+    {
+     "id": "fm-worker",
+     "title": "Converti l'androide operaio",
+     "en": "Convert Android Worker",
+     "type": "choice",
+     "parents": [
+      "fm-startmarch"
+     ]
+    },
+    {
+     "id": "fm-march",
+     "title": "Marcia",
+     "en": "March",
+     "type": "objective",
+     "parents": [
+      "fm-ax400",
+      "fm-worker"
+     ]
+    },
+    {
+     "id": "fm-convert",
+     "title": "Converti gli androidi",
+     "en": "Convert Androids",
+     "type": "choice",
+     "parents": [
+      "fm-march"
+     ]
+    },
+    {
+     "id": "fm-screens",
+     "title": "Hackera gli schermi",
+     "en": "Hack Screens",
+     "type": "choice",
+     "parents": [
+      "fm-march"
+     ]
+    },
+    {
+     "id": "fm-chant",
+     "title": "Intona slogan",
+     "en": "Chant",
+     "type": "choice",
+     "parents": [
+      "fm-march"
+     ]
+    },
+    {
+     "id": "fm-copblocks",
+     "title": "Un poliziotto blocca la marcia",
+     "en": "Policeman Blocks March",
+     "type": "choice",
+     "parents": [
+      "fm-march"
+     ]
+    },
+    {
+     "id": "fm-raise",
+     "title": "Alza le mani",
+     "en": "Raise Hands",
+     "type": "choice",
+     "parents": [
+      "fm-copblocks"
+     ]
+    },
+    {
+     "id": "fm-ignore",
+     "title": "Ignoralo",
+     "en": "Ignore",
+     "type": "choice",
+     "parents": [
+      "fm-copblocks"
+     ]
+    },
+    {
+     "id": "fm-plaza",
+     "title": "Raggiungi la piazza",
+     "en": "Reach the Plaza",
+     "type": "checkpoint",
+     "parents": [
+      "fm-march"
+     ]
+    },
+    {
+     "id": "fm-policeblock",
+     "title": "La polizia blocca la marcia",
+     "en": "Police Block the March",
+     "type": "choice",
+     "parents": [
+      "fm-plaza"
+     ]
+    },
+    {
+     "id": "fm-stand",
+     "title": "Mantieni la posizione",
+     "en": "Stand Your Ground",
+     "type": "choice",
+     "parents": [
+      "fm-policeblock"
+     ]
+    },
+    {
+     "id": "fm-leave2",
+     "title": "Vattene",
+     "en": "Leave",
+     "type": "choice",
+     "parents": [
+      "fm-policeblock"
+     ],
+     "note": "Davanti al blocco della polizia.",
+     "note_en": "At the police roadblock."
+    },
+    {
+     "id": "fm-charge1",
+     "title": "Carica",
+     "en": "Charge",
+     "type": "choice",
+     "parents": [
+      "fm-policeblock"
+     ],
+     "note": "Davanti al blocco della polizia.",
+     "note_en": "At the police roadblock."
+    },
+    {
+     "id": "fm-unprovoked",
+     "title": "La polizia apre il fuoco senza provocazione",
+     "en": "Police Fire Unprovoked",
+     "type": "choice",
+     "parents": [
+      "fm-stand",
+      "fm-leave2"
+     ]
+    },
+    {
+     "id": "fm-openfire",
+     "title": "La polizia apre il fuoco",
+     "en": "Police Open Fire",
+     "type": "choice",
+     "parents": [
+      "fm-charge1"
+     ]
+    },
+    {
+     "id": "fm-runaway",
+     "title": "Scappa",
+     "en": "Run Away",
+     "type": "choice",
+     "parents": [
+      "fm-unprovoked",
+      "fm-openfire"
+     ]
+    },
+    {
+     "id": "fm-sacrifice",
+     "title": "Sacrificati",
+     "en": "Sacrifice Self",
+     "type": "choice",
+     "parents": [
+      "fm-unprovoked",
+      "fm-openfire"
+     ]
+    },
+    {
+     "id": "fm-charge2",
+     "title": "Carica",
+     "en": "Charge",
+     "type": "choice",
+     "parents": [
+      "fm-unprovoked",
+      "fm-openfire"
+     ],
+     "note": "Sotto il fuoco della polizia.",
+     "note_en": "Under police fire."
+    },
+    {
+     "id": "fm-escape",
+     "title": "Alcuni androidi fuggono",
+     "en": "Some Androids Escape",
+     "type": "choice",
+     "parents": [
+      "fm-runaway"
+     ]
+    },
+    {
+     "id": "fm-end-fled",
+     "title": "Markus è fuggito",
+     "en": "Markus Fled",
+     "type": "ending",
+     "parents": [
+      "fm-escape"
+     ]
+    },
+    {
+     "id": "fm-keepfiring",
+     "title": "La polizia continua a sparare",
+     "en": "Police Keep Firing",
+     "type": "choice",
+     "parents": [
+      "fm-sacrifice",
+      "fm-charge2"
+     ]
+    },
+    {
+     "id": "fm-end-stood",
+     "title": "Markus ha mantenuto la posizione ed è stato ucciso",
+     "en": "Markus Stood His Ground and Was Killed",
+     "type": "ending",
+     "parents": [
+      "fm-keepfiring"
+     ]
+    },
+    {
+     "id": "fm-req-john",
+     "title": "John si è unito in «Spare Parts»",
+     "en": "John Joined in 'Spare Parts'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "fm-johnsac",
+     "title": "John si sacrifica",
+     "en": "John Sacrifices Himself",
+     "type": "choice",
+     "parents": [
+      "fm-keepfiring",
+      "fm-req-john"
+     ]
+    },
+    {
+     "id": "fm-end-john",
+     "title": "John ha dato la vita per salvare Markus",
+     "en": "John Gave His Life to Save Markus",
+     "type": "ending",
+     "parents": [
+      "fm-johnsac"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "fm-req-simon2",
+     "title": "Simon sopravvissuto in «Public Enemy»",
+     "en": "Simon Survived in 'Public Enemy'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "fm-simonsac",
+     "title": "Simon si sacrifica",
+     "en": "Simon Sacrifices Himself",
+     "type": "choice",
+     "parents": [
+      "fm-keepfiring",
+      "fm-req-simon2"
+     ]
+    },
+    {
+     "id": "fm-end-simon",
+     "title": "Simon ha dato la vita per salvare Markus",
+     "en": "Simon Gave His Life to Save Markus",
+     "type": "ending",
+     "parents": [
+      "fm-simonsac"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "fm-lose",
+     "title": "Perdi lo scontro",
+     "en": "Lose the Fight",
+     "type": "choice",
+     "parents": [
+      "fm-charge1"
+     ]
+    },
+    {
+     "id": "fm-win",
+     "title": "Vinci lo scontro",
+     "en": "Win the Fight",
+     "type": "choice",
+     "parents": [
+      "fm-charge1"
+     ]
+    },
+    {
+     "id": "fm-nothing",
+     "title": "Non fare nulla",
+     "en": "Do Nothing",
+     "type": "choice",
+     "parents": [
+      "fm-lose"
+     ]
+    },
+    {
+     "id": "fm-shootself",
+     "title": "Spara a te stesso",
+     "en": "Shoot Yourself",
+     "type": "choice",
+     "parents": [
+      "fm-lose"
+     ]
+    },
+    {
+     "id": "fm-end-gunned",
+     "title": "La polizia ha ucciso Markus",
+     "en": "Police Gunned Markus Down",
+     "type": "ending",
+     "parents": [
+      "fm-nothing"
+     ]
+    },
+    {
+     "id": "fm-end-suicide",
+     "title": "Markus si è suicidato",
+     "en": "Markus Committed Suicide",
+     "type": "ending",
+     "parents": [
+      "fm-shootself"
+     ]
+    },
+    {
+     "id": "fm-retreat",
+     "title": "La polizia si ritira",
+     "en": "Police Retreat",
+     "type": "choice",
+     "parents": [
+      "fm-win"
+     ]
+    },
+    {
+     "id": "fm-end-defeats",
+     "title": "Markus ha sconfitto la polizia",
+     "en": "Markus Defeats the Police",
+     "type": "ending",
+     "parents": [
+      "fm-retreat"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,869 @@
+{
+ "chapter": 29,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "lc-start",
+     "title": "Inizio",
+     "en": "Start",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "lc-stone",
+     "title": "Guarda la pietra magica",
+     "en": "Look at Magic Stone",
+     "type": "choice",
+     "parents": [
+      "lc-start"
+     ]
+    },
+    {
+     "id": "lc-amanda",
+     "title": "Parla con Amanda",
+     "en": "Talk to Amanda",
+     "type": "choice",
+     "parents": [
+      "lc-start"
+     ]
+    },
+    {
+     "id": "lc-graves",
+     "title": "Visita le tombe",
+     "en": "Visit Graves",
+     "type": "choice",
+     "parents": [
+      "lc-start"
+     ]
+    },
+    {
+     "id": "lc-station",
+     "title": "Alla centrale di polizia",
+     "en": "In the Police Station",
+     "type": "checkpoint",
+     "parents": [
+      "lc-amanda"
+     ]
+    },
+    {
+     "id": "lc-argue",
+     "title": "Fowler e Hank litigano",
+     "en": "Fowler and Hank Argue",
+     "type": "choice",
+     "parents": [
+      "lc-station"
+     ]
+    },
+    {
+     "id": "lc-know",
+     "title": "Conosci la posizione di Jericho",
+     "en": "Know Jericho's Location",
+     "type": "choice",
+     "parents": [
+      "lc-argue"
+     ]
+    },
+    {
+     "id": "lc-unknown",
+     "title": "Posizione di Jericho sconosciuta",
+     "en": "Jericho's Location Unknown",
+     "type": "choice",
+     "parents": [
+      "lc-argue"
+     ]
+    },
+    {
+     "id": "lc-talkhank1",
+     "title": "Parla con Hank",
+     "en": "Talk to Hank",
+     "type": "choice",
+     "parents": [
+      "lc-know"
+     ],
+     "note": "Se conosci già la posizione di Jericho.",
+     "note_en": "If you already know where Jericho is."
+    },
+    {
+     "id": "lc-end-left",
+     "title": "Connor è partito per Jericho",
+     "en": "Connor Left for Jericho",
+     "type": "ending",
+     "parents": [
+      "lc-talkhank1"
+     ]
+    },
+    {
+     "id": "lc-insuff",
+     "title": "Prove insufficienti",
+     "en": "Insufficient Evidence",
+     "type": "choice",
+     "parents": [
+      "lc-unknown"
+     ]
+    },
+    {
+     "id": "lc-suff",
+     "title": "Prove sufficienti",
+     "en": "Sufficient Evidence",
+     "type": "choice",
+     "parents": [
+      "lc-unknown"
+     ]
+    },
+    {
+     "id": "lc-resigns",
+     "title": "Hank si dimette e se ne va",
+     "en": "Hank Resigns and Leaves",
+     "type": "choice",
+     "parents": [
+      "lc-insuff"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-desk",
+     "title": "Hank torna alla sua scrivania",
+     "en": "Hank Goes to His Desk",
+     "type": "choice",
+     "parents": [
+      "lc-suff"
+     ]
+    },
+    {
+     "id": "lc-talkhank2",
+     "title": "Parla con Hank",
+     "en": "Talk to Hank",
+     "type": "choice",
+     "parents": [
+      "lc-desk"
+     ],
+     "note": "Alla scrivania di Hank.",
+     "note_en": "At Hank's desk."
+    },
+    {
+     "id": "lc-perkins",
+     "title": "Arriva Perkins",
+     "en": "Perkins Arrives",
+     "type": "choice",
+     "parents": [
+      "lc-resigns",
+      "lc-talkhank2"
+     ]
+    },
+    {
+     "id": "lc-outoftime1",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "lc-perkins"
+     ],
+     "note": "Alla centrale, prima del seminterrato.",
+     "note_en": "At the station, before the basement."
+    },
+    {
+     "id": "lc-end-decomm1",
+     "title": "La serie Connor è stata dismessa",
+     "en": "Connor Series Was Decommissioned",
+     "type": "ending",
+     "parents": [
+      "lc-outoftime1"
+     ],
+     "note": "Prima variante: alla centrale.",
+     "note_en": "First variant: at the station."
+    },
+    {
+     "id": "lc-wants",
+     "title": "Hank vuole aiutare",
+     "en": "Hank Wants to Help",
+     "type": "choice",
+     "parents": [
+      "lc-perkins"
+     ]
+    },
+    {
+     "id": "lc-gone",
+     "title": "Hank non c'è",
+     "en": "Hank Is Gone",
+     "type": "choice",
+     "parents": [
+      "lc-perkins"
+     ]
+    },
+    {
+     "id": "lc-wont",
+     "title": "Hank non vuole aiutare",
+     "en": "Hank Won't Help",
+     "type": "choice",
+     "parents": [
+      "lc-perkins"
+     ]
+    },
+    {
+     "id": "lc-punches",
+     "title": "Hank prende a pugni Perkins",
+     "en": "Hank Punches Perkins",
+     "type": "choice",
+     "parents": [
+      "lc-wants"
+     ]
+    },
+    {
+     "id": "lc-free",
+     "title": "Libera il prigioniero",
+     "en": "Free the Prisoner",
+     "type": "choice",
+     "parents": [
+      "lc-gone",
+      "lc-wont"
+     ]
+    },
+    {
+     "id": "lc-hankleaves",
+     "title": "Hank se ne va",
+     "en": "Hank Leaves",
+     "type": "choice",
+     "parents": [
+      "lc-wont"
+     ]
+    },
+    {
+     "id": "lc-diversion",
+     "title": "Crea un diversivo",
+     "en": "Create a Diversion",
+     "type": "checkpoint",
+     "parents": [
+      "lc-punches",
+      "lc-free",
+      "lc-hankleaves"
+     ]
+    },
+    {
+     "id": "lc-key",
+     "title": "Prendi la chiave",
+     "en": "Take Key",
+     "type": "choice",
+     "parents": [
+      "lc-diversion"
+     ]
+    },
+    {
+     "id": "lc-rush",
+     "title": "Corri nel seminterrato",
+     "en": "Rush to Basement",
+     "type": "choice",
+     "parents": [
+      "lc-key"
+     ]
+    },
+    {
+     "id": "lc-gavinyells",
+     "title": "Gavin urla",
+     "en": "Gavin Yells",
+     "type": "choice",
+     "parents": [
+      "lc-key",
+      "lc-rush"
+     ]
+    },
+    {
+     "id": "lc-ignore",
+     "title": "Ignora Gavin",
+     "en": "Ignore Gavin",
+     "type": "choice",
+     "parents": [
+      "lc-gavinyells"
+     ]
+    },
+    {
+     "id": "lc-dismiss",
+     "title": "Liquida Gavin",
+     "en": "Dismiss Gavin",
+     "type": "choice",
+     "parents": [
+      "lc-gavinyells"
+     ]
+    },
+    {
+     "id": "lc-calm",
+     "title": "Rispondi con calma",
+     "en": "Answer Calmly",
+     "type": "choice",
+     "parents": [
+      "lc-gavinyells"
+     ]
+    },
+    {
+     "id": "lc-suspicious",
+     "title": "Gavin è sospettoso",
+     "en": "Gavin Is Suspicious",
+     "type": "choice",
+     "parents": [
+      "lc-ignore",
+      "lc-dismiss"
+     ]
+    },
+    {
+     "id": "lc-convinced",
+     "title": "Gavin è convinto",
+     "en": "Gavin Is Convinced",
+     "type": "choice",
+     "parents": [
+      "lc-calm"
+     ]
+    },
+    {
+     "id": "lc-godown",
+     "title": "Scendi nel seminterrato",
+     "en": "Go Down to Basement",
+     "type": "choice",
+     "parents": [
+      "lc-suspicious",
+      "lc-convinced"
+     ]
+    },
+    {
+     "id": "lc-evroom",
+     "title": "Nella stanza delle prove",
+     "en": "In the Evidence Room",
+     "type": "checkpoint",
+     "parents": [
+      "lc-godown"
+     ]
+    },
+    {
+     "id": "lc-password",
+     "title": "Indovina la password di Hank",
+     "en": "Guess Hank's Password",
+     "type": "choice",
+     "parents": [
+      "lc-evroom"
+     ]
+    },
+    {
+     "id": "lc-unlock",
+     "title": "Sblocca le prove",
+     "en": "Unlock Evidence",
+     "type": "choice",
+     "parents": [
+      "lc-password"
+     ]
+    },
+    {
+     "id": "lc-find",
+     "title": "Trova la posizione di Jericho",
+     "en": "Find Jericho Location",
+     "type": "objective",
+     "parents": [
+      "lc-unlock"
+     ]
+    },
+    {
+     "id": "lc-req-died",
+     "title": "Morto nelle scene precedenti",
+     "en": "Died in Previous Scenes",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-carlosbody",
+     "title": "Corpo dell'androide di Carlos",
+     "en": "Body of Carlos' Android",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-died"
+     ]
+    },
+    {
+     "id": "lc-req-info",
+     "title": "Informazioni ottenute in «Public Enemy»",
+     "en": "Got Information in 'Public Enemy'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-tablet",
+     "title": "Tablet di Jericho",
+     "en": "Jericho Tablet",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-info"
+     ]
+    },
+    {
+     "id": "lc-req-friendly",
+     "title": "Approccio amichevole in «The Interrogation»",
+     "en": "Used Friendly Approach in 'The Interrogation'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-carlosmem",
+     "title": "Memoria dell'androide di Carlos",
+     "en": "Carlos' Android's Memory",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-friendly"
+     ]
+    },
+    {
+     "id": "lc-danielbody",
+     "title": "Corpo di Daniel",
+     "en": "Daniel's Body",
+     "type": "choice",
+     "parents": [
+      "lc-find"
+     ]
+    },
+    {
+     "id": "lc-req-suicide",
+     "title": "Suicida in «The Nest»",
+     "en": "Committed Suicide in 'The Nest'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-rupertbody",
+     "title": "Corpo di Rupert",
+     "en": "Rupert's Body",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-suicide"
+     ]
+    },
+    {
+     "id": "lc-req-nest",
+     "title": "Trovato in «The Nest»",
+     "en": "Found in 'The Nest'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-diary",
+     "title": "Diario di Rupert",
+     "en": "Rupert's Diary",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-nest"
+     ]
+    },
+    {
+     "id": "lc-req-partners",
+     "title": "Trovata in «Partners»",
+     "en": "Found in 'Partners'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-statue",
+     "title": "Statuetta dell'androide di Carlos",
+     "en": "Carlos' Android's Statue",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-partners"
+     ]
+    },
+    {
+     "id": "lc-reactdaniel",
+     "title": "Riattiva Daniel",
+     "en": "Reactivate Daniel",
+     "type": "choice",
+     "parents": [
+      "lc-danielbody"
+     ]
+    },
+    {
+     "id": "lc-talkdaniel",
+     "title": "Parla con Daniel",
+     "en": "Talk to Daniel",
+     "type": "choice",
+     "parents": [
+      "lc-reactdaniel"
+     ]
+    },
+    {
+     "id": "lc-noinfo",
+     "title": "Nessuna informazione",
+     "en": "No Information",
+     "type": "choice",
+     "parents": [
+      "lc-talkdaniel"
+     ]
+    },
+    {
+     "id": "lc-reactrupert",
+     "title": "Riattiva Rupert",
+     "en": "Reactivate Rupert",
+     "type": "choice",
+     "parents": [
+      "lc-rupertbody"
+     ]
+    },
+    {
+     "id": "lc-decrypt",
+     "title": "Ottieni la chiave di decrittazione",
+     "en": "Get Decryption Key",
+     "type": "choice",
+     "parents": [
+      "lc-reactrupert"
+     ]
+    },
+    {
+     "id": "lc-analyzediary",
+     "title": "Analizza il diario",
+     "en": "Analyze Diary",
+     "type": "choice",
+     "parents": [
+      "lc-diary",
+      "lc-decrypt"
+     ]
+    },
+    {
+     "id": "lc-breakstatue",
+     "title": "Rompi la statuetta",
+     "en": "Break Statue",
+     "type": "choice",
+     "parents": [
+      "lc-statue"
+     ]
+    },
+    {
+     "id": "lc-map",
+     "title": "Recupera la mappa",
+     "en": "Retrieve Map",
+     "type": "choice",
+     "parents": [
+      "lc-breakstatue"
+     ]
+    },
+    {
+     "id": "lc-link",
+     "title": "Collega la mappa alle altre prove",
+     "en": "Link Map to Other Evidence",
+     "type": "choice",
+     "parents": [
+      "lc-map"
+     ]
+    },
+    {
+     "id": "lc-nolink",
+     "title": "Impossibile collegare la mappa alle altre prove",
+     "en": "Unable to Link Map to Other Evidence",
+     "type": "choice",
+     "parents": [
+      "lc-map"
+     ]
+    },
+    {
+     "id": "lc-bluebody",
+     "title": "Corpo della Traci dai capelli blu",
+     "en": "Body of Blue-Haired Traci",
+     "type": "choice",
+     "parents": [
+      "lc-find"
+     ]
+    },
+    {
+     "id": "lc-req-eden",
+     "title": "Uccisa in «The Eden Club»",
+     "en": "Killed in 'Eden Club'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-brownbody",
+     "title": "Corpo della Traci dai capelli castani",
+     "en": "Body of Brown-Haired Traci",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-eden"
+     ]
+    },
+    {
+     "id": "lc-broadcast",
+     "title": "Trasmissione di Markus",
+     "en": "Markus' Broadcast",
+     "type": "choice",
+     "parents": [
+      "lc-find"
+     ]
+    },
+    {
+     "id": "lc-req-pe1",
+     "title": "Ucciso in «Public Enemy»",
+     "en": "Killed in 'Public Enemy'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-simonbody",
+     "title": "Corpo di Simon",
+     "en": "Simon's Body",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-pe1"
+     ]
+    },
+    {
+     "id": "lc-req-pe2",
+     "title": "Ucciso in «Public Enemy»",
+     "en": "Killed in 'Public Enemy'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-stratbody",
+     "title": "Corpo dell'androide della Stratford Tower",
+     "en": "Stratford Android's Body",
+     "type": "choice",
+     "parents": [
+      "lc-find",
+      "lc-req-pe2"
+     ]
+    },
+    {
+     "id": "lc-reacttraci",
+     "title": "Riattiva la Traci dai capelli blu",
+     "en": "Reactivate Blue-Haired Traci",
+     "type": "choice",
+     "parents": [
+      "lc-bluebody"
+     ]
+    },
+    {
+     "id": "lc-talktraci",
+     "title": "Parla con la Traci",
+     "en": "Talk to Traci",
+     "type": "choice",
+     "parents": [
+      "lc-reacttraci"
+     ]
+    },
+    {
+     "id": "lc-tricktraci",
+     "title": "Inganna la Traci",
+     "en": "Trick Traci",
+     "type": "choice",
+     "parents": [
+      "lc-talktraci"
+     ]
+    },
+    {
+     "id": "lc-head",
+     "title": "Rimuovi la testa della complice",
+     "en": "Remove Accomplice's Head",
+     "type": "choice",
+     "parents": [
+      "lc-brownbody"
+     ]
+    },
+    {
+     "id": "lc-reactsimon",
+     "title": "Riattiva Simon",
+     "en": "Reactivate Simon",
+     "type": "choice",
+     "parents": [
+      "lc-simonbody"
+     ]
+    },
+    {
+     "id": "lc-intsimon",
+     "title": "Interroga Simon",
+     "en": "Interrogate Simon",
+     "type": "choice",
+     "parents": [
+      "lc-reactsimon"
+     ]
+    },
+    {
+     "id": "lc-reactdev",
+     "title": "Riattiva il deviante",
+     "en": "Reactivate Deviant",
+     "type": "choice",
+     "parents": [
+      "lc-stratbody"
+     ]
+    },
+    {
+     "id": "lc-intdev",
+     "title": "Interroga il deviante",
+     "en": "Interrogate Deviant",
+     "type": "choice",
+     "parents": [
+      "lc-reactdev"
+     ]
+    },
+    {
+     "id": "lc-impersonate",
+     "title": "Fingiti Markus",
+     "en": "Impersonate Markus",
+     "type": "choice",
+     "parents": [
+      "lc-broadcast",
+      "lc-intsimon",
+      "lc-intdev"
+     ]
+    },
+    {
+     "id": "lc-trickdev",
+     "title": "Inganna il deviante",
+     "en": "Trick the Deviant",
+     "type": "choice",
+     "parents": [
+      "lc-impersonate"
+     ]
+    },
+    {
+     "id": "lc-download",
+     "title": "Scarica la chiave di Jericho",
+     "en": "Download Jericho Key",
+     "type": "choice",
+     "parents": [
+      "lc-head",
+      "lc-tricktraci",
+      "lc-trickdev"
+     ]
+    },
+    {
+     "id": "lc-locate",
+     "title": "Localizza Jericho",
+     "en": "Locate Jericho",
+     "type": "choice",
+     "parents": [
+      "lc-link",
+      "lc-analyzediary",
+      "lc-download"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lc-outoftime2",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "lc-find"
+     ],
+     "note": "Nella stanza delle prove.",
+     "note_en": "In the evidence room."
+    },
+    {
+     "id": "lc-end-decomm2",
+     "title": "La serie Connor è stata dismessa",
+     "en": "Connor Series Was Decommissioned",
+     "type": "ending",
+     "parents": [
+      "lc-outoftime2"
+     ],
+     "note": "Seconda variante: nella stanza delle prove.",
+     "note_en": "Second variant: in the evidence room."
+    },
+    {
+     "id": "lc-leave",
+     "title": "Lascia il seminterrato",
+     "en": "Leave the Basement",
+     "type": "choice",
+     "parents": [
+      "lc-locate"
+     ]
+    },
+    {
+     "id": "lc-end-eluded",
+     "title": "Connor è sfuggito a Perkins",
+     "en": "Connor Eluded Perkins",
+     "type": "ending",
+     "parents": [
+      "lc-leave"
+     ]
+    },
+    {
+     "id": "lc-gavinreturns",
+     "title": "Gavin ritorna",
+     "en": "Gavin Returns",
+     "type": "choice",
+     "parents": [
+      "lc-locate"
+     ]
+    },
+    {
+     "id": "lc-fight",
+     "title": "Combatti con Gavin",
+     "en": "Fight Gavin",
+     "type": "choice",
+     "parents": [
+      "lc-gavinreturns"
+     ]
+    },
+    {
+     "id": "lc-lose",
+     "title": "Perdi lo scontro",
+     "en": "Lose Fight",
+     "type": "choice",
+     "parents": [
+      "lc-fight"
+     ]
+    },
+    {
+     "id": "lc-win",
+     "title": "Vinci lo scontro",
+     "en": "Win Fight",
+     "type": "choice",
+     "parents": [
+      "lc-fight"
+     ]
+    },
+    {
+     "id": "lc-end-gavin",
+     "title": "Gavin ha distrutto Connor",
+     "en": "Gavin Destroyed Connor",
+     "type": "ending",
+     "parents": [
+      "lc-lose"
+     ]
+    },
+    {
+     "id": "lc-end-incap",
+     "title": "Connor ha messo fuori combattimento Gavin",
+     "en": "Connor Incapacitated Gavin",
+     "type": "ending",
+     "parents": [
+      "lc-win"
+     ]
+    }
+   ]
+  }
+ ]
+}

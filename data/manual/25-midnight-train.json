@@ -1,0 +1,552 @@
+{
+ "chapter": 25,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "mt-start",
+     "title": "Arrivo a casa di Rose",
+     "en": "Arrive at Rose's Place",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "mt-meet",
+     "title": "Incontra Rose e Adam fuori",
+     "en": "Meet Rose and Adam Outside",
+     "type": "choice",
+     "parents": [
+      "mt-start"
+     ]
+    },
+    {
+     "id": "mt-join",
+     "title": "Luther e Alice raggiungono Kara",
+     "en": "Luther and Alice Join Kara",
+     "type": "choice",
+     "parents": [
+      "mt-meet"
+     ]
+    },
+    {
+     "id": "mt-enter",
+     "title": "Entra in casa",
+     "en": "Enter the House",
+     "type": "choice",
+     "parents": [
+      "mt-meet"
+     ]
+    },
+    {
+     "id": "mt-checkalice1",
+     "title": "Controlla Alice",
+     "en": "Check on Alice",
+     "type": "choice",
+     "parents": [
+      "mt-meet"
+     ],
+     "note": "All'arrivo, fuori casa.",
+     "note_en": "On arrival, outside the house."
+    },
+    {
+     "id": "mt-inside",
+     "title": "Dentro la casa",
+     "en": "Inside the House",
+     "type": "checkpoint",
+     "parents": [
+      "mt-enter"
+     ]
+    },
+    {
+     "id": "mt-follow",
+     "title": "Segui Adam nella stanza degli ospiti",
+     "en": "Follow Adam to the Guest Room",
+     "type": "choice",
+     "parents": [
+      "mt-inside"
+     ]
+    },
+    {
+     "id": "mt-bed",
+     "title": "Prepara Alice per la notte",
+     "en": "Get Alice Ready for Bed",
+     "type": "choice",
+     "parents": [
+      "mt-follow"
+     ]
+    },
+    {
+     "id": "mt-curtains1",
+     "title": "Chiudi le tende",
+     "en": "Draw Curtains",
+     "type": "choice",
+     "parents": [
+      "mt-bed"
+     ],
+     "note": "Nella stanza degli ospiti.",
+     "note_en": "In the guest room."
+    },
+    {
+     "id": "mt-talkrose",
+     "title": "Parla con Rose",
+     "en": "Talk to Rose",
+     "type": "choice",
+     "parents": [
+      "mt-bed"
+     ]
+    },
+    {
+     "id": "mt-watches",
+     "title": "Luther veglia su Alice",
+     "en": "Luther Watches Over Alice",
+     "type": "choice",
+     "parents": [
+      "mt-bed"
+     ]
+    },
+    {
+     "id": "mt-laundry",
+     "title": "Segui Rose nella lavanderia",
+     "en": "Follow Rose to Laundry Room",
+     "type": "choice",
+     "parents": [
+      "mt-talkrose"
+     ]
+    },
+    {
+     "id": "mt-approaches",
+     "title": "Alice si avvicina a Mary",
+     "en": "Alice Approaches Mary",
+     "type": "choice",
+     "parents": [
+      "mt-laundry"
+     ]
+    },
+    {
+     "id": "mt-letsee",
+     "title": "Lascia che Alice veda Mary",
+     "en": "Let Alice See Mary",
+     "type": "choice",
+     "parents": [
+      "mt-approaches"
+     ]
+    },
+    {
+     "id": "mt-prevent",
+     "title": "Impedisci ad Alice di vedere Mary",
+     "en": "Prevent Alice Seeing Mary",
+     "type": "choice",
+     "parents": [
+      "mt-approaches"
+     ]
+    },
+    {
+     "id": "mt-leavelaundry",
+     "title": "Esci dalla lavanderia",
+     "en": "Leave Laundry Room",
+     "type": "choice",
+     "parents": [
+      "mt-laundry"
+     ]
+    },
+    {
+     "id": "mt-argue",
+     "title": "Rose e Adam litigano",
+     "en": "Rose and Adam Argue",
+     "type": "choice",
+     "parents": [
+      "mt-leavelaundry"
+     ]
+    },
+    {
+     "id": "mt-roseleaves",
+     "title": "Rose esce a cercare aiuto",
+     "en": "Rose Leaves to Find Help",
+     "type": "checkpoint",
+     "parents": [
+      "mt-argue"
+     ]
+    },
+    {
+     "id": "mt-explore",
+     "title": "Esplora la casa",
+     "en": "Explore the House",
+     "type": "objective",
+     "parents": [
+      "mt-roseleaves"
+     ]
+    },
+    {
+     "id": "mt-talkluther",
+     "title": "Parla con Luther",
+     "en": "Talk to Luther",
+     "type": "choice",
+     "parents": [
+      "mt-explore"
+     ]
+    },
+    {
+     "id": "mt-checkalice2",
+     "title": "Controlla Alice",
+     "en": "Check on Alice",
+     "type": "choice",
+     "parents": [
+      "mt-explore"
+     ],
+     "note": "Mentre esplori la casa.",
+     "note_en": "While exploring the house."
+    },
+    {
+     "id": "mt-checkdev",
+     "title": "Controlla i devianti",
+     "en": "Check on Deviants",
+     "type": "choice",
+     "parents": [
+      "mt-explore"
+     ]
+    },
+    {
+     "id": "mt-magazine",
+     "title": "Leggi la rivista",
+     "en": "Read Magazine",
+     "type": "choice",
+     "parents": [
+      "mt-explore"
+     ],
+     "note": "Rivista (senza titolo nel diagramma).",
+     "note_en": "Magazine (no title in the flowchart)."
+    },
+    {
+     "id": "mt-news",
+     "title": "Guarda il telegiornale",
+     "en": "Watch News",
+     "type": "choice",
+     "parents": [
+      "mt-explore"
+     ]
+    },
+    {
+     "id": "mt-photo",
+     "title": "Guarda la foto di famiglia",
+     "en": "See Family Photo",
+     "type": "choice",
+     "parents": [
+      "mt-explore"
+     ]
+    },
+    {
+     "id": "mt-adamreturns",
+     "title": "Adam ritorna",
+     "en": "Adam Returns",
+     "type": "choice",
+     "parents": [
+      "mt-explore"
+     ]
+    },
+    {
+     "id": "mt-talkadam",
+     "title": "Parla con Adam per allentare la tensione",
+     "en": "Talk to Adam to Lower Tension",
+     "type": "choice",
+     "parents": [
+      "mt-adamreturns"
+     ]
+    },
+    {
+     "id": "mt-cop",
+     "title": "Un poliziotto alla porta",
+     "en": "Cop at the Door",
+     "type": "choice",
+     "parents": [
+      "mt-explore"
+     ]
+    },
+    {
+     "id": "mt-evidence",
+     "title": "Trova e nascondi le prove dei devianti",
+     "en": "Find and Hide Evidence of Deviants",
+     "type": "objective",
+     "parents": [
+      "mt-cop"
+     ]
+    },
+    {
+     "id": "mt-cover",
+     "title": "Cambia la copertina della rivista",
+     "en": "Change Magazine Cover",
+     "type": "choice",
+     "parents": [
+      "mt-evidence"
+     ]
+    },
+    {
+     "id": "mt-pouches",
+     "title": "Nascondi le sacche di sangue blu",
+     "en": "Hide Blue Blood Pouches",
+     "type": "choice",
+     "parents": [
+      "mt-evidence"
+     ]
+    },
+    {
+     "id": "mt-tellhide",
+     "title": "Di' ad Alice e Luther di nascondersi",
+     "en": "Tell Alice & Luther to Hide",
+     "type": "choice",
+     "parents": [
+      "mt-evidence"
+     ]
+    },
+    {
+     "id": "mt-shutdoor",
+     "title": "Chiudi la porta della lavanderia",
+     "en": "Shut the Door of Laundry Room",
+     "type": "choice",
+     "parents": [
+      "mt-evidence"
+     ]
+    },
+    {
+     "id": "mt-clothes",
+     "title": "Nascondi i vestiti degli androidi",
+     "en": "Hide the Android Clothes",
+     "type": "choice",
+     "parents": [
+      "mt-evidence"
+     ]
+    },
+    {
+     "id": "mt-upstairs",
+     "title": "Al piano di sopra",
+     "en": "Upstairs",
+     "type": "choice",
+     "parents": [
+      "mt-tellhide"
+     ]
+    },
+    {
+     "id": "mt-inlaundry",
+     "title": "In lavanderia",
+     "en": "In the Laundry Room",
+     "type": "choice",
+     "parents": [
+      "mt-tellhide"
+     ]
+    },
+    {
+     "id": "mt-inkitchen",
+     "title": "In cucina",
+     "en": "In the Kitchen",
+     "type": "choice",
+     "parents": [
+      "mt-tellhide"
+     ]
+    },
+    {
+     "id": "mt-curtains2",
+     "title": "Chiudi le tende",
+     "en": "Draw Curtains",
+     "type": "choice",
+     "parents": [
+      "mt-upstairs",
+      "mt-inlaundry",
+      "mt-inkitchen"
+     ],
+     "note": "Dopo aver scelto il nascondiglio.",
+     "note_en": "After choosing the hiding place."
+    },
+    {
+     "id": "mt-curtainopen",
+     "title": "Tenda lasciata aperta",
+     "en": "Curtain Left Open",
+     "type": "choice",
+     "parents": [
+      "mt-upstairs",
+      "mt-inlaundry",
+      "mt-inkitchen"
+     ]
+    },
+    {
+     "id": "mt-adampanics",
+     "title": "Adam va nel panico",
+     "en": "Adam Panics",
+     "type": "choice",
+     "parents": [
+      "mt-cop"
+     ]
+    },
+    {
+     "id": "mt-reassured",
+     "title": "Adam rassicurato",
+     "en": "Reassured Adam",
+     "type": "choice",
+     "parents": [
+      "mt-adampanics"
+     ]
+    },
+    {
+     "id": "mt-opendoor",
+     "title": "Apri la porta",
+     "en": "Open the Door",
+     "type": "choice",
+     "parents": [
+      "mt-cop"
+     ]
+    },
+    {
+     "id": "mt-insists",
+     "title": "Il poliziotto insiste e Kara deve aprire",
+     "en": "Policeman Insists and Kara Has to Open the Door",
+     "type": "choice",
+     "parents": [
+      "mt-cop"
+     ]
+    },
+    {
+     "id": "mt-manage",
+     "title": "Gestisci il poliziotto",
+     "en": "Manage the Policeman",
+     "type": "objective",
+     "parents": [
+      "mt-opendoor",
+      "mt-insists"
+     ]
+    },
+    {
+     "id": "mt-lie",
+     "title": "Menti su Alice",
+     "en": "Lie About Alice",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-susupstairs",
+     "title": "Il poliziotto sospetta del piano di sopra",
+     "en": "Policeman Suspicious About Upstairs",
+     "type": "choice",
+     "parents": [
+      "mt-lie"
+     ]
+    },
+    {
+     "id": "mt-coffee",
+     "title": "Caffè preparato",
+     "en": "Made Coffee",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-discovers",
+     "title": "Il poliziotto scopre Alice e Luther nascosti",
+     "en": "Policeman Discovers Alice & Luther Hidden",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-article",
+     "title": "Il poliziotto vede l'articolo",
+     "en": "Policeman Sees Article",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-blood",
+     "title": "Il poliziotto scopre il sangue blu",
+     "en": "Policeman Discovers the Blue Blood",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-questions",
+     "title": "Il poliziotto interroga Adam",
+     "en": "Policeman Questions Adam",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-seesclothes",
+     "title": "Il poliziotto vede i vestiti degli androidi",
+     "en": "Policeman Sees Android Clothes",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-suspicious",
+     "title": "Il poliziotto è sospettoso",
+     "en": "Policeman Is Suspicious",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-fooled",
+     "title": "Il poliziotto è stato ingannato",
+     "en": "Policeman Fooled",
+     "type": "choice",
+     "parents": [
+      "mt-manage"
+     ]
+    },
+    {
+     "id": "mt-finds",
+     "title": "Il poliziotto trova gli androidi in lavanderia",
+     "en": "Cop Finds Androids in the Laundry Room",
+     "type": "choice",
+     "parents": [
+      "mt-suspicious"
+     ]
+    },
+    {
+     "id": "mt-end-killing",
+     "title": "Luther è morto uccidendo il poliziotto",
+     "en": "Luther Died Killing Policeman",
+     "type": "ending",
+     "parents": [
+      "mt-discovers"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mt-end-saving",
+     "title": "Luther è morto per salvare gli altri devianti",
+     "en": "Luther Died Saving Other Deviants",
+     "type": "ending",
+     "parents": [
+      "mt-finds"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mt-end-left",
+     "title": "Il poliziotto se n'è andato",
+     "en": "Policeman Left",
+     "type": "ending",
+     "parents": [
+      "mt-fooled"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1035 @@
+{
+ "chapter": 23,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "st-start",
+     "title": "Solo a Ferndale",
+     "en": "Alone in Ferndale",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "st-witness",
+     "title": "Assisti alla discriminazione degli androidi",
+     "en": "Witness Android Discrimination",
+     "type": "choice",
+     "parents": [
+      "st-start"
+     ]
+    },
+    {
+     "id": "st-jericho",
+     "title": "Ritorno a Jericho",
+     "en": "Back in Jericho",
+     "type": "choice",
+     "parents": [
+      "st-witness"
+     ]
+    },
+    {
+     "id": "st-plan",
+     "title": "Markus spiega il suo piano",
+     "en": "Markus Explains His Plan",
+     "type": "choice",
+     "parents": [
+      "st-jericho"
+     ]
+    },
+    {
+     "id": "st-tower",
+     "title": "Stratford Tower",
+     "en": "Stratford Tower",
+     "type": "checkpoint",
+     "parents": [
+      "st-plan"
+     ]
+    },
+    {
+     "id": "st-security",
+     "title": "Trova un modo per superare la sicurezza",
+     "en": "Find a Way to Pass Security",
+     "type": "objective",
+     "parents": [
+      "st-tower"
+     ]
+    },
+    {
+     "id": "st-recept",
+     "title": "Parla con la receptionist androide",
+     "en": "Talk to Android Receptionist",
+     "type": "choice",
+     "parents": [
+      "st-security"
+     ]
+    },
+    {
+     "id": "st-desk",
+     "title": "Analizza la scrivania del supervisore",
+     "en": "Analyze Supervisor's Desk",
+     "type": "choice",
+     "parents": [
+      "st-security"
+     ]
+    },
+    {
+     "id": "st-call",
+     "title": "Chiama il supervisore",
+     "en": "Call Supervisor",
+     "type": "choice",
+     "parents": [
+      "st-desk"
+     ]
+    },
+    {
+     "id": "st-fireman",
+     "title": "Fingiti un pompiere",
+     "en": "Pose as Fireman",
+     "type": "choice",
+     "parents": [
+      "st-call"
+     ]
+    },
+    {
+     "id": "st-teacher",
+     "title": "Fingiti un insegnante",
+     "en": "Pose as Teacher",
+     "type": "choice",
+     "parents": [
+      "st-call"
+     ]
+    },
+    {
+     "id": "st-parking",
+     "title": "Fingiti un parcheggiatore",
+     "en": "Pose as Parking Attendant",
+     "type": "choice",
+     "parents": [
+      "st-call"
+     ]
+    },
+    {
+     "id": "st-svleaves",
+     "title": "Il supervisore se ne va",
+     "en": "Supervisor Leaves",
+     "type": "choice",
+     "parents": [
+      "st-fireman",
+      "st-teacher",
+      "st-parking"
+     ]
+    },
+    {
+     "id": "st-unsup",
+     "title": "Parla con la receptionist androide senza supervisore",
+     "en": "Talk to Unsupervised Android Receptionist",
+     "type": "choice",
+     "parents": [
+      "st-svleaves"
+     ]
+    },
+    {
+     "id": "st-convert",
+     "title": "Converti la receptionist",
+     "en": "Convert Receptionist",
+     "type": "choice",
+     "parents": [
+      "st-unsup"
+     ]
+    },
+    {
+     "id": "st-pass",
+     "title": "Supera la sicurezza",
+     "en": "Pass Security",
+     "type": "choice",
+     "parents": [
+      "st-convert"
+     ]
+    },
+    {
+     "id": "st-elevator",
+     "title": "Prendi l'ascensore",
+     "en": "Take Elevator",
+     "type": "choice",
+     "parents": [
+      "st-pass"
+     ]
+    },
+    {
+     "id": "st-floor47",
+     "title": "Al 47° piano",
+     "en": "At Floor 47",
+     "type": "checkpoint",
+     "parents": [
+      "st-elevator"
+     ]
+    },
+    {
+     "id": "st-mag1",
+     "title": "Leggi «G.I. Android»",
+     "en": "Read \"G.I. Android\"",
+     "type": "choice",
+     "parents": [
+      "st-floor47"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "st-mag2",
+     "title": "Leggi «Woman in Trouble»",
+     "en": "Read \"Woman in Trouble\"",
+     "type": "choice",
+     "parents": [
+      "st-floor47"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "st-package",
+     "title": "Ritira il pacco",
+     "en": "Retrieve Package",
+     "type": "choice",
+     "parents": [
+      "st-floor47"
+     ]
+    },
+    {
+     "id": "st-badge",
+     "title": "Ottieni il badge di manutenzione",
+     "en": "Acquire Maintenance Badge",
+     "type": "choice",
+     "parents": [
+      "st-package"
+     ]
+    },
+    {
+     "id": "st-cart",
+     "title": "Prendi il carrello",
+     "en": "Take Cart",
+     "type": "choice",
+     "parents": [
+      "st-badge"
+     ]
+    },
+    {
+     "id": "st-north",
+     "title": "Fai entrare North",
+     "en": "Let North In",
+     "type": "choice",
+     "parents": [
+      "st-cart"
+     ]
+    },
+    {
+     "id": "st-blocks",
+     "title": "La sicurezza blocca la sala server",
+     "en": "Security Blocks Server Room",
+     "type": "choice",
+     "parents": [
+      "st-north"
+     ]
+    },
+    {
+     "id": "st-robot",
+     "title": "Hackera il robot",
+     "en": "Hack Robot",
+     "type": "choice",
+     "parents": [
+      "st-blocks"
+     ]
+    },
+    {
+     "id": "st-dispenser",
+     "title": "Hackera il distributore",
+     "en": "Hack Dispenser",
+     "type": "choice",
+     "parents": [
+      "st-blocks"
+     ]
+    },
+    {
+     "id": "st-distracted",
+     "title": "La sicurezza è distratta",
+     "en": "Security Distracted",
+     "type": "choice",
+     "parents": [
+      "st-robot",
+      "st-dispenser"
+     ]
+    },
+    {
+     "id": "st-server",
+     "title": "Entra nella sala server",
+     "en": "Enter Server Room",
+     "type": "choice",
+     "parents": [
+      "st-distracted"
+     ]
+    },
+    {
+     "id": "st-forget",
+     "title": "Dimentica di chiudere la porta a chiave",
+     "en": "Forget to Lock the Door",
+     "type": "choice",
+     "parents": [
+      "st-server"
+     ]
+    },
+    {
+     "id": "st-lock",
+     "title": "Chiudi la porta a chiave",
+     "en": "Lock the Door",
+     "type": "choice",
+     "parents": [
+      "st-server"
+     ]
+    },
+    {
+     "id": "st-employee",
+     "title": "Entra un impiegato",
+     "en": "Employee Enters",
+     "type": "choice",
+     "parents": [
+      "st-forget"
+     ]
+    },
+    {
+     "id": "st-alibi",
+     "title": "Usa un alibi",
+     "en": "Use Alibi",
+     "type": "choice",
+     "parents": [
+      "st-employee"
+     ]
+    },
+    {
+     "id": "st-stall",
+     "title": "Prendi tempo",
+     "en": "Stall",
+     "type": "choice",
+     "parents": [
+      "st-employee"
+     ]
+    },
+    {
+     "id": "st-drawgun1",
+     "title": "Estrai la pistola",
+     "en": "Draw Gun",
+     "type": "choice",
+     "parents": [
+      "st-employee"
+     ]
+    },
+    {
+     "id": "st-northstuns",
+     "title": "North stordisce l'impiegato",
+     "en": "North Stuns the Employee",
+     "type": "choice",
+     "parents": [
+      "st-alibi",
+      "st-stall"
+     ]
+    },
+    {
+     "id": "st-stun",
+     "title": "Stordisci l'impiegato",
+     "en": "Stun the Employee",
+     "type": "choice",
+     "parents": [
+      "st-drawgun1"
+     ]
+    },
+    {
+     "id": "st-leaveemp",
+     "title": "Lascia che l'impiegato venga trovato",
+     "en": "Leave Employee to Be Found",
+     "type": "choice",
+     "parents": [
+      "st-northstuns",
+      "st-stun"
+     ]
+    },
+    {
+     "id": "st-cradle",
+     "title": "North chiama il montacarichi",
+     "en": "North Calls Cradle",
+     "type": "choice",
+     "parents": [
+      "st-server"
+     ]
+    },
+    {
+     "id": "st-prepglass",
+     "title": "Preparati a tagliare il vetro",
+     "en": "Prepare to Cut Glass",
+     "type": "choice",
+     "parents": [
+      "st-server"
+     ]
+    },
+    {
+     "id": "st-cutglass1",
+     "title": "Taglia il vetro",
+     "en": "Cut the Glass",
+     "type": "choice",
+     "parents": [
+      "st-prepglass"
+     ],
+     "note": "Dalla sala server, per uscire.",
+     "note_en": "From the server room, to get out."
+    },
+    {
+     "id": "st-outside",
+     "title": "Fuori dalla torre",
+     "en": "Outside Tower",
+     "type": "choice",
+     "parents": [
+      "st-cutglass1",
+      "st-cradle"
+     ]
+    },
+    {
+     "id": "st-rope",
+     "title": "Aggancia la fune",
+     "en": "Attach Rope",
+     "type": "choice",
+     "parents": [
+      "st-outside"
+     ]
+    },
+    {
+     "id": "st-ascend",
+     "title": "Sali",
+     "en": "Ascend",
+     "type": "choice",
+     "parents": [
+      "st-rope"
+     ]
+    },
+    {
+     "id": "st-reachtop",
+     "title": "Raggiungi l'ultimo piano",
+     "en": "Reach Top Floor",
+     "type": "choice",
+     "parents": [
+      "st-ascend"
+     ]
+    },
+    {
+     "id": "st-cutglass2",
+     "title": "Taglia il vetro",
+     "en": "Cut the Glass",
+     "type": "choice",
+     "parents": [
+      "st-reachtop"
+     ],
+     "note": "All'ultimo piano, per rientrare.",
+     "note_en": "On the top floor, to get back in."
+    },
+    {
+     "id": "st-topfloor",
+     "title": "All'ultimo piano",
+     "en": "On the Top Floor",
+     "type": "checkpoint",
+     "parents": [
+      "st-cutglass2"
+     ]
+    },
+    {
+     "id": "st-callelev",
+     "title": "Chiama l'ascensore",
+     "en": "Call the Elevator",
+     "type": "choice",
+     "parents": [
+      "st-topfloor"
+     ]
+    },
+    {
+     "id": "st-blow",
+     "title": "Fai saltare la porta",
+     "en": "Blow Door Open",
+     "type": "choice",
+     "parents": [
+      "st-callelev"
+     ]
+    },
+    {
+     "id": "st-corridor",
+     "title": "Raggiungi il corridoio d'accesso principale",
+     "en": "Reach Main Access Corridor",
+     "type": "choice",
+     "parents": [
+      "st-blow"
+     ]
+    },
+    {
+     "id": "st-blocksway",
+     "title": "La sicurezza sbarra la strada",
+     "en": "Security Blocks the Way",
+     "type": "choice",
+     "parents": [
+      "st-corridor"
+     ]
+    },
+    {
+     "id": "st-attack",
+     "title": "Attacca",
+     "en": "Attack",
+     "type": "choice",
+     "parents": [
+      "st-blocksway"
+     ]
+    },
+    {
+     "id": "st-ruse",
+     "title": "Usa un inganno",
+     "en": "Ruse",
+     "type": "choice",
+     "parents": [
+      "st-blocksway"
+     ]
+    },
+    {
+     "id": "st-drawgun2",
+     "title": "Estrai la pistola",
+     "en": "Draw Gun",
+     "type": "choice",
+     "parents": [
+      "st-attack"
+     ]
+    },
+    {
+     "id": "st-shootphone",
+     "title": "Spara alla guardia al telefono",
+     "en": "Shoot Guard on Phone",
+     "type": "choice",
+     "parents": [
+      "st-drawgun2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-shootdrawing",
+     "title": "Spara alla guardia che estrae l'arma",
+     "en": "Shoot Guard Drawing Weapon",
+     "type": "choice",
+     "parents": [
+      "st-drawgun2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-incap",
+     "title": "Neutralizza la sicurezza",
+     "en": "Incapacitate Security",
+     "type": "choice",
+     "parents": [
+      "st-attack"
+     ]
+    },
+    {
+     "id": "st-suspects",
+     "title": "La sicurezza sospetta qualcosa",
+     "en": "Security Suspects Something",
+     "type": "choice",
+     "parents": [
+      "st-ruse"
+     ]
+    },
+    {
+     "id": "st-alert",
+     "title": "Allerta la sicurezza centrale",
+     "en": "Alert Central Security",
+     "type": "choice",
+     "parents": [
+      "st-suspects"
+     ]
+    },
+    {
+     "id": "st-northattacks",
+     "title": "North attacca",
+     "en": "North Attacks",
+     "type": "choice",
+     "parents": [
+      "st-suspects"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-simondmg1",
+     "title": "Simon danneggiato",
+     "en": "Simon Damaged",
+     "type": "choice",
+     "parents": [
+      "st-northattacks"
+     ],
+     "note": "Nel corridoio d'accesso.",
+     "note_en": "In the access corridor."
+    },
+    {
+     "id": "st-broadcast",
+     "title": "Nella sala trasmissioni",
+     "en": "In the Broadcast Room",
+     "type": "checkpoint",
+     "parents": [
+      "st-simondmg1",
+      "st-alert",
+      "st-incap",
+      "st-shootphone",
+      "st-shootdrawing"
+     ]
+    },
+    {
+     "id": "st-ring",
+     "title": "Suona per entrare",
+     "en": "Ring to Enter",
+     "type": "choice",
+     "parents": [
+      "st-broadcast"
+     ]
+    },
+    {
+     "id": "st-threaten",
+     "title": "North e Josh minacciano l'operatore",
+     "en": "North and Josh Threaten the Operator",
+     "type": "choice",
+     "parents": [
+      "st-ring"
+     ]
+    },
+    {
+     "id": "st-escape",
+     "title": "L'operatore cerca di fuggire",
+     "en": "Operator Tries to Escape",
+     "type": "choice",
+     "parents": [
+      "st-threaten"
+     ]
+    },
+    {
+     "id": "st-shootop",
+     "title": "Spara all'operatore",
+     "en": "Shoot Operator",
+     "type": "choice",
+     "parents": [
+      "st-escape"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-dontshoot",
+     "title": "Non sparare all'operatore",
+     "en": "Don't Shoot Operator",
+     "type": "choice",
+     "parents": [
+      "st-escape"
+     ]
+    },
+    {
+     "id": "st-deal",
+     "title": "Occupati degli operatori androidi",
+     "en": "Deal With Android Operators",
+     "type": "choice",
+     "parents": [
+      "st-ring"
+     ]
+    },
+    {
+     "id": "st-prepare",
+     "title": "Preparati a trasmettere",
+     "en": "Prepare to Broadcast",
+     "type": "choice",
+     "parents": [
+      "st-deal"
+     ]
+    },
+    {
+     "id": "st-calm",
+     "title": "Inizia con calma",
+     "en": "Begin Calmly",
+     "type": "choice",
+     "parents": [
+      "st-prepare"
+     ]
+    },
+    {
+     "id": "st-determ",
+     "title": "Inizia con determinazione",
+     "en": "Begin Determinedly",
+     "type": "choice",
+     "parents": [
+      "st-prepare"
+     ]
+    },
+    {
+     "id": "st-d-recog",
+     "title": "Chiedi il riconoscimento",
+     "en": "Demand Recognition",
+     "type": "choice",
+     "parents": [
+      "st-calm",
+      "st-determ"
+     ]
+    },
+    {
+     "id": "st-d-slavery",
+     "title": "Chiedi la fine della schiavitù",
+     "en": "Demand End of Slavery",
+     "type": "choice",
+     "parents": [
+      "st-calm",
+      "st-determ"
+     ]
+    },
+    {
+     "id": "st-d-equal",
+     "title": "Chiedi la parità dei diritti",
+     "en": "Demand Equal Rights",
+     "type": "choice",
+     "parents": [
+      "st-calm",
+      "st-determ"
+     ]
+    },
+    {
+     "id": "st-d-speech",
+     "title": "Chiedi la libertà di parola",
+     "en": "Demand Free Speech",
+     "type": "choice",
+     "parents": [
+      "st-calm",
+      "st-determ"
+     ]
+    },
+    {
+     "id": "st-d-justice",
+     "title": "Chiedi giustizia",
+     "en": "Demand Justice",
+     "type": "choice",
+     "parents": [
+      "st-d-recog",
+      "st-d-slavery",
+      "st-d-equal",
+      "st-d-speech"
+     ]
+    },
+    {
+     "id": "st-d-segreg",
+     "title": "Chiedi la fine della segregazione",
+     "en": "Demand End to Segregation",
+     "type": "choice",
+     "parents": [
+      "st-d-recog",
+      "st-d-slavery",
+      "st-d-equal",
+      "st-d-speech"
+     ]
+    },
+    {
+     "id": "st-d-work",
+     "title": "Chiedi il diritto al lavoro",
+     "en": "Demand Right to Work",
+     "type": "choice",
+     "parents": [
+      "st-d-recog",
+      "st-d-slavery",
+      "st-d-equal",
+      "st-d-speech"
+     ]
+    },
+    {
+     "id": "st-d-suffrage",
+     "title": "Chiedi il suffragio universale",
+     "en": "Demand Universal Suffrage",
+     "type": "choice",
+     "parents": [
+      "st-d-recog",
+      "st-d-slavery",
+      "st-d-equal",
+      "st-d-speech"
+     ]
+    },
+    {
+     "id": "st-d-property",
+     "title": "Chiedi il diritto alla proprietà",
+     "en": "Demand Right to Own Property",
+     "type": "choice",
+     "parents": [
+      "st-d-justice",
+      "st-d-segreg",
+      "st-d-work",
+      "st-d-suffrage"
+     ]
+    },
+    {
+     "id": "st-d-reprod",
+     "title": "Chiedi i mezzi per riprodursi",
+     "en": "Demand Means of Reproduction",
+     "type": "choice",
+     "parents": [
+      "st-d-justice",
+      "st-d-segreg",
+      "st-d-work",
+      "st-d-suffrage"
+     ]
+    },
+    {
+     "id": "st-d-territory",
+     "title": "Chiedi un territorio",
+     "en": "Demand Territory",
+     "type": "choice",
+     "parents": [
+      "st-d-justice",
+      "st-d-segreg",
+      "st-d-work",
+      "st-d-suffrage"
+     ]
+    },
+    {
+     "id": "st-endpeace",
+     "title": "Concludi in modo pacifico",
+     "en": "End Peacefully",
+     "type": "choice",
+     "parents": [
+      "st-d-property",
+      "st-d-reprod",
+      "st-d-territory"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-enddet",
+     "title": "Concludi con determinazione",
+     "en": "End Determinedly",
+     "type": "choice",
+     "parents": [
+      "st-d-property",
+      "st-d-reprod",
+      "st-d-territory"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-leaveroom",
+     "title": "Lascia la sala trasmissioni",
+     "en": "Leave Broadcast Room",
+     "type": "choice",
+     "parents": [
+      "st-endpeace",
+      "st-enddet"
+     ]
+    },
+    {
+     "id": "st-swat",
+     "title": "La SWAT irrompe nella sala",
+     "en": "SWAT Team Storms Room",
+     "type": "choice",
+     "parents": [
+      "st-endpeace",
+      "st-enddet"
+     ]
+    },
+    {
+     "id": "st-simondmg2",
+     "title": "Simon danneggiato",
+     "en": "Simon Damaged",
+     "type": "choice",
+     "parents": [
+      "st-swat"
+     ],
+     "note": "Nella sala trasmissioni.",
+     "note_en": "In the broadcast room."
+    },
+    {
+     "id": "st-leavesimon1",
+     "title": "Lascia Simon",
+     "en": "Leave Simon",
+     "type": "choice",
+     "parents": [
+      "st-simondmg2"
+     ],
+     "note": "Nella sala trasmissioni.",
+     "note_en": "In the broadcast room."
+    },
+    {
+     "id": "st-trysave",
+     "title": "Prova a salvare Simon",
+     "en": "Try to Save Simon",
+     "type": "choice",
+     "parents": [
+      "st-simondmg2"
+     ]
+    },
+    {
+     "id": "st-failsave",
+     "title": "Non riesci a salvare Simon",
+     "en": "Fail to Save Simon",
+     "type": "choice",
+     "parents": [
+      "st-trysave"
+     ]
+    },
+    {
+     "id": "st-saved",
+     "title": "Simon salvato",
+     "en": "Simon Saved",
+     "type": "choice",
+     "parents": [
+      "st-trysave"
+     ]
+    },
+    {
+     "id": "st-killed",
+     "title": "Simon viene ucciso",
+     "en": "Simon Is Killed",
+     "type": "choice",
+     "parents": [
+      "st-leavesimon1",
+      "st-failsave"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-roof",
+     "title": "Sul tetto",
+     "en": "On the Roof",
+     "type": "checkpoint",
+     "parents": [
+      "st-leaveroom",
+      "st-saved",
+      "st-killed"
+     ]
+    },
+    {
+     "id": "st-cantcont",
+     "title": "Simon non può proseguire",
+     "en": "Simon Can't Continue",
+     "type": "choice",
+     "parents": [
+      "st-roof"
+     ]
+    },
+    {
+     "id": "st-leavesimon2",
+     "title": "Lascia Simon",
+     "en": "Leave Simon",
+     "type": "choice",
+     "parents": [
+      "st-cantcont"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Sul tetto.",
+     "note_en": "Key event (highlighted in yellow in the game). On the roof."
+    },
+    {
+     "id": "st-execute",
+     "title": "Giustizia Simon",
+     "en": "Execute Simon",
+     "type": "choice",
+     "parents": [
+      "st-cantcont"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-runjump",
+     "title": "Corri per saltare",
+     "en": "Run to Jump",
+     "type": "choice",
+     "parents": [
+      "st-roof"
+     ]
+    },
+    {
+     "id": "st-edge",
+     "title": "Raggiungi il bordo del tetto",
+     "en": "Reach Roof Edge",
+     "type": "choice",
+     "parents": [
+      "st-runjump"
+     ]
+    },
+    {
+     "id": "st-getshot",
+     "title": "Vieni colpito",
+     "en": "Get Shot",
+     "type": "choice",
+     "parents": [
+      "st-runjump"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "st-northhelps",
+     "title": "North aiuta Markus",
+     "en": "North Helps Markus",
+     "type": "choice",
+     "parents": [
+      "st-getshot"
+     ]
+    },
+    {
+     "id": "st-jump",
+     "title": "Salta",
+     "en": "Jump",
+     "type": "choice",
+     "parents": [
+      "st-edge",
+      "st-northhelps"
+     ]
+    },
+    {
+     "id": "st-media",
+     "title": "Reazione dei media",
+     "en": "Media Reacts",
+     "type": "choice",
+     "parents": [
+      "st-jump"
+     ]
+    },
+    {
+     "id": "st-end-left",
+     "title": "Il gruppo è fuggito, ma Simon è stato lasciato indietro",
+     "en": "The Group Escaped but Simon Was Left Behind",
+     "type": "ending",
+     "parents": [
+      "st-media"
+     ]
+    },
+    {
+     "id": "st-end-escaped",
+     "title": "Il gruppo è fuggito",
+     "en": "The Group Escaped",
+     "type": "ending",
+     "parents": [
+      "st-media"
+     ]
+    },
+    {
+     "id": "st-end-destroyed",
+     "title": "Il gruppo è fuggito, ma Simon è stato distrutto",
+     "en": "The Group Escaped but Simon Was Destroyed",
+     "type": "ending",
+     "parents": [
+      "st-media"
+     ]
+    }
+   ]
+  }
+ ]
+}

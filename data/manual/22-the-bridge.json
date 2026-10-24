@@ -1,0 +1,188 @@
+{
+ "chapter": 22,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "br-start",
+     "title": "Ambassador Bridge",
+     "en": "Ambassador Bridge",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "br-mag1",
+     "title": "Leggi «Mysterious Kamski»",
+     "en": "Read \"Mysterious Kamski\"",
+     "type": "choice",
+     "parents": [
+      "br-start"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "br-mag2",
+     "title": "Leggi «Markets Predict War»",
+     "en": "Read \"Markets Predict War\"",
+     "type": "choice",
+     "parents": [
+      "br-start"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "br-leave",
+     "title": "Scendi dall'auto",
+     "en": "Leave Car",
+     "type": "choice",
+     "parents": [
+      "br-start"
+     ]
+    },
+    {
+     "id": "br-talk",
+     "title": "Parla con Hank",
+     "en": "Talk to Hank",
+     "type": "choice",
+     "parents": [
+      "br-leave"
+     ]
+    },
+    {
+     "id": "br-req",
+     "title": "Foto vista in «Russian Roulette»",
+     "en": "Photo Seen in 'Russian Roulette'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "br-photo",
+     "title": "Parla della foto",
+     "en": "Discuss Photo",
+     "type": "choice",
+     "parents": [
+      "br-talk",
+      "br-req"
+     ]
+    },
+    {
+     "id": "br-roulette",
+     "title": "Parla della roulette russa",
+     "en": "Discuss Russian Roulette",
+     "type": "choice",
+     "parents": [
+      "br-talk"
+     ]
+    },
+    {
+     "id": "br-ra9",
+     "title": "Parla di rA9",
+     "en": "Discuss rA9",
+     "type": "choice",
+     "parents": [
+      "br-talk"
+     ]
+    },
+    {
+     "id": "br-draws",
+     "title": "Hank estrae la pistola",
+     "en": "Hank Draws Gun",
+     "type": "choice",
+     "parents": [
+      "br-talk"
+     ]
+    },
+    {
+     "id": "br-fear",
+     "title": "Mostra paura",
+     "en": "Show Fear",
+     "type": "choice",
+     "parents": [
+      "br-draws"
+     ]
+    },
+    {
+     "id": "br-nofear",
+     "title": "Non mostrare paura",
+     "en": "Show No Fear",
+     "type": "choice",
+     "parents": [
+      "br-draws"
+     ]
+    },
+    {
+     "id": "br-logical",
+     "title": "Resta logico",
+     "en": "Remain Logical",
+     "type": "choice",
+     "parents": [
+      "br-draws"
+     ]
+    },
+    {
+     "id": "br-cold",
+     "title": "Sii freddo",
+     "en": "Be Cold",
+     "type": "choice",
+     "parents": [
+      "br-draws"
+     ]
+    },
+    {
+     "id": "br-placated",
+     "title": "Hank si calma",
+     "en": "Hank Is Placated",
+     "type": "choice",
+     "parents": [
+      "br-fear",
+      "br-nofear",
+      "br-logical",
+      "br-cold"
+     ]
+    },
+    {
+     "id": "br-hostile",
+     "title": "Hank è ostile",
+     "en": "Hank Is Hostile",
+     "type": "choice",
+     "parents": [
+      "br-fear",
+      "br-nofear",
+      "br-logical",
+      "br-cold"
+     ]
+    },
+    {
+     "id": "br-end-alone",
+     "title": "Hank ha lasciato Connor da solo",
+     "en": "Hank Left Connor Alone",
+     "type": "ending",
+     "parents": [
+      "br-placated",
+      "br-fear",
+      "br-nofear",
+      "br-logical",
+      "br-cold"
+     ]
+    },
+    {
+     "id": "br-end-shot",
+     "title": "Hank ha sparato a Connor",
+     "en": "Hank Shot Connor",
+     "type": "ending",
+     "parents": [
+      "br-hostile"
+     ]
+    }
+   ]
+  }
+ ]
+}

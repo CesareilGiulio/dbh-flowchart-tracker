@@ -1,23 +1,24 @@
 {
   "name": "flowchart-tracker",
+  "productName": "Flowchart Tracker",
   "version": "1.0.0",
-  "description": "Tracker offline dei diagrammi per il 100% dei capitoli",
+  "description": "Unofficial offline tracker for the Detroit: Become Human flowcharts / Tracker non ufficiale dei diagrammi di Detroit: Become Human",
   "main": "main.js",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "electron .",
-    "fetch-data": "node scripts/fetch-data.js",
     "dist": "electron-builder --win portable --publish never"
   },
   "devDependencies": {
-    "electron": "^33.2.0",
-    "electron-builder": "^25.1.8"
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
   },
   "build": {
-    "appId": "local.flowchart.tracker",
+    "appId": "io.github.flowchart-tracker",
     "productName": "Flowchart Tracker",
-    "files": ["main.js", "preload.js", "scraper.js", "renderer/**", "data/**"],
-    "win": { "target": "portable" },
+    "files": ["main.js", "preload.js", "renderer/**", "data/manual/**", "build/icon.png"],
+    "win": { "target": "portable", "icon": "build/icon.png" },
     "portable": { "artifactName": "FlowchartTracker.exe" }
   }
 }

@@ -1,7 +1,7 @@
 {
  "chapter": 14,
  "rev": "manual-1",
- "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
  "sections": [
   {
    "name": "",
@@ -40,7 +40,8 @@
      "parents": [
       "j-graffiti"
      ],
-     "note": "Rivista. Compare solo se in «On the Run» Connor ha inseguito Kara e Alice."
+     "note": "Rivista. Compare solo se in «On the Run» Connor ha inseguito Kara e Alice.",
+     "note_en": "Magazine. Only appears if Connor chased Kara and Alice in “On the Run”."
     },
     {
      "id": "j-mag2",
@@ -50,7 +51,8 @@
      "parents": [
       "j-graffiti"
      ],
-     "note": "Rivista. Compare solo se in «On the Run» Connor non ha inseguito Kara e Alice."
+     "note": "Rivista. Compare solo se in «On the Run» Connor non ha inseguito Kara e Alice.",
+     "note_en": "Magazine. Only appears if Connor did not chase Kara and Alice in “On the Run”."
     },
     {
      "id": "j-mag3",
@@ -60,7 +62,8 @@
      "parents": [
       "j-graffiti"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "j-exit",
@@ -107,7 +110,8 @@
      "parents": [
       "j-streets"
      ],
-     "note": "Nel parcheggio, a sinistra entrando."
+     "note": "Nel parcheggio, a sinistra entrando.",
+     "note_en": "In the parking lot, on the left as you enter."
     },
     {
      "id": "j-trail",
@@ -144,7 +148,8 @@
      "parents": [
       "j-roof"
      ],
-     "note": "Accanto a un container."
+     "note": "Accanto a un container.",
+     "note_en": "Next to a container."
     },
     {
      "id": "j-gap",
@@ -181,7 +186,8 @@
      "parents": [
       "j-office"
      ],
-     "note": "Appoggiato a un pilastro."
+     "note": "Appoggiato a un pilastro.",
+     "note_en": "Leaning against a pillar."
     },
     {
      "id": "j-exitright",

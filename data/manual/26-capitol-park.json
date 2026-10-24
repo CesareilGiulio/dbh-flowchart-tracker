@@ -1,0 +1,707 @@
+{
+ "chapter": 26,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "cp-start",
+     "title": "Inizio della missione",
+     "en": "Mission Start",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "cp-mag1",
+     "title": "Leggi «Who Is It?»",
+     "en": "Read \"Who Is It?\"",
+     "type": "choice",
+     "parents": [
+      "cp-start"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "cp-mag2",
+     "title": "Leggi «Android President?»",
+     "en": "Read \"Android President?\"",
+     "type": "choice",
+     "parents": [
+      "cp-start"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "cp-northsaves",
+     "title": "North ti salva",
+     "en": "North Saves You",
+     "type": "choice",
+     "parents": [
+      "cp-start"
+     ]
+    },
+    {
+     "id": "cp-avoid",
+     "title": "Evita l'auto della polizia",
+     "en": "Avoid Police Car",
+     "type": "choice",
+     "parents": [
+      "cp-start"
+     ]
+    },
+    {
+     "id": "cp-reach",
+     "title": "Raggiungi il negozio",
+     "en": "Reach Store",
+     "type": "checkpoint",
+     "parents": [
+      "cp-northsaves",
+      "cp-avoid"
+     ]
+    },
+    {
+     "id": "cp-secure",
+     "title": "Metti in sicurezza la zona",
+     "en": "Secure the Place",
+     "type": "objective",
+     "parents": [
+      "cp-reach"
+     ]
+    },
+    {
+     "id": "cp-jump",
+     "title": "Salta sul drone",
+     "en": "Jump on Drone",
+     "type": "choice",
+     "parents": [
+      "cp-secure"
+     ]
+    },
+    {
+     "id": "cp-destroydrone",
+     "title": "Distruggi il drone",
+     "en": "Destroy Drone",
+     "type": "choice",
+     "parents": [
+      "cp-jump"
+     ]
+    },
+    {
+     "id": "cp-fall",
+     "title": "Cadi dal drone",
+     "en": "Fall From Drone",
+     "type": "choice",
+     "parents": [
+      "cp-jump"
+     ]
+    },
+    {
+     "id": "cp-block",
+     "title": "Blocca la strada",
+     "en": "Block Road",
+     "type": "choice",
+     "parents": [
+      "cp-secure"
+     ]
+    },
+    {
+     "id": "cp-alarm",
+     "title": "Disattiva l'allarme",
+     "en": "Deactivate Alarm",
+     "type": "choice",
+     "parents": [
+      "cp-secure"
+     ]
+    },
+    {
+     "id": "cp-spotted",
+     "title": "Vieni scoperto dal drone",
+     "en": "Get Spotted by Drone",
+     "type": "choice",
+     "parents": [
+      "cp-alarm"
+     ]
+    },
+    {
+     "id": "cp-hide",
+     "title": "Nasconditi",
+     "en": "Hide",
+     "type": "choice",
+     "parents": [
+      "cp-alarm"
+     ]
+    },
+    {
+     "id": "cp-northdrone",
+     "title": "North distrugge il drone",
+     "en": "North Destroys Drone",
+     "type": "choice",
+     "parents": [
+      "cp-fall"
+     ]
+    },
+    {
+     "id": "cp-policecar",
+     "title": "Arriva un'auto della polizia",
+     "en": "Police Car Arrives",
+     "type": "choice",
+     "parents": [
+      "cp-northdrone",
+      "cp-spotted"
+     ]
+    },
+    {
+     "id": "cp-runaway",
+     "title": "Scappa",
+     "en": "Run Away",
+     "type": "choice",
+     "parents": [
+      "cp-policecar"
+     ]
+    },
+    {
+     "id": "cp-hidehack",
+     "title": "Nasconditi e hackera la radio",
+     "en": "Hide and Hack Radio",
+     "type": "choice",
+     "parents": [
+      "cp-policecar"
+     ]
+    },
+    {
+     "id": "cp-feign",
+     "title": "Fingi un bacio",
+     "en": "Feign Kiss",
+     "type": "choice",
+     "parents": [
+      "cp-policecar"
+     ]
+    },
+    {
+     "id": "cp-end-decided",
+     "title": "Hanno deciso di fuggire",
+     "en": "Decided to Flee",
+     "type": "ending",
+     "parents": [
+      "cp-runaway"
+     ]
+    },
+    {
+     "id": "cp-truck",
+     "title": "Trova un camion",
+     "en": "Find Truck",
+     "type": "choice",
+     "parents": [
+      "cp-reach"
+     ]
+    },
+    {
+     "id": "cp-outoftime",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "cp-reach"
+     ]
+    },
+    {
+     "id": "cp-end-retreat",
+     "title": "Ritirata",
+     "en": "Retreat",
+     "type": "ending",
+     "parents": [
+      "cp-outoftime"
+     ]
+    },
+    {
+     "id": "cp-ram",
+     "title": "Sfonda il negozio",
+     "en": "Ram Store",
+     "type": "choice",
+     "parents": [
+      "cp-truck"
+     ]
+    },
+    {
+     "id": "cp-notalerted",
+     "title": "Polizia non allertata",
+     "en": "Police Not Alerted",
+     "type": "choice",
+     "parents": [
+      "cp-ram"
+     ]
+    },
+    {
+     "id": "cp-alerted",
+     "title": "Polizia allertata",
+     "en": "Police Alerted",
+     "type": "choice",
+     "parents": [
+      "cp-ram"
+     ]
+    },
+    {
+     "id": "cp-end-hadtoflee",
+     "title": "Sono dovuti fuggire",
+     "en": "Had to Flee",
+     "type": "ending",
+     "parents": [
+      "cp-alerted"
+     ]
+    },
+    {
+     "id": "cp-inside",
+     "title": "Dentro il negozio",
+     "en": "Inside the Store",
+     "type": "checkpoint",
+     "parents": [
+      "cp-notalerted",
+      "cp-hidehack",
+      "cp-feign"
+     ]
+    },
+    {
+     "id": "cp-convert",
+     "title": "Converti gli androidi e lancia un messaggio",
+     "en": "Convert Androids and Make a Statement",
+     "type": "choice",
+     "parents": [
+      "cp-inside"
+     ]
+    },
+    {
+     "id": "cp-statement",
+     "title": "Lancia un messaggio",
+     "en": "Make a Statement",
+     "type": "checkpoint",
+     "parents": [
+      "cp-convert"
+     ]
+    },
+    {
+     "id": "cp-spread",
+     "title": "Diffondi il tuo messaggio",
+     "en": "Spread Your Message",
+     "type": "objective",
+     "parents": [
+      "cp-statement"
+     ]
+    },
+    {
+     "id": "cp-statue-destroy",
+     "title": "Distruggi la statua",
+     "en": "Destroy Statue",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-statue-tag",
+     "title": "Fai un graffito sulla statua",
+     "en": "Tag Statue",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-bus-hack",
+     "title": "Hackera la pensilina",
+     "en": "Hack Bus Stop",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-bus-destroy",
+     "title": "Distruggi la pensilina",
+     "en": "Destroy Bus Stop",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-car-push",
+     "title": "Spingi l'auto",
+     "en": "Push Car",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-car-overturn",
+     "title": "Ribalta l'auto",
+     "en": "Overturn Car",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-win-destroy",
+     "title": "Distruggi le vetrine",
+     "en": "Destroy Windows",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-win-tag",
+     "title": "Fai graffiti sulle vetrine",
+     "en": "Tag Windows",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-flag-plant",
+     "title": "Pianta la bandiera",
+     "en": "Plant Flag",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-flag-pyre",
+     "title": "Fai un rogo",
+     "en": "Make a Pyre",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-bench-tag",
+     "title": "Fai graffiti sulle panchine",
+     "en": "Tag Benches",
+     "type": "choice",
+     "parents": [
+      "cp-statue-destroy",
+      "cp-statue-tag"
+     ]
+    },
+    {
+     "id": "cp-bench-overturn",
+     "title": "Ribalta le panchine",
+     "en": "Overturn Benches",
+     "type": "choice",
+     "parents": [
+      "cp-statue-destroy",
+      "cp-statue-tag"
+     ]
+    },
+    {
+     "id": "cp-bill-hack",
+     "title": "Hackera i cartelloni",
+     "en": "Hack Billboards",
+     "type": "choice",
+     "parents": [
+      "cp-bus-hack",
+      "cp-bus-destroy"
+     ]
+    },
+    {
+     "id": "cp-bill-off",
+     "title": "Spegni i cartelloni",
+     "en": "Turn Off Billboards",
+     "type": "choice",
+     "parents": [
+      "cp-bus-hack",
+      "cp-bus-destroy"
+     ]
+    },
+    {
+     "id": "cp-park-hack",
+     "title": "Hackera il parcheggio per androidi",
+     "en": "Hack Android Parking",
+     "type": "choice",
+     "parents": [
+      "cp-statue-destroy",
+      "cp-statue-tag",
+      "cp-bus-hack",
+      "cp-bus-destroy"
+     ]
+    },
+    {
+     "id": "cp-park-destroy",
+     "title": "Distruggi il parcheggio per androidi",
+     "en": "Destroy Android Parking",
+     "type": "choice",
+     "parents": [
+      "cp-statue-destroy",
+      "cp-statue-tag",
+      "cp-bus-hack",
+      "cp-bus-destroy"
+     ]
+    },
+    {
+     "id": "cp-lights-hack",
+     "title": "Hackera i lampioni",
+     "en": "Hack Street Lights",
+     "type": "choice",
+     "parents": [
+      "cp-bench-tag",
+      "cp-bench-overturn"
+     ]
+    },
+    {
+     "id": "cp-lights-off",
+     "title": "Spegni i lampioni",
+     "en": "Turn Off Street Lights",
+     "type": "choice",
+     "parents": [
+      "cp-bench-tag",
+      "cp-bench-overturn"
+     ]
+    },
+    {
+     "id": "cp-banner",
+     "title": "Spiega lo striscione",
+     "en": "Deploy Banner",
+     "type": "choice",
+     "parents": [
+      "cp-bill-hack",
+      "cp-bill-off"
+     ]
+    },
+    {
+     "id": "cp-shopwin",
+     "title": "Libera gli androidi nelle vetrine",
+     "en": "Free Androids in Shop Windows",
+     "type": "choice",
+     "parents": [
+      "cp-park-hack",
+      "cp-park-destroy"
+     ]
+    },
+    {
+     "id": "cp-electric",
+     "title": "Sovraccarica l'impianto elettrico",
+     "en": "Overload Electric System",
+     "type": "choice",
+     "parents": [
+      "cp-park-hack",
+      "cp-park-destroy"
+     ]
+    },
+    {
+     "id": "cp-tagcars",
+     "title": "Fai graffiti sulle auto",
+     "en": "Tag Cars",
+     "type": "choice",
+     "parents": [
+      "cp-car-push",
+      "cp-car-overturn"
+     ]
+    },
+    {
+     "id": "cp-refusemolo",
+     "title": "Rifiuta la molotov",
+     "en": "Refuse Molotov",
+     "type": "choice",
+     "parents": [
+      "cp-car-push",
+      "cp-car-overturn",
+      "cp-win-destroy",
+      "cp-win-tag"
+     ]
+    },
+    {
+     "id": "cp-acceptmolo",
+     "title": "Accetta la molotov",
+     "en": "Accept Molotov",
+     "type": "choice",
+     "parents": [
+      "cp-car-push",
+      "cp-car-overturn",
+      "cp-win-destroy",
+      "cp-win-tag"
+     ]
+    },
+    {
+     "id": "cp-burn-coffee",
+     "title": "Brucia la caffetteria",
+     "en": "Burn Coffee Shop",
+     "type": "choice",
+     "parents": [
+      "cp-acceptmolo"
+     ],
+     "note": "Serve aver accettato la molotov.",
+     "note_en": "You need to have accepted the Molotov."
+    },
+    {
+     "id": "cp-burn-dump",
+     "title": "Brucia i cassonetti",
+     "en": "Burn Dumpsters",
+     "type": "choice",
+     "parents": [
+      "cp-acceptmolo"
+     ],
+     "note": "Serve aver accettato la molotov.",
+     "note_en": "You need to have accepted the Molotov."
+    },
+    {
+     "id": "cp-burn-cars",
+     "title": "Brucia le auto",
+     "en": "Burn Cars",
+     "type": "choice",
+     "parents": [
+      "cp-acceptmolo"
+     ],
+     "note": "Serve aver accettato la molotov.",
+     "note_en": "You need to have accepted the Molotov."
+    },
+    {
+     "id": "cp-burn-hotel",
+     "title": "Brucia l'hotel",
+     "en": "Burn Hotel",
+     "type": "choice",
+     "parents": [
+      "cp-acceptmolo"
+     ],
+     "note": "Serve aver accettato la molotov.",
+     "note_en": "You need to have accepted the Molotov."
+    },
+    {
+     "id": "cp-burn-cyber",
+     "title": "Brucia il negozio CyberLife",
+     "en": "Burn CyberLife",
+     "type": "choice",
+     "parents": [
+      "cp-acceptmolo"
+     ],
+     "note": "Serve aver accettato la molotov.",
+     "note_en": "You need to have accepted the Molotov."
+    },
+    {
+     "id": "cp-fail",
+     "title": "Non riesci a lanciare un messaggio",
+     "en": "Fail to Send a Message",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-strong",
+     "title": "Lancia un messaggio forte",
+     "en": "Send a Strong Message",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-end-failed",
+     "title": "Markus non è riuscito a trasmettere il suo messaggio",
+     "en": "Markus Failed to Deliver His Message",
+     "type": "ending",
+     "parents": [
+      "cp-fail"
+     ]
+    },
+    {
+     "id": "cp-aggressive",
+     "title": "Messaggio aggressivo",
+     "en": "Aggressive Message",
+     "type": "choice",
+     "parents": [
+      "cp-strong"
+     ]
+    },
+    {
+     "id": "cp-pacifist",
+     "title": "Messaggio pacifista",
+     "en": "Pacifist Message",
+     "type": "choice",
+     "parents": [
+      "cp-strong"
+     ]
+    },
+    {
+     "id": "cp-patrol",
+     "title": "Arriva una pattuglia della polizia",
+     "en": "Police Patrol Arrives",
+     "type": "choice",
+     "parents": [
+      "cp-spread"
+     ]
+    },
+    {
+     "id": "cp-kill",
+     "title": "Uccidi",
+     "en": "Kill",
+     "type": "choice",
+     "parents": [
+      "cp-patrol"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Uccidi i poliziotti.",
+     "note_en": "Key event (highlighted in yellow in the game). Kill the police officers."
+    },
+    {
+     "id": "cp-spare",
+     "title": "Risparmia",
+     "en": "Spare",
+     "type": "choice",
+     "parents": [
+      "cp-patrol"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Risparmia i poliziotti.",
+     "note_en": "Key event (highlighted in yellow in the game). Spare the police officers."
+    },
+    {
+     "id": "cp-crowd",
+     "title": "Lascia decidere la folla",
+     "en": "Let Crowd Decide",
+     "type": "choice",
+     "parents": [
+      "cp-patrol"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "cp-return",
+     "title": "La squadra torna a Jericho",
+     "en": "Team Return to Jericho",
+     "type": "choice",
+     "parents": [
+      "cp-kill",
+      "cp-spare",
+      "cp-crowd"
+     ]
+    },
+    {
+     "id": "cp-end-riot",
+     "title": "Markus ha guidato una rivolta violenta",
+     "en": "Markus Led a Violent Riot",
+     "type": "ending",
+     "parents": [
+      "cp-aggressive"
+     ]
+    },
+    {
+     "id": "cp-end-peaceful",
+     "title": "Markus ha guidato una protesta pacifica",
+     "en": "Markus Led a Peaceful Protest",
+     "type": "ending",
+     "parents": [
+      "cp-pacifist"
+     ]
+    }
+   ]
+  }
+ ]
+}

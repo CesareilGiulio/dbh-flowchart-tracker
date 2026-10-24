@@ -1,7 +1,7 @@
 {
  "chapter": 20,
  "rev": "manual-1",
- "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
  "sections": [
   {
    "name": "",
@@ -168,7 +168,8 @@
       "e-giveup1",
       "e-reset"
      ],
-     "note": "Prima variante: prima del magazzino."
+     "note": "Prima variante: prima del magazzino.",
+     "note_en": "First variant: before the warehouse."
     },
     {
      "id": "e-warehouse",
@@ -196,7 +197,8 @@
      "parents": [
       "e-blue"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "e-blueblood",
@@ -242,7 +244,8 @@
      "parents": [
       "e-blue"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "e-end-fail2",
@@ -252,7 +255,8 @@
      "parents": [
       "e-giveup2"
      ],
-     "note": "Seconda variante: nel magazzino."
+     "note": "Seconda variante: nel magazzino.",
+     "note_en": "Second variant: in the warehouse."
     },
     {
      "id": "e-bluehair",
@@ -343,7 +347,8 @@
      "parents": [
       "e-herself"
      ],
-     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
     },
     {
      "id": "e-end-escaped",
@@ -354,7 +359,8 @@
       "e-spare",
       "e-letgo"
      ],
-     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
     },
     {
      "id": "e-end-shot",
@@ -364,7 +370,8 @@
      "parents": [
       "e-back"
      ],
-     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
     }
    ]
   }

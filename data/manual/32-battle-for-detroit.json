@@ -1,0 +1,5580 @@
+{
+ "chapter": 32,
+ "rev": "manual-3",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "Battle for Detroit - Connor's Last Mission",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "lm-zen",
+     "title": "Nel giardino zen",
+     "en": "In the Zen Garden",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "lm-amanda",
+     "title": "Parla con Amanda",
+     "en": "Talk to Amanda",
+     "type": "choice",
+     "parents": [
+      "lm-zen"
+     ]
+    },
+    {
+     "id": "lm-rooftop",
+     "title": "Tetto di Hart Plaza",
+     "en": "Hart Plaza Rooftop",
+     "type": "checkpoint",
+     "parents": [
+      "lm-amanda"
+     ]
+    },
+    {
+     "id": "lm-vantage",
+     "title": "Trova un punto di osservazione",
+     "en": "Find Vantage Point",
+     "type": "choice",
+     "parents": [
+      "lm-rooftop"
+     ]
+    },
+    {
+     "id": "lm-prepare",
+     "title": "Preparati a sparare",
+     "en": "Prepare to Shoot",
+     "type": "choice",
+     "parents": [
+      "lm-vantage"
+     ]
+    },
+    {
+     "id": "lm-hankint",
+     "title": "Hank interviene",
+     "en": "Hank Intervenes",
+     "type": "choice",
+     "parents": [
+      "lm-prepare"
+     ]
+    },
+    {
+     "id": "lm-req-suicide",
+     "title": "Hank suicida in «Night of the Soul»",
+     "en": "Hank Committed Suicide in 'Night of the Soul'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "lm-allenint",
+     "title": "Interviene il capitano Allen",
+     "en": "Captain Allen Intervenes",
+     "type": "choice",
+     "parents": [
+      "lm-prepare",
+      "lm-req-suicide"
+     ]
+    },
+    {
+     "id": "lm-talkhank",
+     "title": "Parla con Hank",
+     "en": "Talk to Hank",
+     "type": "choice",
+     "parents": [
+      "lm-hankint"
+     ]
+    },
+    {
+     "id": "lm-son",
+     "title": "Parla del figlio di Hank",
+     "en": "Talk About Hank's Son",
+     "type": "choice",
+     "parents": [
+      "lm-talkhank"
+     ]
+    },
+    {
+     "id": "lm-giveup",
+     "title": "Arrenditi",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "lm-talkhank"
+     ]
+    },
+    {
+     "id": "lm-attackhank",
+     "title": "Attacca Hank",
+     "en": "Attack Hank",
+     "type": "choice",
+     "parents": [
+      "lm-talkhank"
+     ]
+    },
+    {
+     "id": "lm-connorwins",
+     "title": "Connor vince",
+     "en": "Connor Wins",
+     "type": "choice",
+     "parents": [
+      "lm-giveup",
+      "lm-attackhank"
+     ]
+    },
+    {
+     "id": "lm-hankwins",
+     "title": "Hank vince",
+     "en": "Hank Wins",
+     "type": "choice",
+     "parents": [
+      "lm-giveup",
+      "lm-attackhank"
+     ]
+    },
+    {
+     "id": "lm-lethank",
+     "title": "Lascia andare Hank",
+     "en": "Let Hank Go",
+     "type": "choice",
+     "parents": [
+      "lm-connorwins"
+     ]
+    },
+    {
+     "id": "lm-savehank",
+     "title": "Salva Hank",
+     "en": "Save Hank",
+     "type": "choice",
+     "parents": [
+      "lm-connorwins"
+     ]
+    },
+    {
+     "id": "lm-killshank",
+     "title": "Connor uccide Hank",
+     "en": "Connor Kills Hank",
+     "type": "choice",
+     "parents": [
+      "lm-lethank"
+     ]
+    },
+    {
+     "id": "lm-rushes",
+     "title": "Hank si scaglia contro Connor",
+     "en": "Hank Rushes Connor",
+     "type": "choice",
+     "parents": [
+      "lm-savehank"
+     ]
+    },
+    {
+     "id": "lm-dodge",
+     "title": "Schiva l'attacco",
+     "en": "Dodge Attack",
+     "type": "choice",
+     "parents": [
+      "lm-rushes"
+     ]
+    },
+    {
+     "id": "lm-faildodge",
+     "title": "Non riesci a schivare l'attacco",
+     "en": "Fail to Dodge Attack",
+     "type": "choice",
+     "parents": [
+      "lm-rushes"
+     ]
+    },
+    {
+     "id": "lm-hankfalls",
+     "title": "Hank precipita e muore",
+     "en": "Hank Falls to His Death",
+     "type": "choice",
+     "parents": [
+      "lm-dodge"
+     ]
+    },
+    {
+     "id": "lm-connorfalls",
+     "title": "Connor precipita e viene distrutto",
+     "en": "Connor Falls and Gets Destroyed",
+     "type": "choice",
+     "parents": [
+      "lm-faildodge"
+     ]
+    },
+    {
+     "id": "lm-hankkills",
+     "title": "Hank uccide Connor",
+     "en": "Hank Kills Connor",
+     "type": "choice",
+     "parents": [
+      "lm-hankwins"
+     ]
+    },
+    {
+     "id": "lm-talkallen",
+     "title": "Parla con Allen",
+     "en": "Talk to Allen",
+     "type": "choice",
+     "parents": [
+      "lm-allenint"
+     ]
+    },
+    {
+     "id": "lm-flee",
+     "title": "Scappa",
+     "en": "Flee",
+     "type": "choice",
+     "parents": [
+      "lm-talkallen"
+     ]
+    },
+    {
+     "id": "lm-attackallen",
+     "title": "Attacca Allen",
+     "en": "Attack Allen",
+     "type": "choice",
+     "parents": [
+      "lm-talkallen"
+     ]
+    },
+    {
+     "id": "lm-jumps",
+     "title": "Connor salta giù dal tetto",
+     "en": "Connor Jumps Off the Roof",
+     "type": "choice",
+     "parents": [
+      "lm-flee"
+     ]
+    },
+    {
+     "id": "lm-killallen",
+     "title": "Uccidi Allen e i suoi uomini",
+     "en": "Kill Allen and His Men",
+     "type": "choice",
+     "parents": [
+      "lm-attackallen"
+     ]
+    },
+    {
+     "id": "lm-faildefend",
+     "title": "Connor non riesce a difendersi",
+     "en": "Connor Fails to Defend Himself",
+     "type": "choice",
+     "parents": [
+      "lm-attackallen"
+     ]
+    },
+    {
+     "id": "lm-allendestroys",
+     "title": "Allen distrugge Connor",
+     "en": "Allen Destroys Connor",
+     "type": "choice",
+     "parents": [
+      "lm-faildefend"
+     ]
+    },
+    {
+     "id": "lm-end-sent1",
+     "title": "CyberLife ha deciso di mandare un altro Connor",
+     "en": "CyberLife Decided to Send Another Connor",
+     "type": "ending",
+     "parents": [
+      "lm-allendestroys"
+     ],
+     "note": "Prima variante: distrutto da Allen.",
+     "note_en": "First variant: destroyed by Allen."
+    },
+    {
+     "id": "lm-end-sent2",
+     "title": "CyberLife ha deciso di mandare un altro Connor",
+     "en": "CyberLife Decided to Send Another Connor",
+     "type": "ending",
+     "parents": [
+      "lm-hankkills",
+      "lm-connorfalls"
+     ],
+     "note": "Seconda variante: lo scontro con Hank.",
+     "note_en": "Second variant: the fight with Hank."
+    },
+    {
+     "id": "lm-missed",
+     "title": "Occasione mancata",
+     "en": "Missed Opportunity",
+     "type": "choice",
+     "parents": [
+      "lm-killshank",
+      "lm-hankfalls",
+      "lm-killallen",
+      "lm-jumps"
+     ]
+    },
+    {
+     "id": "lm-end-left",
+     "title": "Connor ha lasciato il tetto",
+     "en": "Connor Left Rooftop",
+     "type": "ending",
+     "parents": [
+      "lm-son",
+      "lm-missed"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Battle for Detroit - Connor at the CyberLife Tower",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "ct-hq",
+     "title": "Sede della CyberLife",
+     "en": "CyberLife HQ",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "ct-follow",
+     "title": "Segui le guardie",
+     "en": "Follow Guards",
+     "type": "choice",
+     "parents": [
+      "ct-hq"
+     ]
+    },
+    {
+     "id": "ct-elevator",
+     "title": "Nell'ascensore",
+     "en": "Inside Elevator",
+     "type": "checkpoint",
+     "parents": [
+      "ct-follow"
+     ]
+    },
+    {
+     "id": "ct-escape",
+     "title": "Trova un modo per fuggire",
+     "en": "Find a Way to Escape",
+     "type": "objective",
+     "parents": [
+      "ct-elevator"
+     ]
+    },
+    {
+     "id": "ct-spotcam",
+     "title": "Individua la telecamera",
+     "en": "Spot Camera",
+     "type": "choice",
+     "parents": [
+      "ct-escape"
+     ]
+    },
+    {
+     "id": "ct-hackcam",
+     "title": "Hackera la telecamera",
+     "en": "Hack Camera",
+     "type": "choice",
+     "parents": [
+      "ct-spotcam"
+     ]
+    },
+    {
+     "id": "ct-level31",
+     "title": "L'ascensore arriva al livello 31",
+     "en": "Elevator Reaches Level 31",
+     "type": "choice",
+     "parents": [
+      "ct-escape"
+     ]
+    },
+    {
+     "id": "ct-stopelev",
+     "title": "Prova a fermare l'ascensore",
+     "en": "Try to Stop Elevator",
+     "type": "choice",
+     "parents": [
+      "ct-escape"
+     ]
+    },
+    {
+     "id": "ct-attack",
+     "title": "Attacca le guardie",
+     "en": "Attack Guards",
+     "type": "choice",
+     "parents": [
+      "ct-escape"
+     ]
+    },
+    {
+     "id": "ct-failneut",
+     "title": "Non riesci a neutralizzare le guardie",
+     "en": "Fail to Neutralize Guards",
+     "type": "choice",
+     "parents": [
+      "ct-attack"
+     ]
+    },
+    {
+     "id": "ct-neut",
+     "title": "Neutralizza le guardie",
+     "en": "Neutralize Guards",
+     "type": "choice",
+     "parents": [
+      "ct-attack"
+     ]
+    },
+    {
+     "id": "ct-hackelev",
+     "title": "Hackera l'ascensore",
+     "en": "Hack Elevator",
+     "type": "choice",
+     "parents": [
+      "ct-neut"
+     ]
+    },
+    {
+     "id": "ct-copyvoice",
+     "title": "Copia la voce della guardia",
+     "en": "Copy Guard's Voice",
+     "type": "choice",
+     "parents": [
+      "ct-hackelev"
+     ]
+    },
+    {
+     "id": "ct-ownvoice",
+     "title": "Usa la voce di Connor",
+     "en": "Use Connor's Voice",
+     "type": "choice",
+     "parents": [
+      "ct-hackelev"
+     ]
+    },
+    {
+     "id": "ct-redirect",
+     "title": "Devia l'ascensore",
+     "en": "Redirect Elevator",
+     "type": "choice",
+     "parents": [
+      "ct-copyvoice",
+      "ct-ownvoice"
+     ]
+    },
+    {
+     "id": "ct-amanda",
+     "title": "Amanda avverte Connor",
+     "en": "Amanda Warns Connor",
+     "type": "choice",
+     "parents": [
+      "ct-level31"
+     ]
+    },
+    {
+     "id": "ct-end-ambushed",
+     "title": "Connor è caduto in un'imboscata ed è stato colpito",
+     "en": "Connor Was Ambushed and Shot",
+     "type": "ending",
+     "parents": [
+      "ct-amanda"
+     ]
+    },
+    {
+     "id": "ct-end-shot1",
+     "title": "Connor è stato colpito dalla sicurezza",
+     "en": "Connor Was Shot by Security",
+     "type": "ending",
+     "parents": [
+      "ct-failneut"
+     ],
+     "note": "Prima variante: nell'ascensore.",
+     "note_en": "First variant: in the elevator."
+    },
+    {
+     "id": "ct-floor49",
+     "title": "Piano -49",
+     "en": "Floor -49",
+     "type": "checkpoint",
+     "parents": [
+      "ct-redirect"
+     ]
+    },
+    {
+     "id": "ct-camhacked",
+     "title": "Telecamera hackerata",
+     "en": "Camera Hacked",
+     "type": "choice",
+     "parents": [
+      "ct-floor49"
+     ],
+     "note": "Se hai hackerato la telecamera nell'ascensore.",
+     "note_en": "If you hacked the camera in the elevator."
+    },
+    {
+     "id": "ct-camok",
+     "title": "Telecamera funzionante",
+     "en": "Camera Functional",
+     "type": "choice",
+     "parents": [
+      "ct-floor49"
+     ]
+    },
+    {
+     "id": "ct-leaveelev",
+     "title": "Esci dall'ascensore",
+     "en": "Leave Elevator",
+     "type": "choice",
+     "parents": [
+      "ct-camhacked"
+     ]
+    },
+    {
+     "id": "ct-await",
+     "title": "Le guardie aspettano Connor",
+     "en": "Guards Await Connor",
+     "type": "choice",
+     "parents": [
+      "ct-camok"
+     ]
+    },
+    {
+     "id": "ct-elim",
+     "title": "Elimina le guardie",
+     "en": "Eliminate Guards",
+     "type": "choice",
+     "parents": [
+      "ct-await"
+     ]
+    },
+    {
+     "id": "ct-failelim",
+     "title": "Non riesci a eliminare le guardie",
+     "en": "Fail to Eliminate Guards",
+     "type": "choice",
+     "parents": [
+      "ct-await"
+     ]
+    },
+    {
+     "id": "ct-end-shot2",
+     "title": "Connor è stato colpito dalla sicurezza",
+     "en": "Connor Was Shot by Security",
+     "type": "ending",
+     "parents": [
+      "ct-failelim"
+     ],
+     "note": "Seconda variante: al piano -49.",
+     "note_en": "Second variant: on floor -49."
+    },
+    {
+     "id": "ct-initiate",
+     "title": "Avvia la conversione degli androidi",
+     "en": "Initiate Android Conversion",
+     "type": "choice",
+     "parents": [
+      "ct-leaveelev",
+      "ct-elim"
+     ]
+    },
+    {
+     "id": "ct-req-suicide",
+     "title": "Hank suicida in «Night of the Soul»",
+     "en": "Hank Committed Suicide in 'Night of the Soul'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "ct-newarrives",
+     "title": "Arriva un nuovo Connor",
+     "en": "A New Connor Arrives",
+     "type": "choice",
+     "parents": [
+      "ct-initiate",
+      "ct-req-suicide"
+     ]
+    },
+    {
+     "id": "ct-newshoots",
+     "title": "Il nuovo Connor spara a Connor",
+     "en": "New Connor Shoots Connor",
+     "type": "choice",
+     "parents": [
+      "ct-newarrives"
+     ]
+    },
+    {
+     "id": "ct-hostage",
+     "title": "Il nuovo Connor tiene Hank in ostaggio",
+     "en": "New Connor Has Hank Hostage",
+     "type": "choice",
+     "parents": [
+      "ct-initiate"
+     ]
+    },
+    {
+     "id": "ct-sacrifice",
+     "title": "Sacrifica Hank e riprendi la conversione",
+     "en": "Sacrifice Hank and Resume Conversion",
+     "type": "choice",
+     "parents": [
+      "ct-hostage"
+     ]
+    },
+    {
+     "id": "ct-killshank",
+     "title": "Il nuovo Connor uccide Hank e danneggia Connor",
+     "en": "New Connor Kills Hank and Damages Connor",
+     "type": "choice",
+     "parents": [
+      "ct-sacrifice"
+     ]
+    },
+    {
+     "id": "ct-approaches",
+     "title": "Il nuovo Connor si avvicina",
+     "en": "New Connor Approaches",
+     "type": "choice",
+     "parents": [
+      "ct-newshoots",
+      "ct-killshank"
+     ]
+    },
+    {
+     "id": "ct-swap",
+     "title": "Scambia la coscienza con il nuovo Connor",
+     "en": "Swap Consciousness With New Connor",
+     "type": "choice",
+     "parents": [
+      "ct-approaches"
+     ]
+    },
+    {
+     "id": "ct-talknew",
+     "title": "Parla con il nuovo Connor",
+     "en": "Talk to New Connor",
+     "type": "choice",
+     "parents": [
+      "ct-approaches"
+     ]
+    },
+    {
+     "id": "ct-stand",
+     "title": "Prova ad alzarti",
+     "en": "Try to Stand",
+     "type": "choice",
+     "parents": [
+      "ct-approaches"
+     ]
+    },
+    {
+     "id": "ct-drawgun1",
+     "title": "Estrai la pistola",
+     "en": "Draw Gun",
+     "type": "choice",
+     "parents": [
+      "ct-approaches"
+     ],
+     "note": "Da terra, col nuovo Connor che si avvicina.",
+     "note_en": "From the ground, as the new Connor approaches."
+    },
+    {
+     "id": "ct-diesold",
+     "title": "Il nuovo Connor muore nel vecchio corpo",
+     "en": "New Connor Dies in the Old Body",
+     "type": "choice",
+     "parents": [
+      "ct-swap"
+     ]
+    },
+    {
+     "id": "ct-newkills1",
+     "title": "Il nuovo Connor uccide Connor",
+     "en": "New Connor Kills Connor",
+     "type": "choice",
+     "parents": [
+      "ct-talknew",
+      "ct-stand"
+     ],
+     "note": "Da terra.",
+     "note_en": "From the ground."
+    },
+    {
+     "id": "ct-killsnew",
+     "title": "Connor uccide il nuovo Connor e muore",
+     "en": "Connor Kills New Connor and Dies",
+     "type": "choice",
+     "parents": [
+      "ct-drawgun1"
+     ]
+    },
+    {
+     "id": "ct-stop",
+     "title": "Interrompi la conversione per salvare Hank",
+     "en": "Stop Conversion to Save Hank",
+     "type": "choice",
+     "parents": [
+      "ct-hostage"
+     ]
+    },
+    {
+     "id": "ct-outoftime",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "ct-stop"
+     ]
+    },
+    {
+     "id": "ct-injures",
+     "title": "Il nuovo Connor ferisce Hank",
+     "en": "New Connor Injures Hank",
+     "type": "choice",
+     "parents": [
+      "ct-outoftime"
+     ]
+    },
+    {
+     "id": "ct-newkills2",
+     "title": "Il nuovo Connor uccide Connor",
+     "en": "New Connor Kills Connor",
+     "type": "choice",
+     "parents": [
+      "ct-injures"
+     ],
+     "note": "Dopo aver ferito Hank.",
+     "note_en": "After injuring Hank."
+    },
+    {
+     "id": "ct-attacknew",
+     "title": "Attacca il nuovo Connor",
+     "en": "Attack New Connor",
+     "type": "choice",
+     "parents": [
+      "ct-stop"
+     ]
+    },
+    {
+     "id": "ct-drawgun2",
+     "title": "Estrai la pistola",
+     "en": "Draw Gun",
+     "type": "choice",
+     "parents": [
+      "ct-stop"
+     ],
+     "note": "Per salvare Hank.",
+     "note_en": "To save Hank."
+    },
+    {
+     "id": "ct-bothshoot",
+     "title": "Entrambi i Connor sparano",
+     "en": "Both Connors Shoot",
+     "type": "choice",
+     "parents": [
+      "ct-drawgun2"
+     ]
+    },
+    {
+     "id": "ct-fight",
+     "title": "I Connor lottano",
+     "en": "Connors Fight",
+     "type": "choice",
+     "parents": [
+      "ct-attacknew",
+      "ct-bothshoot"
+     ]
+    },
+    {
+     "id": "ct-draw",
+     "title": "I Connor si tengono sotto tiro",
+     "en": "Connors Draw",
+     "type": "choice",
+     "parents": [
+      "ct-fight"
+     ]
+    },
+    {
+     "id": "ct-grabs",
+     "title": "Hank prende la pistola",
+     "en": "Hank Grabs Gun",
+     "type": "choice",
+     "parents": [
+      "ct-draw"
+     ]
+    },
+    {
+     "id": "ct-dog",
+     "title": "Hank chiede il nome del suo cane",
+     "en": "Hank Asks About His Dog's Name",
+     "type": "choice",
+     "parents": [
+      "ct-grabs"
+     ]
+    },
+    {
+     "id": "ct-sumo",
+     "title": "Sumo",
+     "en": "Sumo",
+     "type": "choice",
+     "parents": [
+      "ct-dog"
+     ]
+    },
+    {
+     "id": "ct-wrongdog",
+     "title": "Risposta sbagliata",
+     "en": "Wrong Answer",
+     "type": "choice",
+     "parents": [
+      "ct-dog"
+     ],
+     "note": "Sul nome del cane.",
+     "note_en": "About the dog's name."
+    },
+    {
+     "id": "ct-sonname",
+     "title": "Hank chiede il nome di suo figlio",
+     "en": "Hank Asks About His Son's Name",
+     "type": "choice",
+     "parents": [
+      "ct-sumo"
+     ]
+    },
+    {
+     "id": "ct-wrongson",
+     "title": "Risposta sbagliata",
+     "en": "Wrong Answer",
+     "type": "choice",
+     "parents": [
+      "ct-sonname"
+     ],
+     "note": "Sul nome del figlio.",
+     "note_en": "About his son's name."
+    },
+    {
+     "id": "ct-cole",
+     "title": "Cole",
+     "en": "Cole",
+     "type": "choice",
+     "parents": [
+      "ct-sonname"
+     ]
+    },
+    {
+     "id": "ct-hankkills",
+     "title": "Hank uccide Connor",
+     "en": "Hank Kills Connor",
+     "type": "choice",
+     "parents": [
+      "ct-wrongson"
+     ]
+    },
+    {
+     "id": "ct-hankkillsnew",
+     "title": "Hank uccide il nuovo Connor",
+     "en": "Hank Kills New Connor",
+     "type": "choice",
+     "parents": [
+      "ct-cole"
+     ]
+    },
+    {
+     "id": "ct-resume",
+     "title": "Riprendi la conversione",
+     "en": "Resume Conversion",
+     "type": "choice",
+     "parents": [
+      "ct-hankkillsnew"
+     ]
+    },
+    {
+     "id": "ct-end-woke1",
+     "title": "Gli androidi si sono risvegliati",
+     "en": "The Androids Woke Up",
+     "type": "ending",
+     "parents": [
+      "ct-diesold"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Prima variante: scambio di coscienza.",
+     "note_en": "Key event (highlighted in yellow in the game). First variant: consciousness swap."
+    },
+    {
+     "id": "ct-end-dormant1",
+     "title": "Gli androidi sono rimasti dormienti",
+     "en": "The Androids Remained Dormant",
+     "type": "ending",
+     "parents": [
+      "ct-newkills1",
+      "ct-newkills2"
+     ],
+     "note": "Prima variante: il nuovo Connor uccide Connor.",
+     "note_en": "First variant: the new Connor kills Connor."
+    },
+    {
+     "id": "ct-end-woke2",
+     "title": "Gli androidi si sono risvegliati",
+     "en": "The Androids Woke Up",
+     "type": "ending",
+     "parents": [
+      "ct-killsnew"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Seconda variante: Connor uccide il nuovo Connor.",
+     "note_en": "Key event (highlighted in yellow in the game). Second variant: Connor kills the new Connor."
+    },
+    {
+     "id": "ct-end-dormant2",
+     "title": "Gli androidi sono rimasti dormienti",
+     "en": "The Androids Remained Dormant",
+     "type": "ending",
+     "parents": [
+      "ct-hankkills",
+      "ct-wrongdog"
+     ],
+     "note": "Seconda variante: domande di Hank.",
+     "note_en": "Second variant: Hank's questions."
+    },
+    {
+     "id": "ct-end-woke3",
+     "title": "Gli androidi si sono risvegliati",
+     "en": "The Androids Woke Up",
+     "type": "ending",
+     "parents": [
+      "ct-resume"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Terza variante: Hank uccide il nuovo Connor.",
+     "note_en": "Key event (highlighted in yellow in the game). Third variant: Hank kills the new Connor."
+    }
+   ]
+  },
+  {
+   "name": "Battle for Detroit - Kara Leaving Detroit",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "kl-street",
+     "title": "Una strada di Detroit",
+     "en": "A Detroit Street",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "kl-hanged",
+     "title": "Guarda l'androide impiccato",
+     "en": "See Hanged Android",
+     "type": "choice",
+     "parents": [
+      "kl-street"
+     ],
+     "note": "Collegamento da verificare: nel diagramma parte da un'icona separata, senza linea dal nodo precedente.",
+     "note_en": "Link to be verified: in the flowchart it starts from a separate icon, with no line from the previous node."
+    },
+    {
+     "id": "kl-broadcast",
+     "title": "Guarda il notiziario sull'attacco a Jericho",
+     "en": "Watch Broadcast About Jericho's Attack",
+     "type": "choice",
+     "parents": [
+      "kl-street"
+     ],
+     "note": "Collegamento da verificare: nel diagramma parte da un'icona separata, senza linea dal nodo precedente.",
+     "note_en": "Link to be verified: in the flowchart it starts from a separate icon, with no line from the previous node."
+    },
+    {
+     "id": "kl-luthergun",
+     "title": "Luther trova una pistola",
+     "en": "Luther Finds a Gun",
+     "type": "choice",
+     "parents": [
+      "kl-street"
+     ]
+    },
+    {
+     "id": "kl-findgun",
+     "title": "Trova una pistola",
+     "en": "Find a Gun",
+     "type": "choice",
+     "parents": [
+      "kl-street"
+     ]
+    },
+    {
+     "id": "kl-hide",
+     "title": "Nasconditi dai militari",
+     "en": "Hide From Military",
+     "type": "choice",
+     "parents": [
+      "kl-luthergun",
+      "kl-findgun"
+     ]
+    },
+    {
+     "id": "kl-sneak",
+     "title": "Supera i soldati di nascosto",
+     "en": "Sneak Past Soldiers",
+     "type": "choice",
+     "parents": [
+      "kl-hide"
+     ]
+    },
+    {
+     "id": "kl-req-luther",
+     "title": "Luther salvato in «Crossroads»",
+     "en": "Luther Saved in 'Crossroads'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kl-findjerrys",
+     "title": "Trova i Jerry",
+     "en": "Find Jerrys",
+     "type": "choice",
+     "parents": [
+      "kl-sneak"
+     ]
+    },
+    {
+     "id": "kl-findlj",
+     "title": "Trova Luther e Jerry",
+     "en": "Find Luther & Jerry",
+     "type": "choice",
+     "parents": [
+      "kl-sneak",
+      "kl-req-luther"
+     ]
+    },
+    {
+     "id": "kl-spotted",
+     "title": "Avvistata dai soldati",
+     "en": "Spotted by Soldiers",
+     "type": "choice",
+     "parents": [
+      "kl-hide"
+     ],
+     "note": "Collegamento da verificare: nel diagramma parte da un'icona separata, senza linea dal nodo precedente. Collegata a «Nasconditi dai militari» per posizione.",
+     "note_en": "Link to be verified: in the flowchart it starts from a separate icon, with no line from the previous node. Linked to “Hide From Military” based on its position."
+    },
+    {
+     "id": "kl-arrested2",
+     "title": "Kara e Alice arrestate",
+     "en": "Kara & Alice Arrested",
+     "type": "choice",
+     "parents": [
+      "kl-spotted"
+     ]
+    },
+    {
+     "id": "kl-arrested3",
+     "title": "Kara, Alice e Luther arrestati",
+     "en": "Kara, Alice & Luther Arrested",
+     "type": "choice",
+     "parents": [
+      "kl-spotted"
+     ]
+    },
+    {
+     "id": "kl-seecaptured",
+     "title": "Vedi il diagramma «Kara Captured»",
+     "en": "See: Kara Captured Flowchart",
+     "type": "choice",
+     "parents": [
+      "kl-arrested2",
+      "kl-arrested3"
+     ],
+     "note": "Rimanda alla sezione «Battle for Detroit - Kara Captured» (icona gialla nel gioco).",
+     "note_en": "Points to the “Battle for Detroit - Kara Captured” section (yellow icon in the game)."
+    },
+    {
+     "id": "kl-savejerrys",
+     "title": "Salva i Jerry",
+     "en": "Save Jerrys",
+     "type": "choice",
+     "parents": [
+      "kl-findjerrys",
+      "kl-findlj"
+     ]
+    },
+    {
+     "id": "kl-saveluther",
+     "title": "Salva Luther",
+     "en": "Save Luther",
+     "type": "choice",
+     "parents": [
+      "kl-findjerrys",
+      "kl-findlj"
+     ]
+    },
+    {
+     "id": "kl-hurry",
+     "title": "Sbrigati",
+     "en": "Hurry",
+     "type": "choice",
+     "parents": [
+      "kl-findjerrys",
+      "kl-findlj"
+     ]
+    },
+    {
+     "id": "kl-grabrock",
+     "title": "Afferra una pietra",
+     "en": "Grab Rock",
+     "type": "choice",
+     "parents": [
+      "kl-savejerrys",
+      "kl-saveluther"
+     ],
+     "note": "Collegamento da verificare: la linea parte dalla parte alta del gruppo; attribuita a «Salva i Jerry» e «Salva Luther».",
+     "note_en": "Link to be verified: the line leaves the top of the group; attributed to “Save Jerrys” and “Save Luther”."
+    },
+    {
+     "id": "kl-hitrock",
+     "title": "Colpisci il soldato con la pietra",
+     "en": "Hit Soldier With Rock",
+     "type": "choice",
+     "parents": [
+      "kl-grabrock"
+     ]
+    },
+    {
+     "id": "kl-jerrysflee",
+     "title": "I Jerry fuggono",
+     "en": "Jerrys Flee",
+     "type": "choice",
+     "parents": [
+      "kl-hitrock"
+     ]
+    },
+    {
+     "id": "kl-lutherjoins",
+     "title": "Jerry fugge e Luther si unisce al gruppo",
+     "en": "Jerry Flees and Luther Joins the Group",
+     "type": "choice",
+     "parents": [
+      "kl-hitrock"
+     ]
+    },
+    {
+     "id": "kl-continue",
+     "title": "Prosegui verso la stazione degli autobus",
+     "en": "Continue to Bus Terminal",
+     "type": "choice",
+     "parents": [
+      "kl-hurry",
+      "kl-hitrock"
+     ]
+    },
+    {
+     "id": "kl-security",
+     "title": "Posto di blocco",
+     "en": "Security Checkpoint",
+     "type": "checkpoint",
+     "parents": [
+      "kl-continue"
+     ]
+    },
+    {
+     "id": "kl-approach",
+     "title": "Avvicinati al posto di blocco",
+     "en": "Approach Checkpoint",
+     "type": "choice",
+     "parents": [
+      "kl-security"
+     ]
+    },
+    {
+     "id": "kl-detour",
+     "title": "Prendi una deviazione",
+     "en": "Take Detour",
+     "type": "choice",
+     "parents": [
+      "kl-security"
+     ]
+    },
+    {
+     "id": "kl-handid1",
+     "title": "Consegna il documento",
+     "en": "Hand Over ID",
+     "type": "choice",
+     "parents": [
+      "kl-approach"
+     ],
+     "note": "Al posto di blocco.",
+     "note_en": "At the security checkpoint."
+    },
+    {
+     "id": "kl-talkguard",
+     "title": "Parla con la guardia",
+     "en": "Talk to Guard",
+     "type": "choice",
+     "parents": [
+      "kl-handid1"
+     ]
+    },
+    {
+     "id": "kl-callsout",
+     "title": "La guardia chiama Kara",
+     "en": "Guard Calls Out to Kara",
+     "type": "choice",
+     "parents": [
+      "kl-talkguard"
+     ]
+    },
+    {
+     "id": "kl-nervous",
+     "title": "Luther è nervoso",
+     "en": "Luther Is Nervous",
+     "type": "choice",
+     "parents": [
+      "kl-talkguard"
+     ]
+    },
+    {
+     "id": "kl-dontshoot",
+     "title": "Non sparare",
+     "en": "Don't Shoot",
+     "type": "choice",
+     "parents": [
+      "kl-callsout"
+     ]
+    },
+    {
+     "id": "kl-shoot",
+     "title": "Spara",
+     "en": "Shoot",
+     "type": "choice",
+     "parents": [
+      "kl-callsout"
+     ]
+    },
+    {
+     "id": "kl-glove1",
+     "title": "La guardia restituisce il guanto di Alice",
+     "en": "Guard Returns Alice's Glove",
+     "type": "choice",
+     "parents": [
+      "kl-dontshoot"
+     ],
+     "note": "Prima variante: dopo «Non sparare».",
+     "note_en": "First variant: after “Don't Shoot”."
+    },
+    {
+     "id": "kl-shootsguards",
+     "title": "Spari alle guardie",
+     "en": "Shoots Guards",
+     "type": "choice",
+     "parents": [
+      "kl-shoot"
+     ]
+    },
+    {
+     "id": "kl-askshoot1",
+     "title": "Chiedi a Luther di sparare",
+     "en": "Ask Luther to Shoot",
+     "type": "choice",
+     "parents": [
+      "kl-nervous"
+     ],
+     "note": "Quando Luther è nervoso.",
+     "note_en": "When Luther is nervous."
+    },
+    {
+     "id": "kl-askcalm1",
+     "title": "Chiedi a Luther di stare calmo",
+     "en": "Ask Luther to Stay Calm",
+     "type": "choice",
+     "parents": [
+      "kl-nervous"
+     ],
+     "note": "Quando Luther è nervoso.",
+     "note_en": "When Luther is nervous."
+    },
+    {
+     "id": "kl-approaches",
+     "title": "La guardia si avvicina",
+     "en": "Guard Approaches",
+     "type": "choice",
+     "parents": [
+      "kl-askcalm1"
+     ]
+    },
+    {
+     "id": "kl-askshoot2",
+     "title": "Chiedi a Luther di sparare",
+     "en": "Ask Luther to Shoot",
+     "type": "choice",
+     "parents": [
+      "kl-approaches"
+     ],
+     "note": "Quando la guardia si avvicina.",
+     "note_en": "When the guard approaches."
+    },
+    {
+     "id": "kl-askcalm2",
+     "title": "Chiedi a Luther di stare calmo",
+     "en": "Ask Luther to Stay Calm",
+     "type": "choice",
+     "parents": [
+      "kl-approaches"
+     ],
+     "note": "Quando la guardia si avvicina.",
+     "note_en": "When the guard approaches."
+    },
+    {
+     "id": "kl-luthershoots",
+     "title": "Luther spara alle guardie",
+     "en": "Luther Shoots Guards",
+     "type": "choice",
+     "parents": [
+      "kl-askshoot1",
+      "kl-askshoot2"
+     ]
+    },
+    {
+     "id": "kl-glove2",
+     "title": "La guardia restituisce il guanto di Alice",
+     "en": "Guard Returns Alice's Glove",
+     "type": "choice",
+     "parents": [
+      "kl-askcalm2"
+     ],
+     "note": "Seconda variante: Luther resta calmo.",
+     "note_en": "Second variant: Luther stays calm."
+    },
+    {
+     "id": "kl-findsglove",
+     "title": "Alice trova il suo guanto",
+     "en": "Alice Finds Her Glove",
+     "type": "choice",
+     "parents": [
+      "kl-shootsguards",
+      "kl-luthershoots"
+     ]
+    },
+    {
+     "id": "kl-delayed",
+     "title": "In ritardo",
+     "en": "Delayed",
+     "type": "choice",
+     "parents": [
+      "kl-detour"
+     ]
+    },
+    {
+     "id": "kl-terminal",
+     "title": "Alla stazione degli autobus",
+     "en": "At the Bus Terminal",
+     "type": "checkpoint",
+     "parents": [
+      "kl-glove1",
+      "kl-glove2",
+      "kl-findsglove"
+     ]
+    },
+    {
+     "id": "kl-late",
+     "title": "In ritardo per l'autobus",
+     "en": "Late for the Bus",
+     "type": "checkpoint",
+     "parents": [
+      "kl-delayed",
+      "kl-findsglove"
+     ],
+     "note": "Collegamento da verificare: oltre a «In ritardo», una linea parte dal punto in cui convergono i rami verso «At the Bus Terminal»; attribuita ad «Alice trova il suo guanto».",
+     "note_en": "Link to be verified: besides “Delayed”, a line starts where the branches towards “At the Bus Terminal” meet; attributed to “Alice Finds Her Glove”."
+    },
+    {
+     "id": "kl-lastbus",
+     "title": "Parte l'ultimo autobus",
+     "en": "Last Bus Departs",
+     "type": "choice",
+     "parents": [
+      "kl-late"
+     ]
+    },
+    {
+     "id": "kl-border",
+     "title": "Trova un modo per arrivare al confine",
+     "en": "Find a Way to the Border",
+     "type": "objective",
+     "parents": [
+      "kl-terminal",
+      "kl-lastbus"
+     ]
+    },
+    {
+     "id": "kl-watchtv",
+     "title": "Guarda la TV",
+     "en": "Watch TV",
+     "type": "choice",
+     "parents": [
+      "kl-border"
+     ]
+    },
+    {
+     "id": "kl-markusattacks",
+     "title": "Markus attacca gli umani",
+     "en": "Markus Attacks Humans",
+     "type": "choice",
+     "parents": [
+      "kl-watchtv"
+     ]
+    },
+    {
+     "id": "kl-markusprotest",
+     "title": "Markus guida la protesta",
+     "en": "Markus Leads Protest",
+     "type": "choice",
+     "parents": [
+      "kl-watchtv"
+     ]
+    },
+    {
+     "id": "kl-civilwar",
+     "title": "Leggi «Civil War»",
+     "en": "Read \"Civil War\"",
+     "type": "choice",
+     "parents": [
+      "kl-border"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "kl-mother",
+     "title": "Alice incontra una madre",
+     "en": "Alice Meets a Mother",
+     "type": "choice",
+     "parents": [
+      "kl-border"
+     ]
+    },
+    {
+     "id": "kl-tickets",
+     "title": "I genitori perdono i biglietti dell'autobus",
+     "en": "Parents Drop Bus Tickets",
+     "type": "choice",
+     "parents": [
+      "kl-mother"
+     ]
+    },
+    {
+     "id": "kl-steal",
+     "title": "Ruba i biglietti",
+     "en": "Steal Tickets",
+     "type": "choice",
+     "parents": [
+      "kl-tickets"
+     ]
+    },
+    {
+     "id": "kl-return",
+     "title": "Restituisci i biglietti",
+     "en": "Return Tickets",
+     "type": "choice",
+     "parents": [
+      "kl-tickets"
+     ]
+    },
+    {
+     "id": "kl-seccheck",
+     "title": "Controllo di sicurezza",
+     "en": "Security Check",
+     "type": "choice",
+     "parents": [
+      "kl-border"
+     ]
+    },
+    {
+     "id": "kl-flee",
+     "title": "Scappa",
+     "en": "Flee",
+     "type": "choice",
+     "parents": [
+      "kl-seccheck"
+     ]
+    },
+    {
+     "id": "kl-handid2",
+     "title": "Consegna il documento",
+     "en": "Hand Over ID",
+     "type": "choice",
+     "parents": [
+      "kl-seccheck"
+     ],
+     "note": "Al controllo di sicurezza nella stazione.",
+     "note_en": "At the security check in the bus terminal."
+    },
+    {
+     "id": "kl-askdiv",
+     "title": "Chiedi a Luther di creare un diversivo",
+     "en": "Ask Luther to Create Diversion",
+     "type": "choice",
+     "parents": [
+      "kl-seccheck"
+     ]
+    },
+    {
+     "id": "kl-meettodd",
+     "title": "Incontra Todd",
+     "en": "Meet Todd",
+     "type": "choice",
+     "parents": [
+      "kl-border"
+     ]
+    },
+    {
+     "id": "kl-persuade",
+     "title": "Convinci Todd",
+     "en": "Persuade Todd",
+     "type": "choice",
+     "parents": [
+      "kl-meettodd"
+     ]
+    },
+    {
+     "id": "kl-failpersuade",
+     "title": "Non riesci a convincere Todd",
+     "en": "Fail to Persuade Todd",
+     "type": "choice",
+     "parents": [
+      "kl-meettodd"
+     ]
+    },
+    {
+     "id": "kl-toddsends",
+     "title": "Todd manda via i soldati",
+     "en": "Todd Sends Soldiers Away",
+     "type": "choice",
+     "parents": [
+      "kl-persuade"
+     ]
+    },
+    {
+     "id": "kl-goodbye",
+     "title": "Alice saluta Todd",
+     "en": "Alice Says Goodbye to Todd",
+     "type": "choice",
+     "parents": [
+      "kl-toddsends"
+     ]
+    },
+    {
+     "id": "kl-soldiersarrive",
+     "title": "Arrivano i soldati per un controllo",
+     "en": "Soldiers Arrive for Security Check",
+     "type": "choice",
+     "parents": [
+      "kl-failpersuade"
+     ]
+    },
+    {
+     "id": "kl-lutherdiv",
+     "title": "Luther crea un diversivo",
+     "en": "Luther Creates a Diversion",
+     "type": "choice",
+     "parents": [
+      "kl-soldiersarrive"
+     ]
+    },
+    {
+     "id": "kl-tvs",
+     "title": "Guarda i televisori della stazione",
+     "en": "Watch Terminal TVs",
+     "type": "choice",
+     "parents": [
+      "kl-border"
+     ]
+    },
+    {
+     "id": "kl-findadam",
+     "title": "Trova Adam",
+     "en": "Find Adam",
+     "type": "choice",
+     "parents": [
+      "kl-border"
+     ]
+    },
+    {
+     "id": "kl-adamcalls",
+     "title": "Adam chiama Kara",
+     "en": "Adam Calls Out to Kara",
+     "type": "choice",
+     "parents": [
+      "kl-askdiv",
+      "kl-lutherdiv"
+     ],
+     "note": "Collegamento da verificare: una linea arriva dal gruppo «Scappa / Consegna il documento / Chiedi a Luther…» senza indicare la scelta; attribuita a «Chiedi a Luther di creare un diversivo».",
+     "note_en": "Link to be verified: a line arrives from the “Flee / Hand Over ID / Ask Luther…” group without showing which choice; attributed to “Ask Luther to Create Diversion”."
+    },
+    {
+     "id": "kl-board",
+     "title": "Sali sull'autobus",
+     "en": "Board the Bus",
+     "type": "choice",
+     "parents": [
+      "kl-steal",
+      "kl-return"
+     ]
+    },
+    {
+     "id": "kl-end-execkal",
+     "title": "I soldati hanno giustiziato Kara, Alice e Luther",
+     "en": "Soldiers Executed Kara, Alice & Luther",
+     "type": "ending",
+     "parents": [
+      "kl-flee",
+      "kl-handid2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Collegamento da verificare: la linea parte dal gruppo del controllo di sicurezza e passa per un'icona di bivio; attribuita a «Scappa» e «Consegna il documento».",
+     "note_en": "Key event (highlighted in yellow in the game). Link to be verified: the line leaves the security check group and passes through a branch icon; attributed to “Flee” and “Hand Over ID”."
+    },
+    {
+     "id": "kl-end-execka",
+     "title": "I soldati hanno giustiziato Kara e Alice",
+     "en": "Soldiers Executed Kara & Alice",
+     "type": "ending",
+     "parents": [
+      "kl-flee",
+      "kl-handid2",
+      "kl-soldiersarrive"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Stessa icona di bivio dell'esito con Luther.",
+     "note_en": "Key event (highlighted in yellow in the game). Same branch icon as the outcome with Luther."
+    },
+    {
+     "id": "kl-rosecar",
+     "title": "Sali nell'auto di Rose",
+     "en": "Get in Rose's Car",
+     "type": "choice",
+     "parents": [
+      "kl-findadam",
+      "kl-adamcalls"
+     ]
+    },
+    {
+     "id": "kl-canborder",
+     "title": "Confine canadese",
+     "en": "Canadian Border",
+     "type": "checkpoint",
+     "parents": [
+      "kl-board"
+     ]
+    },
+    {
+     "id": "kl-agents",
+     "title": "Gli agenti di frontiera misurano la temperatura",
+     "en": "Border Agents Check Temperature",
+     "type": "choice",
+     "parents": [
+      "kl-canborder"
+     ]
+    },
+    {
+     "id": "kl-avoid",
+     "title": "Evita il controllo della temperatura",
+     "en": "Avoid Temperature Check",
+     "type": "objective",
+     "parents": [
+      "kl-agents"
+     ]
+    },
+    {
+     "id": "kl-news",
+     "title": "Guarda il notiziario",
+     "en": "See News Bulletin",
+     "type": "choice",
+     "parents": [
+      "kl-avoid"
+     ]
+    },
+    {
+     "id": "kl-charging",
+     "title": "Androidi alla carica del campo",
+     "en": "Androids Charging the Camp",
+     "type": "choice",
+     "parents": [
+      "kl-news"
+     ]
+    },
+    {
+     "id": "kl-demonstr",
+     "title": "Androidi che manifestano",
+     "en": "Androids Demonstrating",
+     "type": "choice",
+     "parents": [
+      "kl-news"
+     ]
+    },
+    {
+     "id": "kl-controldesk",
+     "title": "Esamina la postazione di controllo",
+     "en": "Check Control Desk",
+     "type": "choice",
+     "parents": [
+      "kl-avoid"
+     ]
+    },
+    {
+     "id": "kl-infoboard",
+     "title": "Esamina il tabellone informativo",
+     "en": "Check Information Board",
+     "type": "choice",
+     "parents": [
+      "kl-avoid"
+     ]
+    },
+    {
+     "id": "kl-executed",
+     "title": "Un androide viene giustiziato",
+     "en": "Android Is Executed",
+     "type": "choice",
+     "parents": [
+      "kl-avoid"
+     ]
+    },
+    {
+     "id": "kl-seerose",
+     "title": "Nota Rose e Adam",
+     "en": "See Rose & Adam",
+     "type": "choice",
+     "parents": [
+      "kl-avoid"
+     ]
+    },
+    {
+     "id": "kl-reachrose",
+     "title": "Raggiungi Rose",
+     "en": "Reach Rose",
+     "type": "choice",
+     "parents": [
+      "kl-seerose"
+     ]
+    },
+    {
+     "id": "kl-seerestroom",
+     "title": "Nota i bagni",
+     "en": "See Restroom",
+     "type": "choice",
+     "parents": [
+      "kl-reachrose"
+     ]
+    },
+    {
+     "id": "kl-gorestroom",
+     "title": "Vai in bagno",
+     "en": "Go to Restroom",
+     "type": "choice",
+     "parents": [
+      "kl-seerestroom"
+     ]
+    },
+    {
+     "id": "kl-talkrose1",
+     "title": "Parla con Rose",
+     "en": "Talk to Rose",
+     "type": "choice",
+     "parents": [
+      "kl-seerestroom",
+      "kl-gorestroom"
+     ],
+     "note": "Al confine canadese.",
+     "note_en": "At the Canadian border."
+    },
+    {
+     "id": "kl-talkadam1",
+     "title": "Parla con Adam",
+     "en": "Talk to Adam",
+     "type": "choice",
+     "parents": [
+      "kl-talkrose1"
+     ],
+     "note": "Al confine canadese.",
+     "note_en": "At the Canadian border."
+    },
+    {
+     "id": "kl-talkluther",
+     "title": "Parla con Luther",
+     "en": "Talk to Luther",
+     "type": "choice",
+     "parents": [
+      "kl-avoid"
+     ]
+    },
+    {
+     "id": "kl-talkjerry",
+     "title": "Parla con Jerry",
+     "en": "Talk to Jerry",
+     "type": "choice",
+     "parents": [
+      "kl-avoid"
+     ]
+    },
+    {
+     "id": "kl-backline",
+     "title": "Torna in fila",
+     "en": "Get Back in Line",
+     "type": "choice",
+     "parents": [
+      "kl-talkrose1",
+      "kl-talkadam1"
+     ]
+    },
+    {
+     "id": "kl-desk",
+     "title": "Al banco della frontiera",
+     "en": "At Border Desk",
+     "type": "choice",
+     "parents": [
+      "kl-avoid",
+      "kl-backline"
+     ]
+    },
+    {
+     "id": "kl-choose",
+     "title": "Scegli come procedere",
+     "en": "Choose Approach",
+     "type": "choice",
+     "parents": [
+      "kl-desk"
+     ]
+    },
+    {
+     "id": "kl-sacnone",
+     "title": "Non sacrificare nessuno",
+     "en": "Sacrifice No One",
+     "type": "choice",
+     "parents": [
+      "kl-choose"
+     ]
+    },
+    {
+     "id": "kl-sacjerry",
+     "title": "Sacrifica Jerry",
+     "en": "Sacrifice Jerry",
+     "type": "choice",
+     "parents": [
+      "kl-choose"
+     ]
+    },
+    {
+     "id": "kl-sacluther",
+     "title": "Sacrifica Luther",
+     "en": "Sacrifice Luther",
+     "type": "choice",
+     "parents": [
+      "kl-choose"
+     ]
+    },
+    {
+     "id": "kl-sackara",
+     "title": "Sacrifica Kara",
+     "en": "Sacrifice Kara",
+     "type": "choice",
+     "parents": [
+      "kl-choose"
+     ]
+    },
+    {
+     "id": "kl-guardattack",
+     "title": "La guardia vede Markus attaccare il campo",
+     "en": "Guard Sees Markus Attacking the Camp",
+     "type": "choice",
+     "parents": [
+      "kl-sacnone"
+     ]
+    },
+    {
+     "id": "kl-guardprotest",
+     "title": "La guardia vede Markus protestare",
+     "en": "Guard Sees Markus Protesting",
+     "type": "choice",
+     "parents": [
+      "kl-sacnone"
+     ]
+    },
+    {
+     "id": "kl-letpass",
+     "title": "La guardia li lascia passare",
+     "en": "Guard Lets Them Pass",
+     "type": "choice",
+     "parents": [
+      "kl-guardprotest"
+     ]
+    },
+    {
+     "id": "kl-jerrysac",
+     "title": "Jerry si sacrifica per creare un diversivo",
+     "en": "Jerry Sacrifices Himself to Create Diversion",
+     "type": "choice",
+     "parents": [
+      "kl-sacjerry"
+     ]
+    },
+    {
+     "id": "kl-luthersac",
+     "title": "Luther si sacrifica per creare un diversivo",
+     "en": "Luther Sacrifices Himself to Create Diversion",
+     "type": "choice",
+     "parents": [
+      "kl-sacluther"
+     ]
+    },
+    {
+     "id": "kl-luthergets",
+     "title": "Luther passa con Alice",
+     "en": "Luther Gets Through With Alice",
+     "type": "choice",
+     "parents": [
+      "kl-sackara"
+     ]
+    },
+    {
+     "id": "kl-rose",
+     "title": "Rose prende con sé Alice",
+     "en": "Rose Collects Alice",
+     "type": "choice",
+     "parents": [
+      "kl-sackara"
+     ]
+    },
+    {
+     "id": "kl-end-arrested",
+     "title": "Sono stati tutti arrestati e uccisi",
+     "en": "Everyone Was Arrested and Killed",
+     "type": "ending",
+     "parents": [
+      "kl-guardattack"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kl-end-group",
+     "title": "Il gruppo ha attraversato il confine",
+     "en": "The Group Crossed the Border",
+     "type": "ending",
+     "parents": [
+      "kl-letpass",
+      "kl-jerrysac"
+     ]
+    },
+    {
+     "id": "kl-end-ka",
+     "title": "Kara e Alice hanno attraversato il confine",
+     "en": "Kara & Alice Crossed the Border",
+     "type": "ending",
+     "parents": [
+      "kl-letpass",
+      "kl-jerrysac",
+      "kl-luthersac"
+     ]
+    },
+    {
+     "id": "kl-end-aliceluther",
+     "title": "Alice è arrivata in Canada con Luther",
+     "en": "Alice Got to Canada With Luther",
+     "type": "ending",
+     "parents": [
+      "kl-luthergets"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kl-end-alicerose",
+     "title": "Alice è arrivata in Canada con Rose",
+     "en": "Alice Got to Canada With Rose",
+     "type": "ending",
+     "parents": [
+      "kl-rose"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kl-river",
+     "title": "Al fiume",
+     "en": "At the River",
+     "type": "checkpoint",
+     "parents": [
+      "kl-rosecar"
+     ]
+    },
+    {
+     "id": "kl-outcar",
+     "title": "Scendi dall'auto di Rose",
+     "en": "Get Out of Rose's Car",
+     "type": "choice",
+     "parents": [
+      "kl-river"
+     ]
+    },
+    {
+     "id": "kl-riverbank",
+     "title": "Sulla riva del fiume a Detroit",
+     "en": "Detroit Riverbank",
+     "type": "objective",
+     "parents": [
+      "kl-outcar"
+     ]
+    },
+    {
+     "id": "kl-rivertemp",
+     "title": "Controlla la temperatura del fiume",
+     "en": "Check River Temperature",
+     "type": "choice",
+     "parents": [
+      "kl-riverbank"
+     ]
+    },
+    {
+     "id": "kl-skyline",
+     "title": "Osserva lo skyline canadese",
+     "en": "Observe Canadian Skyline",
+     "type": "choice",
+     "parents": [
+      "kl-riverbank"
+     ]
+    },
+    {
+     "id": "kl-talkadam2",
+     "title": "Parla con Adam",
+     "en": "Talk to Adam",
+     "type": "choice",
+     "parents": [
+      "kl-riverbank"
+     ],
+     "note": "Sulla riva del fiume.",
+     "note_en": "On the riverbank."
+    },
+    {
+     "id": "kl-talkrose2",
+     "title": "Parla con Rose",
+     "en": "Talk to Rose",
+     "type": "choice",
+     "parents": [
+      "kl-riverbank"
+     ],
+     "note": "Sulla riva del fiume.",
+     "note_en": "On the riverbank."
+    },
+    {
+     "id": "kl-push",
+     "title": "Spingi la barca",
+     "en": "Push the Boat",
+     "type": "choice",
+     "parents": [
+      "kl-talkrose2"
+     ]
+    },
+    {
+     "id": "kl-talkalice",
+     "title": "Parla con Alice",
+     "en": "Talk to Alice",
+     "type": "choice",
+     "parents": [
+      "kl-push"
+     ]
+    },
+    {
+     "id": "kl-coastguard",
+     "title": "Arriva la guardia costiera",
+     "en": "Coastguard Appears",
+     "type": "choice",
+     "parents": [
+      "kl-push"
+     ]
+    },
+    {
+     "id": "kl-hidec",
+     "title": "Nasconditi",
+     "en": "Hide",
+     "type": "choice",
+     "parents": [
+      "kl-coastguard"
+     ]
+    },
+    {
+     "id": "kl-accel",
+     "title": "Accelera",
+     "en": "Accelerate",
+     "type": "choice",
+     "parents": [
+      "kl-coastguard"
+     ]
+    },
+    {
+     "id": "kl-hideluther",
+     "title": "Nasconditi dietro Luther",
+     "en": "Hide Behind Luther",
+     "type": "choice",
+     "parents": [
+      "kl-coastguard"
+     ]
+    },
+    {
+     "id": "kl-dive1",
+     "title": "Tuffati",
+     "en": "Dive",
+     "type": "choice",
+     "parents": [
+      "kl-coastguard"
+     ],
+     "note": "Quando arriva la guardia costiera.",
+     "note_en": "When the coastguard appears."
+    },
+    {
+     "id": "kl-protect",
+     "title": "Proteggi Alice",
+     "en": "Protect Alice",
+     "type": "choice",
+     "parents": [
+      "kl-coastguard"
+     ]
+    },
+    {
+     "id": "kl-surrender",
+     "title": "Arrenditi",
+     "en": "Surrender",
+     "type": "choice",
+     "parents": [
+      "kl-coastguard"
+     ]
+    },
+    {
+     "id": "kl-end-groupdied",
+     "title": "Il gruppo è morto",
+     "en": "The Group Died",
+     "type": "ending",
+     "parents": [
+      "kl-surrender"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kl-opensfire",
+     "title": "La guardia costiera apre il fuoco",
+     "en": "Coastguard Opens Fire",
+     "type": "choice",
+     "parents": [
+      "kl-hidec",
+      "kl-accel",
+      "kl-hideluther",
+      "kl-dive1",
+      "kl-protect"
+     ]
+    },
+    {
+     "id": "kl-aliceinj",
+     "title": "Alice è ferita",
+     "en": "Alice Is Injured",
+     "type": "choice",
+     "parents": [
+      "kl-opensfire"
+     ]
+    },
+    {
+     "id": "kl-karainj",
+     "title": "Kara è ferita",
+     "en": "Kara Is Injured",
+     "type": "choice",
+     "parents": [
+      "kl-opensfire"
+     ]
+    },
+    {
+     "id": "kl-lutherdied",
+     "title": "Luther è morto",
+     "en": "Luther Died",
+     "type": "choice",
+     "parents": [
+      "kl-opensfire"
+     ]
+    },
+    {
+     "id": "kl-sinking",
+     "title": "La barca affonda",
+     "en": "Boat Sinking",
+     "type": "objective",
+     "parents": [
+      "kl-opensfire"
+     ]
+    },
+    {
+     "id": "kl-castluther",
+     "title": "Abbandona Luther",
+     "en": "Cast Luther Away",
+     "type": "choice",
+     "parents": [
+      "kl-sinking"
+     ]
+    },
+    {
+     "id": "kl-supplies",
+     "title": "Getta le provviste",
+     "en": "Dispose of Supplies",
+     "type": "choice",
+     "parents": [
+      "kl-sinking"
+     ]
+    },
+    {
+     "id": "kl-row",
+     "title": "Rema",
+     "en": "Row",
+     "type": "choice",
+     "parents": [
+      "kl-sinking"
+     ]
+    },
+    {
+     "id": "kl-reassure",
+     "title": "Rassicura Alice",
+     "en": "Reassure Alice",
+     "type": "choice",
+     "parents": [
+      "kl-sinking"
+     ]
+    },
+    {
+     "id": "kl-lightened",
+     "title": "La barca è più leggera",
+     "en": "Boat Lightened",
+     "type": "choice",
+     "parents": [
+      "kl-sinking"
+     ]
+    },
+    {
+     "id": "kl-engine",
+     "title": "Getta il motore",
+     "en": "Dispose of Engine",
+     "type": "choice",
+     "parents": [
+      "kl-sinking"
+     ]
+    },
+    {
+     "id": "kl-dive2",
+     "title": "Tuffati",
+     "en": "Dive",
+     "type": "choice",
+     "parents": [
+      "kl-lightened",
+      "kl-engine"
+     ],
+     "note": "Con la barca che affonda.",
+     "note_en": "With the boat sinking."
+    },
+    {
+     "id": "kl-reachboat",
+     "title": "Raggiungi il Canada in barca",
+     "en": "Reach Canada on Boat",
+     "type": "choice",
+     "parents": [
+      "kl-dive2"
+     ]
+    },
+    {
+     "id": "kl-reachswim",
+     "title": "Raggiungi il Canada a nuoto",
+     "en": "Reach Canada by Swimming",
+     "type": "choice",
+     "parents": [
+      "kl-dive2"
+     ]
+    },
+    {
+     "id": "kl-karadmg",
+     "title": "Kara è danneggiata e si spegne",
+     "en": "Kara Is Damaged and Shuts Down",
+     "type": "choice",
+     "parents": [
+      "kl-reachboat",
+      "kl-reachswim"
+     ]
+    },
+    {
+     "id": "kl-alicedmg",
+     "title": "Alice è danneggiata e si spegne",
+     "en": "Alice Is Damaged and Shuts Down",
+     "type": "choice",
+     "parents": [
+      "kl-reachboat",
+      "kl-reachswim"
+     ]
+    },
+    {
+     "id": "kl-continueliving",
+     "title": "Continua a vivere",
+     "en": "Continue Living",
+     "type": "choice",
+     "parents": [
+      "kl-alicedmg"
+     ]
+    },
+    {
+     "id": "kl-choosedeath",
+     "title": "Kara sceglie di morire",
+     "en": "Kara Chooses Death",
+     "type": "choice",
+     "parents": [
+      "kl-alicedmg"
+     ]
+    },
+    {
+     "id": "kl-end-survived",
+     "title": "Kara e Alice sono sopravvissute",
+     "en": "Kara & Alice Survived",
+     "type": "ending",
+     "parents": [
+      "kl-reachboat",
+      "kl-reachswim"
+     ],
+     "note": "Stesso nome di un esito in «Kara Captured»: nodi separati.",
+     "note_en": "Same name as an outcome in “Kara Captured”: separate nodes."
+    },
+    {
+     "id": "kl-end-karadied",
+     "title": "Kara è morta e Alice è sopravvissuta",
+     "en": "Kara Died and Alice Survived",
+     "type": "ending",
+     "parents": [
+      "kl-karadmg"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kl-end-alicedied",
+     "title": "Alice è morta e Kara è andata avanti da sola",
+     "en": "Alice Died and Kara Continued Alone",
+     "type": "ending",
+     "parents": [
+      "kl-continueliving"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kl-end-bothdied",
+     "title": "Kara e Alice sono morte",
+     "en": "Kara & Alice Died",
+     "type": "ending",
+     "parents": [
+      "kl-choosedeath",
+      "kl-reachboat",
+      "kl-reachswim"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Una linea arriva direttamente dal gruppo «Raggiungi il Canada…».",
+     "note_en": "Key event (highlighted in yellow in the game). A line comes directly from the “Reach Canada…” group."
+    }
+   ]
+  },
+  {
+   "name": "Battle for Detroit - Kara Captured",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "kc-recall",
+     "title": "Al centro di richiamo",
+     "en": "At Recall Center",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "kc-leavetruck",
+     "title": "Gli androidi scendono dal camion",
+     "en": "Androids Leave the Truck",
+     "type": "choice",
+     "parents": [
+      "kc-recall"
+     ]
+    },
+    {
+     "id": "kc-reassure1",
+     "title": "Rassicura Alice",
+     "en": "Reassure Alice",
+     "type": "choice",
+     "parents": [
+      "kc-leavetruck"
+     ],
+     "note": "Scendendo dal camion.",
+     "note_en": "Getting out of the truck."
+    },
+    {
+     "id": "kc-failreassure1",
+     "title": "Non riesci a rassicurare Alice",
+     "en": "Fail to Reassure Alice",
+     "type": "choice",
+     "parents": [
+      "kc-leavetruck"
+     ],
+     "note": "Scendendo dal camion.",
+     "note_en": "Getting out of the truck."
+    },
+    {
+     "id": "kc-outtruck",
+     "title": "Scendi dal camion",
+     "en": "Get Out of Truck",
+     "type": "choice",
+     "parents": [
+      "kc-reassure1",
+      "kc-failreassure1"
+     ]
+    },
+    {
+     "id": "kc-tooslow1",
+     "title": "Kara è troppo lenta a obbedire",
+     "en": "Kara Is Too Slow to Obey",
+     "type": "choice",
+     "parents": [
+      "kc-outtruck"
+     ],
+     "note": "Prima volta: scendendo dal camion.",
+     "note_en": "First time: getting out of the truck."
+    },
+    {
+     "id": "kc-strikes1",
+     "title": "Il soldato colpisce Kara",
+     "en": "Soldier Strikes Kara",
+     "type": "choice",
+     "parents": [
+      "kc-tooslow1"
+     ],
+     "note": "Prima volta: scendendo dal camion.",
+     "note_en": "First time: getting out of the truck."
+    },
+    {
+     "id": "kc-getinline",
+     "title": "Mettiti in fila",
+     "en": "Get in Line",
+     "type": "choice",
+     "parents": [
+      "kc-outtruck"
+     ]
+    },
+    {
+     "id": "kc-ordered",
+     "title": "Alice riceve l'ordine di avanzare",
+     "en": "Alice Ordered to Move Forward",
+     "type": "choice",
+     "parents": [
+      "kc-getinline",
+      "kc-tooslow1"
+     ]
+    },
+    {
+     "id": "kc-reassure2",
+     "title": "Rassicura Alice",
+     "en": "Reassure Alice",
+     "type": "choice",
+     "parents": [
+      "kc-ordered"
+     ],
+     "note": "Quando Alice deve avanzare.",
+     "note_en": "When Alice has to move forward."
+    },
+    {
+     "id": "kc-failreassure2",
+     "title": "Non riesci a rassicurare Alice",
+     "en": "Fail to Reassure Alice",
+     "type": "choice",
+     "parents": [
+      "kc-ordered"
+     ],
+     "note": "Quando Alice deve avanzare.",
+     "note_en": "When Alice has to move forward."
+    },
+    {
+     "id": "kc-impatient",
+     "title": "Il soldato perde la pazienza",
+     "en": "Soldier Becomes Impatient",
+     "type": "choice",
+     "parents": [
+      "kc-reassure2",
+      "kc-failreassure2"
+     ]
+    },
+    {
+     "id": "kc-convsoldier",
+     "title": "Convinci il soldato",
+     "en": "Convince Soldier",
+     "type": "choice",
+     "parents": [
+      "kc-impatient"
+     ]
+    },
+    {
+     "id": "kc-convalice",
+     "title": "Convinci Alice",
+     "en": "Convince Alice",
+     "type": "choice",
+     "parents": [
+      "kc-impatient"
+     ]
+    },
+    {
+     "id": "kc-intervene1",
+     "title": "Intervieni",
+     "en": "Intervene",
+     "type": "choice",
+     "parents": [
+      "kc-impatient"
+     ],
+     "note": "Con il soldato impaziente.",
+     "note_en": "With the impatient soldier."
+    },
+    {
+     "id": "kc-tent",
+     "title": "Raggiungi la tenda",
+     "en": "Reach the Tent",
+     "type": "choice",
+     "parents": [
+      "kc-convsoldier",
+      "kc-convalice",
+      "kc-intervene1"
+     ]
+    },
+    {
+     "id": "kc-tooslow2",
+     "title": "Kara è troppo lenta a obbedire",
+     "en": "Kara Is Too Slow to Obey",
+     "type": "choice",
+     "parents": [
+      "kc-tent"
+     ],
+     "note": "Seconda volta: davanti alla tenda.",
+     "note_en": "Second time: in front of the tent."
+    },
+    {
+     "id": "kc-strikes2",
+     "title": "Il soldato colpisce Kara",
+     "en": "Soldier Strikes Kara",
+     "type": "choice",
+     "parents": [
+      "kc-tooslow2"
+     ],
+     "note": "Seconda volta: davanti alla tenda.",
+     "note_en": "Second time: in front of the tent."
+    },
+    {
+     "id": "kc-skin",
+     "title": "Disattiva la pelle",
+     "en": "Deactivate Skin",
+     "type": "choice",
+     "parents": [
+      "kc-tent"
+     ]
+    },
+    {
+     "id": "kc-undress",
+     "title": "Spogliati",
+     "en": "Undress",
+     "type": "choice",
+     "parents": [
+      "kc-skin"
+     ]
+    },
+    {
+     "id": "kc-leavetent",
+     "title": "Esci dalla tenda",
+     "en": "Leave Tent",
+     "type": "choice",
+     "parents": [
+      "kc-undress"
+     ]
+    },
+    {
+     "id": "kc-tooslow3",
+     "title": "Kara è troppo lenta a obbedire",
+     "en": "Kara Is Too Slow to Obey",
+     "type": "choice",
+     "parents": [
+      "kc-leavetent"
+     ],
+     "note": "Terza volta: uscendo dalla tenda.",
+     "note_en": "Third time: leaving the tent."
+    },
+    {
+     "id": "kc-forces",
+     "title": "Il soldato porta fuori Kara e Alice con la forza",
+     "en": "Soldier Forces Kara & Alice Out",
+     "type": "choice",
+     "parents": [
+      "kc-tooslow3"
+     ]
+    },
+    {
+     "id": "kc-deviantshot",
+     "title": "Un deviante viene ucciso mentre tenta la fuga",
+     "en": "Deviant Shot Trying to Escape",
+     "type": "choice",
+     "parents": [
+      "kc-leavetent"
+     ]
+    },
+    {
+     "id": "kc-movebody",
+     "title": "Il soldato ordina a un androide di spostare il corpo",
+     "en": "Soldier Orders Android to Move Body",
+     "type": "choice",
+     "parents": [
+      "kc-deviantshot"
+     ]
+    },
+    {
+     "id": "kc-saynothing1",
+     "title": "Non dire nulla",
+     "en": "Say Nothing",
+     "type": "choice",
+     "parents": [
+      "kc-movebody"
+     ],
+     "note": "Quando il soldato cerca chi sposti il corpo.",
+     "note_en": "When the soldier looks for someone to move the body."
+    },
+    {
+     "id": "kc-volunteer",
+     "title": "Offriti volontaria",
+     "en": "Volunteer",
+     "type": "choice",
+     "parents": [
+      "kc-movebody"
+     ]
+    },
+    {
+     "id": "kc-refuses",
+     "title": "Un androide si rifiuta e viene ucciso",
+     "en": "Android Refuses and Is Shot",
+     "type": "choice",
+     "parents": [
+      "kc-saynothing1"
+     ]
+    },
+    {
+     "id": "kc-separated",
+     "title": "Kara e Alice vengono separate",
+     "en": "Kara & Alice Get Separated",
+     "type": "choice",
+     "parents": [
+      "kc-refuses"
+     ]
+    },
+    {
+     "id": "kc-carry",
+     "title": "Trasporta l'androide",
+     "en": "Carry Android",
+     "type": "choice",
+     "parents": [
+      "kc-volunteer"
+     ]
+    },
+    {
+     "id": "kc-climb",
+     "title": "Sali sul camion",
+     "en": "Climb Truck",
+     "type": "choice",
+     "parents": [
+      "kc-carry"
+     ]
+    },
+    {
+     "id": "kc-goback",
+     "title": "Torna indietro",
+     "en": "Go Back",
+     "type": "choice",
+     "parents": [
+      "kc-climb"
+     ]
+    },
+    {
+     "id": "kc-leave",
+     "title": "Vattene",
+     "en": "Leave",
+     "type": "choice",
+     "parents": [
+      "kc-climb"
+     ]
+    },
+    {
+     "id": "kc-end-leftcamp",
+     "title": "Kara ha lasciato il campo senza Alice",
+     "en": "Kara Leaves Camp Without Alice",
+     "type": "ending",
+     "parents": [
+      "kc-leave"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-alicedied1",
+     "title": "Alice è morta nella macchina di riciclaggio",
+     "en": "Alice Died in Recycling Machine",
+     "type": "choice",
+     "parents": [
+      "kc-end-leftcamp"
+     ],
+     "note": "Dopo che Kara ha lasciato il campo.",
+     "note_en": "After Kara left the camp."
+    },
+    {
+     "id": "kc-alicefreed1",
+     "title": "Alice è stata liberata da Markus",
+     "en": "Alice Freed by Markus",
+     "type": "choice",
+     "parents": [
+      "kc-end-leftcamp"
+     ],
+     "note": "Dopo che Kara ha lasciato il campo.",
+     "note_en": "After Kara left the camp."
+    },
+    {
+     "id": "kc-enclosure",
+     "title": "Dentro il recinto",
+     "en": "Inside the Enclosure",
+     "type": "checkpoint",
+     "parents": [
+      "kc-separated",
+      "kc-carry",
+      "kc-goback"
+     ]
+    },
+    {
+     "id": "kc-explore",
+     "title": "Esplora il recinto",
+     "en": "Explore Enclosure",
+     "type": "objective",
+     "parents": [
+      "kc-enclosure"
+     ]
+    },
+    {
+     "id": "kc-caught",
+     "title": "Avvistata dal drone",
+     "en": "Caught by Drone",
+     "type": "choice",
+     "parents": [
+      "kc-explore"
+     ]
+    },
+    {
+     "id": "kc-distressed",
+     "title": "Un androide in preda al panico viene ucciso",
+     "en": "Distressed Android Is Shot",
+     "type": "choice",
+     "parents": [
+      "kc-explore"
+     ]
+    },
+    {
+     "id": "kc-move",
+     "title": "Muoviti",
+     "en": "Move",
+     "type": "choice",
+     "parents": [
+      "kc-caught",
+      "kc-distressed"
+     ]
+    },
+    {
+     "id": "kc-still",
+     "title": "Resta immobile",
+     "en": "Remain Still",
+     "type": "choice",
+     "parents": [
+      "kc-caught",
+      "kc-distressed"
+     ]
+    },
+    {
+     "id": "kc-dronewounds",
+     "title": "Il drone ferisce Kara",
+     "en": "Drone Wounds Kara",
+     "type": "choice",
+     "parents": [
+      "kc-move"
+     ]
+    },
+    {
+     "id": "kc-end-drone",
+     "title": "Kara è stata uccisa dal drone",
+     "en": "Kara Is Killed by the Drone",
+     "type": "ending",
+     "parents": [
+      "kc-move"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Collegamento da verificare: la linea parte dal gruppo «Muoviti / Resta immobile»; attribuita a «Muoviti».",
+     "note_en": "Key event (highlighted in yellow in the game). Link to be verified: the line leaves the “Move / Remain Still” group; attributed to “Move”."
+    },
+    {
+     "id": "kc-alicedied2",
+     "title": "Alice è morta da sola nella macchina di riciclaggio",
+     "en": "Alice Died Alone in Recycling Machine",
+     "type": "choice",
+     "parents": [
+      "kc-end-drone"
+     ]
+    },
+    {
+     "id": "kc-alicefreed2",
+     "title": "Alice è stata liberata da Markus",
+     "en": "Alice Freed by Markus",
+     "type": "choice",
+     "parents": [
+      "kc-end-drone"
+     ],
+     "note": "Dopo la morte di Kara per mano del drone.",
+     "note_en": "After Kara was killed by the drone."
+    },
+    {
+     "id": "kc-talkjerry1",
+     "title": "Parla con un Jerry",
+     "en": "Talk to Jerry",
+     "type": "choice",
+     "parents": [
+      "kc-explore"
+     ],
+     "note": "Nel recinto.",
+     "note_en": "In the enclosure."
+    },
+    {
+     "id": "kc-talkother",
+     "title": "Parla con l'altro Jerry",
+     "en": "Talk to Other Jerry",
+     "type": "choice",
+     "parents": [
+      "kc-explore"
+     ]
+    },
+    {
+     "id": "kc-alicetaken",
+     "title": "Alice viene portata via",
+     "en": "Alice Gets Taken Away",
+     "type": "choice",
+     "parents": [
+      "kc-explore",
+      "kc-talkother"
+     ]
+    },
+    {
+     "id": "kc-req-saved1",
+     "title": "Salvato nelle scene precedenti",
+     "en": "Saved in Previous Scenes",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-talkluther1",
+     "title": "Parla con Luther",
+     "en": "Talk to Luther",
+     "type": "choice",
+     "parents": [
+      "kc-explore",
+      "kc-req-saved1"
+     ],
+     "note": "Nel recinto.",
+     "note_en": "In the enclosure."
+    },
+    {
+     "id": "kc-luthertaken",
+     "title": "Luther viene portato via",
+     "en": "Luther Gets Taken Away",
+     "type": "choice",
+     "parents": [
+      "kc-talkluther1"
+     ]
+    },
+    {
+     "id": "kc-intervene2",
+     "title": "Intervieni",
+     "en": "Intervene",
+     "type": "choice",
+     "parents": [
+      "kc-luthertaken"
+     ],
+     "note": "Quando portano via Luther.",
+     "note_en": "When Luther is taken away."
+    },
+    {
+     "id": "kc-nointervene1",
+     "title": "Non intervenire",
+     "en": "Do Not Intervene",
+     "type": "choice",
+     "parents": [
+      "kc-luthertaken"
+     ],
+     "note": "Quando portano via Luther.",
+     "note_en": "When Luther is taken away."
+    },
+    {
+     "id": "kc-req-zlatko1",
+     "title": "Liberato in «Zlatko»",
+     "en": "Freed in 'Zlatko'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-talkscarred1",
+     "title": "Parla con l'androide sfregiato",
+     "en": "Talk to Scarred Android",
+     "type": "choice",
+     "parents": [
+      "kc-explore",
+      "kc-req-zlatko1"
+     ],
+     "note": "Nel recinto.",
+     "note_en": "In the enclosure."
+    },
+    {
+     "id": "kc-talkrescued",
+     "title": "Parla con l'androide salvato",
+     "en": "Talk to Rescued Android",
+     "type": "choice",
+     "parents": [
+      "kc-explore"
+     ]
+    },
+    {
+     "id": "kc-req-fug1",
+     "title": "Incontrato in «Fugitives»",
+     "en": "Met in 'Fugitives'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-talkralph1",
+     "title": "Parla con Ralph",
+     "en": "Talk to Ralph",
+     "type": "choice",
+     "parents": [
+      "kc-explore",
+      "kc-req-fug1"
+     ],
+     "note": "Nel recinto.",
+     "note_en": "In the enclosure."
+    },
+    {
+     "id": "kc-ralphdrone",
+     "title": "Ralph attira l'attenzione del drone",
+     "en": "Ralph Attracts Drone's Attention",
+     "type": "choice",
+     "parents": [
+      "kc-talkralph1"
+     ]
+    },
+    {
+     "id": "kc-giveup",
+     "title": "Lascia perdere",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "kc-ralphdrone",
+      "kc-talkrescued"
+     ],
+     "note": "Collegamento da verificare: a questo gruppo arriva anche una linea da «Parla con l'androide salvato».",
+     "note_en": "Link to be verified: a line from “Talk to Rescued Android” also reaches this group."
+    },
+    {
+     "id": "kc-insist",
+     "title": "Insisti",
+     "en": "Insist",
+     "type": "choice",
+     "parents": [
+      "kc-ralphdrone",
+      "kc-talkrescued"
+     ]
+    },
+    {
+     "id": "kc-calm",
+     "title": "Calmalo",
+     "en": "Calm Down",
+     "type": "choice",
+     "parents": [
+      "kc-ralphdrone",
+      "kc-talkrescued"
+     ]
+    },
+    {
+     "id": "kc-ralphkilled",
+     "title": "Ralph viene ucciso",
+     "en": "Ralph Is Killed",
+     "type": "choice",
+     "parents": [
+      "kc-giveup",
+      "kc-insist",
+      "kc-calm"
+     ]
+    },
+    {
+     "id": "kc-ralphsettles",
+     "title": "Ralph si calma",
+     "en": "Ralph Settles Down",
+     "type": "choice",
+     "parents": [
+      "kc-giveup",
+      "kc-insist",
+      "kc-calm"
+     ]
+    },
+    {
+     "id": "kc-exit",
+     "title": "Esci dal recinto",
+     "en": "Exit Enclosure",
+     "type": "choice",
+     "parents": [
+      "kc-alicetaken",
+      "kc-intervene2",
+      "kc-nointervene1"
+     ]
+    },
+    {
+     "id": "kc-joinline",
+     "title": "In fila",
+     "en": "Join Line",
+     "type": "checkpoint",
+     "parents": [
+      "kc-exit"
+     ]
+    },
+    {
+     "id": "kc-findalice",
+     "title": "Trova Alice",
+     "en": "Find Alice",
+     "type": "choice",
+     "parents": [
+      "kc-joinline"
+     ]
+    },
+    {
+     "id": "kc-terrified",
+     "title": "Alice è terrorizzata",
+     "en": "Alice Is Terrified",
+     "type": "choice",
+     "parents": [
+      "kc-findalice"
+     ]
+    },
+    {
+     "id": "kc-firm",
+     "title": "Decisa",
+     "en": "Firm",
+     "type": "choice",
+     "parents": [
+      "kc-terrified"
+     ]
+    },
+    {
+     "id": "kc-optimistic",
+     "title": "Ottimista",
+     "en": "Optimistic",
+     "type": "choice",
+     "parents": [
+      "kc-terrified"
+     ]
+    },
+    {
+     "id": "kc-reassuring",
+     "title": "Rassicurante",
+     "en": "Reassuring",
+     "type": "choice",
+     "parents": [
+      "kc-terrified"
+     ]
+    },
+    {
+     "id": "kc-direct",
+     "title": "Diretta",
+     "en": "Direct",
+     "type": "choice",
+     "parents": [
+      "kc-terrified"
+     ]
+    },
+    {
+     "id": "kc-silence",
+     "title": "Silenzio",
+     "en": "Silence",
+     "type": "choice",
+     "parents": [
+      "kc-terrified"
+     ]
+    },
+    {
+     "id": "kc-lmf1",
+     "title": "La fila avanza",
+     "en": "Line Moves Forward",
+     "type": "choice",
+     "parents": [
+      "kc-firm",
+      "kc-optimistic",
+      "kc-reassuring",
+      "kc-direct",
+      "kc-silence"
+     ],
+     "note": "Prima volta: dopo aver parlato con Alice.",
+     "note_en": "First time: after talking to Alice."
+    },
+    {
+     "id": "kc-strikescomply",
+     "title": "Il soldato colpisce Kara perché non obbedisce",
+     "en": "Soldier Strikes Kara for Not Complying",
+     "type": "choice",
+     "parents": [
+      "kc-lmf1"
+     ]
+    },
+    {
+     "id": "kc-step",
+     "title": "Fai un passo avanti",
+     "en": "Step Forward",
+     "type": "choice",
+     "parents": [
+      "kc-lmf1"
+     ]
+    },
+    {
+     "id": "kc-join",
+     "title": "Trova un modo per raggiungere Alice",
+     "en": "Find a Way to Join Alice",
+     "type": "objective",
+     "parents": [
+      "kc-step"
+     ]
+    },
+    {
+     "id": "kc-panics",
+     "title": "Alice va nel panico e corre da Kara",
+     "en": "Alice Panics and Runs to Kara",
+     "type": "choice",
+     "parents": [
+      "kc-join"
+     ]
+    },
+    {
+     "id": "kc-nointervene2",
+     "title": "Non intervenire",
+     "en": "Do Not Intervene",
+     "type": "choice",
+     "parents": [
+      "kc-panics"
+     ],
+     "note": "Quando Alice corre da Kara.",
+     "note_en": "When Alice runs to Kara."
+    },
+    {
+     "id": "kc-intervene3",
+     "title": "Intervieni",
+     "en": "Intervene",
+     "type": "choice",
+     "parents": [
+      "kc-panics"
+     ],
+     "note": "Quando Alice corre da Kara.",
+     "note_en": "When Alice runs to Kara."
+    },
+    {
+     "id": "kc-aliceshot",
+     "title": "Alice viene colpita",
+     "en": "Alice Gets Shot",
+     "type": "choice",
+     "parents": [
+      "kc-nointervene2"
+     ]
+    },
+    {
+     "id": "kc-karashot",
+     "title": "Kara viene colpita",
+     "en": "Kara Gets Shot",
+     "type": "choice",
+     "parents": [
+      "kc-intervene3"
+     ]
+    },
+    {
+     "id": "kc-end-karadead",
+     "title": "Kara è morta",
+     "en": "Kara Is Dead",
+     "type": "ending",
+     "parents": [
+      "kc-aliceshot"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-end-karafreed",
+     "title": "Kara è stata liberata da Markus",
+     "en": "Kara Freed by Markus",
+     "type": "ending",
+     "parents": [
+      "kc-aliceshot"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-lmf2",
+     "title": "La fila avanza",
+     "en": "Line Moves Forward",
+     "type": "choice",
+     "parents": [
+      "kc-join"
+     ],
+     "note": "Seconda volta: mentre cerchi di raggiungere Alice.",
+     "note_en": "Second time: while trying to reach Alice."
+    },
+    {
+     "id": "kc-getkilled1",
+     "title": "Vieni uccisa",
+     "en": "Get Killed",
+     "type": "choice",
+     "parents": [
+      "kc-lmf2"
+     ],
+     "note": "Mentre cerchi di raggiungere Alice.",
+     "note_en": "While trying to reach Alice."
+    },
+    {
+     "id": "kc-getshot1",
+     "title": "Vieni colpita",
+     "en": "Get Shot",
+     "type": "choice",
+     "parents": [
+      "kc-lmf2"
+     ],
+     "note": "Mentre cerchi di raggiungere Alice.",
+     "note_en": "While trying to reach Alice."
+    },
+    {
+     "id": "kc-stress",
+     "title": "Lo stress di Alice aumenta",
+     "en": "Alice's Stress Increases",
+     "type": "choice",
+     "parents": [
+      "kc-getkilled1",
+      "kc-getshot1"
+     ]
+    },
+    {
+     "id": "kc-behind",
+     "title": "Parla con l'androide dietro Kara",
+     "en": "Talk to Android Behind Kara",
+     "type": "choice",
+     "parents": [
+      "kc-join"
+     ]
+    },
+    {
+     "id": "kc-ahead",
+     "title": "Parla con l'androide davanti a Kara",
+     "en": "Talk to Android Ahead of Kara",
+     "type": "choice",
+     "parents": [
+      "kc-join"
+     ]
+    },
+    {
+     "id": "kc-req-saved2",
+     "title": "Salvato nelle scene precedenti",
+     "en": "Saved in Previous Scenes",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-talkluther2",
+     "title": "Parla con Luther",
+     "en": "Talk to Luther",
+     "type": "choice",
+     "parents": [
+      "kc-join",
+      "kc-req-saved2"
+     ],
+     "note": "In fila, per raggiungere Alice.",
+     "note_en": "In line, to reach Alice."
+    },
+    {
+     "id": "kc-talkjerry2",
+     "title": "Parla con un Jerry",
+     "en": "Talk to Jerry",
+     "type": "choice",
+     "parents": [
+      "kc-talkluther2"
+     ],
+     "note": "In fila, per raggiungere Alice.",
+     "note_en": "In line, to reach Alice."
+    },
+    {
+     "id": "kc-observeguards",
+     "title": "Osserva le guardie",
+     "en": "Observe Guards",
+     "type": "choice",
+     "parents": [
+      "kc-join"
+     ]
+    },
+    {
+     "id": "kc-req-zlatko2",
+     "title": "Liberato in «Zlatko»",
+     "en": "Freed in 'Zlatko'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-talkscarred2",
+     "title": "Parla con l'androide sfregiato",
+     "en": "Talk to Scarred Android",
+     "type": "choice",
+     "parents": [
+      "kc-join",
+      "kc-req-zlatko2"
+     ],
+     "note": "In fila, per raggiungere Alice. Collegamento da verificare: una linea passa anche da «Osserva le guardie».",
+     "note_en": "In line, to reach Alice. Link to be verified: a line also passes through “Observe Guards”."
+    },
+    {
+     "id": "kc-jerrydies",
+     "title": "Jerry muore",
+     "en": "Jerry Dies",
+     "type": "choice",
+     "parents": [
+      "kc-join"
+     ]
+    },
+    {
+     "id": "kc-asks",
+     "title": "Alice fa domande",
+     "en": "Alice Asks Questions",
+     "type": "choice",
+     "parents": [
+      "kc-join"
+     ]
+    },
+    {
+     "id": "kc-reassure3",
+     "title": "Rassicurala",
+     "en": "Reassure",
+     "type": "choice",
+     "parents": [
+      "kc-asks"
+     ]
+    },
+    {
+     "id": "kc-truth",
+     "title": "Dille la verità",
+     "en": "Tell the Truth",
+     "type": "choice",
+     "parents": [
+      "kc-asks"
+     ]
+    },
+    {
+     "id": "kc-saynothing2",
+     "title": "Non dire nulla",
+     "en": "Say Nothing",
+     "type": "choice",
+     "parents": [
+      "kc-asks"
+     ],
+     "note": "Alle domande di Alice.",
+     "note_en": "Answering Alice's questions."
+    },
+    {
+     "id": "kc-req-fug2",
+     "title": "Incontrato in «Fugitives»",
+     "en": "Met in 'Fugitives'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-talkralph2",
+     "title": "Parla con Ralph",
+     "en": "Talk to Ralph",
+     "type": "choice",
+     "parents": [
+      "kc-join",
+      "kc-req-fug2"
+     ],
+     "note": "In fila, per raggiungere Alice.",
+     "note_en": "In line, to reach Alice."
+    },
+    {
+     "id": "kc-askdiv1",
+     "title": "Chiedi di creare un diversivo",
+     "en": "Ask to Create Diversion",
+     "type": "choice",
+     "parents": [
+      "kc-talkjerry2",
+      "kc-talkscarred2"
+     ],
+     "note": "Per raggiungere Alice.",
+     "note_en": "To reach Alice."
+    },
+    {
+     "id": "kc-distracted1",
+     "title": "I soldati sono distratti",
+     "en": "Soldiers Are Distracted",
+     "type": "choice",
+     "parents": [
+      "kc-askdiv1"
+     ],
+     "note": "Prima volta: per raggiungere Alice.",
+     "note_en": "First time: to reach Alice."
+    },
+    {
+     "id": "kc-karacaught",
+     "title": "Kara viene presa dal drone",
+     "en": "Kara Gets Caught by the Drone",
+     "type": "choice",
+     "parents": [
+      "kc-distracted1"
+     ]
+    },
+    {
+     "id": "kc-reachalice",
+     "title": "Raggiungi Alice",
+     "en": "Reach Alice",
+     "type": "choice",
+     "parents": [
+      "kc-distracted1"
+     ]
+    },
+    {
+     "id": "kc-inline",
+     "title": "In fila con Alice",
+     "en": "In Line With Alice",
+     "type": "checkpoint",
+     "parents": [
+      "kc-reachalice"
+     ]
+    },
+    {
+     "id": "kc-escape",
+     "title": "Trova un modo per fuggire",
+     "en": "Find a Way to Escape",
+     "type": "objective",
+     "parents": [
+      "kc-inline"
+     ]
+    },
+    {
+     "id": "kc-lmf3",
+     "title": "La fila avanza",
+     "en": "Line Moves Forward",
+     "type": "choice",
+     "parents": [
+      "kc-escape"
+     ],
+     "note": "Terza volta: in fila con Alice.",
+     "note_en": "Third time: in line with Alice."
+    },
+    {
+     "id": "kc-getkilled2",
+     "title": "Vieni uccisa",
+     "en": "Get Killed",
+     "type": "choice",
+     "parents": [
+      "kc-lmf3"
+     ],
+     "note": "In fila con Alice.",
+     "note_en": "In line with Alice."
+    },
+    {
+     "id": "kc-getshot2",
+     "title": "Vieni colpita",
+     "en": "Get Shot",
+     "type": "choice",
+     "parents": [
+      "kc-lmf3"
+     ],
+     "note": "In fila con Alice.",
+     "note_en": "In line with Alice."
+    },
+    {
+     "id": "kc-end-lines",
+     "title": "Kara è morta in fila",
+     "en": "Kara Died in the Lines",
+     "type": "ending",
+     "parents": [
+      "kc-karashot",
+      "kc-getkilled1",
+      "kc-getshot1",
+      "kc-getkilled2",
+      "kc-getshot2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-alicedied3",
+     "title": "Alice è morta nella macchina di riciclaggio",
+     "en": "Alice Died in Recycling Machine",
+     "type": "choice",
+     "parents": [
+      "kc-end-lines"
+     ],
+     "note": "Dopo la morte di Kara in fila.",
+     "note_en": "After Kara died in the lines."
+    },
+    {
+     "id": "kc-alicefreed3",
+     "title": "Alice è stata liberata da Markus",
+     "en": "Alice Freed by Markus",
+     "type": "choice",
+     "parents": [
+      "kc-end-lines"
+     ],
+     "note": "Dopo la morte di Kara in fila.",
+     "note_en": "After Kara died in the lines."
+    },
+    {
+     "id": "kc-reachmachine",
+     "title": "Raggiungi la macchina di riciclaggio",
+     "en": "Reach Recycling Machine",
+     "type": "choice",
+     "parents": [
+      "kc-escape"
+     ]
+    },
+    {
+     "id": "kc-end-machine",
+     "title": "Alice e Kara sono morte nella macchina di riciclaggio",
+     "en": "Alice & Kara Died in Recycling Machine",
+     "type": "ending",
+     "parents": [
+      "kc-reachmachine"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-observewire",
+     "title": "Osserva il filo spinato",
+     "en": "Observe Barbed Wire",
+     "type": "choice",
+     "parents": [
+      "kc-escape"
+     ]
+    },
+    {
+     "id": "kc-markuslib",
+     "title": "Markus libera gli androidi",
+     "en": "Markus Liberates Androids",
+     "type": "choice",
+     "parents": [
+      "kc-observewire"
+     ]
+    },
+    {
+     "id": "kc-end-survived",
+     "title": "Kara e Alice sono sopravvissute",
+     "en": "Kara & Alice Survived",
+     "type": "ending",
+     "parents": [
+      "kc-markuslib"
+     ],
+     "note": "Stesso nome di un esito in «Kara Leaving Detroit»: nodi separati.",
+     "note_en": "Same name as an outcome in “Kara Leaving Detroit”: separate nodes."
+    },
+    {
+     "id": "kc-lutherreaches",
+     "title": "Luther raggiunge la macchina di riciclaggio",
+     "en": "Luther Reaches the Recycling Machine",
+     "type": "choice",
+     "parents": [
+      "kc-escape"
+     ]
+    },
+    {
+     "id": "kc-talkjerry3",
+     "title": "Parla con un Jerry",
+     "en": "Talk to Jerry",
+     "type": "choice",
+     "parents": [
+      "kc-escape"
+     ],
+     "note": "In fila con Alice.",
+     "note_en": "In line with Alice."
+    },
+    {
+     "id": "kc-talkralph3",
+     "title": "Parla con Ralph",
+     "en": "Talk to Ralph",
+     "type": "choice",
+     "parents": [
+      "kc-escape"
+     ],
+     "note": "In fila con Alice.",
+     "note_en": "In line with Alice."
+    },
+    {
+     "id": "kc-talkluther3",
+     "title": "Parla con Luther",
+     "en": "Talk to Luther",
+     "type": "choice",
+     "parents": [
+      "kc-escape"
+     ],
+     "note": "In fila con Alice.",
+     "note_en": "In line with Alice."
+    },
+    {
+     "id": "kc-talkscarred3",
+     "title": "Parla con l'androide sfregiato",
+     "en": "Talk to Scarred Android",
+     "type": "choice",
+     "parents": [
+      "kc-escape"
+     ],
+     "note": "In fila con Alice.",
+     "note_en": "In line with Alice."
+    },
+    {
+     "id": "kc-askdiv2",
+     "title": "Chiedi di creare un diversivo",
+     "en": "Ask to Create Diversion",
+     "type": "choice",
+     "parents": [
+      "kc-talkjerry3",
+      "kc-talkralph3",
+      "kc-talkluther3",
+      "kc-talkscarred3"
+     ],
+     "note": "Per fuggire.",
+     "note_en": "To escape."
+    },
+    {
+     "id": "kc-distracted2",
+     "title": "I soldati sono distratti",
+     "en": "Soldiers Are Distracted",
+     "type": "choice",
+     "parents": [
+      "kc-askdiv2"
+     ],
+     "note": "Seconda volta: per fuggire.",
+     "note_en": "Second time: to escape."
+    },
+    {
+     "id": "kc-runwire",
+     "title": "Corri verso il filo spinato",
+     "en": "Run to Barbed Wire",
+     "type": "choice",
+     "parents": [
+      "kc-distracted2"
+     ]
+    },
+    {
+     "id": "kc-tooslowwire",
+     "title": "Kara è troppo lenta",
+     "en": "Kara Is Too Slow",
+     "type": "choice",
+     "parents": [
+      "kc-runwire"
+     ]
+    },
+    {
+     "id": "kc-shootsgroup1",
+     "title": "Il soldato spara al gruppo",
+     "en": "Soldier Shoots the Group",
+     "type": "choice",
+     "parents": [
+      "kc-tooslowwire"
+     ],
+     "note": "Prima variante: Kara troppo lenta.",
+     "note_en": "First variant: Kara too slow."
+    },
+    {
+     "id": "kc-end-kakilled1",
+     "title": "Kara e Alice sono state uccise",
+     "en": "Kara & Alice Were Killed",
+     "type": "ending",
+     "parents": [
+      "kc-shootsgroup1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Prima variante: Kara troppo lenta.",
+     "note_en": "Key event (highlighted in yellow in the game). First variant: Kara too slow."
+    },
+    {
+     "id": "kc-end-klakilled1",
+     "title": "Kara, Luther e Alice sono stati uccisi",
+     "en": "Kara, Luther and Alice Were Killed",
+     "type": "ending",
+     "parents": [
+      "kc-shootsgroup1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Prima variante: Kara troppo lenta.",
+     "note_en": "Key event (highlighted in yellow in the game). First variant: Kara too slow."
+    },
+    {
+     "id": "kc-alicepast",
+     "title": "Alice supera il filo spinato",
+     "en": "Alice Gets Past the Barbed Wire",
+     "type": "choice",
+     "parents": [
+      "kc-runwire"
+     ]
+    },
+    {
+     "id": "kc-alpast",
+     "title": "Alice e Luther superano il filo spinato",
+     "en": "Alice & Luther Get Past the Barbed Wire",
+     "type": "choice",
+     "parents": [
+      "kc-runwire"
+     ]
+    },
+    {
+     "id": "kc-damaged",
+     "title": "Kara è troppo danneggiata per proseguire",
+     "en": "Kara Is Too Damaged to Proceed",
+     "type": "choice",
+     "parents": [
+      "kc-alicepast",
+      "kc-alpast"
+     ]
+    },
+    {
+     "id": "kc-shootskara",
+     "title": "Il soldato spara a Kara",
+     "en": "Soldier Shoots Kara",
+     "type": "choice",
+     "parents": [
+      "kc-damaged"
+     ]
+    },
+    {
+     "id": "kc-end-aliceescaped",
+     "title": "Alice è fuggita sul camion",
+     "en": "Alice Escaped on Truck",
+     "type": "ending",
+     "parents": [
+      "kc-shootskara"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-end-alescaped",
+     "title": "Alice e Luther sono fuggiti sui camion",
+     "en": "Alice & Luther Escaped by Trucks",
+     "type": "ending",
+     "parents": [
+      "kc-shootskara"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "kc-soldierarrives",
+     "title": "Arriva un soldato",
+     "en": "A Soldier Arrives",
+     "type": "choice",
+     "parents": [
+      "kc-alicepast",
+      "kc-alpast"
+     ]
+    },
+    {
+     "id": "kc-passwire",
+     "title": "Supera il filo spinato",
+     "en": "Pass the Barbed Wire",
+     "type": "choice",
+     "parents": [
+      "kc-soldierarrives"
+     ]
+    },
+    {
+     "id": "kc-fightsoldier",
+     "title": "Combatti il soldato",
+     "en": "Fight Soldier",
+     "type": "choice",
+     "parents": [
+      "kc-soldierarrives"
+     ]
+    },
+    {
+     "id": "kc-shootsgroup2",
+     "title": "Il soldato spara al gruppo",
+     "en": "Soldier Shoots the Group",
+     "type": "choice",
+     "parents": [
+      "kc-passwire"
+     ],
+     "note": "Seconda variante: superando il filo spinato.",
+     "note_en": "Second variant: passing the barbed wire."
+    },
+    {
+     "id": "kc-soldierbeats",
+     "title": "Il soldato ha la meglio su Kara",
+     "en": "Soldier Beats Kara",
+     "type": "choice",
+     "parents": [
+      "kc-fightsoldier"
+     ]
+    },
+    {
+     "id": "kc-karabeats",
+     "title": "Kara ha la meglio sul soldato",
+     "en": "Kara Beats Soldier",
+     "type": "choice",
+     "parents": [
+      "kc-fightsoldier"
+     ]
+    },
+    {
+     "id": "kc-ralphint",
+     "title": "Ralph interviene",
+     "en": "Ralph Intervenes",
+     "type": "choice",
+     "parents": [
+      "kc-soldierbeats",
+      "kc-karabeats"
+     ],
+     "note": "Collegamento da verificare: le linee partono dal gruppo «Il soldato ha la meglio su Kara / Kara ha la meglio sul soldato» senza indicare la scelta.",
+     "note_en": "Link to be verified: the lines leave the “Soldier Beats Kara / Kara Beats Soldier” group without showing which choice."
+    },
+    {
+     "id": "kc-lutherint",
+     "title": "Luther interviene",
+     "en": "Luther Intervenes",
+     "type": "choice",
+     "parents": [
+      "kc-soldierbeats",
+      "kc-karabeats"
+     ],
+     "note": "Collegamento da verificare: le linee partono dal gruppo «Il soldato ha la meglio su Kara / Kara ha la meglio sul soldato» senza indicare la scelta.",
+     "note_en": "Link to be verified: the lines leave the “Soldier Beats Kara / Kara Beats Soldier” group without showing which choice."
+    },
+    {
+     "id": "kc-end-klakilled2",
+     "title": "Kara, Luther e Alice sono stati uccisi",
+     "en": "Kara, Luther and Alice Were Killed",
+     "type": "ending",
+     "parents": [
+      "kc-shootsgroup2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Seconda variante: superando il filo spinato.",
+     "note_en": "Key event (highlighted in yellow in the game). Second variant: passing the barbed wire."
+    },
+    {
+     "id": "kc-end-kakilled2",
+     "title": "Kara e Alice sono state uccise",
+     "en": "Kara & Alice Were Killed",
+     "type": "ending",
+     "parents": [
+      "kc-shootsgroup2",
+      "kc-soldierbeats",
+      "kc-karabeats"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Seconda variante: superando il filo spinato o nello scontro col soldato. Collegamento da verificare: le linee partono dal gruppo «Il soldato ha la meglio su Kara / Kara ha la meglio sul soldato» senza indicare la scelta.",
+     "note_en": "Key event (highlighted in yellow in the game). Second variant: passing the barbed wire or in the fight with the soldier. Link to be verified: the lines leave the “Soldier Beats Kara / Kara Beats Soldier” group without showing which choice."
+    },
+    {
+     "id": "kc-end-katruck",
+     "title": "Kara e Alice sono fuggite sul camion",
+     "en": "Kara & Alice Escaped on Truck",
+     "type": "ending",
+     "parents": [
+      "kc-ralphint",
+      "kc-lutherint",
+      "kc-soldierbeats",
+      "kc-karabeats"
+     ],
+     "note": "Collegamento da verificare: le linee partono dal gruppo «Il soldato ha la meglio su Kara / Kara ha la meglio sul soldato» senza indicare la scelta.",
+     "note_en": "Link to be verified: the lines leave the “Soldier Beats Kara / Kara Beats Soldier” group without showing which choice."
+    },
+    {
+     "id": "kc-end-klatruck",
+     "title": "Kara, Luther e Alice sono fuggiti sul camion",
+     "en": "Kara, Luther and Alice Escaped on Truck",
+     "type": "ending",
+     "parents": [
+      "kc-soldierbeats",
+      "kc-karabeats"
+     ],
+     "note": "Collegamento da verificare: le linee partono dal gruppo «Il soldato ha la meglio su Kara / Kara ha la meglio sul soldato» senza indicare la scelta.",
+     "note_en": "Link to be verified: the lines leave the “Soldier Beats Kara / Kara Beats Soldier” group without showing which choice."
+    }
+   ]
+  },
+  {
+   "name": "Battle for Detroit - Markus Revolution",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "mr-hart",
+     "title": "Rivoluzione a Hart Plaza",
+     "en": "Revolution at Hart Plaza",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "mr-message",
+     "title": "Markus manda un messaggio",
+     "en": "Markus Sends a Message",
+     "type": "choice",
+     "parents": [
+      "mr-hart"
+     ]
+    },
+    {
+     "id": "mr-charge",
+     "title": "Carica la barricata",
+     "en": "Charge the Barricade",
+     "type": "choice",
+     "parents": [
+      "mr-message"
+     ]
+    },
+    {
+     "id": "mr-wounded",
+     "title": "Markus ferito",
+     "en": "Markus Wounded",
+     "type": "choice",
+     "parents": [
+      "mr-charge"
+     ]
+    },
+    {
+     "id": "mr-flag",
+     "title": "Pianta la bandiera",
+     "en": "Plant the Flag",
+     "type": "choice",
+     "parents": [
+      "mr-charge"
+     ]
+    },
+    {
+     "id": "mr-crossroad",
+     "title": "All'incrocio",
+     "en": "At the Crossroad",
+     "type": "checkpoint",
+     "parents": [
+      "mr-flag"
+     ]
+    },
+    {
+     "id": "mr-launch",
+     "title": "Lancia l'attacco",
+     "en": "Launch the Attack",
+     "type": "choice",
+     "parents": [
+      "mr-crossroad"
+     ]
+    },
+    {
+     "id": "mr-approach",
+     "title": "Avvicinati al centro di richiamo",
+     "en": "Approaching Recall Center",
+     "type": "objective",
+     "parents": [
+      "mr-launch"
+     ]
+    },
+    {
+     "id": "mr-joshcover",
+     "title": "Josh esce allo scoperto",
+     "en": "Josh Leaves Cover",
+     "type": "choice",
+     "parents": [
+      "mr-approach"
+     ]
+    },
+    {
+     "id": "mr-rescuejosh",
+     "title": "Salva Josh",
+     "en": "Rescue Josh",
+     "type": "choice",
+     "parents": [
+      "mr-joshcover"
+     ]
+    },
+    {
+     "id": "mr-joshshot",
+     "title": "Josh viene colpito",
+     "en": "Josh Is Shot",
+     "type": "choice",
+     "parents": [
+      "mr-joshcover"
+     ]
+    },
+    {
+     "id": "mr-joshdies",
+     "title": "Josh muore tra le braccia di Markus",
+     "en": "Josh Dies in Markus' Arms",
+     "type": "choice",
+     "parents": [
+      "mr-rescuejosh"
+     ]
+    },
+    {
+     "id": "mr-inspire",
+     "title": "Incoraggia un androide spaventato",
+     "en": "Inspire Frightened Android",
+     "type": "choice",
+     "parents": [
+      "mr-approach"
+     ]
+    },
+    {
+     "id": "mr-androidshot",
+     "title": "L'androide viene colpito uscendo allo scoperto",
+     "en": "Android Is Shot Leaving Cover",
+     "type": "choice",
+     "parents": [
+      "mr-inspire"
+     ]
+    },
+    {
+     "id": "mr-androidhidden",
+     "title": "L'androide resta nascosto",
+     "en": "Android Stays Hidden",
+     "type": "choice",
+     "parents": [
+      "mr-inspire"
+     ]
+    },
+    {
+     "id": "mr-simonshot",
+     "title": "Simon viene colpito",
+     "en": "Simon Is Shot",
+     "type": "choice",
+     "parents": [
+      "mr-approach"
+     ]
+    },
+    {
+     "id": "mr-trysimon",
+     "title": "Prova a salvare Simon",
+     "en": "Try to Save Simon",
+     "type": "choice",
+     "parents": [
+      "mr-simonshot"
+     ]
+    },
+    {
+     "id": "mr-keepgoing",
+     "title": "Vai avanti",
+     "en": "Keep Going",
+     "type": "choice",
+     "parents": [
+      "mr-simonshot"
+     ]
+    },
+    {
+     "id": "mr-savesimon",
+     "title": "Salva Simon",
+     "en": "Save Simon",
+     "type": "choice",
+     "parents": [
+      "mr-trysimon"
+     ]
+    },
+    {
+     "id": "mr-failsimon",
+     "title": "Non riesci a salvare Simon",
+     "en": "Fail to Save Simon",
+     "type": "choice",
+     "parents": [
+      "mr-trysimon"
+     ]
+    },
+    {
+     "id": "mr-grenade",
+     "title": "Lancia una granata",
+     "en": "Throw Grenade",
+     "type": "choice",
+     "parents": [
+      "mr-approach"
+     ]
+    },
+    {
+     "id": "mr-badly",
+     "title": "Markus gravemente ferito",
+     "en": "Markus Badly Wounded",
+     "type": "choice",
+     "parents": [
+      "mr-approach"
+     ]
+    },
+    {
+     "id": "mr-simonheart",
+     "title": "Simon offre il suo cuore",
+     "en": "Simon Offers His Heart",
+     "type": "choice",
+     "parents": [
+      "mr-badly"
+     ]
+    },
+    {
+     "id": "mr-northheart",
+     "title": "North offre il suo cuore",
+     "en": "North Offers Her Heart",
+     "type": "choice",
+     "parents": [
+      "mr-badly"
+     ]
+    },
+    {
+     "id": "mr-accept",
+     "title": "Accetta",
+     "en": "Accept",
+     "type": "choice",
+     "parents": [
+      "mr-northheart"
+     ]
+    },
+    {
+     "id": "mr-refuse",
+     "title": "Rifiuta",
+     "en": "Refuse",
+     "type": "choice",
+     "parents": [
+      "mr-northheart"
+     ]
+    },
+    {
+     "id": "mr-nobody",
+     "title": "Nessuno può salvare Markus",
+     "en": "Nobody to Save Markus",
+     "type": "choice",
+     "parents": [
+      "mr-badly"
+     ]
+    },
+    {
+     "id": "mr-end-failed1",
+     "title": "Markus è morto e la rivoluzione è fallita",
+     "en": "Markus Died and the Revolution Failed",
+     "type": "ending",
+     "parents": [
+      "mr-accept",
+      "mr-refuse",
+      "mr-nobody"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Prima variante: Markus gravemente ferito. Collegamento da verificare: la linea parte dal gruppo «Accetta / Rifiuta» senza indicare la scelta.",
+     "note_en": "Key event (highlighted in yellow in the game). First variant: Markus badly wounded. Link to be verified: the line leaves the “Accept / Refuse” group without showing which choice."
+    },
+    {
+     "id": "mr-machinegun",
+     "title": "Raggiungi la mitragliatrice",
+     "en": "Reach Machine Gun",
+     "type": "choice",
+     "parents": [
+      "mr-approach"
+     ]
+    },
+    {
+     "id": "mr-coordinate",
+     "title": "Coordina l'attacco",
+     "en": "Coordinate Attack",
+     "type": "choice",
+     "parents": [
+      "mr-machinegun"
+     ]
+    },
+    {
+     "id": "mr-sendnorth",
+     "title": "Manda North a morire",
+     "en": "Send North to Her Death",
+     "type": "choice",
+     "parents": [
+      "mr-coordinate"
+     ]
+    },
+    {
+     "id": "mr-success",
+     "title": "Attacco riuscito",
+     "en": "Attack Successful",
+     "type": "choice",
+     "parents": [
+      "mr-coordinate"
+     ]
+    },
+    {
+     "id": "mr-unsuccess",
+     "title": "Attacco fallito",
+     "en": "Attack Unsuccessful",
+     "type": "choice",
+     "parents": [
+      "mr-coordinate"
+     ]
+    },
+    {
+     "id": "mr-drone",
+     "title": "Un drone attacca il gruppo di North",
+     "en": "Drone Attacks North's Group",
+     "type": "choice",
+     "parents": [
+      "mr-success"
+     ]
+    },
+    {
+     "id": "mr-failshoot",
+     "title": "Non riesci ad abbattere il drone",
+     "en": "Fail to Shoot Drone",
+     "type": "choice",
+     "parents": [
+      "mr-drone"
+     ]
+    },
+    {
+     "id": "mr-shootdrone",
+     "title": "Abbatti il drone",
+     "en": "Shoot Drone",
+     "type": "choice",
+     "parents": [
+      "mr-drone"
+     ]
+    },
+    {
+     "id": "mr-fallback",
+     "title": "Gli androidi devono ripiegare",
+     "en": "Androids Have to Fall Back",
+     "type": "choice",
+     "parents": [
+      "mr-unsuccess",
+      "mr-approach"
+     ],
+     "note": "Collegamento da verificare: una seconda linea arriva direttamente dall'obiettivo «Approaching Recall Center».",
+     "note_en": "Link to be verified: a second line comes directly from the “Approaching Recall Center” objective."
+    },
+    {
+     "id": "mr-simongets",
+     "title": "Simon viene colpito",
+     "en": "Simon Gets Shot",
+     "type": "choice",
+     "parents": [
+      "mr-fallback"
+     ],
+     "note": "Durante la ritirata.",
+     "note_en": "During the retreat."
+    },
+    {
+     "id": "mr-northgets",
+     "title": "North viene colpita",
+     "en": "North Gets Shot",
+     "type": "choice",
+     "parents": [
+      "mr-fallback"
+     ]
+    },
+    {
+     "id": "mr-sheltm",
+     "title": "Markus si ripara in un negozio",
+     "en": "Markus Takes Shelter in Store",
+     "type": "choice",
+     "parents": [
+      "mr-fallback"
+     ]
+    },
+    {
+     "id": "mr-sheltmn",
+     "title": "Markus e North si riparano in un negozio",
+     "en": "Markus and North Take Shelter in Store",
+     "type": "choice",
+     "parents": [
+      "mr-fallback"
+     ]
+    },
+    {
+     "id": "mr-recall5",
+     "title": "Vicino al centro di richiamo n° 5",
+     "en": "Approaching Recall Center N°5",
+     "type": "checkpoint",
+     "parents": [
+      "mr-failshoot",
+      "mr-shootdrone",
+      "mr-success"
+     ],
+     "note": "Una linea arriva anche direttamente da «Attack Successful».",
+     "note_en": "A line also comes directly from “Attack Successful”."
+    },
+    {
+     "id": "mr-final",
+     "title": "Assalto finale",
+     "en": "Final Assault",
+     "type": "choice",
+     "parents": [
+      "mr-recall5"
+     ]
+    },
+    {
+     "id": "mr-explosion",
+     "title": "Markus viene colpito da un'esplosione",
+     "en": "Markus Is Hit by Explosion",
+     "type": "choice",
+     "parents": [
+      "mr-final"
+     ]
+    },
+    {
+     "id": "mr-connorfinds",
+     "title": "Connor trova Markus",
+     "en": "Connor Finds Markus",
+     "type": "choice",
+     "parents": [
+      "mr-explosion"
+     ]
+    },
+    {
+     "id": "mr-ctrlconnor",
+     "title": "Controlla Connor",
+     "en": "Control Connor",
+     "type": "choice",
+     "parents": [
+      "mr-connorfinds"
+     ]
+    },
+    {
+     "id": "mr-winc",
+     "title": "Vinci lo scontro",
+     "en": "Win the Fight",
+     "type": "choice",
+     "parents": [
+      "mr-ctrlconnor"
+     ],
+     "note": "Controllando Connor.",
+     "note_en": "Controlling Connor."
+    },
+    {
+     "id": "mr-losec",
+     "title": "Perdi lo scontro",
+     "en": "Lose the Fight",
+     "type": "choice",
+     "parents": [
+      "mr-ctrlconnor"
+     ],
+     "note": "Controllando Connor.",
+     "note_en": "Controlling Connor."
+    },
+    {
+     "id": "mr-defeats",
+     "title": "Markus sconfigge Connor",
+     "en": "Markus Defeats Connor",
+     "type": "choice",
+     "parents": [
+      "mr-losec"
+     ]
+    },
+    {
+     "id": "mr-ctrlmarkus",
+     "title": "Controlla Markus",
+     "en": "Control Markus",
+     "type": "choice",
+     "parents": [
+      "mr-connorfinds"
+     ]
+    },
+    {
+     "id": "mr-winm",
+     "title": "Vinci lo scontro",
+     "en": "Win the Fight",
+     "type": "choice",
+     "parents": [
+      "mr-ctrlmarkus"
+     ],
+     "note": "Controllando Markus.",
+     "note_en": "Controlling Markus."
+    },
+    {
+     "id": "mr-losem",
+     "title": "Perdi lo scontro",
+     "en": "Lose the Fight",
+     "type": "choice",
+     "parents": [
+      "mr-ctrlmarkus"
+     ],
+     "note": "Controllando Markus.",
+     "note_en": "Controlling Markus."
+    },
+    {
+     "id": "mr-soldiers",
+     "title": "I soldati si avvicinano a Markus",
+     "en": "Soldiers Approach Markus",
+     "type": "choice",
+     "parents": [
+      "mr-explosion"
+     ]
+    },
+    {
+     "id": "mr-neutralize",
+     "title": "Neutralizza i soldati",
+     "en": "Neutralize Soldiers",
+     "type": "choice",
+     "parents": [
+      "mr-soldiers"
+     ]
+    },
+    {
+     "id": "mr-failneut",
+     "title": "Non riesci a neutralizzare i soldati",
+     "en": "Fail to Neutralize the Soldiers",
+     "type": "choice",
+     "parents": [
+      "mr-soldiers"
+     ]
+    },
+    {
+     "id": "mr-tanks",
+     "title": "Spara ai carri armati",
+     "en": "Shoot Tanks",
+     "type": "choice",
+     "parents": [
+      "mr-defeats",
+      "mr-winm",
+      "mr-neutralize"
+     ]
+    },
+    {
+     "id": "mr-end-stopped",
+     "title": "Connor ha fermato la rivoluzione",
+     "en": "Connor Stopped the Revolution",
+     "type": "ending",
+     "parents": [
+      "mr-winc"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-end-success",
+     "title": "L'assalto è riuscito",
+     "en": "Assault Was Successful",
+     "type": "ending",
+     "parents": [
+      "mr-tanks"
+     ]
+    },
+    {
+     "id": "mr-end-failed2",
+     "title": "Markus è morto e la rivoluzione è fallita",
+     "en": "Markus Died and the Revolution Failed",
+     "type": "ending",
+     "parents": [
+      "mr-losem",
+      "mr-failneut"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Seconda variante: nell'assalto finale.",
+     "note_en": "Key event (highlighted in yellow in the game). Second variant: in the final assault."
+    },
+    {
+     "id": "mr-alone",
+     "title": "Da solo nel negozio",
+     "en": "Alone in Store",
+     "type": "checkpoint",
+     "parents": [
+      "mr-sheltm"
+     ]
+    },
+    {
+     "id": "mr-connorarrives",
+     "title": "Arriva Connor",
+     "en": "Connor Arrives",
+     "type": "choice",
+     "parents": [
+      "mr-alone"
+     ]
+    },
+    {
+     "id": "mr-shoot2",
+     "title": "Spara",
+     "en": "Shoot",
+     "type": "choice",
+     "parents": [
+      "mr-connorarrives"
+     ],
+     "note": "Markus da solo nel negozio.",
+     "note_en": "Markus alone in the store."
+    },
+    {
+     "id": "mr-spare2",
+     "title": "Risparmialo",
+     "en": "Spare",
+     "type": "choice",
+     "parents": [
+      "mr-connorarrives"
+     ],
+     "note": "Markus da solo nel negozio.",
+     "note_en": "Markus alone in the store."
+    },
+    {
+     "id": "mr-nochoice2",
+     "title": "Nessuna scelta",
+     "en": "No Choice",
+     "type": "choice",
+     "parents": [
+      "mr-connorarrives"
+     ],
+     "note": "Markus da solo nel negozio.",
+     "note_en": "Markus alone in the store."
+    },
+    {
+     "id": "mr-markusshot",
+     "title": "Markus viene colpito",
+     "en": "Markus Is Shot",
+     "type": "choice",
+     "parents": [
+      "mr-shoot2"
+     ]
+    },
+    {
+     "id": "mr-detonate1",
+     "title": "Fai esplodere la bomba",
+     "en": "Detonate Bomb",
+     "type": "choice",
+     "parents": [
+      "mr-markusshot"
+     ],
+     "note": "Dopo essere stato colpito da Connor.",
+     "note_en": "After being shot by Connor."
+    },
+    {
+     "id": "mr-end-executed",
+     "title": "Connor ha giustiziato Markus",
+     "en": "Connor Executed Markus",
+     "type": "ending",
+     "parents": [
+      "mr-markusshot"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-end-burns",
+     "title": "Markus è morto mentre Detroit brucia",
+     "en": "Markus Died as Detroit Burns",
+     "type": "ending",
+     "parents": [
+      "mr-detonate1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-end-spared",
+     "title": "Connor ha risparmiato Markus",
+     "en": "Connor Spared Markus",
+     "type": "ending",
+     "parents": [
+      "mr-spare2"
+     ]
+    },
+    {
+     "id": "mr-end-eachother",
+     "title": "Markus e Connor si sono uccisi a vicenda",
+     "en": "Markus and Connor Killed Each Other",
+     "type": "ending",
+     "parents": [
+      "mr-nochoice2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-surround1",
+     "title": "I soldati circondano il negozio",
+     "en": "Soldiers Surround Store",
+     "type": "choice",
+     "parents": [
+      "mr-alone"
+     ],
+     "note": "Markus da solo nel negozio.",
+     "note_en": "Markus alone in the store."
+    },
+    {
+     "id": "mr-req-det1",
+     "title": "Hai preso il detonatore in «Crossroads»",
+     "en": "Took Detonator in 'Crossroads'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-surrender1",
+     "title": "Arrenditi",
+     "en": "Surrender",
+     "type": "choice",
+     "parents": [
+      "mr-surround1"
+     ],
+     "note": "Markus da solo nel negozio.",
+     "note_en": "Markus alone in the store."
+    },
+    {
+     "id": "mr-suicide1",
+     "title": "Suicidati",
+     "en": "Suicide",
+     "type": "choice",
+     "parents": [
+      "mr-surround1"
+     ],
+     "note": "Markus da solo nel negozio.",
+     "note_en": "Markus alone in the store."
+    },
+    {
+     "id": "mr-detonate2",
+     "title": "Fai esplodere la bomba",
+     "en": "Detonate Bomb",
+     "type": "choice",
+     "parents": [
+      "mr-surround1",
+      "mr-req-det1"
+     ],
+     "note": "Markus da solo nel negozio.",
+     "note_en": "Markus alone in the store."
+    },
+    {
+     "id": "mr-end-leaving",
+     "title": "Markus è morto uscendo dal negozio",
+     "en": "Markus Died Leaving Store",
+     "type": "ending",
+     "parents": [
+      "mr-surrender1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-end-suicide",
+     "title": "Markus si è suicidato",
+     "en": "Markus Committed Suicide",
+     "type": "ending",
+     "parents": [
+      "mr-suicide1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-end-watched",
+     "title": "Markus ha guardato Detroit bruciare",
+     "en": "Markus Watched Detroit Burn",
+     "type": "ending",
+     "parents": [
+      "mr-detonate2"
+     ]
+    },
+    {
+     "id": "mr-withnorth",
+     "title": "Nel negozio con North",
+     "en": "Inside Store With North",
+     "type": "checkpoint",
+     "parents": [
+      "mr-sheltmn"
+     ]
+    },
+    {
+     "id": "mr-surround2",
+     "title": "I soldati circondano il negozio",
+     "en": "Soldiers Surround Store",
+     "type": "choice",
+     "parents": [
+      "mr-withnorth"
+     ],
+     "note": "Markus e North nel negozio.",
+     "note_en": "Markus and North in the store."
+    },
+    {
+     "id": "mr-req-det2",
+     "title": "Hai preso il detonatore in «Crossroads»",
+     "en": "Took Detonator in 'Crossroads'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-detonate3",
+     "title": "Fai esplodere la bomba",
+     "en": "Detonate Bomb",
+     "type": "choice",
+     "parents": [
+      "mr-surround2",
+      "mr-req-det2"
+     ],
+     "note": "Markus e North nel negozio.",
+     "note_en": "Markus and North in the store."
+    },
+    {
+     "id": "mr-surrender2",
+     "title": "Arrenditi",
+     "en": "Surrender",
+     "type": "choice",
+     "parents": [
+      "mr-surround2"
+     ],
+     "note": "Markus e North nel negozio.",
+     "note_en": "Markus and North in the store."
+    },
+    {
+     "id": "mr-suicide2",
+     "title": "Suicidati",
+     "en": "Suicide",
+     "type": "choice",
+     "parents": [
+      "mr-surround2"
+     ],
+     "note": "Markus e North nel negozio.",
+     "note_en": "Markus and North in the store."
+    },
+    {
+     "id": "mr-kissnorth",
+     "title": "Bacia North",
+     "en": "Kiss North",
+     "type": "choice",
+     "parents": [
+      "mr-surround2"
+     ]
+    },
+    {
+     "id": "mr-end-mnwatched",
+     "title": "Markus e North hanno guardato Detroit bruciare",
+     "en": "Markus and North Watched Detroit Burn",
+     "type": "ending",
+     "parents": [
+      "mr-detonate3"
+     ]
+    },
+    {
+     "id": "mr-end-mnleaving",
+     "title": "Markus e North sono morti uscendo dal negozio",
+     "en": "Markus and North Died Leaving the Store",
+     "type": "ending",
+     "parents": [
+      "mr-surrender2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-end-mnsuicide",
+     "title": "Markus e North si sono suicidati",
+     "en": "Markus and North Committed Suicide",
+     "type": "ending",
+     "parents": [
+      "mr-suicide2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-moment",
+     "title": "Condividi un momento con North",
+     "en": "Share a Moment With North",
+     "type": "choice",
+     "parents": [
+      "mr-kissnorth"
+     ]
+    },
+    {
+     "id": "mr-req-north",
+     "title": "North è diventata la leader in una scena precedente",
+     "en": "North Became Leader in a Previous Scene",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-northhart",
+     "title": "North a Hart Plaza",
+     "en": "North in Hart Plaza",
+     "type": "checkpoint",
+     "parents": [
+      "mr-req-north"
+     ]
+    },
+    {
+     "id": "mr-nmessage",
+     "title": "North manda un messaggio",
+     "en": "North Sends a Message",
+     "type": "choice",
+     "parents": [
+      "mr-northhart"
+     ]
+    },
+    {
+     "id": "mr-ncharges",
+     "title": "North carica la barricata",
+     "en": "North Charges the Barricade",
+     "type": "choice",
+     "parents": [
+      "mr-nmessage"
+     ]
+    },
+    {
+     "id": "mr-nflag",
+     "title": "North pianta la bandiera",
+     "en": "North Plants the Flag",
+     "type": "choice",
+     "parents": [
+      "mr-ncharges"
+     ]
+    },
+    {
+     "id": "mr-outnumbered",
+     "title": "I devianti sono in inferiorità numerica",
+     "en": "Deviants Are Outnumbered",
+     "type": "choice",
+     "parents": [
+      "mr-nflag"
+     ]
+    },
+    {
+     "id": "mr-end-northsoldiers",
+     "title": "North è stata uccisa dai soldati",
+     "en": "North Was Shot by Soldiers",
+     "type": "ending",
+     "parents": [
+      "mr-outnumbered"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-nshelter",
+     "title": "North si ripara in un negozio",
+     "en": "North Takes Shelter in Store",
+     "type": "choice",
+     "parents": [
+      "mr-outnumbered"
+     ]
+    },
+    {
+     "id": "mr-cyberstore",
+     "title": "Connor nel negozio della CyberLife",
+     "en": "Connor in CyberLife Store",
+     "type": "checkpoint",
+     "parents": [
+      "mr-nshelter"
+     ]
+    },
+    {
+     "id": "mr-findnorth",
+     "title": "Trova North",
+     "en": "Find North",
+     "type": "choice",
+     "parents": [
+      "mr-cyberstore"
+     ]
+    },
+    {
+     "id": "mr-shoot1",
+     "title": "Spara",
+     "en": "Shoot",
+     "type": "choice",
+     "parents": [
+      "mr-findnorth"
+     ],
+     "note": "Davanti a North, nel negozio della CyberLife.",
+     "note_en": "Facing North, in the CyberLife store."
+    },
+    {
+     "id": "mr-spare1",
+     "title": "Risparmiala",
+     "en": "Spare",
+     "type": "choice",
+     "parents": [
+      "mr-findnorth"
+     ],
+     "note": "Davanti a North, nel negozio della CyberLife.",
+     "note_en": "Facing North, in the CyberLife store."
+    },
+    {
+     "id": "mr-nochoice1",
+     "title": "Nessuna scelta",
+     "en": "No Choice",
+     "type": "choice",
+     "parents": [
+      "mr-findnorth"
+     ],
+     "note": "Davanti a North, nel negozio della CyberLife.",
+     "note_en": "Facing North, in the CyberLife store."
+    },
+    {
+     "id": "mr-end-northconnor",
+     "title": "North è stata uccisa da Connor",
+     "en": "North Was Shot by Connor",
+     "type": "ending",
+     "parents": [
+      "mr-shoot1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "mr-end-sparednorth",
+     "title": "Connor ha risparmiato North",
+     "en": "Connor Spared North",
+     "type": "ending",
+     "parents": [
+      "mr-spare1"
+     ]
+    },
+    {
+     "id": "mr-end-nceachother",
+     "title": "North e Connor si sono uccisi a vicenda",
+     "en": "North and Connor Killed Each Other",
+     "type": "ending",
+     "parents": [
+      "mr-nochoice1"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    }
+   ]
+  },
+  {
+   "name": "Battle for Detroit - Markus Demonstration",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "md-march",
+     "title": "Marcia per la libertà a Hart Plaza",
+     "en": "Hart Plaza Freedom March",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "md-lead",
+     "title": "Guida Jericho",
+     "en": "Lead Jericho",
+     "type": "choice",
+     "parents": [
+      "md-march"
+     ]
+    },
+    {
+     "id": "md-roadblock",
+     "title": "Posto di blocco",
+     "en": "Roadblock",
+     "type": "choice",
+     "parents": [
+      "md-lead"
+     ]
+    },
+    {
+     "id": "md-officer",
+     "title": "Parla con l'agente",
+     "en": "Talk to Officer",
+     "type": "choice",
+     "parents": [
+      "md-roadblock"
+     ]
+    },
+    {
+     "id": "md-underfire",
+     "title": "Androidi sotto il fuoco",
+     "en": "Androids Under Fire",
+     "type": "choice",
+     "parents": [
+      "md-officer"
+     ]
+    },
+    {
+     "id": "md-determination",
+     "title": "Mostra determinazione",
+     "en": "Show Determination",
+     "type": "choice",
+     "parents": [
+      "md-underfire"
+     ]
+    },
+    {
+     "id": "md-fist",
+     "title": "Alza il pugno",
+     "en": "Raise Fist",
+     "type": "choice",
+     "parents": [
+      "md-determination"
+     ]
+    },
+    {
+     "id": "md-hands",
+     "title": "Mani in alto",
+     "en": "Hands in the Air",
+     "type": "choice",
+     "parents": [
+      "md-determination"
+     ]
+    },
+    {
+     "id": "md-sit",
+     "title": "Siediti",
+     "en": "Sit",
+     "type": "choice",
+     "parents": [
+      "md-determination"
+     ]
+    },
+    {
+     "id": "md-kneel",
+     "title": "Inginocchiati",
+     "en": "Kneel",
+     "type": "choice",
+     "parents": [
+      "md-determination"
+     ]
+    },
+    {
+     "id": "md-stand",
+     "title": "Gli androidi non arretrano",
+     "en": "Androids Stand Their Ground",
+     "type": "checkpoint",
+     "parents": [
+      "md-fist",
+      "md-hands",
+      "md-sit",
+      "md-kneel"
+     ]
+    },
+    {
+     "id": "md-build",
+     "title": "Costruisci una barricata",
+     "en": "Build Barricade",
+     "type": "choice",
+     "parents": [
+      "md-stand"
+     ]
+    },
+    {
+     "id": "md-billboard",
+     "title": "Usa il cartellone",
+     "en": "Use Billboard",
+     "type": "choice",
+     "parents": [
+      "md-build"
+     ]
+    },
+    {
+     "id": "md-bench",
+     "title": "Usa la panchina",
+     "en": "Use Bench",
+     "type": "choice",
+     "parents": [
+      "md-build"
+     ]
+    },
+    {
+     "id": "md-car",
+     "title": "Usa l'auto abbandonata",
+     "en": "Use Abandoned Car",
+     "type": "choice",
+     "parents": [
+      "md-build"
+     ]
+    },
+    {
+     "id": "md-hold",
+     "title": "Difendi la barricata",
+     "en": "Hold Barricade",
+     "type": "objective",
+     "parents": [
+      "md-billboard",
+      "md-bench",
+      "md-car"
+     ]
+    },
+    {
+     "id": "md-slogans",
+     "title": "Scegli gli slogan",
+     "en": "Choose Slogans",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ]
+    },
+    {
+     "id": "md-scared",
+     "title": "Parla con l'androide spaventato",
+     "en": "Talk to Scared Android",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ]
+    },
+    {
+     "id": "md-traumatized",
+     "title": "Parla con l'androide traumatizzato",
+     "en": "Talk to Traumatized Android",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ]
+    },
+    {
+     "id": "md-north1",
+     "title": "Parla con North",
+     "en": "Talk to North",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ],
+     "note": "Mentre difendi la barricata.",
+     "note_en": "While holding the barricade."
+    },
+    {
+     "id": "md-flag",
+     "title": "Pianta la bandiera",
+     "en": "Plant the Flag",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ]
+    },
+    {
+     "id": "md-obssoldiers",
+     "title": "Osserva i soldati",
+     "en": "Observe Soldiers",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ]
+    },
+    {
+     "id": "md-obsdet1",
+     "title": "Osserva il detonatore",
+     "en": "Observe Detonator",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ],
+     "note": "Mentre difendi la barricata.",
+     "note_en": "While holding the barricade."
+    },
+    {
+     "id": "md-barrel",
+     "title": "Accendi il barile",
+     "en": "Light Barrel",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ]
+    },
+    {
+     "id": "md-mag",
+     "title": "Leggi «They Defy Us»",
+     "en": "Read \"They Defy Us\"",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ],
+     "note": "Rivista",
+     "note_en": "Magazine"
+    },
+    {
+     "id": "md-perkins",
+     "title": "Arriva Perkins",
+     "en": "Perkins Arrives",
+     "type": "choice",
+     "parents": [
+      "md-hold"
+     ]
+    },
+    {
+     "id": "md-negotiate",
+     "title": "Tratta con Perkins",
+     "en": "Negotiate With Perkins",
+     "type": "choice",
+     "parents": [
+      "md-perkins"
+     ]
+    },
+    {
+     "id": "md-refuseneg",
+     "title": "Rifiuta di trattare",
+     "en": "Refuse to Negotiate",
+     "type": "choice",
+     "parents": [
+      "md-perkins"
+     ]
+    },
+    {
+     "id": "md-acceptdeal",
+     "title": "Accetta l'accordo",
+     "en": "Accept Deal",
+     "type": "choice",
+     "parents": [
+      "md-negotiate"
+     ]
+    },
+    {
+     "id": "md-refusedeal",
+     "title": "Rifiuta l'accordo",
+     "en": "Refuse Deal",
+     "type": "choice",
+     "parents": [
+      "md-negotiate"
+     ]
+    },
+    {
+     "id": "md-perkinsleaves",
+     "title": "Perkins se ne va",
+     "en": "Perkins Leaves",
+     "type": "choice",
+     "parents": [
+      "md-acceptdeal"
+     ]
+    },
+    {
+     "id": "md-dismantled",
+     "title": "Nella barricata smantellata",
+     "en": "In the Dismantled Barricade",
+     "type": "checkpoint",
+     "parents": [
+      "md-perkinsleaves"
+     ]
+    },
+    {
+     "id": "md-north2",
+     "title": "Parla con North",
+     "en": "Talk to North",
+     "type": "choice",
+     "parents": [
+      "md-dismantled"
+     ],
+     "note": "Nella barricata smantellata.",
+     "note_en": "In the dismantled barricade."
+    },
+    {
+     "id": "md-talkperkins",
+     "title": "Parla con Perkins",
+     "en": "Talk to Perkins",
+     "type": "choice",
+     "parents": [
+      "md-dismantled",
+      "md-north2"
+     ]
+    },
+    {
+     "id": "md-shootsnorth",
+     "title": "Perkins spara a North",
+     "en": "Perkins Shoots North",
+     "type": "choice",
+     "parents": [
+      "md-talkperkins"
+     ]
+    },
+    {
+     "id": "md-shootsmarkus",
+     "title": "Perkins spara a Markus",
+     "en": "Perkins Shoots Markus",
+     "type": "choice",
+     "parents": [
+      "md-talkperkins",
+      "md-shootsnorth"
+     ]
+    },
+    {
+     "id": "md-end-betraying",
+     "title": "Markus è morto dopo aver tradito la sua gente",
+     "en": "Markus Died After Betraying His People",
+     "type": "ending",
+     "parents": [
+      "md-shootsmarkus"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "md-attack",
+     "title": "I soldati attaccano la barricata",
+     "en": "Soldiers Attack Barricade",
+     "type": "choice",
+     "parents": [
+      "md-refuseneg",
+      "md-refusedeal"
+     ]
+    },
+    {
+     "id": "md-defending",
+     "title": "A difesa della barricata",
+     "en": "Defending the Barricade",
+     "type": "checkpoint",
+     "parents": [
+      "md-attack"
+     ]
+    },
+    {
+     "id": "md-savefleeing",
+     "title": "Salva gli androidi in fuga",
+     "en": "Save Fleeing Androids",
+     "type": "choice",
+     "parents": [
+      "md-defending"
+     ]
+    },
+    {
+     "id": "md-failsave",
+     "title": "Non riesci a salvare gli androidi",
+     "en": "Fail to Save Androids",
+     "type": "choice",
+     "parents": [
+      "md-defending"
+     ]
+    },
+    {
+     "id": "md-bullet",
+     "title": "North si prende una pallottola per Markus",
+     "en": "North Takes a Bullet for Markus",
+     "type": "choice",
+     "parents": [
+      "md-failsave"
+     ],
+     "note": "Collegamento da verificare: la linea parte dal gruppo «Salva gli androidi / Non riesci…»; attribuita a «Non riesci a salvare gli androidi».",
+     "note_en": "Link to be verified: the line leaves the “Save Fleeing Androids / Fail…” group; attributed to “Fail to Save Androids”."
+    },
+    {
+     "id": "md-markusshot",
+     "title": "Markus viene colpito",
+     "en": "Markus Shot",
+     "type": "choice",
+     "parents": [
+      "md-failsave"
+     ],
+     "note": "Collegamento da verificare: attribuito a «Non riesci a salvare gli androidi» come il nodo precedente.",
+     "note_en": "Link to be verified: attributed to “Fail to Save Androids”, like the previous node."
+    },
+    {
+     "id": "md-end-protecting",
+     "title": "Markus è morto proteggendo la sua gente",
+     "en": "Markus Died Protecting His People",
+     "type": "ending",
+     "parents": [
+      "md-markusshot"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "md-cornered",
+     "title": "Markus è messo all'angolo",
+     "en": "Markus Is Cornered",
+     "type": "choice",
+     "parents": [
+      "md-savefleeing",
+      "md-bullet"
+     ]
+    },
+    {
+     "id": "md-northjoins",
+     "title": "North si unisce a lui",
+     "en": "North Joins Him",
+     "type": "choice",
+     "parents": [
+      "md-cornered"
+     ]
+    },
+    {
+     "id": "md-joshjoins",
+     "title": "Josh si unisce a lui",
+     "en": "Josh Joins Him",
+     "type": "choice",
+     "parents": [
+      "md-cornered"
+     ]
+    },
+    {
+     "id": "md-simonjoins",
+     "title": "Simon si unisce a lui",
+     "en": "Simon Joins Him",
+     "type": "choice",
+     "parents": [
+      "md-cornered"
+     ]
+    },
+    {
+     "id": "md-raise",
+     "title": "I soldati alzano le armi",
+     "en": "Soldiers Raise Weapons",
+     "type": "choice",
+     "parents": [
+      "md-cornered"
+     ]
+    },
+    {
+     "id": "md-req-det",
+     "title": "Hai preso il detonatore in «Crossroads»",
+     "en": "Took Detonator in 'Crossroads'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "md-sing",
+     "title": "Canta",
+     "en": "Sing",
+     "type": "choice",
+     "parents": [
+      "md-raise"
+     ]
+    },
+    {
+     "id": "md-kissnorth",
+     "title": "Bacia North",
+     "en": "Kiss North",
+     "type": "choice",
+     "parents": [
+      "md-raise"
+     ]
+    },
+    {
+     "id": "md-sacrifice",
+     "title": "Sacrificati",
+     "en": "Sacrifice",
+     "type": "choice",
+     "parents": [
+      "md-raise"
+     ]
+    },
+    {
+     "id": "md-donothing",
+     "title": "Non fare nulla",
+     "en": "Do Nothing",
+     "type": "choice",
+     "parents": [
+      "md-raise"
+     ]
+    },
+    {
+     "id": "md-obsdet2",
+     "title": "Osserva il detonatore",
+     "en": "Observe Detonator",
+     "type": "choice",
+     "parents": [
+      "md-raise",
+      "md-req-det"
+     ],
+     "note": "Davanti ai soldati che alzano le armi.",
+     "note_en": "As the soldiers raise their weapons."
+    },
+    {
+     "id": "md-public",
+     "title": "La gente reagisce all'ultima resistenza degli androidi",
+     "en": "Public Reacts to the Androids' Last Stand",
+     "type": "choice",
+     "parents": [
+      "md-sing",
+      "md-kissnorth",
+      "md-sacrifice",
+      "md-donothing"
+     ],
+     "note": "Collegamento da verificare: la linea parte dal gruppo delle scelte finali senza indicare quali.",
+     "note_en": "Link to be verified: the line leaves the group of final choices without showing which ones."
+    },
+    {
+     "id": "md-president",
+     "title": "La presidente ordina ai soldati di non sparare",
+     "en": "President Orders Soldiers Not to Shoot",
+     "type": "choice",
+     "parents": [
+      "md-public"
+     ]
+    },
+    {
+     "id": "md-giveup",
+     "title": "Lascia perdere",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "md-obsdet2"
+     ]
+    },
+    {
+     "id": "md-press",
+     "title": "Premi",
+     "en": "Press",
+     "type": "choice",
+     "parents": [
+      "md-obsdet2"
+     ]
+    },
+    {
+     "id": "md-fire",
+     "title": "I soldati sparano",
+     "en": "Soldiers Fire",
+     "type": "choice",
+     "parents": [
+      "md-public",
+      "md-giveup",
+      "md-sing",
+      "md-kissnorth",
+      "md-sacrifice",
+      "md-donothing"
+     ],
+     "note": "Collegamento da verificare: arrivano linee da «La gente reagisce…», dal gruppo delle scelte finali e dal gruppo «Lascia perdere / Premi».",
+     "note_en": "Link to be verified: lines arrive from “Public Reacts…”, from the group of final choices and from the “Give Up / Press” group."
+    },
+    {
+     "id": "md-explosion",
+     "title": "Un'esplosione scuote Detroit",
+     "en": "An Explosion Shakes Detroit",
+     "type": "choice",
+     "parents": [
+      "md-press"
+     ]
+    },
+    {
+     "id": "md-retreat",
+     "title": "I soldati si ritirano",
+     "en": "Soldiers Retreat",
+     "type": "choice",
+     "parents": [
+      "md-explosion"
+     ]
+    },
+    {
+     "id": "md-end-moment",
+     "title": "Gli androidi hanno ottenuto la libertà, per ora",
+     "en": "Androids Won Freedom - For the Moment",
+     "type": "ending",
+     "parents": [
+      "md-president"
+     ]
+    },
+    {
+     "id": "md-end-withpeople",
+     "title": "Markus è morto con la sua gente",
+     "en": "Markus Died With His People",
+     "type": "ending",
+     "parents": [
+      "md-fire"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "md-end-debris",
+     "title": "Gli androidi sono diventati liberi tra le macerie di Detroit",
+     "en": "Androids Became Free in the Debris of Detroit",
+     "type": "ending",
+     "parents": [
+      "md-retreat"
+     ]
+    }
+   ]
+  }
+ ]
+}

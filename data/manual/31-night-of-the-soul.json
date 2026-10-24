@@ -1,0 +1,678 @@
+{
+ "chapter": 31,
+ "rev": "manual-1",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
+ "sections": [
+  {
+   "name": "Night of the Soul - Markus",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "nm-req-carldied",
+     "title": "Carl morto in «Broken»",
+     "en": "Carl Died in 'Broken'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-respects",
+     "title": "Rendi omaggio",
+     "en": "Pay Respects",
+     "type": "checkpoint",
+     "parents": [
+      "nm-req-carldied"
+     ]
+    },
+    {
+     "id": "nm-confide1",
+     "title": "Confidati con Carl",
+     "en": "Confide in Carl",
+     "type": "choice",
+     "parents": [
+      "nm-respects"
+     ],
+     "note": "Sulla tomba di Carl.",
+     "note_en": "At Carl's grave."
+    },
+    {
+     "id": "nm-req-carlworse",
+     "title": "Carl peggiorato dopo il ferimento di Leo in «Broken»",
+     "en": "Carl Deteriorated After Leo Was Hurt in 'Broken'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-welcome",
+     "title": "Bentornato a casa",
+     "en": "Welcome Home",
+     "type": "checkpoint",
+     "parents": [
+      "nm-req-carlworse"
+     ]
+    },
+    {
+     "id": "nm-enter",
+     "title": "Entra in casa",
+     "en": "Enter the House",
+     "type": "choice",
+     "parents": [
+      "nm-welcome"
+     ]
+    },
+    {
+     "id": "nm-explore",
+     "title": "Esplora la casa",
+     "en": "Explore the House",
+     "type": "objective",
+     "parents": [
+      "nm-enter"
+     ]
+    },
+    {
+     "id": "nm-piano",
+     "title": "Suona il pianoforte",
+     "en": "Play Piano",
+     "type": "choice",
+     "parents": [
+      "nm-explore"
+     ]
+    },
+    {
+     "id": "nm-books",
+     "title": "Sfoglia i libri",
+     "en": "Browse Books",
+     "type": "choice",
+     "parents": [
+      "nm-explore"
+     ]
+    },
+    {
+     "id": "nm-chess",
+     "title": "Guarda la scacchiera",
+     "en": "Look at the Chessboard",
+     "type": "choice",
+     "parents": [
+      "nm-explore"
+     ]
+    },
+    {
+     "id": "nm-leo",
+     "title": "Ascolta il messaggio di Leo",
+     "en": "Listen to Leo's Message",
+     "type": "choice",
+     "parents": [
+      "nm-explore"
+     ]
+    },
+    {
+     "id": "nm-painting",
+     "title": "Guarda il tuo dipinto",
+     "en": "Look at Your Painting",
+     "type": "choice",
+     "parents": [
+      "nm-explore"
+     ]
+    },
+    {
+     "id": "nm-upstairs",
+     "title": "Sali al piano di sopra",
+     "en": "Go Upstairs",
+     "type": "choice",
+     "parents": [
+      "nm-explore"
+     ]
+    },
+    {
+     "id": "nm-nurse",
+     "title": "L'infermiere di Carl interviene",
+     "en": "Carl's Nurse Intervenes",
+     "type": "choice",
+     "parents": [
+      "nm-upstairs"
+     ]
+    },
+    {
+     "id": "nm-convert",
+     "title": "Converti l'infermiere di Carl",
+     "en": "Convert Carl's Nurse",
+     "type": "choice",
+     "parents": [
+      "nm-nurse"
+     ]
+    },
+    {
+     "id": "nm-bedroom",
+     "title": "Entra in camera da letto",
+     "en": "Enter Bedroom",
+     "type": "choice",
+     "parents": [
+      "nm-convert"
+     ]
+    },
+    {
+     "id": "nm-reconcile",
+     "title": "Riconciliati con Carl",
+     "en": "Reconcile With Carl",
+     "type": "choice",
+     "parents": [
+      "nm-bedroom"
+     ]
+    },
+    {
+     "id": "nm-confide2",
+     "title": "Confidati con Carl",
+     "en": "Confide in Carl",
+     "type": "choice",
+     "parents": [
+      "nm-reconcile"
+     ],
+     "note": "Al capezzale di Carl.",
+     "note_en": "At Carl's bedside."
+    },
+    {
+     "id": "nm-leave",
+     "title": "Vattene",
+     "en": "Leave",
+     "type": "choice",
+     "parents": [
+      "nm-confide2"
+     ]
+    },
+    {
+     "id": "nm-carldies",
+     "title": "Carl muore",
+     "en": "Carl Dies",
+     "type": "choice",
+     "parents": [
+      "nm-confide2"
+     ]
+    },
+    {
+     "id": "nm-req-lost1",
+     "title": "Jericho ha perso il suo leader in una scena precedente",
+     "en": "Jericho Lost Their Leader in a Previous Scene",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-northpeople",
+     "title": "North tra la gente",
+     "en": "North Among the People",
+     "type": "checkpoint",
+     "parents": [
+      "nm-req-lost1"
+     ]
+    },
+    {
+     "id": "nm-arms1",
+     "title": "Chiamata alle armi",
+     "en": "Call to Arms",
+     "type": "choice",
+     "parents": [
+      "nm-northpeople"
+     ],
+     "note": "North tra la gente.",
+     "note_en": "North among the people."
+    },
+    {
+     "id": "nm-req-lost2",
+     "title": "Jericho ha perso il suo leader in una scena precedente",
+     "en": "Jericho Lost Their Leader in a Previous Scene",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-req-attacked1",
+     "title": "Jericho attaccata in «Crossroads»",
+     "en": "Jericho Was Attacked in 'Crossroads'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-northsacred",
+     "title": "North in terra consacrata",
+     "en": "North on Sacred Ground",
+     "type": "checkpoint",
+     "parents": [
+      "nm-req-lost2",
+      "nm-req-attacked1"
+     ]
+    },
+    {
+     "id": "nm-regroup1",
+     "title": "I devianti si riorganizzano",
+     "en": "Deviants Regroup",
+     "type": "choice",
+     "parents": [
+      "nm-northsacred"
+     ],
+     "note": "Con North in chiesa.",
+     "note_en": "With North in the church."
+    },
+    {
+     "id": "nm-arms2",
+     "title": "Chiamata alle armi",
+     "en": "Call to Arms",
+     "type": "choice",
+     "parents": [
+      "nm-regroup1"
+     ],
+     "note": "North in chiesa.",
+     "note_en": "North in the church."
+    },
+    {
+     "id": "nm-end-north",
+     "title": "North ha deciso di attaccare il campo",
+     "en": "North Decided to Attack the Camp",
+     "type": "ending",
+     "parents": [
+      "nm-arms1",
+      "nm-arms2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-markuspeople",
+     "title": "Markus tra la gente",
+     "en": "Markus Among the People",
+     "type": "checkpoint",
+     "parents": [
+      "nm-leave",
+      "nm-confide1",
+      "nm-carldies"
+     ]
+    },
+    {
+     "id": "nm-violent1",
+     "title": "Attacco violento",
+     "en": "Violent Attack",
+     "type": "choice",
+     "parents": [
+      "nm-markuspeople"
+     ],
+     "note": "Markus tra la gente.",
+     "note_en": "Markus among the people."
+    },
+    {
+     "id": "nm-peaceful1",
+     "title": "Protesta pacifica",
+     "en": "Peaceful Protest",
+     "type": "choice",
+     "parents": [
+      "nm-markuspeople"
+     ],
+     "note": "Markus tra la gente.",
+     "note_en": "Markus among the people."
+    },
+    {
+     "id": "nm-req-attacked2",
+     "title": "Jericho attaccata in «Crossroads»",
+     "en": "Jericho Was Attacked in 'Crossroads'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-markussacred",
+     "title": "Markus in terra consacrata",
+     "en": "Markus on Sacred Ground",
+     "type": "checkpoint",
+     "parents": [
+      "nm-req-attacked2",
+      "nm-leave",
+      "nm-confide1",
+      "nm-carldies"
+     ]
+    },
+    {
+     "id": "nm-regroup2",
+     "title": "I devianti si riorganizzano",
+     "en": "Deviants Regroup",
+     "type": "choice",
+     "parents": [
+      "nm-markussacred"
+     ],
+     "note": "Con Markus in chiesa.",
+     "note_en": "With Markus in the church."
+    },
+    {
+     "id": "nm-regroupobj",
+     "title": "I devianti si riorganizzano",
+     "en": "Deviants Regroup",
+     "type": "objective",
+     "parents": [
+      "nm-regroup2"
+     ]
+    },
+    {
+     "id": "nm-talknorth",
+     "title": "Parla con North",
+     "en": "Talk to North",
+     "type": "choice",
+     "parents": [
+      "nm-regroupobj"
+     ]
+    },
+    {
+     "id": "nm-moment",
+     "title": "Condividi un momento con North",
+     "en": "Share a Moment With North",
+     "type": "choice",
+     "parents": [
+      "nm-talknorth"
+     ]
+    },
+    {
+     "id": "nm-talkkara",
+     "title": "Parla con Kara",
+     "en": "Talk to Kara",
+     "type": "choice",
+     "parents": [
+      "nm-regroupobj"
+     ]
+    },
+    {
+     "id": "nm-talkjosh",
+     "title": "Parla con Josh",
+     "en": "Talk to Josh",
+     "type": "choice",
+     "parents": [
+      "nm-regroupobj"
+     ]
+    },
+    {
+     "id": "nm-talkconnor",
+     "title": "Parla con Connor",
+     "en": "Talk to Connor",
+     "type": "choice",
+     "parents": [
+      "nm-regroupobj"
+     ]
+    },
+    {
+     "id": "nm-killconnor",
+     "title": "Uccidi Connor",
+     "en": "Kill Connor",
+     "type": "choice",
+     "parents": [
+      "nm-talkconnor"
+     ]
+    },
+    {
+     "id": "nm-spareconnor",
+     "title": "Risparmia Connor",
+     "en": "Spare Connor",
+     "type": "choice",
+     "parents": [
+      "nm-talkconnor"
+     ]
+    },
+    {
+     "id": "nm-newconnor",
+     "title": "Verrà inviato un nuovo Connor",
+     "en": "A New Connor Will Be Sent",
+     "type": "choice",
+     "parents": [
+      "nm-killconnor"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-talksimon",
+     "title": "Parla con Simon",
+     "en": "Talk to Simon",
+     "type": "choice",
+     "parents": [
+      "nm-regroupobj"
+     ]
+    },
+    {
+     "id": "nm-violent2",
+     "title": "Attacco violento",
+     "en": "Violent Attack",
+     "type": "choice",
+     "parents": [
+      "nm-regroupobj"
+     ],
+     "note": "Dopo la riorganizzazione.",
+     "note_en": "After regrouping."
+    },
+    {
+     "id": "nm-peaceful2",
+     "title": "Protesta pacifica",
+     "en": "Peaceful Protest",
+     "type": "choice",
+     "parents": [
+      "nm-regroupobj"
+     ],
+     "note": "Dopo la riorganizzazione.",
+     "note_en": "After regrouping."
+    },
+    {
+     "id": "nm-end-fight",
+     "title": "Markus ha scelto di combattere per la sua gente",
+     "en": "Markus Chose to Fight for His People",
+     "type": "ending",
+     "parents": [
+      "nm-violent1",
+      "nm-violent2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nm-end-protest",
+     "title": "Markus ha scelto di protestare per la sua gente",
+     "en": "Markus Chose to Protest for His People",
+     "type": "ending",
+     "parents": [
+      "nm-peaceful1",
+      "nm-peaceful2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    }
+   ]
+  },
+  {
+   "name": "Night of the Soul - Connor",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "nc-thinice",
+     "title": "Ghiaccio sottile",
+     "en": "Thin Ice",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "nc-assignment",
+     "title": "L'ultimo incarico",
+     "en": "The Last Assignment",
+     "type": "choice",
+     "parents": [
+      "nc-thinice"
+     ]
+    },
+    {
+     "id": "nc-req-quit",
+     "title": "Hank ha lasciato la polizia",
+     "en": "Hank Quit the Force",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nc-hankhouse",
+     "title": "Casa di Hank",
+     "en": "Hank's House",
+     "type": "checkpoint",
+     "parents": [
+      "nc-req-quit"
+     ]
+    },
+    {
+     "id": "nc-enter",
+     "title": "Entra in casa",
+     "en": "Enter House",
+     "type": "choice",
+     "parents": [
+      "nc-hankhouse"
+     ]
+    },
+    {
+     "id": "nc-talkhank",
+     "title": "Parla con Hank",
+     "en": "Talk to Hank",
+     "type": "choice",
+     "parents": [
+      "nc-enter"
+     ]
+    },
+    {
+     "id": "nc-son",
+     "title": "Hank si confida sul figlio",
+     "en": "Hank Confides About His Son",
+     "type": "choice",
+     "parents": [
+      "nc-talkhank"
+     ]
+    },
+    {
+     "id": "nc-rails",
+     "title": "Hank si scaglia contro gli androidi",
+     "en": "Hank Rails Against Androids",
+     "type": "choice",
+     "parents": [
+      "nc-talkhank"
+     ]
+    },
+    {
+     "id": "nc-leave",
+     "title": "Vattene",
+     "en": "Leave",
+     "type": "choice",
+     "parents": [
+      "nc-son",
+      "nc-rails"
+     ]
+    },
+    {
+     "id": "nc-end-suicide",
+     "title": "Hank si è suicidato",
+     "en": "Hank Committed Suicide",
+     "type": "ending",
+     "parents": [
+      "nc-leave"
+     ]
+    },
+    {
+     "id": "nc-req-joined",
+     "title": "Connor si è unito alla rivoluzione in «Crossroads»",
+     "en": "Connor Joined the Revolution in 'Crossroads'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco).",
+     "note_en": "Requirement from a previous chapter (highlighted in yellow in the game)."
+    },
+    {
+     "id": "nc-sacred",
+     "title": "Connor in terra consacrata",
+     "en": "Connor on Sacred Ground",
+     "type": "checkpoint",
+     "parents": [
+      "nc-req-joined"
+     ]
+    },
+    {
+     "id": "nc-regroup",
+     "title": "I devianti si riorganizzano",
+     "en": "Deviants Regroup",
+     "type": "choice",
+     "parents": [
+      "nc-sacred"
+     ]
+    },
+    {
+     "id": "nc-church",
+     "title": "Esplora la chiesa",
+     "en": "Explore the Church",
+     "type": "objective",
+     "parents": [
+      "nc-regroup"
+     ]
+    },
+    {
+     "id": "nc-talknorth",
+     "title": "Parla con North",
+     "en": "Talk to North",
+     "type": "choice",
+     "parents": [
+      "nc-church"
+     ]
+    },
+    {
+     "id": "nc-talkkara",
+     "title": "Parla con Kara",
+     "en": "Talk to Kara",
+     "type": "choice",
+     "parents": [
+      "nc-talknorth"
+     ]
+    },
+    {
+     "id": "nc-josh",
+     "title": "Controlla Josh",
+     "en": "Check on Josh",
+     "type": "choice",
+     "parents": [
+      "nc-church"
+     ]
+    },
+    {
+     "id": "nc-simon",
+     "title": "Controlla Simon",
+     "en": "Check on Simon",
+     "type": "choice",
+     "parents": [
+      "nc-josh"
+     ]
+    },
+    {
+     "id": "nc-arms",
+     "title": "North chiama alle armi",
+     "en": "North Calls to Arms",
+     "type": "choice",
+     "parents": [
+      "nc-church"
+     ]
+    },
+    {
+     "id": "nc-end-north",
+     "title": "North ha deciso di attaccare il campo",
+     "en": "North Decided to Attack the Camp",
+     "type": "ending",
+     "parents": [
+      "nc-arms"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco).",
+     "note_en": "Key event (highlighted in yellow in the game)."
+    }
+   ]
+  }
+ ]
+}

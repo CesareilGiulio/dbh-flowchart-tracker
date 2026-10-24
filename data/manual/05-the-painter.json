@@ -1,7 +1,7 @@
 {
  "chapter": 5,
  "rev": "manual-1",
- "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "source": "Trascritto dai diagrammi del gioco / Transcribed from the in-game flowcharts",
  "sections": [
   {
    "name": "",
@@ -40,7 +40,8 @@
      "parents": [
       "p-package"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "p-mag2",
@@ -50,7 +51,8 @@
      "parents": [
       "p-package"
      ],
-     "note": "Rivista"
+     "note": "Rivista",
+     "note_en": "Magazine"
     },
     {
      "id": "p-wake",

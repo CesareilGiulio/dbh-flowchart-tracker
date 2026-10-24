@@ -6,6 +6,7 @@ const bridge = window.api || null;
 
 let DATA = { chapters: {} }, S, cur = 1, curSec = 0, filter = "all";
 let view = { x: 0, y: 0, k: 1 }, bounds = null;
+let nodeEls = new Map(), edgeEls = [];  // elementi del diagramma visibile, per aggiornarli senza ridisegnare
 
 /* ---------- lingua ---------- */
 const T = () => STRINGS[S.lang] || STRINGS.it;
@@ -46,7 +47,13 @@ function fillMissingText(c, f) {
   }));
 }
 function load() { try { const r = localStorage.getItem(KEY); if (r) { const d = JSON.parse(r); if (d && d.v === 2) return d; } } catch (e) {} return null; }
-function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+let saveTimer = null;
+function save() { clearTimeout(saveTimer); saveTimer = null; try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+// I clic ravvicinati producono un solo salvataggio invece di riscrivere tutto a ogni clic
+function scheduleSave() { clearTimeout(saveTimer); saveTimer = setTimeout(save, 400); }
+const flushSave = () => { if (saveTimer) save(); };
+window.addEventListener("beforeunload", flushSave);
+document.addEventListener("visibilitychange", () => { if (document.hidden) flushSave(); });
 function applyData(replaceAll) {
   CHAPTERS.forEach(([n]) => {
     const c = S.chapters[n], f = fromData(n);
@@ -145,6 +152,7 @@ const hidden = n => !n.unlocked && S.spoiler;
 
 function renderGraph() {
   const E = $("#edges"), N = $("#nodes"); E.replaceChildren(); N.replaceChildren();
+  nodeEls = new Map(); edgeEls = [];
   const empty = !hasData(chap());
   $("#empty").hidden = !empty;
   if (empty) { bounds = null; return; }
@@ -157,22 +165,20 @@ function renderGraph() {
       const p = pos.get(pid), pn = map.get(pid); if (!p) return;
       const sx = p.x + W / 2, ex = b.x - W / 2, mx = ex - GX / 2;
       const d = p.y === b.y ? `M${sx},${p.y}H${ex}` : `M${sx},${p.y}H${mx}V${b.y}H${ex}`;
-      el("path", { d, class: "edge" + (pn.unlocked && n.unlocked ? " lit" : "") }, E);
+      const e = el("path", { d, class: "edge" + (pn.unlocked && n.unlocked ? " lit" : "") }, E);
+      edgeEls.push({ e, p: pn, c: n });
     });
   });
   bounds = { x0, x1, y0, y1 };
   nodes.forEach(n => {
-    const b = pos.get(n.id), hide = hidden(n);
-    const g = el("g", { class: `node ${n.type}${n.unlocked ? " on" : ""}${hide ? " hidden" : ""}`, transform: `translate(${b.x},${b.y})`,
-      tabindex: 0, role: "checkbox", "aria-checked": n.unlocked ? "true" : "false" }, N);
+    const b = pos.get(n.id);
+    const g = el("g", { transform: `translate(${b.x},${b.y})`, tabindex: 0, role: "checkbox" }, N);
     el("rect", { class: "box", x: -W / 2, y: -H / 2, width: W, height: H, rx: n.type === "checkpoint" ? H / 2 : 2 }, g);
     if (n.type === "ending") el("rect", { class: "inner", x: -W / 2 + 3, y: -H / 2 + 3, width: W - 6, height: H - 6, rx: 1 }, g);
-    const lines = hide ? [T().hiddenName] : wrap(label(n));
-    const tx = el("text", { "text-anchor": "middle" }, g);
-    lines.forEach((l, i) => { const s = el("tspan", { x: 0, y: (i - (lines.length - 1) / 2) * 15 + 4.5 }, tx); s.textContent = l; });
-    g.setAttribute("aria-label", hide ? T().hiddenName : label(n));
+    el("text", { "text-anchor": "middle" }, g);
+    paintNode(g, n); nodeEls.set(n.id, g);
     g.addEventListener("click", () => toggle(n));
-    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(n, true); } });
+    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(n); } });
     g.addEventListener("mouseenter", () => showInfo(n));
     g.addEventListener("focus", () => showInfo(n));
     g.addEventListener("mouseleave", hideInfo);
@@ -181,6 +187,16 @@ function renderGraph() {
   applyView();
 }
 
+// Stato visivo di un nodo: classe, testo (nascosto se bloccato e spoiler attivo), accessibilità
+function paintNode(g, n) {
+  const hide = hidden(n);
+  g.setAttribute("class", `node ${n.type}${n.unlocked ? " on" : ""}${hide ? " hidden" : ""}`);
+  g.setAttribute("aria-checked", n.unlocked ? "true" : "false");
+  g.setAttribute("aria-label", hide ? T().hiddenName : label(n));
+  const tx = g.querySelector("text"), lines = hide ? [T().hiddenName] : wrap(label(n));
+  tx.replaceChildren();
+  lines.forEach((l, i) => { const s = el("tspan", { x: 0, y: (i - (lines.length - 1) / 2) * 15 + 4.5 }, tx); s.textContent = l; });
+}
 function showInfo(n) {
   if (hidden(n)) { $("#infoTitle").textContent = T().hiddenName; $("#infoNote").textContent = ""; }
   else {
@@ -250,12 +266,25 @@ function renderTop() {
 function renderAll() { applyLang(); renderSide(); renderTop(); renderGraph(); }
 function commit() { save(); renderAll(); }
 
-// Dopo il ridisegno il nodo è un elemento nuovo: con la tastiera gli si ridà il focus
-function toggle(n, refocus) {
-  n.unlocked = !n.unlocked; save();
-  renderSide(); renderTop(); renderGraph();
-  const i = sec().nodes.indexOf(n), g = document.querySelectorAll("#nodes .node")[i];
-  if (refocus && g) g.focus(); else if (g && g.matches(":hover")) showInfo(n);
+// Un clic aggiorna solo il nodo, le sue linee e i contatori: niente ridisegno completo
+function toggle(n) {
+  n.unlocked = !n.unlocked; scheduleSave();
+  const g = nodeEls.get(n.id);
+  if (g) paintNode(g, n);
+  edgeEls.forEach(x => { if (x.p === n || x.c === n) x.e.classList.toggle("lit", x.p.unlocked && x.c.unlocked); });
+  updateCounts();
+  if (g && (g.matches(":hover") || document.activeElement === g)) showInfo(n);
+}
+function updateCounts() {
+  const s = chStats(chap());
+  $("#chPct").textContent = s.calc + "%";
+  const p = document.querySelector(".ch.sel .p");
+  if (p) { p.textContent = s.shown + "%"; p.classList.toggle("full", s.shown >= 100); }
+  let full = 0;
+  CHAPTERS.forEach(([c]) => { if (chStats(S.chapters[c]).shown >= 100) full++; });
+  $("#ovCh").textContent = `${full} / 32`;
+  const t = document.querySelector("#pathTabs button.on small");
+  if (t) t.textContent = `${sec().nodes.filter(x => x.unlocked).length}/${sec().nodes.length}`;
 }
 
 /* ---------- vista: scorrimento e zoom ---------- */
@@ -307,7 +336,7 @@ $("#langSel").onclick = e => { const b = e.target.closest("button"); if (!b) ret
 $("#gamePct").oninput = e => {
   const v = e.target.value;
   chap().game = v === "" ? null : Math.max(0, Math.min(100, Number(v)));
-  save(); renderSide();
+  scheduleSave(); updateCounts();
 };
 $("#exportBtn").onclick = () => {
   const blob = new Blob([JSON.stringify(S, null, 1)], { type: "application/json" });

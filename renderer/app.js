@@ -1,6 +1,6 @@
 const NAMES = { C: "Connor", K: "Kara", M: "Markus" };
 const KEY = "flowchart-tracker-v2";
-const W = 204, H = 40, GX = 44, GY = 12, MAXCH = 28;
+const W = Layout.W, H = Layout.H, MAXCH = 28;
 const ZMIN = 0.3, ZMAX = 2, ZFIT = 0.85;
 const bridge = window.api || null;
 
@@ -75,63 +75,12 @@ function chStats(c) {
   return { t, u, calc, shown };
 }
 
-/* ---------- layout da sinistra a destra: profondità → x, fratelli → y ---------- */
-function depths(nodes) {
-  const map = new Map(nodes.map(n => [n.id, n])), depth = new Map(), kids = new Map();
-  nodes.forEach(n => n.parents.forEach(p => { if (map.has(p)) (kids.get(p) || kids.set(p, []).get(p)).push(n.id); }));
-  const d = (n, seen = new Set()) => {
-    if (depth.has(n.id)) return depth.get(n.id);
-    if (seen.has(n.id)) return 0;
-    seen.add(n.id);
-    const ps = n.parents.map(p => map.get(p)).filter(Boolean);
-    const v = ps.length ? Math.max(...ps.map(p => d(p, seen))) + 1 : 0;
-    depth.set(n.id, v); return v;
-  };
-  nodes.forEach(n => d(n));
-  // I nodi senza genitori (requisiti da capitoli precedenti) vanno subito prima del loro primo figlio
-  nodes.forEach(n => {
-    if (n.parents.some(p => map.has(p))) return;
-    const k = (kids.get(n.id) || []).map(id => depth.get(id));
-    if (k.length) depth.set(n.id, Math.max(0, Math.min(...k) - 1));
-  });
-  return { depth, kids };
-}
-function place(nodes, depth, hint) {
-  const layers = [], pos = new Map(), step = H + GY;
-  nodes.forEach((n, i) => { const k = depth.get(n.id); (layers[k] = layers[k] || []).push({ n, i }); });
-  let free = 0;
-  layers.forEach((L, k) => {
-    if (!L) return;
-    L.forEach(o => {
-      const py = o.n.parents.map(p => pos.get(p)).filter(Boolean).map(p => p.y);
-      if (py.length) o.b = py.reduce((a, b) => a + b, 0) / py.length;
-      else if (hint && hint.has(o.n.id)) o.b = hint.get(o.n.id);
-      else o.b = (free++) * step;
-    });
-    L.sort((a, b) => a.b - b.b || a.i - b.i);
-    let y = -Infinity;
-    L.forEach(o => { y = Math.max(o.b, y + step); o.y = y; });
-    const off = L.reduce((a, o) => a + o.b - o.y, 0) / L.length;
-    L.forEach((o, j) => {
-      let yy = o.y + off;
-      if (j) yy = Math.max(yy, pos.get(L[j - 1].n.id).y + step);
-      pos.set(o.n.id, { x: k * (W + GX), y: yy });
-    });
-  });
-  return pos;
-}
-function layout(nodes) {
-  const { depth, kids } = depths(nodes);
-  let pos = place(nodes, depth, null);
-  // secondo passaggio: i nodi senza genitori si allineano ai loro figli
-  const hint = new Map();
-  nodes.forEach(n => {
-    if (n.parents.length) return;
-    const ys = (kids.get(n.id) || []).map(id => pos.get(id)).filter(Boolean).map(p => p.y);
-    if (ys.length) hint.set(n.id, ys.reduce((a, b) => a + b, 0) / ys.length);
-  });
-  if (hint.size) pos = place(nodes, depth, hint);
-  return pos;
+/* ---------- disposizione: vedi layout.js; si calcola una volta per percorso ---------- */
+const layoutCache = new WeakMap();
+function layoutOf(nodes) {
+  let L = layoutCache.get(nodes);
+  if (!L) { L = Layout.layout(nodes); layoutCache.set(nodes, L); }
+  return L;
 }
 
 /* ---------- disegno ---------- */
@@ -156,20 +105,16 @@ function renderGraph() {
   const empty = !hasData(chap());
   $("#empty").hidden = !empty;
   if (empty) { bounds = null; return; }
-  const nodes = sec().nodes, pos = layout(nodes), map = new Map(nodes.map(n => [n.id, n]));
-  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
-  nodes.forEach(n => {
-    const b = pos.get(n.id);
-    x0 = Math.min(x0, b.x - W / 2); x1 = Math.max(x1, b.x + W / 2); y0 = Math.min(y0, b.y - H / 2); y1 = Math.max(y1, b.y + H / 2);
-    n.parents.forEach(pid => {
-      const p = pos.get(pid), pn = map.get(pid); if (!p) return;
-      const sx = p.x + W / 2, ex = b.x - W / 2, mx = ex - GX / 2;
-      const d = p.y === b.y ? `M${sx},${p.y}H${ex}` : `M${sx},${p.y}H${mx}V${b.y}H${ex}`;
-      const e = el("path", { d, class: "edge" + (pn.unlocked && n.unlocked ? " lit" : "") }, E);
-      edgeEls.push({ e, p: pn, c: n });
-    });
+  const nodes = sec().nodes, L = layoutOf(nodes), pos = L.pos, map = new Map(nodes.map(n => [n.id, n]));
+  bounds = L.bounds;
+  // prima le linee spente, poi quelle accese, così le accese restano sopra
+  const lit = e => map.get(e.p).unlocked && map.get(e.c).unlocked;
+  [...L.edges].sort((a, b) => lit(a) - lit(b)).forEach(x => {
+    const g = el("g", { class: "edge" + (lit(x) ? " lit" : "") }, E);
+    el("path", { d: x.d }, g);
+    x.dots.forEach(([cx, cy]) => el("circle", { cx, cy, r: 2.2 }, g));
+    edgeEls.push({ e: g, p: map.get(x.p), c: map.get(x.c) });
   });
-  bounds = { x0, x1, y0, y1 };
   nodes.forEach(n => {
     const b = pos.get(n.id);
     const g = el("g", { transform: `translate(${b.x},${b.y})`, tabindex: 0, role: "checkbox" }, N);
@@ -271,7 +216,12 @@ function toggle(n) {
   n.unlocked = !n.unlocked; scheduleSave();
   const g = nodeEls.get(n.id);
   if (g) paintNode(g, n);
-  edgeEls.forEach(x => { if (x.p === n || x.c === n) x.e.classList.toggle("lit", x.p.unlocked && x.c.unlocked); });
+  edgeEls.forEach(x => {
+    if (x.p !== n && x.c !== n) return;
+    const on = x.p.unlocked && x.c.unlocked;
+    x.e.classList.toggle("lit", on);
+    if (on) x.e.parentNode.appendChild(x.e);   // le linee accese stanno sopra
+  });
   updateCounts();
   if (g && (g.matches(":hover") || document.activeElement === g)) showInfo(n);
 }

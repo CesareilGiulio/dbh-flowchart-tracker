@@ -1,7 +1,7 @@
 {
   "name": "flowchart-tracker",
   "productName": "Flowchart Tracker",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Unofficial offline tracker for the Detroit: Become Human flowcharts / Tracker non ufficiale dei diagrammi di Detroit: Become Human",
   "main": "main.js",
   "license": "MIT",

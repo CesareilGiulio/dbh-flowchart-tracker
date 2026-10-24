@@ -77,8 +77,10 @@ input { font: inherit; color: inherit; user-select: text; }
 #svg.panning { cursor: grabbing; }
 .empty { position: absolute; inset: 0; margin: 0; display: grid; place-items: center; color: var(--dim); }
 
-.edge { fill: none; stroke: var(--edge); stroke-width: 1; }
-.edge.lit { stroke: var(--on); }
+.edge path { fill: none; stroke: var(--edge); stroke-width: 1; }
+.edge circle { fill: var(--edge); }
+.edge.lit path { stroke: var(--on); stroke-width: 1.4; }
+.edge.lit circle { fill: var(--on); }
 .node { cursor: pointer; }
 .node .box { fill: var(--node); stroke: var(--line); stroke-width: 1; }
 .node .inner { fill: none; stroke: var(--line); stroke-width: 1; }

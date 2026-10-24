@@ -1,0 +1,305 @@
+{
+ "chapter": 4,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "n-start",
+     "title": "Benvenuta a casa",
+     "en": "Welcome Home",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "n-todd",
+     "title": "Raggiungi Todd",
+     "en": "Join Todd",
+     "type": "choice",
+     "parents": [
+      "n-start"
+     ]
+    },
+    {
+     "id": "n-floor1",
+     "title": "Pulisci il piano terra",
+     "en": "Clean First Floor",
+     "type": "objective",
+     "parents": [
+      "n-todd"
+     ]
+    },
+    {
+     "id": "n-mag1",
+     "title": "Leggi «Android Power!»",
+     "en": "Read \"Android Power!\"",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "n-mag2",
+     "title": "Leggi «Connecting the Dots»",
+     "en": "Read \"Connecting the Dots\"",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "n-backyard",
+     "title": "Controlla il cortile",
+     "en": "Check Backyard",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ]
+    },
+    {
+     "id": "n-dishes",
+     "title": "Lava i piatti",
+     "en": "Wash Dishes",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ]
+    },
+    {
+     "id": "n-alice1",
+     "title": "Parla con Alice",
+     "en": "Talk With Alice",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ]
+    },
+    {
+     "id": "n-disturb",
+     "title": "Disturba Todd",
+     "en": "Disturb Todd",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ]
+    },
+    {
+     "id": "n-vacuum",
+     "title": "Attiva l'aspirapolvere",
+     "en": "Activate Vacuum",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ]
+    },
+    {
+     "id": "n-rewash",
+     "title": "Rilava i vestiti",
+     "en": "Rewash Clothes",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ]
+    },
+    {
+     "id": "n-redice",
+     "title": "Trova il Red Ice",
+     "en": "Find Red Ice",
+     "type": "choice",
+     "parents": [
+      "n-rewash"
+     ]
+    },
+    {
+     "id": "n-enrage",
+     "title": "Fai infuriare Todd",
+     "en": "Enrage Todd",
+     "type": "choice",
+     "parents": [
+      "n-redice"
+     ]
+    },
+    {
+     "id": "n-trash",
+     "title": "Porta fuori la spazzatura",
+     "en": "Take Out Trash",
+     "type": "choice",
+     "parents": [
+      "n-floor1"
+     ]
+    },
+    {
+     "id": "n-ask",
+     "title": "Chiedi di salire al piano di sopra",
+     "en": "Ask to Go Upstairs",
+     "type": "choice",
+     "parents": [
+      "n-trash"
+     ]
+    },
+    {
+     "id": "n-upstairs",
+     "title": "Sali al piano di sopra",
+     "en": "Go Upstairs",
+     "type": "checkpoint",
+     "parents": [
+      "n-ask"
+     ]
+    },
+    {
+     "id": "n-floor2",
+     "title": "Pulisci il primo piano",
+     "en": "Clean Second Floor",
+     "type": "objective",
+     "parents": [
+      "n-upstairs"
+     ]
+    },
+    {
+     "id": "n-toddroom",
+     "title": "Pulisci la stanza di Todd",
+     "en": "Clean Todd's Room",
+     "type": "choice",
+     "parents": [
+      "n-floor2"
+     ]
+    },
+    {
+     "id": "n-pills",
+     "title": "Riordina le pillole",
+     "en": "Tidy Pills",
+     "type": "choice",
+     "parents": [
+      "n-toddroom"
+     ]
+    },
+    {
+     "id": "n-gun",
+     "title": "Kara vede la pistola",
+     "en": "Kara Sees Gun",
+     "type": "choice",
+     "parents": [
+      "n-pills"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "n-toilet",
+     "title": "Pulisci il WC",
+     "en": "Clean Toilet",
+     "type": "choice",
+     "parents": [
+      "n-floor2"
+     ]
+    },
+    {
+     "id": "n-aliceroom-go",
+     "title": "Alice va in camera sua",
+     "en": "Alice Goes to Her Room",
+     "type": "choice",
+     "parents": [
+      "n-floor2"
+     ]
+    },
+    {
+     "id": "n-bathroom",
+     "title": "Pulisci il bagno",
+     "en": "Clean Bathroom",
+     "type": "choice",
+     "parents": [
+      "n-floor2"
+     ]
+    },
+    {
+     "id": "n-mag3",
+     "title": "Leggi «Android QB»",
+     "en": "Read \"Android QB\"",
+     "type": "choice",
+     "parents": [
+      "n-floor2"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "n-mag4",
+     "title": "Leggi «Putting a Price»",
+     "en": "Read \"Putting a Price\"",
+     "type": "choice",
+     "parents": [
+      "n-floor2"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "n-aliceroom",
+     "title": "Pulisci la stanza di Alice",
+     "en": "Clean Alice's Room",
+     "type": "choice",
+     "parents": [
+      "n-floor2"
+     ]
+    },
+    {
+     "id": "n-ventilate",
+     "title": "Arieggia la stanza",
+     "en": "Ventilate Room",
+     "type": "choice",
+     "parents": [
+      "n-aliceroom"
+     ]
+    },
+    {
+     "id": "n-waydown",
+     "title": "Kara scopre un modo per scendere",
+     "en": "Kara Discovers a Way Down",
+     "type": "choice",
+     "parents": [
+      "n-ventilate"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "n-alice2",
+     "title": "Parla con Alice",
+     "en": "Talk With Alice",
+     "type": "choice",
+     "parents": [
+      "n-floor2"
+     ]
+    },
+    {
+     "id": "n-key",
+     "title": "Alice dà una chiave a Kara",
+     "en": "Alice Gives Kara a Key",
+     "type": "choice",
+     "parents": [
+      "n-alice2"
+     ]
+    },
+    {
+     "id": "n-box",
+     "title": "Apri la scatola di Alice",
+     "en": "Open Alice's Box",
+     "type": "choice",
+     "parents": [
+      "n-key"
+     ]
+    },
+    {
+     "id": "n-end",
+     "title": "Pulizie finite",
+     "en": "Finished Cleaning",
+     "type": "ending",
+     "parents": [
+      "n-alice2"
+     ]
+    }
+   ]
+  }
+ ]
+}

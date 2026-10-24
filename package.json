@@ -1,0 +1,23 @@
+{
+  "name": "flowchart-tracker",
+  "version": "1.0.0",
+  "description": "Tracker offline dei diagrammi per il 100% dei capitoli",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "fetch-data": "node scripts/fetch-data.js",
+    "dist": "electron-builder --win portable --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "local.flowchart.tracker",
+    "productName": "Flowchart Tracker",
+    "files": ["main.js", "preload.js", "scraper.js", "renderer/**", "data/**"],
+    "win": { "target": "portable" },
+    "portable": { "artifactName": "FlowchartTracker.exe" }
+  }
+}

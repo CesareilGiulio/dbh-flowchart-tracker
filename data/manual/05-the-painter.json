@@ -1,0 +1,431 @@
+{
+ "chapter": 5,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "p-start",
+     "title": "Arrivo a casa",
+     "en": "Arriving Home",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "p-package",
+     "title": "Lascia il pacco",
+     "en": "Drop Off Package",
+     "type": "choice",
+     "parents": [
+      "p-start"
+     ]
+    },
+    {
+     "id": "p-birds",
+     "title": "Attiva gli uccelli",
+     "en": "Activate Birds",
+     "type": "choice",
+     "parents": [
+      "p-package"
+     ]
+    },
+    {
+     "id": "p-mag1",
+     "title": "Leggi «North Pole Russia»",
+     "en": "Read \"North Pole Russia\"",
+     "type": "choice",
+     "parents": [
+      "p-package"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "p-mag2",
+     "title": "Leggi «Life on Titan»",
+     "en": "Read \"Life on Titan\"",
+     "type": "choice",
+     "parents": [
+      "p-package"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "p-wake",
+     "title": "Sveglia Carl",
+     "en": "Wake Carl",
+     "type": "choice",
+     "parents": [
+      "p-package"
+     ]
+    },
+    {
+     "id": "p-clothes",
+     "title": "Carl nota i vestiti di Markus",
+     "en": "Carl Notices Markus' Clothes",
+     "type": "choice",
+     "parents": [
+      "p-wake"
+     ]
+    },
+    {
+     "id": "p-breakfast",
+     "title": "Servi la colazione",
+     "en": "Serve Breakfast",
+     "type": "choice",
+     "parents": [
+      "p-wake"
+     ]
+    },
+    {
+     "id": "p-todo",
+     "title": "Trova qualcosa da fare",
+     "en": "Find Something to Do",
+     "type": "checkpoint",
+     "parents": [
+      "p-breakfast"
+     ]
+    },
+    {
+     "id": "p-chess",
+     "title": "Gioca a scacchi",
+     "en": "Play Chess",
+     "type": "choice",
+     "parents": [
+      "p-todo"
+     ]
+    },
+    {
+     "id": "p-win",
+     "title": "Vinci",
+     "en": "Win",
+     "type": "choice",
+     "parents": [
+      "p-chess"
+     ]
+    },
+    {
+     "id": "p-lose",
+     "title": "Perdi",
+     "en": "Lose",
+     "type": "choice",
+     "parents": [
+      "p-chess"
+     ]
+    },
+    {
+     "id": "p-draw",
+     "title": "Patta",
+     "en": "Draw",
+     "type": "choice",
+     "parents": [
+      "p-chess"
+     ]
+    },
+    {
+     "id": "p-book",
+     "title": "Leggi un libro",
+     "en": "Read Book",
+     "type": "choice",
+     "parents": [
+      "p-todo"
+     ]
+    },
+    {
+     "id": "p-plato",
+     "title": "La Repubblica di Platone",
+     "en": "The Republic by Plato",
+     "type": "choice",
+     "parents": [
+      "p-book"
+     ]
+    },
+    {
+     "id": "p-shakes",
+     "title": "Le tragedie di William Shakespeare",
+     "en": "Tragedies of William Shakespeare",
+     "type": "choice",
+     "parents": [
+      "p-book"
+     ]
+    },
+    {
+     "id": "p-keats",
+     "title": "Le odi di John Keats",
+     "en": "Odes by John Keats",
+     "type": "choice",
+     "parents": [
+      "p-book"
+     ]
+    },
+    {
+     "id": "p-piano",
+     "title": "Suona il piano",
+     "en": "Play Piano",
+     "type": "choice",
+     "parents": [
+      "p-todo"
+     ]
+    },
+    {
+     "id": "p-melan",
+     "title": "Malinconico",
+     "en": "Melancholic",
+     "type": "choice",
+     "parents": [
+      "p-piano"
+     ]
+    },
+    {
+     "id": "p-hopeful",
+     "title": "Speranzoso",
+     "en": "Hopeful",
+     "type": "choice",
+     "parents": [
+      "p-piano"
+     ]
+    },
+    {
+     "id": "p-intimate",
+     "title": "Intimo",
+     "en": "Intimate",
+     "type": "choice",
+     "parents": [
+      "p-piano"
+     ]
+    },
+    {
+     "id": "p-enigma",
+     "title": "Enigmatico",
+     "en": "Enigmatic",
+     "type": "choice",
+     "parents": [
+      "p-piano"
+     ]
+    },
+    {
+     "id": "p-studio",
+     "title": "Porta Carl nello studio",
+     "en": "Take Carl to the Studio",
+     "type": "choice",
+     "parents": [
+      "p-win",
+      "p-lose",
+      "p-draw",
+      "p-plato",
+      "p-shakes",
+      "p-keats",
+      "p-melan",
+      "p-hopeful",
+      "p-intimate",
+      "p-enigma"
+     ]
+    },
+    {
+     "id": "p-see",
+     "title": "Dipingi qualcosa che vedi",
+     "en": "Paint Something You See",
+     "type": "choice",
+     "parents": [
+      "p-studio"
+     ]
+    },
+    {
+     "id": "p-copy-carl",
+     "title": "Copia il dipinto di Carl",
+     "en": "Copy Carl's Painting",
+     "type": "choice",
+     "parents": [
+      "p-see"
+     ]
+    },
+    {
+     "id": "p-copy-desk",
+     "title": "Copia la scrivania",
+     "en": "Copy Desk",
+     "type": "choice",
+     "parents": [
+      "p-see"
+     ]
+    },
+    {
+     "id": "p-copy-statue",
+     "title": "Copia la statua",
+     "en": "Copy Statue",
+     "type": "choice",
+     "parents": [
+      "p-see"
+     ]
+    },
+    {
+     "id": "p-heart",
+     "title": "Dipingi con il cuore",
+     "en": "Paint From the Heart",
+     "type": "choice",
+     "parents": [
+      "p-copy-carl",
+      "p-copy-desk",
+      "p-copy-statue"
+     ]
+    },
+    {
+     "id": "p-androids",
+     "title": "Androidi",
+     "en": "Androids",
+     "type": "choice",
+     "parents": [
+      "p-heart"
+     ]
+    },
+    {
+     "id": "p-fate",
+     "title": "Destino",
+     "en": "Fate",
+     "type": "choice",
+     "parents": [
+      "p-androids"
+     ]
+    },
+    {
+     "id": "p-hope1",
+     "title": "Speranza",
+     "en": "Hope",
+     "type": "choice",
+     "parents": [
+      "p-androids"
+     ]
+    },
+    {
+     "id": "p-pain",
+     "title": "Dolore",
+     "en": "Pain",
+     "type": "choice",
+     "parents": [
+      "p-androids"
+     ]
+    },
+    {
+     "id": "p-sad",
+     "title": "Tristezza",
+     "en": "Sadness",
+     "type": "choice",
+     "parents": [
+      "p-androids"
+     ]
+    },
+    {
+     "id": "p-humanity",
+     "title": "Umanità",
+     "en": "Humanity",
+     "type": "choice",
+     "parents": [
+      "p-heart"
+     ]
+    },
+    {
+     "id": "p-anger",
+     "title": "Rabbia",
+     "en": "Anger",
+     "type": "choice",
+     "parents": [
+      "p-humanity"
+     ]
+    },
+    {
+     "id": "p-comfort",
+     "title": "Conforto",
+     "en": "Comfort",
+     "type": "choice",
+     "parents": [
+      "p-humanity"
+     ]
+    },
+    {
+     "id": "p-empathy",
+     "title": "Empatia",
+     "en": "Empathy",
+     "type": "choice",
+     "parents": [
+      "p-humanity"
+     ]
+    },
+    {
+     "id": "p-hope2",
+     "title": "Speranza",
+     "en": "Hope",
+     "type": "choice",
+     "parents": [
+      "p-humanity"
+     ]
+    },
+    {
+     "id": "p-identity",
+     "title": "Identità",
+     "en": "Identity",
+     "type": "choice",
+     "parents": [
+      "p-heart"
+     ]
+    },
+    {
+     "id": "p-androids2",
+     "title": "Androidi",
+     "en": "Androids",
+     "type": "choice",
+     "parents": [
+      "p-identity"
+     ]
+    },
+    {
+     "id": "p-despair",
+     "title": "Disperazione",
+     "en": "Despair",
+     "type": "choice",
+     "parents": [
+      "p-identity"
+     ]
+    },
+    {
+     "id": "p-doubts",
+     "title": "Dubbi",
+     "en": "Doubts",
+     "type": "choice",
+     "parents": [
+      "p-identity"
+     ]
+    },
+    {
+     "id": "p-prisoner",
+     "title": "Prigioniero",
+     "en": "Prisoner",
+     "type": "choice",
+     "parents": [
+      "p-identity"
+     ]
+    },
+    {
+     "id": "p-end",
+     "title": "Leo irrompe per chiedere soldi",
+     "en": "Leo Intruded to Ask for Money",
+     "type": "ending",
+     "parents": [
+      "p-fate",
+      "p-hope1",
+      "p-pain",
+      "p-sad",
+      "p-anger",
+      "p-comfort",
+      "p-empathy",
+      "p-hope2",
+      "p-androids2",
+      "p-despair",
+      "p-doubts",
+      "p-prisoner"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,598 @@
+{
+ "chapter": 19,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "sp-start",
+     "title": "A caccia di pezzi",
+     "en": "Hunting for Parts",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "sp-dock",
+     "title": "Sali sul molo",
+     "en": "Climb Onto Dock",
+     "type": "choice",
+     "parents": [
+      "sp-start"
+     ]
+    },
+    {
+     "id": "sp-north1",
+     "title": "Segui North",
+     "en": "Follow North",
+     "type": "choice",
+     "parents": [
+      "sp-dock"
+     ]
+    },
+    {
+     "id": "sp-almost",
+     "title": "Quasi scoperti",
+     "en": "Almost Spotted",
+     "type": "choice",
+     "parents": [
+      "sp-north1"
+     ]
+    },
+    {
+     "id": "sp-containers",
+     "title": "Arrampicati sui container",
+     "en": "Climb on Containers",
+     "type": "choice",
+     "parents": [
+      "sp-almost"
+     ]
+    },
+    {
+     "id": "sp-progress",
+     "title": "Avanza verso la CyberLife",
+     "en": "Progress Toward CyberLife",
+     "type": "choice",
+     "parents": [
+      "sp-containers"
+     ]
+    },
+    {
+     "id": "sp-north2",
+     "title": "Segui North",
+     "en": "Follow North",
+     "type": "choice",
+     "parents": [
+      "sp-progress"
+     ]
+    },
+    {
+     "id": "sp-simon",
+     "title": "Segui Simon",
+     "en": "Follow Simon",
+     "type": "choice",
+     "parents": [
+      "sp-progress"
+     ]
+    },
+    {
+     "id": "sp-drone",
+     "title": "Un drone blocca la strada",
+     "en": "Drone Blocks Path",
+     "type": "choice",
+     "parents": [
+      "sp-simon"
+     ]
+    },
+    {
+     "id": "sp-neutralize",
+     "title": "Neutralizza il drone",
+     "en": "Neutralize Drone",
+     "type": "choice",
+     "parents": [
+      "sp-north2",
+      "sp-drone"
+     ]
+    },
+    {
+     "id": "sp-unharmed",
+     "title": "Markus illeso",
+     "en": "Markus Unharmed",
+     "type": "choice",
+     "parents": [
+      "sp-neutralize"
+     ]
+    },
+    {
+     "id": "sp-damaged",
+     "title": "Markus danneggiato",
+     "en": "Markus Damaged",
+     "type": "choice",
+     "parents": [
+      "sp-neutralize"
+     ]
+    },
+    {
+     "id": "sp-reach",
+     "title": "Arrivo alla CyberLife",
+     "en": "Reach CyberLife",
+     "type": "checkpoint",
+     "parents": [
+      "sp-unharmed",
+      "sp-damaged"
+     ]
+    },
+    {
+     "id": "sp-gather",
+     "title": "Raccogli i pezzi di ricambio",
+     "en": "Gather Spare Parts",
+     "type": "choice",
+     "parents": [
+      "sp-reach"
+     ]
+    },
+    {
+     "id": "sp-security",
+     "title": "Compare un androide di sicurezza",
+     "en": "Security Android Appears",
+     "type": "choice",
+     "parents": [
+      "sp-gather"
+     ]
+    },
+    {
+     "id": "sp-attack1",
+     "title": "Attacca",
+     "en": "Attack",
+     "type": "choice",
+     "parents": [
+      "sp-security"
+     ]
+    },
+    {
+     "id": "sp-grab",
+     "title": "Afferra l'androide e nasconditi",
+     "en": "Grab Android and Hide",
+     "type": "choice",
+     "parents": [
+      "sp-security"
+     ]
+    },
+    {
+     "id": "sp-runaway",
+     "title": "Scappa",
+     "en": "Run Away",
+     "type": "choice",
+     "parents": [
+      "sp-security"
+     ]
+    },
+    {
+     "id": "sp-hide",
+     "title": "Nasconditi",
+     "en": "Hide",
+     "type": "choice",
+     "parents": [
+      "sp-security"
+     ]
+    },
+    {
+     "id": "sp-john",
+     "title": "John diventa deviante",
+     "en": "John Becomes Deviant",
+     "type": "choice",
+     "parents": [
+      "sp-grab"
+     ]
+    },
+    {
+     "id": "sp-guard",
+     "title": "La guardia cerca l'androide di sicurezza",
+     "en": "Guard Searches for Security Android",
+     "type": "choice",
+     "parents": [
+      "sp-grab"
+     ]
+    },
+    {
+     "id": "sp-attack2",
+     "title": "Attacca",
+     "en": "Attack",
+     "type": "choice",
+     "parents": [
+      "sp-john",
+      "sp-guard"
+     ]
+    },
+    {
+     "id": "sp-release",
+     "title": "Lascialo andare",
+     "en": "Release",
+     "type": "choice",
+     "parents": [
+      "sp-john",
+      "sp-guard"
+     ]
+    },
+    {
+     "id": "sp-hold",
+     "title": "Resta in posizione",
+     "en": "Hold Position",
+     "type": "choice",
+     "parents": [
+      "sp-john",
+      "sp-guard"
+     ]
+    },
+    {
+     "id": "sp-blood1",
+     "title": "Markus versa sangue",
+     "en": "Markus Spills Blood",
+     "type": "choice",
+     "parents": [
+      "sp-attack2"
+     ]
+    },
+    {
+     "id": "sp-guardleaves",
+     "title": "La guardia umana se ne va",
+     "en": "Human Guard Leaves",
+     "type": "choice",
+     "parents": [
+      "sp-release",
+      "sp-hold"
+     ]
+    },
+    {
+     "id": "sp-resume",
+     "title": "Riprendi la ricerca",
+     "en": "Resume Search",
+     "type": "choice",
+     "parents": [
+      "sp-blood1",
+      "sp-guardleaves"
+     ]
+    },
+    {
+     "id": "sp-crate",
+     "title": "Trova una cassa di androidi",
+     "en": "Find Crate of Androids",
+     "type": "choice",
+     "parents": [
+      "sp-resume"
+     ]
+    },
+    {
+     "id": "sp-free",
+     "title": "Libera gli androidi",
+     "en": "Free Androids",
+     "type": "choice",
+     "parents": [
+      "sp-crate"
+     ]
+    },
+    {
+     "id": "sp-leave",
+     "title": "Lascia gli androidi",
+     "en": "Leave Androids",
+     "type": "choice",
+     "parents": [
+      "sp-crate"
+     ]
+    },
+    {
+     "id": "sp-join",
+     "title": "John vuole unirsi",
+     "en": "John Wants to Join",
+     "type": "choice",
+     "parents": [
+      "sp-free"
+     ]
+    },
+    {
+     "id": "sp-accept1",
+     "title": "Accetta",
+     "en": "Accept",
+     "type": "choice",
+     "parents": [
+      "sp-join"
+     ]
+    },
+    {
+     "id": "sp-refuse1",
+     "title": "Rifiuta",
+     "en": "Refuse",
+     "type": "choice",
+     "parents": [
+      "sp-join"
+     ]
+    },
+    {
+     "id": "sp-key-mention",
+     "title": "John parla di una chiave",
+     "en": "John Mentions Key",
+     "type": "choice",
+     "parents": [
+      "sp-accept1"
+     ]
+    },
+    {
+     "id": "sp-accept2",
+     "title": "Accetta",
+     "en": "Accept",
+     "type": "choice",
+     "parents": [
+      "sp-key-mention"
+     ]
+    },
+    {
+     "id": "sp-refuse2",
+     "title": "Rifiuta",
+     "en": "Refuse",
+     "type": "choice",
+     "parents": [
+      "sp-key-mention"
+     ]
+    },
+    {
+     "id": "sp-control",
+     "title": "Sala di controllo",
+     "en": "Control Room",
+     "type": "checkpoint",
+     "parents": [
+      "sp-accept2",
+      "sp-refuse2",
+      "sp-refuse1",
+      "sp-leave"
+     ]
+    },
+    {
+     "id": "sp-enter",
+     "title": "Entra nella stanza",
+     "en": "Enter Room",
+     "type": "choice",
+     "parents": [
+      "sp-control"
+     ]
+    },
+    {
+     "id": "sp-findkey",
+     "title": "Trova la chiave",
+     "en": "Find Key",
+     "type": "choice",
+     "parents": [
+      "sp-enter"
+     ]
+    },
+    {
+     "id": "sp-spotted",
+     "title": "Markus viene scoperto",
+     "en": "Markus Gets Spotted",
+     "type": "choice",
+     "parents": [
+      "sp-enter"
+     ]
+    },
+    {
+     "id": "sp-threaten",
+     "title": "Minaccia le guardie",
+     "en": "Threaten Guards",
+     "type": "choice",
+     "parents": [
+      "sp-findkey"
+     ]
+    },
+    {
+     "id": "sp-lure",
+     "title": "Attira le guardie",
+     "en": "Lure Guards",
+     "type": "choice",
+     "parents": [
+      "sp-findkey"
+     ]
+    },
+    {
+     "id": "sp-blackout",
+     "title": "Provoca un blackout",
+     "en": "Create Blackout",
+     "type": "choice",
+     "parents": [
+      "sp-findkey"
+     ]
+    },
+    {
+     "id": "sp-kill",
+     "title": "Uccidi le guardie",
+     "en": "Kill Guards",
+     "type": "choice",
+     "parents": [
+      "sp-threaten"
+     ]
+    },
+    {
+     "id": "sp-incap",
+     "title": "Metti fuori gioco le guardie",
+     "en": "Incapacitate Guards",
+     "type": "choice",
+     "parents": [
+      "sp-threaten"
+     ]
+    },
+    {
+     "id": "sp-alarm-trig",
+     "title": "Fai scattare l'allarme",
+     "en": "Trigger Alarm",
+     "type": "choice",
+     "parents": [
+      "sp-threaten"
+     ]
+    },
+    {
+     "id": "sp-avoid",
+     "title": "Evita le guardie",
+     "en": "Avoid Guards",
+     "type": "choice",
+     "parents": [
+      "sp-lure",
+      "sp-blackout"
+     ]
+    },
+    {
+     "id": "sp-avoid-fail",
+     "title": "Non riesci a evitare le guardie",
+     "en": "Fail to Avoid Guards",
+     "type": "choice",
+     "parents": [
+      "sp-lure",
+      "sp-blackout"
+     ]
+    },
+    {
+     "id": "sp-blood2",
+     "title": "Markus versa sangue",
+     "en": "Markus Spills Blood",
+     "type": "choice",
+     "parents": [
+      "sp-kill"
+     ]
+    },
+    {
+     "id": "sp-steal",
+     "title": "Ruba la chiave",
+     "en": "Steal Key",
+     "type": "choice",
+     "parents": [
+      "sp-incap",
+      "sp-avoid",
+      "sp-kill"
+     ]
+    },
+    {
+     "id": "sp-truck",
+     "title": "Vai via con il camion",
+     "en": "Leave With Truck",
+     "type": "choice",
+     "parents": [
+      "sp-steal"
+     ]
+    },
+    {
+     "id": "sp-end-truck",
+     "title": "Markus ha rubato un camion pieno di pezzi",
+     "en": "Markus Stole a Truck Full of Parts",
+     "type": "ending",
+     "parents": [
+      "sp-truck"
+     ]
+    },
+    {
+     "id": "sp-alarm1",
+     "title": "Scatta l'allarme",
+     "en": "Alarm Sounds",
+     "type": "choice",
+     "parents": [
+      "sp-alarm-trig",
+      "sp-avoid-fail",
+      "sp-spotted"
+     ]
+    },
+    {
+     "id": "sp-fence1",
+     "title": "Corri alla recinzione",
+     "en": "Run to Fence",
+     "type": "choice",
+     "parents": [
+      "sp-alarm1"
+     ]
+    },
+    {
+     "id": "sp-dogs",
+     "title": "I cani sbranano John",
+     "en": "Dogs Maul John",
+     "type": "choice",
+     "parents": [
+      "sp-fence1"
+     ]
+    },
+    {
+     "id": "sp-leavejohn",
+     "title": "Abbandona John",
+     "en": "Leave John Behind",
+     "type": "choice",
+     "parents": [
+      "sp-dogs"
+     ]
+    },
+    {
+     "id": "sp-savejohn",
+     "title": "Subisci danni cercando di salvare John",
+     "en": "Sustain Damage Trying to Save John",
+     "type": "choice",
+     "parents": [
+      "sp-dogs"
+     ]
+    },
+    {
+     "id": "sp-dmgfence",
+     "title": "Subisci danni raggiungendo la recinzione",
+     "en": "Sustain Damage Reaching the Fence",
+     "type": "choice",
+     "parents": [
+      "sp-fence1"
+     ]
+    },
+    {
+     "id": "sp-alarm2",
+     "title": "Scatta l'allarme",
+     "en": "Alarm Sounds",
+     "type": "choice",
+     "parents": [
+      "sp-attack1",
+      "sp-runaway",
+      "sp-hide"
+     ]
+    },
+    {
+     "id": "sp-fence2",
+     "title": "Corri alla recinzione",
+     "en": "Run to Fence",
+     "type": "choice",
+     "parents": [
+      "sp-alarm2"
+     ]
+    },
+    {
+     "id": "sp-jericho",
+     "title": "Torna a Jericho",
+     "en": "Back to Jericho",
+     "type": "choice",
+     "parents": [
+      "sp-fence2"
+     ]
+    },
+    {
+     "id": "sp-end-bags",
+     "title": "Il gruppo è tornato con le borse piene",
+     "en": "Group Returned With Full Bags",
+     "type": "ending",
+     "parents": [
+      "sp-leavejohn",
+      "sp-savejohn"
+     ]
+    },
+    {
+     "id": "sp-end-failed",
+     "title": "Il gruppo ha fallito la missione",
+     "en": "Group Failed Their Mission",
+     "type": "ending",
+     "parents": [
+      "sp-jericho",
+      "sp-dmgfence"
+     ]
+    }
+   ]
+  }
+ ]
+}

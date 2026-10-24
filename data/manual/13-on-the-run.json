@@ -1,0 +1,1225 @@
+{
+ "chapter": 13,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": null,
+   "nodes": [
+    {
+     "id": "r-pl-start",
+     "title": "Mattina nel parcheggio",
+     "en": "Morning in Parking Lot",
+     "type": "checkpoint",
+     "parents": [],
+     "note": "Se in «Fugitives» Kara e Alice hanno dormito nell'auto abbandonata."
+    },
+    {
+     "id": "r-pl-asleep",
+     "title": "Lascia Alice addormentata in auto",
+     "en": "Leave Alice Asleep in Car",
+     "type": "choice",
+     "parents": [
+      "r-pl-start"
+     ]
+    },
+    {
+     "id": "r-pl",
+     "title": "Esplora il parcheggio",
+     "en": "Explore Parking Lot",
+     "type": "objective",
+     "parents": [
+      "r-pl-asleep"
+     ]
+    },
+    {
+     "id": "r-pl-scissors",
+     "title": "Trova delle forbici arrugginite",
+     "en": "Find Some Rusted Scissors",
+     "type": "choice",
+     "parents": [
+      "r-pl"
+     ]
+    },
+    {
+     "id": "r-pl-hair",
+     "title": "Taglia e tingi i capelli",
+     "en": "Cut and Color Hair",
+     "type": "choice",
+     "parents": [
+      "r-pl-scissors"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "r-pl-brown",
+     "title": "Castani",
+     "en": "Brown",
+     "type": "choice",
+     "parents": [
+      "r-pl-hair"
+     ]
+    },
+    {
+     "id": "r-pl-black",
+     "title": "Neri",
+     "en": "Black",
+     "type": "choice",
+     "parents": [
+      "r-pl-hair"
+     ]
+    },
+    {
+     "id": "r-pl-white",
+     "title": "Bianchi",
+     "en": "White",
+     "type": "choice",
+     "parents": [
+      "r-pl-hair"
+     ]
+    },
+    {
+     "id": "r-pl-blonde",
+     "title": "Biondi",
+     "en": "Blonde",
+     "type": "choice",
+     "parents": [
+      "r-pl-hair"
+     ]
+    },
+    {
+     "id": "r-pl-led",
+     "title": "Rimuovi il LED",
+     "en": "Remove LED",
+     "type": "choice",
+     "parents": [
+      "r-pl-brown",
+      "r-pl-black",
+      "r-pl-white",
+      "r-pl-blonde"
+     ]
+    },
+    {
+     "id": "r-pl-burnt",
+     "title": "Trova l'androide bruciato",
+     "en": "Find Burnt Android",
+     "type": "choice",
+     "parents": [
+      "r-pl"
+     ]
+    },
+    {
+     "id": "r-pl-mag1",
+     "title": "Leggi «Cyber-Wildlife»",
+     "en": "Read \"Cyber-Wildlife\"",
+     "type": "choice",
+     "parents": [
+      "r-pl"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "r-pl-mag2",
+     "title": "Leggi «Android and Canada»",
+     "en": "Read \"Android and Canada\"",
+     "type": "choice",
+     "parents": [
+      "r-pl"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "r-pl-trunk",
+     "title": "Prova ad aprire il bagagliaio",
+     "en": "Try to Open Car Trunk",
+     "type": "choice",
+     "parents": [
+      "r-pl"
+     ]
+    },
+    {
+     "id": "r-pl-crowbar",
+     "title": "Trova un piede di porco",
+     "en": "Find a Crowbar",
+     "type": "choice",
+     "parents": [
+      "r-pl-trunk"
+     ]
+    },
+    {
+     "id": "r-pl-clothes",
+     "title": "Trova dei vestiti",
+     "en": "Find Some Clothes",
+     "type": "choice",
+     "parents": [
+      "r-pl-crowbar"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "r-pl-neigh",
+     "title": "Controlla il quartiere",
+     "en": "Check Neighborhood",
+     "type": "choice",
+     "parents": [
+      "r-pl"
+     ]
+    },
+    {
+     "id": "r-pl-police",
+     "title": "La polizia è nei paraggi",
+     "en": "Police Is in Vicinity",
+     "type": "choice",
+     "parents": [
+      "r-pl"
+     ]
+    },
+    {
+     "id": "r-pl-wake",
+     "title": "Sveglia Alice",
+     "en": "Wake Up Alice",
+     "type": "choice",
+     "parents": [
+      "r-pl"
+     ]
+    },
+    {
+     "id": "r-pl-leave",
+     "title": "Lascia il parcheggio",
+     "en": "Leave the Parking Lot",
+     "type": "choice",
+     "parents": [
+      "r-pl-wake"
+     ]
+    },
+    {
+     "id": "r-c-super",
+     "title": "Connor indaga al supermercato",
+     "en": "Connor Investigates Supermarket",
+     "type": "checkpoint",
+     "parents": [
+      "r-pl-leave"
+     ]
+    },
+    {
+     "id": "r-c-nolead",
+     "title": "La polizia non ha piste",
+     "en": "Police Don't Have a Lead",
+     "type": "choice",
+     "parents": [
+      "r-c-super"
+     ]
+    },
+    {
+     "id": "r-mr-start",
+     "title": "Mattina al motel",
+     "en": "Morning in Motel",
+     "type": "checkpoint",
+     "parents": [],
+     "note": "Se in «Fugitives» Kara e Alice hanno dormito al motel."
+    },
+    {
+     "id": "r-mr-talk",
+     "title": "Parla con Alice",
+     "en": "Talk to Alice",
+     "type": "choice",
+     "parents": [
+      "r-mr-start"
+     ]
+    },
+    {
+     "id": "r-mr-bath",
+     "title": "Prepara un bagno per Alice",
+     "en": "Draw a Bath for Alice",
+     "type": "choice",
+     "parents": [
+      "r-mr-talk"
+     ]
+    },
+    {
+     "id": "r-mr-hair",
+     "title": "Taglia e tingi i capelli",
+     "en": "Cut and Color Hair",
+     "type": "choice",
+     "parents": [
+      "r-mr-bath"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "r-mr-brown",
+     "title": "Castani",
+     "en": "Brown",
+     "type": "choice",
+     "parents": [
+      "r-mr-hair"
+     ]
+    },
+    {
+     "id": "r-mr-black",
+     "title": "Neri",
+     "en": "Black",
+     "type": "choice",
+     "parents": [
+      "r-mr-hair"
+     ]
+    },
+    {
+     "id": "r-mr-white",
+     "title": "Bianchi",
+     "en": "White",
+     "type": "choice",
+     "parents": [
+      "r-mr-hair"
+     ]
+    },
+    {
+     "id": "r-mr-blonde",
+     "title": "Biondi",
+     "en": "Blonde",
+     "type": "choice",
+     "parents": [
+      "r-mr-hair"
+     ]
+    },
+    {
+     "id": "r-mr-led",
+     "title": "Rimuovi il LED",
+     "en": "Remove LED",
+     "type": "choice",
+     "parents": [
+      "r-mr-brown",
+      "r-mr-black",
+      "r-mr-white",
+      "r-mr-blonde"
+     ]
+    },
+    {
+     "id": "r-mr-finishbath",
+     "title": "Finisci di preparare il bagno",
+     "en": "Finish Drawing Bath",
+     "type": "choice",
+     "parents": [
+      "r-mr-led"
+     ]
+    },
+    {
+     "id": "r-mr",
+     "title": "Esplora la stanza del motel",
+     "en": "Explore Motel Room",
+     "type": "objective",
+     "parents": [
+      "r-mr-talk",
+      "r-mr-led"
+     ]
+    },
+    {
+     "id": "r-mr-clock",
+     "title": "Guarda l'orologio",
+     "en": "Look at the Clock",
+     "type": "choice",
+     "parents": [
+      "r-mr"
+     ]
+    },
+    {
+     "id": "r-mr-outside",
+     "title": "Guarda fuori",
+     "en": "Look Outside",
+     "type": "choice",
+     "parents": [
+      "r-mr"
+     ]
+    },
+    {
+     "id": "r-mr-mag1",
+     "title": "Leggi «Cyber-Wildlife»",
+     "en": "Read \"Cyber-Wildlife\"",
+     "type": "choice",
+     "parents": [
+      "r-mr"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "r-mr-mag2",
+     "title": "Leggi «Android and Canada»",
+     "en": "Read \"Android and Canada\"",
+     "type": "choice",
+     "parents": [
+      "r-mr"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "r-mr-painting",
+     "title": "Guarda il quadro",
+     "en": "Look at the Painting",
+     "type": "choice",
+     "parents": [
+      "r-mr"
+     ]
+    },
+    {
+     "id": "r-mr-channel",
+     "title": "Cambia canale",
+     "en": "Change Channel",
+     "type": "choice",
+     "parents": [
+      "r-mr"
+     ]
+    },
+    {
+     "id": "r-mr-todd",
+     "title": "Alice sente parlare di Todd",
+     "en": "Alice Hears About Todd",
+     "type": "choice",
+     "parents": [
+      "r-mr-channel"
+     ]
+    },
+    {
+     "id": "r-mr-cheer",
+     "title": "Tira su di morale Alice",
+     "en": "Cheer Alice Up",
+     "type": "choice",
+     "parents": [
+      "r-mr-todd"
+     ]
+    },
+    {
+     "id": "r-mr-breakfast",
+     "title": "Cerca la colazione",
+     "en": "Look for Breakfast",
+     "type": "choice",
+     "parents": [
+      "r-mr-cheer"
+     ]
+    },
+    {
+     "id": "r-mr-spots",
+     "title": "Kara avvista la polizia",
+     "en": "Kara Spots Police Forces",
+     "type": "choice",
+     "parents": [
+      "r-mr-breakfast"
+     ]
+    },
+    {
+     "id": "r-c-motel",
+     "title": "Connor indaga al motel",
+     "en": "Connor Investigates the Motel",
+     "type": "checkpoint",
+     "parents": [
+      "r-mr-spots"
+     ]
+    },
+    {
+     "id": "r-c-recept",
+     "title": "Interroga il receptionist",
+     "en": "Interrogate Receptionist",
+     "type": "choice",
+     "parents": [
+      "r-c-motel"
+     ]
+    },
+    {
+     "id": "r-c-follow",
+     "title": "Segui Hank",
+     "en": "Follow Hank",
+     "type": "choice",
+     "parents": [
+      "r-c-recept"
+     ]
+    },
+    {
+     "id": "r-c-hankroom",
+     "title": "Hank controlla la stanza del motel",
+     "en": "Hank Checks Motel Room",
+     "type": "choice",
+     "parents": [
+      "r-c-follow"
+     ]
+    },
+    {
+     "id": "r-c-door",
+     "title": "Controlla la porta",
+     "en": "Check the Door",
+     "type": "choice",
+     "parents": [
+      "r-c-follow"
+     ]
+    },
+    {
+     "id": "r-street",
+     "title": "Kara e Alice in strada",
+     "en": "Kara & Alice in the Street",
+     "type": "choice",
+     "parents": [
+      "r-c-nolead",
+      "r-c-hankroom"
+     ]
+    },
+    {
+     "id": "r-train-walk",
+     "title": "Cammina verso la stazione",
+     "en": "Walk Toward Train Station",
+     "type": "choice",
+     "parents": [
+      "r-street"
+     ]
+    },
+    {
+     "id": "r-sneak",
+     "title": "Supera la polizia di nascosto",
+     "en": "Sneak Past Police Forces",
+     "type": "choice",
+     "parents": [
+      "r-train-walk"
+     ]
+    },
+    {
+     "id": "r-spotted",
+     "title": "Avvistate dalla polizia",
+     "en": "Spotted by Police",
+     "type": "choice",
+     "parents": [
+      "r-train-walk"
+     ]
+    },
+    {
+     "id": "r-end-train",
+     "title": "Kara e Alice hanno raggiunto il treno sane e salve",
+     "en": "Reached the Train Safely",
+     "type": "ending",
+     "parents": [
+      "r-sneak"
+     ]
+    },
+    {
+     "id": "r-runaway",
+     "title": "Kara e Alice scappano",
+     "en": "Kara & Alice Run Away",
+     "type": "choice",
+     "parents": [
+      "r-spotted"
+     ]
+    },
+    {
+     "id": "r-sq-start",
+     "title": "Mattina nel rifugio",
+     "en": "Morning in Squat",
+     "type": "checkpoint",
+     "parents": [],
+     "note": "Se in «Fugitives» Kara e Alice hanno dormito nel rifugio di Ralph."
+    },
+    {
+     "id": "r-sq",
+     "title": "Esplora il rifugio",
+     "en": "Explore Squat",
+     "type": "objective",
+     "parents": [
+      "r-sq-start"
+     ]
+    },
+    {
+     "id": "r-sq-mag1",
+     "title": "Leggi «Cyber-Wildlife»",
+     "en": "Read \"Cyber-Wildlife\"",
+     "type": "choice",
+     "parents": [
+      "r-sq"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "r-sq-mag2",
+     "title": "Leggi «Android and Canada»",
+     "en": "Read \"Android and Canada\"",
+     "type": "choice",
+     "parents": [
+      "r-sq"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "r-sq-fire",
+     "title": "Ravviva il fuoco",
+     "en": "Revive Fire",
+     "type": "choice",
+     "parents": [
+      "r-sq"
+     ]
+    },
+    {
+     "id": "r-sq-leaflet",
+     "title": "Leggi il volantino",
+     "en": "Read Leaflet",
+     "type": "choice",
+     "parents": [
+      "r-sq"
+     ]
+    },
+    {
+     "id": "r-sq-alice",
+     "title": "Controlla Alice",
+     "en": "Check on Alice",
+     "type": "choice",
+     "parents": [
+      "r-sq"
+     ]
+    },
+    {
+     "id": "r-sq-stuff",
+     "title": "Guarda le cose di Ralph",
+     "en": "Look at Ralph's Stuff",
+     "type": "choice",
+     "parents": [
+      "r-sq"
+     ]
+    },
+    {
+     "id": "r-sq-money",
+     "title": "Ruba i soldi",
+     "en": "Steal Money",
+     "type": "choice",
+     "parents": [
+      "r-sq-stuff"
+     ]
+    },
+    {
+     "id": "r-sq-up",
+     "title": "Sali di sopra",
+     "en": "Go Upstairs",
+     "type": "choice",
+     "parents": [
+      "r-sq"
+     ]
+    },
+    {
+     "id": "r-sq-hair",
+     "title": "Taglia e tingi i capelli",
+     "en": "Cut and Color Hair",
+     "type": "choice",
+     "parents": [
+      "r-sq-up"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "r-sq-brown",
+     "title": "Castani",
+     "en": "Brown",
+     "type": "choice",
+     "parents": [
+      "r-sq-hair"
+     ]
+    },
+    {
+     "id": "r-sq-black",
+     "title": "Neri",
+     "en": "Black",
+     "type": "choice",
+     "parents": [
+      "r-sq-hair"
+     ]
+    },
+    {
+     "id": "r-sq-white",
+     "title": "Bianchi",
+     "en": "White",
+     "type": "choice",
+     "parents": [
+      "r-sq-hair"
+     ]
+    },
+    {
+     "id": "r-sq-blonde",
+     "title": "Biondi",
+     "en": "Blonde",
+     "type": "choice",
+     "parents": [
+      "r-sq-hair"
+     ]
+    },
+    {
+     "id": "r-sq-led",
+     "title": "Rimuovi il LED",
+     "en": "Remove LED",
+     "type": "choice",
+     "parents": [
+      "r-sq-brown",
+      "r-sq-black",
+      "r-sq-white",
+      "r-sq-blonde"
+     ]
+    },
+    {
+     "id": "r-sq-clothes",
+     "title": "Cambiati d'abito",
+     "en": "Change Clothes",
+     "type": "choice",
+     "parents": [
+      "r-sq-up"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "r-sq-forgotgun",
+     "title": "Pistola dimenticata",
+     "en": "Forgot Gun",
+     "type": "choice",
+     "parents": [
+      "r-sq-clothes"
+     ]
+    },
+    {
+     "id": "r-sq-takegun",
+     "title": "Riprendi la pistola",
+     "en": "Take Gun Back",
+     "type": "choice",
+     "parents": [
+      "r-sq-clothes"
+     ]
+    },
+    {
+     "id": "r-sq-corpse",
+     "title": "Trova il cadavere nella vasca",
+     "en": "Find Corpse in Bathtub",
+     "type": "choice",
+     "parents": [
+      "r-sq-led"
+     ]
+    },
+    {
+     "id": "r-sq-down",
+     "title": "Scendi di sotto",
+     "en": "Go Downstairs",
+     "type": "choice",
+     "parents": [
+      "r-sq-led"
+     ]
+    },
+    {
+     "id": "r-sq-police",
+     "title": "Arriva la polizia",
+     "en": "Police Arrives",
+     "type": "choice",
+     "parents": [
+      "r-sq-down"
+     ]
+    },
+    {
+     "id": "r-sq-meal",
+     "title": "Ralph vuole una cena in famiglia",
+     "en": "Ralph Wants a Family Meal",
+     "type": "choice",
+     "parents": [
+      "r-sq-police"
+     ]
+    },
+    {
+     "id": "r-sq-agree",
+     "title": "Accetta di sederti",
+     "en": "Agree to Sit",
+     "type": "choice",
+     "parents": [
+      "r-sq-meal"
+     ]
+    },
+    {
+     "id": "r-sq-refuse",
+     "title": "Rifiuta di sederti",
+     "en": "Refuse to Sit",
+     "type": "choice",
+     "parents": [
+      "r-sq-meal"
+     ]
+    },
+    {
+     "id": "r-sq-threatens",
+     "title": "Ralph minaccia Alice",
+     "en": "Ralph Threatens Alice",
+     "type": "choice",
+     "parents": [
+      "r-sq-refuse"
+     ]
+    },
+    {
+     "id": "r-sq-table",
+     "title": "Siediti a tavola",
+     "en": "Sit at the Table",
+     "type": "choice",
+     "parents": [
+      "r-sq-agree",
+      "r-sq-threatens"
+     ]
+    },
+    {
+     "id": "r-sq-discuss",
+     "title": "Parla del cadavere",
+     "en": "Discuss Corpse",
+     "type": "choice",
+     "parents": [
+      "r-sq-table"
+     ]
+    },
+    {
+     "id": "r-sq-convince",
+     "title": "Prova a convincere Ralph",
+     "en": "Try to Convince Ralph",
+     "type": "choice",
+     "parents": [
+      "r-sq-table"
+     ]
+    },
+    {
+     "id": "r-sq-threaten",
+     "title": "Minaccia Ralph",
+     "en": "Threaten Ralph",
+     "type": "choice",
+     "parents": [
+      "r-sq-table"
+     ]
+    },
+    {
+     "id": "r-sq-apolog",
+     "title": "Ralph si scusa",
+     "en": "Ralph Apologizes",
+     "type": "choice",
+     "parents": [
+      "r-sq-discuss",
+      "r-sq-convince"
+     ]
+    },
+    {
+     "id": "r-sq-disturbed",
+     "title": "Interrotte da Connor",
+     "en": "Disturbed by Connor",
+     "type": "choice",
+     "parents": [
+      "r-sq-apolog",
+      "r-sq-threaten"
+     ]
+    },
+    {
+     "id": "r-c-squat",
+     "title": "Connor indaga nel rifugio",
+     "en": "Connor Investigates Squat",
+     "type": "checkpoint",
+     "parents": [
+      "r-sq-disturbed"
+     ]
+    },
+    {
+     "id": "r-c-enter",
+     "title": "Entra nel rifugio",
+     "en": "Enter Squat",
+     "type": "choice",
+     "parents": [
+      "r-c-squat"
+     ]
+    },
+    {
+     "id": "r-c-interr",
+     "title": "Interroga l'androide del rifugio",
+     "en": "Interrogate Squat Android",
+     "type": "choice",
+     "parents": [
+      "r-c-enter"
+     ]
+    },
+    {
+     "id": "r-c-informs",
+     "title": "Il deviante del rifugio denuncia l'AX400",
+     "en": "Squat Deviant Informs on AX400",
+     "type": "choice",
+     "parents": [
+      "r-c-interr"
+     ]
+    },
+    {
+     "id": "r-c-quiet",
+     "title": "L'androide del rifugio tace",
+     "en": "Squat Android Keeps Quiet",
+     "type": "choice",
+     "parents": [
+      "r-c-interr"
+     ]
+    },
+    {
+     "id": "r-gf",
+     "title": "Indaga al piano terra del rifugio",
+     "en": "Investigate Squat Ground Floor",
+     "type": "objective",
+     "parents": [
+      "r-c-quiet"
+     ]
+    },
+    {
+     "id": "r-gf-upstairs",
+     "title": "Controlla di sopra",
+     "en": "Check Upstairs",
+     "type": "choice",
+     "parents": [
+      "r-gf"
+     ]
+    },
+    {
+     "id": "r-gf-android",
+     "title": "Analizza l'androide del rifugio",
+     "en": "Analyze Squat Android",
+     "type": "choice",
+     "parents": [
+      "r-gf"
+     ]
+    },
+    {
+     "id": "r-gf-table",
+     "title": "Controlla il tavolo",
+     "en": "Check Table",
+     "type": "choice",
+     "parents": [
+      "r-gf-upstairs"
+     ]
+    },
+    {
+     "id": "r-gf-stairs",
+     "title": "Controlla sotto le scale",
+     "en": "Check Under the Stairs",
+     "type": "choice",
+     "parents": [
+      "r-gf-android"
+     ]
+    },
+    {
+     "id": "r-gf-kitchen",
+     "title": "Controlla la cucina",
+     "en": "Check Kitchen",
+     "type": "choice",
+     "parents": [
+      "r-gf"
+     ]
+    },
+    {
+     "id": "r-gf-fireplace",
+     "title": "Controlla il camino",
+     "en": "Check Fireplace",
+     "type": "choice",
+     "parents": [
+      "r-gf"
+     ]
+    },
+    {
+     "id": "r-gf-hankleave",
+     "title": "Hank ordina a Connor di andarsene",
+     "en": "Hank Commands Connor to Leave",
+     "type": "choice",
+     "parents": [
+      "r-gf"
+     ]
+    },
+    {
+     "id": "r-gf-attacks",
+     "title": "L'androide del rifugio attacca Connor",
+     "en": "Squat Android Attacks Connor",
+     "type": "choice",
+     "parents": [
+      "r-gf-table",
+      "r-gf-stairs"
+     ]
+    },
+    {
+     "id": "r-gf-escaped",
+     "title": "L'AX400 e la bambina sono fuggite",
+     "en": "AX400 and Child Escaped",
+     "type": "choice",
+     "parents": [
+      "r-gf-attacks"
+     ]
+    },
+    {
+     "id": "r-gf-disappears",
+     "title": "L'androide del rifugio sparisce",
+     "en": "Squat Android Disappears",
+     "type": "choice",
+     "parents": [
+      "r-gf-hankleave"
+     ]
+    },
+    {
+     "id": "r-end-undiscovered",
+     "title": "Kara e Alice non scoperte nel rifugio",
+     "en": "Kara & Alice Undiscovered in Squat",
+     "type": "ending",
+     "parents": [
+      "r-gf-disappears"
+     ]
+    },
+    {
+     "id": "r-pursues",
+     "title": "Connor insegue Kara",
+     "en": "Connor Pursues Kara",
+     "type": "choice",
+     "parents": [
+      "r-runaway",
+      "r-c-door",
+      "r-gf-escaped",
+      "r-c-informs"
+     ]
+    },
+    {
+     "id": "r-run",
+     "title": "Corri verso la loro ultima posizione nota",
+     "en": "Run Toward Their Last Known Position",
+     "type": "choice",
+     "parents": [
+      "r-pursues"
+     ]
+    },
+    {
+     "id": "r-late1",
+     "title": "Raggiungi la recinzione troppo tardi",
+     "en": "Reach Fence Too Late",
+     "type": "choice",
+     "parents": [
+      "r-run"
+     ]
+    },
+    {
+     "id": "r-end-vanished",
+     "title": "Kara e Alice sono sparite",
+     "en": "Kara & Alice Vanished",
+     "type": "ending",
+     "parents": [
+      "r-late1"
+     ]
+    },
+    {
+     "id": "r-intime",
+     "title": "Raggiungi la recinzione in tempo",
+     "en": "Reach Fence in Time",
+     "type": "choice",
+     "parents": [
+      "r-run"
+     ]
+    },
+    {
+     "id": "r-late2",
+     "title": "Raggiungi la recinzione troppo tardi",
+     "en": "Reach Fence Too Late",
+     "type": "choice",
+     "parents": [
+      "r-run"
+     ]
+    },
+    {
+     "id": "r-end-crossed",
+     "title": "Kara e Alice hanno attraversato l'autostrada",
+     "en": "Kara & Alice Crossed the Highway",
+     "type": "ending",
+     "parents": [
+      "r-late2"
+     ]
+    },
+    {
+     "id": "r-highway",
+     "title": "Kara e Alice sono all'autostrada",
+     "en": "Kara & Alice Are at the Highway",
+     "type": "choice",
+     "parents": [
+      "r-intime"
+     ]
+    },
+    {
+     "id": "r-mid",
+     "title": "Kara e Alice raggiungono lo spartitraffico",
+     "en": "Kara & Alice Reach Middle Section",
+     "type": "choice",
+     "parents": [
+      "r-highway"
+     ]
+    },
+    {
+     "id": "r-hit1",
+     "title": "Un'auto investe Kara e Alice",
+     "en": "Car Hits Kara & Alice",
+     "type": "choice",
+     "parents": [
+      "r-highway"
+     ]
+    },
+    {
+     "id": "r-hankorders",
+     "title": "Hank ordina a Connor di non andare",
+     "en": "Hank Orders Connor Not to Go",
+     "type": "choice",
+     "parents": [
+      "r-mid"
+     ]
+    },
+    {
+     "id": "r-obeys",
+     "title": "Connor obbedisce a Hank",
+     "en": "Connor Obeys Hank's Order",
+     "type": "choice",
+     "parents": [
+      "r-hankorders"
+     ]
+    },
+    {
+     "id": "r-pursues2",
+     "title": "Connor insegue l'AX400",
+     "en": "Connor Pursues AX400",
+     "type": "choice",
+     "parents": [
+      "r-hankorders"
+     ]
+    },
+    {
+     "id": "r-o-other",
+     "title": "Kara e Alice arrivano dall'altra parte",
+     "en": "Kara & Alice Get to the Other Side",
+     "type": "choice",
+     "parents": [
+      "r-obeys"
+     ]
+    },
+    {
+     "id": "r-o-hit",
+     "title": "Un'auto investe Kara e Alice",
+     "en": "Car Hits Kara & Alice",
+     "type": "choice",
+     "parents": [
+      "r-obeys"
+     ]
+    },
+    {
+     "id": "r-c-mid",
+     "title": "Connor raggiunge lo spartitraffico",
+     "en": "Connor Reaches Middle Section",
+     "type": "choice",
+     "parents": [
+      "r-pursues2"
+     ]
+    },
+    {
+     "id": "r-c-hit",
+     "title": "Un'auto investe Connor",
+     "en": "Car Hits Connor",
+     "type": "choice",
+     "parents": [
+      "r-pursues2"
+     ]
+    },
+    {
+     "id": "r-h-other",
+     "title": "Kara e Alice arrivano dall'altra parte",
+     "en": "Kara & Alice Get to the Other Side",
+     "type": "choice",
+     "parents": [
+      "r-c-hit"
+     ]
+    },
+    {
+     "id": "r-h-hit",
+     "title": "Un'auto investe Kara e Alice",
+     "en": "Car Hits Kara & Alice",
+     "type": "choice",
+     "parents": [
+      "r-c-hit"
+     ]
+    },
+    {
+     "id": "r-last",
+     "title": "Kara e Alice attraversano l'ultimo tratto",
+     "en": "Kara & Alice Cross Last Section",
+     "type": "choice",
+     "parents": [
+      "r-c-mid"
+     ]
+    },
+    {
+     "id": "r-catches",
+     "title": "Connor raggiunge Kara",
+     "en": "Connor Catches Kara",
+     "type": "choice",
+     "parents": [
+      "r-last"
+     ]
+    },
+    {
+     "id": "r-loses",
+     "title": "Kara semina Connor",
+     "en": "Kara Loses Connor",
+     "type": "choice",
+     "parents": [
+      "r-catches"
+     ]
+    },
+    {
+     "id": "r-hitkara",
+     "title": "Un'auto investe Kara",
+     "en": "Car Hits Kara",
+     "type": "choice",
+     "parents": [
+      "r-catches"
+     ]
+    },
+    {
+     "id": "r-avoids",
+     "title": "Connor evita l'impatto",
+     "en": "Connor Avoids Collision",
+     "type": "choice",
+     "parents": [
+      "r-loses"
+     ]
+    },
+    {
+     "id": "r-connorhit",
+     "title": "Connor investito",
+     "en": "Connor Hit by Car",
+     "type": "choice",
+     "parents": [
+      "r-loses"
+     ]
+    },
+    {
+     "id": "r-end-other1",
+     "title": "Kara e Alice hanno raggiunto l'altra parte",
+     "en": "Kara & Alice Reached the Other Side",
+     "type": "ending",
+     "parents": [
+      "r-o-other",
+      "r-avoids"
+     ],
+     "note": "Variante con Connor illeso."
+    },
+    {
+     "id": "r-end-other2",
+     "title": "Kara e Alice hanno raggiunto l'altra parte",
+     "en": "Kara & Alice Reached the Other Side",
+     "type": "ending",
+     "parents": [
+      "r-connorhit",
+      "r-h-other"
+     ],
+     "note": "Variante con Connor investito."
+    },
+    {
+     "id": "r-end-died",
+     "title": "Kara e Alice sono morte sull'autostrada",
+     "en": "Kara & Alice Died on the Highway",
+     "type": "ending",
+     "parents": [
+      "r-hit1",
+      "r-o-hit",
+      "r-h-hit",
+      "r-hitkara"
+     ]
+    }
+   ]
+  }
+ ]
+}

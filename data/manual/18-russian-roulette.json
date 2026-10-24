@@ -1,0 +1,309 @@
+{
+ "chapter": 18,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "rr-start",
+     "title": "Risveglio nel giardino zen",
+     "en": "Emerge in the Zen Garden",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "rr-amanda",
+     "title": "Raggiungi Amanda",
+     "en": "Join Amanda",
+     "type": "choice",
+     "parents": [
+      "rr-start"
+     ]
+    },
+    {
+     "id": "rr-arrive",
+     "title": "Arrivo a casa di Hank",
+     "en": "Arrive at Hank's Place",
+     "type": "checkpoint",
+     "parents": [
+      "rr-amanda"
+     ]
+    },
+    {
+     "id": "rr-find",
+     "title": "Trova il tenente Anderson",
+     "en": "Find Lt. Anderson",
+     "type": "objective",
+     "parents": [
+      "rr-arrive"
+     ]
+    },
+    {
+     "id": "rr-bell",
+     "title": "Suona il campanello",
+     "en": "Ring Bell",
+     "type": "choice",
+     "parents": [
+      "rr-find"
+     ]
+    },
+    {
+     "id": "rr-again",
+     "title": "Suona di nuovo",
+     "en": "Ring Again",
+     "type": "choice",
+     "parents": [
+      "rr-bell"
+     ]
+    },
+    {
+     "id": "rr-car",
+     "title": "Controlla l'auto",
+     "en": "Check Car",
+     "type": "choice",
+     "parents": [
+      "rr-find"
+     ]
+    },
+    {
+     "id": "rr-bedwin",
+     "title": "Controlla la finestra della camera",
+     "en": "Check Bedroom Window",
+     "type": "choice",
+     "parents": [
+      "rr-find"
+     ]
+    },
+    {
+     "id": "rr-frontwin",
+     "title": "Controlla la finestra anteriore del soggiorno",
+     "en": "Check Front Living Room Window",
+     "type": "choice",
+     "parents": [
+      "rr-find"
+     ]
+    },
+    {
+     "id": "rr-backwin",
+     "title": "Controlla la finestra posteriore del soggiorno",
+     "en": "Check Back Living Room Window",
+     "type": "choice",
+     "parents": [
+      "rr-find"
+     ]
+    },
+    {
+     "id": "rr-knock",
+     "title": "Bussa alla porta",
+     "en": "Knock on Door",
+     "type": "choice",
+     "parents": [
+      "rr-find"
+     ]
+    },
+    {
+     "id": "rr-breakin",
+     "title": "Vedi Hank e irrompi in casa",
+     "en": "Spot Hank and Break In",
+     "type": "choice",
+     "parents": [
+      "rr-find",
+      "rr-arrive"
+     ]
+    },
+    {
+     "id": "rr-enter",
+     "title": "Entra in casa",
+     "en": "Enter House",
+     "type": "choice",
+     "parents": [
+      "rr-breakin"
+     ]
+    },
+    {
+     "id": "rr-dog",
+     "title": "Il cane di Hank attacca",
+     "en": "Hank's Dog Attacks",
+     "type": "choice",
+     "parents": [
+      "rr-enter"
+     ]
+    },
+    {
+     "id": "rr-calm",
+     "title": "Calma il cane di Hank",
+     "en": "Calm Hank's Dog",
+     "type": "choice",
+     "parents": [
+      "rr-dog"
+     ]
+    },
+    {
+     "id": "rr-rile",
+     "title": "Agita il cane di Hank",
+     "en": "Rile Hank's Dog",
+     "type": "choice",
+     "parents": [
+      "rr-dog"
+     ]
+    },
+    {
+     "id": "rr-analyze",
+     "title": "Analizza Hank",
+     "en": "Analyze Hank",
+     "type": "choice",
+     "parents": [
+      "rr-calm",
+      "rr-rile"
+     ]
+    },
+    {
+     "id": "rr-bathroom",
+     "title": "Porta Hank in bagno",
+     "en": "Take Hank to the Bathroom",
+     "type": "choice",
+     "parents": [
+      "rr-analyze"
+     ]
+    },
+    {
+     "id": "rr-distant",
+     "title": "Atteggiamento distaccato",
+     "en": "Distant Attitude",
+     "type": "choice",
+     "parents": [
+      "rr-bathroom"
+     ]
+    },
+    {
+     "id": "rr-underst",
+     "title": "Atteggiamento comprensivo",
+     "en": "Understanding Attitude",
+     "type": "choice",
+     "parents": [
+      "rr-bathroom"
+     ]
+    },
+    {
+     "id": "rr-hippy",
+     "title": "Prendi la camicia hippy",
+     "en": "Take Hippy Shirt",
+     "type": "choice",
+     "parents": [
+      "rr-distant",
+      "rr-underst"
+     ]
+    },
+    {
+     "id": "rr-streaky",
+     "title": "Prendi la camicia a strisce colorate",
+     "en": "Take Streaky Shirt",
+     "type": "choice",
+     "parents": [
+      "rr-distant",
+      "rr-underst"
+     ]
+    },
+    {
+     "id": "rr-stripy",
+     "title": "Prendi la camicia a righe",
+     "en": "Take Stripy Shirt",
+     "type": "choice",
+     "parents": [
+      "rr-distant",
+      "rr-underst"
+     ]
+    },
+    {
+     "id": "rr-wait",
+     "title": "Aspetta Hank",
+     "en": "Wait for Hank",
+     "type": "objective",
+     "parents": [
+      "rr-hippy",
+      "rr-streaky",
+      "rr-stripy"
+     ]
+    },
+    {
+     "id": "rr-mag1",
+     "title": "Leggi «Pull the Plug?»",
+     "en": "Read \"Pull the Plug?\"",
+     "type": "choice",
+     "parents": [
+      "rr-wait"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "rr-roulette",
+     "title": "Scopri che Hank giocava alla roulette russa",
+     "en": "Learn Hank Was Playing Russian Roulette",
+     "type": "choice",
+     "parents": [
+      "rr-wait"
+     ]
+    },
+    {
+     "id": "rr-son",
+     "title": "Trova la foto del figlio di Hank",
+     "en": "Find Picture of Hank's Son",
+     "type": "choice",
+     "parents": [
+      "rr-wait"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "rr-interests",
+     "title": "Scopri gli interessi di Hank",
+     "en": "Learn Hank's Interests",
+     "type": "choice",
+     "parents": [
+      "rr-wait"
+     ]
+    },
+    {
+     "id": "rr-pet",
+     "title": "Accarezza il cane di Hank",
+     "en": "Pet Hank's Dog",
+     "type": "choice",
+     "parents": [
+      "rr-wait"
+     ]
+    },
+    {
+     "id": "rr-mag2",
+     "title": "Leggi «Tainted Love»",
+     "en": "Read \"Tainted Love\"",
+     "type": "choice",
+     "parents": [
+      "rr-wait"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "rr-ready",
+     "title": "Hank è pronto",
+     "en": "Hank Is Ready",
+     "type": "choice",
+     "parents": [
+      "rr-wait"
+     ]
+    },
+    {
+     "id": "rr-end",
+     "title": "Partiti per l'Eden Club",
+     "en": "Left for Eden Club",
+     "type": "ending",
+     "parents": [
+      "rr-ready"
+     ]
+    }
+   ]
+  }
+ ]
+}

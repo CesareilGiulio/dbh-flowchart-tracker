@@ -1,0 +1,191 @@
+{
+ "chapter": 11,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "d-start",
+     "title": "Ritorno alla vita",
+     "en": "Back to Life",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "d-self",
+     "title": "Analizza te stesso",
+     "en": "Analyze Self",
+     "type": "choice",
+     "parents": [
+      "d-start"
+     ]
+    },
+    {
+     "id": "d-legs",
+     "title": "Ripara le gambe",
+     "en": "Repair Legs",
+     "type": "choice",
+     "parents": [
+      "d-self"
+     ]
+    },
+    {
+     "id": "d-jericho",
+     "title": "Senti parlare di Jericho",
+     "en": "Hear About Jericho",
+     "type": "choice",
+     "parents": [
+      "d-legs"
+     ]
+    },
+    {
+     "id": "d-limbs",
+     "title": "Passaggio tra gli arti",
+     "en": "Passage of Limbs",
+     "type": "choice",
+     "parents": [
+      "d-jericho"
+     ]
+    },
+    {
+     "id": "d-junk",
+     "title": "Discarica",
+     "en": "Junkyard",
+     "type": "choice",
+     "parents": [
+      "d-limbs"
+     ]
+    },
+    {
+     "id": "d-search",
+     "title": "Cerca i pezzi",
+     "en": "Search for Parts",
+     "type": "objective",
+     "parents": [
+      "d-junk"
+     ]
+    },
+    {
+     "id": "d-pump",
+     "title": "Trova un regolatore della pompa in un androide",
+     "en": "Find Pump Regulator in Android",
+     "type": "choice",
+     "parents": [
+      "d-search"
+     ]
+    },
+    {
+     "id": "d-pump-refuse",
+     "title": "Rifiuta di uccidere per la pompa",
+     "en": "Refuse to Kill for Pump",
+     "type": "choice",
+     "parents": [
+      "d-pump"
+     ]
+    },
+    {
+     "id": "d-pump-kill",
+     "title": "Uccidi per la pompa",
+     "en": "Kill for Pump",
+     "type": "choice",
+     "parents": [
+      "d-pump"
+     ]
+    },
+    {
+     "id": "d-begs",
+     "title": "Un androide implora di morire",
+     "en": "Android Begs to Die",
+     "type": "choice",
+     "parents": [
+      "d-search"
+     ]
+    },
+    {
+     "id": "d-begs-refuse",
+     "title": "Rifiuta di ucciderlo",
+     "en": "Refuse to Kill",
+     "type": "choice",
+     "parents": [
+      "d-begs"
+     ]
+    },
+    {
+     "id": "d-begs-kill",
+     "title": "Uccidilo",
+     "en": "Kill",
+     "type": "choice",
+     "parents": [
+      "d-begs"
+     ]
+    },
+    {
+     "id": "d-pump-dead",
+     "title": "Trova un regolatore della pompa in un androide morto",
+     "en": "Find Pump Regulator in Dead Android",
+     "type": "choice",
+     "parents": [
+      "d-search"
+     ]
+    },
+    {
+     "id": "d-audio",
+     "title": "Trova un processore audio",
+     "en": "Find Audio Processor",
+     "type": "choice",
+     "parents": [
+      "d-search"
+     ]
+    },
+    {
+     "id": "d-optical",
+     "title": "Trova un'unità ottica",
+     "en": "Find Optical Unit",
+     "type": "choice",
+     "parents": [
+      "d-search"
+     ]
+    },
+    {
+     "id": "d-crane",
+     "title": "La gru scarica dei corpi",
+     "en": "Crane Dumps Bodies",
+     "type": "choice",
+     "parents": [
+      "d-optical"
+     ]
+    },
+    {
+     "id": "d-dig",
+     "title": "Liberati",
+     "en": "Dig Yourself Out",
+     "type": "choice",
+     "parents": [
+      "d-crane"
+     ]
+    },
+    {
+     "id": "d-climb",
+     "title": "Risali il pendio",
+     "en": "Climb Slope",
+     "type": "choice",
+     "parents": [
+      "d-search"
+     ]
+    },
+    {
+     "id": "d-end",
+     "title": "Markus è tornato dalla morte",
+     "en": "Markus Came Back From the Dead",
+     "type": "ending",
+     "parents": [
+      "d-climb"
+     ]
+    }
+   ]
+  }
+ ]
+}

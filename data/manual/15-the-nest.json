@@ -1,0 +1,304 @@
+{
+ "chapter": 15,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "n-start",
+     "title": "Pausa pranzo",
+     "en": "Lunch Break",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "n-join",
+     "title": "Raggiungi Hank",
+     "en": "Join Hank",
+     "type": "choice",
+     "parents": [
+      "n-start"
+     ]
+    },
+    {
+     "id": "n-env",
+     "title": "Analizza l'ambiente",
+     "en": "Analyze Environment",
+     "type": "choice",
+     "parents": [
+      "n-join"
+     ]
+    },
+    {
+     "id": "n-insults",
+     "title": "Hank insulta Connor",
+     "en": "Hank Insults Connor",
+     "type": "choice",
+     "parents": [
+      "n-join"
+     ]
+    },
+    {
+     "id": "n-talk",
+     "title": "Parla con Hank",
+     "en": "Talk to Hank",
+     "type": "choice",
+     "parents": [
+      "n-join"
+     ]
+    },
+    {
+     "id": "n-frank",
+     "title": "Sii franco con Hank",
+     "en": "Be Frank With Hank",
+     "type": "choice",
+     "parents": [
+      "n-talk"
+     ]
+    },
+    {
+     "id": "n-chol",
+     "title": "Avverti Hank del colesterolo",
+     "en": "Warn Hank About Cholesterol",
+     "type": "choice",
+     "parents": [
+      "n-talk"
+     ]
+    },
+    {
+     "id": "n-friends",
+     "title": "Avverti Hank sui suoi amici",
+     "en": "Warn Hank About His Friends",
+     "type": "choice",
+     "parents": [
+      "n-talk"
+     ]
+    },
+    {
+     "id": "n-elevator",
+     "title": "Nell'ascensore",
+     "en": "In the Elevator",
+     "type": "checkpoint",
+     "parents": [
+      "n-talk",
+      "n-insults"
+     ]
+    },
+    {
+     "id": "n-feathers",
+     "title": "Esamina le piume",
+     "en": "Examine Feathers",
+     "type": "choice",
+     "parents": [
+      "n-elevator"
+     ]
+    },
+    {
+     "id": "n-nest",
+     "title": "Nel nido",
+     "en": "Into the Nest",
+     "type": "choice",
+     "parents": [
+      "n-elevator"
+     ]
+    },
+    {
+     "id": "n-apt",
+     "title": "Indaga nell'appartamento",
+     "en": "Investigate Apartment",
+     "type": "objective",
+     "parents": [
+      "n-nest"
+     ]
+    },
+    {
+     "id": "n-ra9",
+     "title": "Vedi il riferimento a rA9",
+     "en": "See RA9 Reference",
+     "type": "choice",
+     "parents": [
+      "n-apt"
+     ]
+    },
+    {
+     "id": "n-stool",
+     "title": "Esamina lo sgabello",
+     "en": "Investigate Stool",
+     "type": "choice",
+     "parents": [
+      "n-ra9"
+     ]
+    },
+    {
+     "id": "n-cage",
+     "title": "Esamina la gabbia",
+     "en": "Investigate Cage",
+     "type": "choice",
+     "parents": [
+      "n-apt"
+     ]
+    },
+    {
+     "id": "n-mag1",
+     "title": "Leggi «Red Ice Epidemic»",
+     "en": "Read \"Red Ice Epidemic\"",
+     "type": "choice",
+     "parents": [
+      "n-apt"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "n-mag2",
+     "title": "Leggi «Past the Tipping Point»",
+     "en": "Read \"Past the Tipping Point\"",
+     "type": "choice",
+     "parents": [
+      "n-apt"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "n-led",
+     "title": "Trova il LED",
+     "en": "Find LED",
+     "type": "choice",
+     "parents": [
+      "n-apt"
+     ]
+    },
+    {
+     "id": "n-diary",
+     "title": "Trova il diario",
+     "en": "Find Diary",
+     "type": "choice",
+     "parents": [
+      "n-led"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "n-leave",
+     "title": "Hank e Connor lasciano l'appartamento",
+     "en": "Hank and Connor Leave the Apartment",
+     "type": "choice",
+     "parents": [
+      "n-apt"
+     ]
+    },
+    {
+     "id": "n-end-notfound",
+     "title": "Rupert non trovato",
+     "en": "Rupert Not Found",
+     "type": "ending",
+     "parents": [
+      "n-leave"
+     ]
+    },
+    {
+     "id": "n-find",
+     "title": "Trova Rupert",
+     "en": "Find Rupert",
+     "type": "checkpoint",
+     "parents": [
+      "n-apt"
+     ]
+    },
+    {
+     "id": "n-chase",
+     "title": "Insegui Rupert",
+     "en": "Chase Rupert",
+     "type": "choice",
+     "parents": [
+      "n-find"
+     ]
+    },
+    {
+     "id": "n-gaining",
+     "title": "Guadagni terreno su Rupert",
+     "en": "Gaining on Rupert",
+     "type": "choice",
+     "parents": [
+      "n-chase"
+     ]
+    },
+    {
+     "id": "n-lose",
+     "title": "Perdi di vista Rupert",
+     "en": "Lose Sight of Rupert",
+     "type": "choice",
+     "parents": [
+      "n-chase"
+     ]
+    },
+    {
+     "id": "n-died",
+     "title": "Connor muore",
+     "en": "Connor Died",
+     "type": "choice",
+     "parents": [
+      "n-chase"
+     ]
+    },
+    {
+     "id": "n-pushes",
+     "title": "Rupert spinge giù Hank",
+     "en": "Rupert Pushes Hank",
+     "type": "choice",
+     "parents": [
+      "n-gaining"
+     ]
+    },
+    {
+     "id": "n-follow",
+     "title": "Insegui Rupert",
+     "en": "Follow Rupert",
+     "type": "choice",
+     "parents": [
+      "n-pushes"
+     ]
+    },
+    {
+     "id": "n-save",
+     "title": "Salva Hank",
+     "en": "Save Hank",
+     "type": "choice",
+     "parents": [
+      "n-pushes"
+     ]
+    },
+    {
+     "id": "n-end-suicide",
+     "title": "Rupert si è suicidato",
+     "en": "Rupert Committed Suicide",
+     "type": "ending",
+     "parents": [
+      "n-follow"
+     ]
+    },
+    {
+     "id": "n-end-away",
+     "title": "Rupert è scappato",
+     "en": "Rupert Got Away",
+     "type": "ending",
+     "parents": [
+      "n-save",
+      "n-lose"
+     ]
+    },
+    {
+     "id": "n-end-died",
+     "title": "Connor è morto inseguendo Rupert",
+     "en": "Connor Died Chasing Rupert",
+     "type": "ending",
+     "parents": [
+      "n-died"
+     ]
+    }
+   ]
+  }
+ ]
+}

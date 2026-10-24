@@ -1,0 +1,121 @@
+{
+ "chapter": 3,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "s-start",
+     "title": "Passeggiata nel parco",
+     "en": "Walking in the Park",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "s-hotdog",
+     "title": "Fissa il venditore di hot dog",
+     "en": "Stare at Hot Dog Vendor",
+     "type": "choice",
+     "parents": [
+      "s-start"
+     ]
+    },
+    {
+     "id": "s-hotdog-push",
+     "title": "Il venditore di hot dog spinge Markus",
+     "en": "Hot Dog Vendor Pushes Markus",
+     "type": "choice",
+     "parents": [
+      "s-hotdog"
+     ]
+    },
+    {
+     "id": "s-busker",
+     "title": "Ascolta l'artista di strada",
+     "en": "Listen to Busker",
+     "type": "choice",
+     "parents": [
+      "s-start"
+     ]
+    },
+    {
+     "id": "s-mag1",
+     "title": "Leggi «Secret of Androids»",
+     "en": "Read \"Secret of Androids\"",
+     "type": "choice",
+     "parents": [
+      "s-start"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "s-mag2",
+     "title": "Leggi «Climate Change-Up»",
+     "en": "Read \"Climate Change-Up\"",
+     "type": "choice",
+     "parents": [
+      "s-start"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "s-paints",
+     "title": "Vai al negozio di colori",
+     "en": "Visit Paints Store",
+     "type": "choice",
+     "parents": [
+      "s-start"
+     ]
+    },
+    {
+     "id": "s-preacher",
+     "title": "Guarda il predicatore",
+     "en": "Watch Preacher",
+     "type": "choice",
+     "parents": [
+      "s-paints"
+     ]
+    },
+    {
+     "id": "s-preacher-yell",
+     "title": "Il predicatore urla contro Markus",
+     "en": "Preacher Yells at Markus",
+     "type": "choice",
+     "parents": [
+      "s-preacher"
+     ]
+    },
+    {
+     "id": "s-package",
+     "title": "Ritira il pacco",
+     "en": "Collect Package",
+     "type": "choice",
+     "parents": [
+      "s-paints"
+     ]
+    },
+    {
+     "id": "s-protest",
+     "title": "I manifestanti molestano Markus",
+     "en": "Protesters Harass Markus",
+     "type": "choice",
+     "parents": [
+      "s-package"
+     ]
+    },
+    {
+     "id": "s-bus",
+     "title": "Markus ha preso l'autobus",
+     "en": "Markus Took the Bus",
+     "type": "ending",
+     "parents": [
+      "s-package"
+     ]
+    }
+   ]
+  }
+ ]
+}

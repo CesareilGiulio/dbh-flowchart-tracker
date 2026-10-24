@@ -1,0 +1,488 @@
+{
+ "chapter": 21,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "pc-start",
+     "title": "Autostrada verso la salvezza",
+     "en": "Highway to Help",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "pc-car",
+     "title": "Auto",
+     "en": "Car",
+     "type": "objective",
+     "parents": [
+      "pc-start"
+     ]
+    },
+    {
+     "id": "pc-news",
+     "title": "Guarda il notiziario",
+     "en": "Watch News",
+     "type": "choice",
+     "parents": [
+      "pc-car"
+     ]
+    },
+    {
+     "id": "pc-luther1",
+     "title": "Parla con Luther",
+     "en": "Talk to Luther",
+     "type": "choice",
+     "parents": [
+      "pc-car"
+     ]
+    },
+    {
+     "id": "pc-alice1",
+     "title": "Guarda Alice",
+     "en": "Look at Alice",
+     "type": "choice",
+     "parents": [
+      "pc-car"
+     ]
+    },
+    {
+     "id": "pc-breaks",
+     "title": "L'auto si guasta",
+     "en": "Car Breaks Down",
+     "type": "choice",
+     "parents": [
+      "pc-car"
+     ]
+    },
+    {
+     "id": "pc-investigate",
+     "title": "Esamina il guasto",
+     "en": "Investigate Breakdown",
+     "type": "choice",
+     "parents": [
+      "pc-breaks"
+     ]
+    },
+    {
+     "id": "pc-scan",
+     "title": "Scansiona l'ambiente",
+     "en": "Scan Environment",
+     "type": "choice",
+     "parents": [
+      "pc-breaks"
+     ]
+    },
+    {
+     "id": "pc-inside",
+     "title": "Dentro il Pirates' Cove",
+     "en": "Inside Pirates' Cove",
+     "type": "choice",
+     "parents": [
+      "pc-investigate",
+      "pc-scan"
+     ]
+    },
+    {
+     "id": "pc-fair",
+     "title": "Luna park",
+     "en": "Fun Fair",
+     "type": "objective",
+     "parents": [
+      "pc-inside"
+     ]
+    },
+    {
+     "id": "pc-buildings",
+     "title": "Controlla gli edifici",
+     "en": "Check Buildings",
+     "type": "choice",
+     "parents": [
+      "pc-fair"
+     ]
+    },
+    {
+     "id": "pc-frozen",
+     "title": "Esamina l'androide congelato",
+     "en": "Examine Frozen Android",
+     "type": "choice",
+     "parents": [
+      "pc-fair"
+     ]
+    },
+    {
+     "id": "pc-ivan",
+     "title": "Accendi Ivan",
+     "en": "Switch On Ivan",
+     "type": "choice",
+     "parents": [
+      "pc-fair"
+     ]
+    },
+    {
+     "id": "pc-map",
+     "title": "Guarda la mappa",
+     "en": "Look at Map",
+     "type": "choice",
+     "parents": [
+      "pc-fair"
+     ]
+    },
+    {
+     "id": "pc-checktavern",
+     "title": "Controlla la taverna abbandonata",
+     "en": "Check Abandoned Tavern",
+     "type": "choice",
+     "parents": [
+      "pc-fair"
+     ]
+    },
+    {
+     "id": "pc-entertavern",
+     "title": "Entra nella taverna",
+     "en": "Enter Tavern",
+     "type": "choice",
+     "parents": [
+      "pc-checktavern"
+     ]
+    },
+    {
+     "id": "pc-intavern",
+     "title": "Dentro la taverna",
+     "en": "Inside Tavern",
+     "type": "checkpoint",
+     "parents": [
+      "pc-entertavern"
+     ]
+    },
+    {
+     "id": "pc-tavern",
+     "title": "La taverna",
+     "en": "The Tavern",
+     "type": "objective",
+     "parents": [
+      "pc-intavern"
+     ]
+    },
+    {
+     "id": "pc-mag1",
+     "title": "Leggi «USS Iowa»",
+     "en": "Read \"USS Iowa\"",
+     "type": "choice",
+     "parents": [
+      "pc-tavern"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "pc-ra9",
+     "title": "Guarda la scritta rA9",
+     "en": "Look at RA9 Writing",
+     "type": "choice",
+     "parents": [
+      "pc-tavern"
+     ]
+    },
+    {
+     "id": "pc-leaflet",
+     "title": "Guarda il volantino",
+     "en": "Look at Leaflet",
+     "type": "choice",
+     "parents": [
+      "pc-tavern"
+     ]
+    },
+    {
+     "id": "pc-fire",
+     "title": "Luther accende un fuoco",
+     "en": "Luther Starts a Fire",
+     "type": "choice",
+     "parents": [
+      "pc-tavern"
+     ]
+    },
+    {
+     "id": "pc-window",
+     "title": "Guarda dalla finestra",
+     "en": "Look Through Window",
+     "type": "choice",
+     "parents": [
+      "pc-tavern"
+     ]
+    },
+    {
+     "id": "pc-pirate",
+     "title": "Guarda «Pirate»",
+     "en": "Look at \"Pirate\"",
+     "type": "choice",
+     "parents": [
+      "pc-tavern"
+     ]
+    },
+    {
+     "id": "pc-mag2",
+     "title": "Leggi «All-Android Band»",
+     "en": "Read \"All-Android Band\"",
+     "type": "choice",
+     "parents": [
+      "pc-tavern"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "pc-bed",
+     "title": "Prepara un letto per Alice",
+     "en": "Make Bed for Alice",
+     "type": "choice",
+     "parents": [
+      "pc-tavern"
+     ]
+    },
+    {
+     "id": "pc-poster",
+     "title": "Alice guarda il poster",
+     "en": "Alice Looks at Poster",
+     "type": "choice",
+     "parents": [
+      "pc-bed"
+     ]
+    },
+    {
+     "id": "pc-alice2",
+     "title": "Parla con Alice",
+     "en": "Talk to Alice",
+     "type": "choice",
+     "parents": [
+      "pc-poster"
+     ]
+    },
+    {
+     "id": "pc-tobed",
+     "title": "Alice va a letto",
+     "en": "Alice Goes to Bed",
+     "type": "choice",
+     "parents": [
+      "pc-alice2"
+     ]
+    },
+    {
+     "id": "pc-bag",
+     "title": "Apri la borsa",
+     "en": "Open Bag",
+     "type": "choice",
+     "parents": [
+      "pc-tobed"
+     ]
+    },
+    {
+     "id": "pc-cookie",
+     "title": "Offri un biscotto",
+     "en": "Offer Cookie",
+     "type": "choice",
+     "parents": [
+      "pc-bag"
+     ]
+    },
+    {
+     "id": "pc-nothungry",
+     "title": "Alice non ha fame",
+     "en": "Alice Is Not Hungry",
+     "type": "choice",
+     "parents": [
+      "pc-cookie"
+     ]
+    },
+    {
+     "id": "pc-seegun",
+     "title": "Vedi la pistola",
+     "en": "See Gun",
+     "type": "choice",
+     "parents": [
+      "pc-bag"
+     ]
+    },
+    {
+     "id": "pc-noticegun",
+     "title": "Kara nota la pistola",
+     "en": "Kara Notices Gun",
+     "type": "choice",
+     "parents": [
+      "pc-seegun"
+     ]
+    },
+    {
+     "id": "pc-story",
+     "title": "Racconta una storia ad Alice",
+     "en": "Tell Alice a Story",
+     "type": "choice",
+     "parents": [
+      "pc-tobed"
+     ]
+    },
+    {
+     "id": "pc-luther2",
+     "title": "Parla con Luther",
+     "en": "Talk to Luther",
+     "type": "choice",
+     "parents": [
+      "pc-story"
+     ]
+    },
+    {
+     "id": "pc-shadows",
+     "title": "Delle ombre attaccano",
+     "en": "Shadows Attack",
+     "type": "choice",
+     "parents": [
+      "pc-luther2"
+     ]
+    },
+    {
+     "id": "pc-grabgun",
+     "title": "Afferra la pistola",
+     "en": "Grab Gun",
+     "type": "choice",
+     "parents": [
+      "pc-shadows"
+     ]
+    },
+    {
+     "id": "pc-stick",
+     "title": "Prendi un tizzone dal fuoco",
+     "en": "Grab Stick From Fire",
+     "type": "choice",
+     "parents": [
+      "pc-shadows"
+     ]
+    },
+    {
+     "id": "pc-protect",
+     "title": "Proteggi Alice",
+     "en": "Protect Alice",
+     "type": "choice",
+     "parents": [
+      "pc-shadows"
+     ]
+    },
+    {
+     "id": "pc-putout",
+     "title": "Spegni il fuoco",
+     "en": "Put Out Fire",
+     "type": "choice",
+     "parents": [
+      "pc-shadows"
+     ]
+    },
+    {
+     "id": "pc-warning",
+     "title": "Spara un colpo d'avvertimento",
+     "en": "Fire Warning Shot",
+     "type": "choice",
+     "parents": [
+      "pc-grabgun",
+      "pc-stick",
+      "pc-protect",
+      "pc-putout"
+     ]
+    },
+    {
+     "id": "pc-threaten",
+     "title": "Minaccia",
+     "en": "Threaten",
+     "type": "choice",
+     "parents": [
+      "pc-grabgun",
+      "pc-stick",
+      "pc-protect",
+      "pc-putout"
+     ]
+    },
+    {
+     "id": "pc-question",
+     "title": "Fai domande",
+     "en": "Question",
+     "type": "choice",
+     "parents": [
+      "pc-grabgun",
+      "pc-stick",
+      "pc-protect",
+      "pc-putout"
+     ]
+    },
+    {
+     "id": "pc-push",
+     "title": "Respingi",
+     "en": "Push Away",
+     "type": "choice",
+     "parents": [
+      "pc-grabgun",
+      "pc-stick",
+      "pc-protect",
+      "pc-putout"
+     ]
+    },
+    {
+     "id": "pc-jerrys",
+     "title": "Gli aggressori si rivelano dei Jerry",
+     "en": "Attackers Reveal Themselves as Jerrys",
+     "type": "choice",
+     "parents": [
+      "pc-warning",
+      "pc-threaten",
+      "pc-question",
+      "pc-push"
+     ]
+    },
+    {
+     "id": "pc-outside",
+     "title": "Di nuovo fuori",
+     "en": "Back Outside",
+     "type": "choice",
+     "parents": [
+      "pc-jerrys"
+     ]
+    },
+    {
+     "id": "pc-carousel",
+     "title": "Vai alla giostra",
+     "en": "Go to Carousel",
+     "type": "choice",
+     "parents": [
+      "pc-outside"
+     ]
+    },
+    {
+     "id": "pc-switchon",
+     "title": "Accendi la giostra",
+     "en": "Switch On Carousel",
+     "type": "choice",
+     "parents": [
+      "pc-carousel"
+     ]
+    },
+    {
+     "id": "pc-ride",
+     "title": "Metti Alice sulla giostra",
+     "en": "Put Alice on Ride",
+     "type": "choice",
+     "parents": [
+      "pc-switchon"
+     ]
+    },
+    {
+     "id": "pc-end",
+     "title": "Il gruppo si è goduto un momento di pace",
+     "en": "The Group Enjoyed a Quiet Moment Together",
+     "type": "ending",
+     "parents": [
+      "pc-ride"
+     ]
+    }
+   ]
+  }
+ ]
+}

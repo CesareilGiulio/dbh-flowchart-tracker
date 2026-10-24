@@ -1,0 +1,926 @@
+{
+ "chapter": 10,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "f-start",
+     "title": "Capolinea",
+     "en": "Last Stop",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "f-bus",
+     "title": "Scendi dall'autobus",
+     "en": "Leave Bus",
+     "type": "choice",
+     "parents": [
+      "f-start"
+     ]
+    },
+    {
+     "id": "f-shelter",
+     "title": "Trova un riparo per la notte",
+     "en": "Find Shelter for the Night",
+     "type": "objective",
+     "parents": [
+      "f-bus"
+     ]
+    },
+    {
+     "id": "f-laundro",
+     "title": "Entra nella lavanderia",
+     "en": "Enter Laundromat",
+     "type": "choice",
+     "parents": [
+      "f-shelter"
+     ]
+    },
+    {
+     "id": "f-parked",
+     "title": "Parla con l'androide parcheggiato",
+     "en": "Talk to Parked Android",
+     "type": "choice",
+     "parents": [
+      "f-shelter"
+     ]
+    },
+    {
+     "id": "f-motel",
+     "title": "Controlla il motel",
+     "en": "Check Motel",
+     "type": "choice",
+     "parents": [
+      "f-shelter"
+     ]
+    },
+    {
+     "id": "f-parking",
+     "title": "Controlla il parcheggio",
+     "en": "Check Parking Lot",
+     "type": "choice",
+     "parents": [
+      "f-shelter"
+     ]
+    },
+    {
+     "id": "f-cold",
+     "title": "Alice ha troppo freddo",
+     "en": "Alice Too Cold",
+     "type": "choice",
+     "parents": [
+      "f-shelter"
+     ],
+     "note": "Resta sotto la pioggia per diversi minuti senza scegliere un riparo."
+    },
+    {
+     "id": "f-trash",
+     "title": "Parla con l'androide netturbino",
+     "en": "Talk to Android Trash Collector",
+     "type": "choice",
+     "parents": [
+      "f-shelter"
+     ]
+    },
+    {
+     "id": "f-squat",
+     "title": "Controlla il rifugio",
+     "en": "Check Squat",
+     "type": "choice",
+     "parents": [
+      "f-shelter"
+     ]
+    },
+    {
+     "id": "f-super",
+     "title": "Entra nel supermercato",
+     "en": "Enter Supermarket",
+     "type": "choice",
+     "parents": [
+      "f-shelter"
+     ]
+    },
+    {
+     "id": "f-in-laundro",
+     "title": "Nella lavanderia",
+     "en": "Inside Laundromat",
+     "type": "choice",
+     "parents": [
+      "f-laundro"
+     ]
+    },
+    {
+     "id": "f-mag1",
+     "title": "Leggi «Bee-Line to Disaster»",
+     "en": "Read \"Bee-Line to Disaster\"",
+     "type": "choice",
+     "parents": [
+      "f-in-laundro"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "f-mag2",
+     "title": "Leggi «Face the Music»",
+     "en": "Read \"Face the Music\"",
+     "type": "choice",
+     "parents": [
+      "f-in-laundro"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "f-dryer",
+     "title": "Controlla l'asciugatrice",
+     "en": "Inspect Dryer",
+     "type": "choice",
+     "parents": [
+      "f-in-laundro"
+     ]
+    },
+    {
+     "id": "f-cl-leave",
+     "title": "Lascia i vestiti",
+     "en": "Leave Clothes",
+     "type": "choice",
+     "parents": [
+      "f-dryer"
+     ]
+    },
+    {
+     "id": "f-cl-steal",
+     "title": "Ruba i vestiti",
+     "en": "Steal Clothes",
+     "type": "choice",
+     "parents": [
+      "f-dryer"
+     ]
+    },
+    {
+     "id": "f-cl-wear",
+     "title": "Indossa i vestiti",
+     "en": "Wear Clothes",
+     "type": "choice",
+     "parents": [
+      "f-cl-steal"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "f-cl-disturb",
+     "title": "Disturba l'uomo",
+     "en": "Disturb Man",
+     "type": "choice",
+     "parents": [
+      "f-cl-steal"
+     ]
+    },
+    {
+     "id": "f-leave-laundro",
+     "title": "Esci dalla lavanderia",
+     "en": "Leave Laundromat",
+     "type": "choice",
+     "parents": [
+      "f-cl-leave",
+      "f-cl-wear",
+      "f-cl-disturb"
+     ]
+    },
+    {
+     "id": "f-moneydisg",
+     "title": "Hai soldi e travestimento",
+     "en": "Have Money and Disguise",
+     "type": "choice",
+     "parents": [
+      "f-motel"
+     ],
+     "note": "Servono i soldi del supermercato e i vestiti della lavanderia."
+    },
+    {
+     "id": "f-in-motel",
+     "title": "Nel motel",
+     "en": "Inside Motel",
+     "type": "choice",
+     "parents": [
+      "f-moneydisg"
+     ]
+    },
+    {
+     "id": "f-recept",
+     "title": "Parla con il receptionist",
+     "en": "Talk to Receptionist",
+     "type": "choice",
+     "parents": [
+      "f-in-motel"
+     ]
+    },
+    {
+     "id": "f-checkin",
+     "title": "Fai il check-in",
+     "en": "Check In",
+     "type": "choice",
+     "parents": [
+      "f-recept"
+     ]
+    },
+    {
+     "id": "f-room28",
+     "title": "Trova la stanza 28 ed entra",
+     "en": "Find and Enter Room 28",
+     "type": "choice",
+     "parents": [
+      "f-checkin"
+     ]
+    },
+    {
+     "id": "f-wet",
+     "title": "Togli i vestiti bagnati",
+     "en": "Remove Wet Clothes",
+     "type": "choice",
+     "parents": [
+      "f-room28"
+     ]
+    },
+    {
+     "id": "f-m-talk",
+     "title": "Parla con Alice",
+     "en": "Talk to Alice",
+     "type": "choice",
+     "parents": [
+      "f-wet"
+     ]
+    },
+    {
+     "id": "f-m-promise",
+     "title": "Fai una promessa",
+     "en": "Make Promise",
+     "type": "choice",
+     "parents": [
+      "f-m-talk"
+     ]
+    },
+    {
+     "id": "f-m-nopromise",
+     "title": "Non fare promesse",
+     "en": "Don't Make Promise",
+     "type": "choice",
+     "parents": [
+      "f-m-talk"
+     ]
+    },
+    {
+     "id": "f-m-toy",
+     "title": "Dai il giocattolo",
+     "en": "Give Toy",
+     "type": "choice",
+     "parents": [
+      "f-m-promise",
+      "f-m-nopromise"
+     ],
+     "note": "Serve il giocattolo rubato al supermercato."
+    },
+    {
+     "id": "f-m-choc",
+     "title": "Dai la cioccolata",
+     "en": "Give Chocolate",
+     "type": "choice",
+     "parents": [
+      "f-m-promise",
+      "f-m-nopromise"
+     ],
+     "note": "Serve la barretta rubata al supermercato."
+    },
+    {
+     "id": "f-m-sleep",
+     "title": "Kara dorme accanto ad Alice",
+     "en": "Kara Sleeps Next to Alice",
+     "type": "choice",
+     "parents": [
+      "f-m-promise",
+      "f-m-nopromise",
+      "f-m-toy",
+      "f-m-choc"
+     ]
+    },
+    {
+     "id": "f-m-chair",
+     "title": "Veglia Alice dalla sedia",
+     "en": "Watch Alice From Chair",
+     "type": "choice",
+     "parents": [
+      "f-m-promise",
+      "f-m-nopromise",
+      "f-m-toy",
+      "f-m-choc"
+     ]
+    },
+    {
+     "id": "f-end-motel",
+     "title": "Alice e Kara hanno dormito al motel",
+     "en": "Alice & Kara Stayed in Motel",
+     "type": "ending",
+     "parents": [
+      "f-m-sleep",
+      "f-m-chair"
+     ]
+    },
+    {
+     "id": "f-in-parking",
+     "title": "Nel parcheggio",
+     "en": "Inside Parking Lot",
+     "type": "choice",
+     "parents": [
+      "f-parking",
+      "f-cold"
+     ]
+    },
+    {
+     "id": "f-breakcar",
+     "title": "Entra nell'auto con la forza",
+     "en": "Break Into Car",
+     "type": "choice",
+     "parents": [
+      "f-in-parking"
+     ]
+    },
+    {
+     "id": "f-leave-parking",
+     "title": "Lascia il parcheggio",
+     "en": "Leave Parking Lot",
+     "type": "choice",
+     "parents": [
+      "f-in-parking"
+     ]
+    },
+    {
+     "id": "f-stay",
+     "title": "Resta",
+     "en": "Stay",
+     "type": "choice",
+     "parents": [
+      "f-breakcar"
+     ]
+    },
+    {
+     "id": "f-other",
+     "title": "Trova un'altra soluzione",
+     "en": "Find Another Option",
+     "type": "choice",
+     "parents": [
+      "f-breakcar"
+     ]
+    },
+    {
+     "id": "f-getincar",
+     "title": "Sali in auto",
+     "en": "Get in Car",
+     "type": "choice",
+     "parents": [
+      "f-stay"
+     ]
+    },
+    {
+     "id": "f-c-talk",
+     "title": "Parla con Alice",
+     "en": "Talk to Alice",
+     "type": "choice",
+     "parents": [
+      "f-getincar"
+     ]
+    },
+    {
+     "id": "f-c-promise",
+     "title": "Fai una promessa",
+     "en": "Make Promise",
+     "type": "choice",
+     "parents": [
+      "f-c-talk"
+     ]
+    },
+    {
+     "id": "f-c-nopromise",
+     "title": "Non fare promesse",
+     "en": "Don't Make Promise",
+     "type": "choice",
+     "parents": [
+      "f-c-talk"
+     ]
+    },
+    {
+     "id": "f-c-toy",
+     "title": "Dai il giocattolo",
+     "en": "Give Toy",
+     "type": "choice",
+     "parents": [
+      "f-c-promise",
+      "f-c-nopromise"
+     ],
+     "note": "Serve il giocattolo rubato al supermercato."
+    },
+    {
+     "id": "f-c-choc",
+     "title": "Dai la cioccolata",
+     "en": "Give Chocolate",
+     "type": "choice",
+     "parents": [
+      "f-c-promise",
+      "f-c-nopromise"
+     ],
+     "note": "Serve la barretta rubata al supermercato."
+    },
+    {
+     "id": "f-c-sleep",
+     "title": "Kara dorme accanto ad Alice",
+     "en": "Kara Sleeps Next to Alice",
+     "type": "choice",
+     "parents": [
+      "f-c-promise",
+      "f-c-nopromise",
+      "f-c-toy",
+      "f-c-choc"
+     ]
+    },
+    {
+     "id": "f-end-car",
+     "title": "Alice e Kara hanno dormito nell'auto abbandonata",
+     "en": "Alice & Kara Stayed in Abandoned Car",
+     "type": "ending",
+     "parents": [
+      "f-c-sleep"
+     ]
+    },
+    {
+     "id": "f-cutters",
+     "title": "Prendi le cesoie",
+     "en": "Take Wire Cutters",
+     "type": "choice",
+     "parents": [
+      "f-squat"
+     ],
+     "note": "Servono le cesoie: puoi rubarle al supermercato."
+    },
+    {
+     "id": "f-fence-street",
+     "title": "Taglia la recinzione sulla strada",
+     "en": "Cut Street Fence",
+     "type": "choice",
+     "parents": [
+      "f-cutters"
+     ]
+    },
+    {
+     "id": "f-fence-parking",
+     "title": "Taglia la recinzione del parcheggio",
+     "en": "Cut Parking Lot Fence",
+     "type": "choice",
+     "parents": [
+      "f-cutters"
+     ]
+    },
+    {
+     "id": "f-in-squat",
+     "title": "Nel rifugio",
+     "en": "Inside Squat",
+     "type": "choice",
+     "parents": [
+      "f-fence-street",
+      "f-fence-parking"
+     ]
+    },
+    {
+     "id": "f-ralph",
+     "title": "Incontra Ralph",
+     "en": "Meet Ralph",
+     "type": "choice",
+     "parents": [
+      "f-in-squat"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "f-req-gun1",
+     "title": "Pistola presa in «Stormy Night»",
+     "en": "Gun Taken in 'Stormy Night'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "f-r-convince",
+     "title": "Convinci",
+     "en": "Convince",
+     "type": "choice",
+     "parents": [
+      "f-ralph"
+     ]
+    },
+    {
+     "id": "f-r-threaten",
+     "title": "Minaccia con la pistola",
+     "en": "Threaten With Gun",
+     "type": "choice",
+     "parents": [
+      "f-ralph",
+      "f-req-gun1"
+     ]
+    },
+    {
+     "id": "f-r-giveup",
+     "title": "Rinuncia",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "f-ralph"
+     ]
+    },
+    {
+     "id": "f-follow",
+     "title": "Segui Ralph",
+     "en": "Follow Ralph",
+     "type": "choice",
+     "parents": [
+      "f-r-convince",
+      "f-r-threaten"
+     ]
+    },
+    {
+     "id": "f-fire",
+     "title": "Accendi un fuoco",
+     "en": "Start a Fire",
+     "type": "choice",
+     "parents": [
+      "f-follow"
+     ]
+    },
+    {
+     "id": "f-bed",
+     "title": "Prepara un letto",
+     "en": "Make a Bed",
+     "type": "choice",
+     "parents": [
+      "f-follow"
+     ]
+    },
+    {
+     "id": "f-leave-squat",
+     "title": "Lascia il rifugio",
+     "en": "Leave Squat",
+     "type": "choice",
+     "parents": [
+      "f-r-giveup"
+     ]
+    },
+    {
+     "id": "f-s-talk",
+     "title": "Parla con Alice",
+     "en": "Talk to Alice",
+     "type": "choice",
+     "parents": [
+      "f-fire",
+      "f-bed"
+     ]
+    },
+    {
+     "id": "f-s-promise",
+     "title": "Fai una promessa",
+     "en": "Make Promise",
+     "type": "choice",
+     "parents": [
+      "f-s-talk"
+     ]
+    },
+    {
+     "id": "f-s-nopromise",
+     "title": "Non fare promesse",
+     "en": "Don't Make Promise",
+     "type": "choice",
+     "parents": [
+      "f-s-talk"
+     ]
+    },
+    {
+     "id": "f-s-toy",
+     "title": "Dai il giocattolo",
+     "en": "Give Toy",
+     "type": "choice",
+     "parents": [
+      "f-s-promise",
+      "f-s-nopromise"
+     ],
+     "note": "Serve il giocattolo rubato al supermercato."
+    },
+    {
+     "id": "f-s-choc",
+     "title": "Dai la cioccolata",
+     "en": "Give Chocolate",
+     "type": "choice",
+     "parents": [
+      "f-s-promise",
+      "f-s-nopromise"
+     ],
+     "note": "Serve la barretta rubata al supermercato."
+    },
+    {
+     "id": "f-s-sleep",
+     "title": "Kara dorme accanto ad Alice",
+     "en": "Kara Sleeps Next to Alice",
+     "type": "choice",
+     "parents": [
+      "f-s-promise",
+      "f-s-nopromise",
+      "f-s-toy",
+      "f-s-choc"
+     ]
+    },
+    {
+     "id": "f-s-chair",
+     "title": "Veglia Alice dalla sedia",
+     "en": "Watch Alice From Chair",
+     "type": "choice",
+     "parents": [
+      "f-s-promise",
+      "f-s-nopromise",
+      "f-s-toy",
+      "f-s-choc"
+     ]
+    },
+    {
+     "id": "f-end-squat",
+     "title": "Alice e Kara hanno dormito nel rifugio",
+     "en": "Alice & Kara Stayed in the Squat",
+     "type": "ending",
+     "parents": [
+      "f-s-sleep",
+      "f-s-chair"
+     ]
+    },
+    {
+     "id": "f-sm",
+     "title": "Nel supermercato",
+     "en": "Inside Supermarket",
+     "type": "choice",
+     "parents": [
+      "f-super"
+     ]
+    },
+    {
+     "id": "f-clerk",
+     "title": "Parla con il commesso",
+     "en": "Talk to Clerk",
+     "type": "choice",
+     "parents": [
+      "f-sm"
+     ]
+    },
+    {
+     "id": "f-register",
+     "title": "Nota il registratore di cassa",
+     "en": "Notice Cash Register",
+     "type": "choice",
+     "parents": [
+      "f-clerk"
+     ]
+    },
+    {
+     "id": "f-cans",
+     "title": "Nota la pila di lattine",
+     "en": "Notice Can Stack",
+     "type": "choice",
+     "parents": [
+      "f-sm"
+     ]
+    },
+    {
+     "id": "f-choc-steal",
+     "title": "Ruba la barretta di cioccolato",
+     "en": "Steal Chocolate Bar",
+     "type": "choice",
+     "parents": [
+      "f-sm"
+     ]
+    },
+    {
+     "id": "f-choc-leave",
+     "title": "Lascia la barretta di cioccolato",
+     "en": "Leave Chocolate Bar",
+     "type": "choice",
+     "parents": [
+      "f-sm"
+     ]
+    },
+    {
+     "id": "f-toy-steal",
+     "title": "Ruba il giocattolo",
+     "en": "Steal Toy",
+     "type": "choice",
+     "parents": [
+      "f-sm"
+     ]
+    },
+    {
+     "id": "f-toy-leave",
+     "title": "Lascia il giocattolo",
+     "en": "Leave Toy",
+     "type": "choice",
+     "parents": [
+      "f-sm"
+     ]
+    },
+    {
+     "id": "f-cut-steal",
+     "title": "Ruba le cesoie",
+     "en": "Steal Wire Cutters",
+     "type": "choice",
+     "parents": [
+      "f-sm"
+     ]
+    },
+    {
+     "id": "f-cut-leave",
+     "title": "Lascia le cesoie",
+     "en": "Leave Wire Cutters",
+     "type": "choice",
+     "parents": [
+      "f-sm"
+     ]
+    },
+    {
+     "id": "f-req-gun2",
+     "title": "Pistola presa in «Stormy Night»",
+     "en": "Gun Taken in 'Stormy Night'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "f-diversion",
+     "title": "Usa Alice come diversivo",
+     "en": "Use Alice as a Diversion",
+     "type": "choice",
+     "parents": [
+      "f-register"
+     ]
+    },
+    {
+     "id": "f-usegun",
+     "title": "Usa la pistola",
+     "en": "Use Gun",
+     "type": "choice",
+     "parents": [
+      "f-register",
+      "f-req-gun2"
+     ]
+    },
+    {
+     "id": "f-discreet",
+     "title": "Ruba con discrezione",
+     "en": "Steal Discreetly",
+     "type": "choice",
+     "parents": [
+      "f-diversion"
+     ]
+    },
+    {
+     "id": "f-toolong",
+     "title": "Ci metti troppo",
+     "en": "Take Too Much Time",
+     "type": "choice",
+     "parents": [
+      "f-diversion"
+     ]
+    },
+    {
+     "id": "f-customer",
+     "title": "Arriva un cliente",
+     "en": "Customer Arrives",
+     "type": "choice",
+     "parents": [
+      "f-usegun"
+     ]
+    },
+    {
+     "id": "f-hu-giveup",
+     "title": "Rinuncia",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "f-customer"
+     ]
+    },
+    {
+     "id": "f-hu-resume",
+     "title": "Riprendi la rapina",
+     "en": "Resume Hold Up",
+     "type": "choice",
+     "parents": [
+      "f-customer"
+     ]
+    },
+    {
+     "id": "f-opencash",
+     "title": "Apri il registratore di cassa",
+     "en": "Open Cash Register",
+     "type": "choice",
+     "parents": [
+      "f-hu-resume"
+     ]
+    },
+    {
+     "id": "f-dontmove",
+     "title": "«Fermo!»",
+     "en": "\"Don't Move\"",
+     "type": "choice",
+     "parents": [
+      "f-hu-resume"
+     ]
+    },
+    {
+     "id": "f-clerkgun",
+     "title": "Il commesso afferra una pistola",
+     "en": "Clerk Grabs a Gun",
+     "type": "choice",
+     "parents": [
+      "f-opencash"
+     ]
+    },
+    {
+     "id": "f-cg-giveup",
+     "title": "Rinuncia",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "f-clerkgun"
+     ]
+    },
+    {
+     "id": "f-cg-convince",
+     "title": "Convinci",
+     "en": "Convince",
+     "type": "choice",
+     "parents": [
+      "f-clerkgun"
+     ]
+    },
+    {
+     "id": "f-spotted",
+     "title": "Il commesso sorprende Kara a rubare",
+     "en": "Clerk Spots Kara Stealing",
+     "type": "choice",
+     "parents": [
+      "f-toolong",
+      "f-choc-steal",
+      "f-toy-steal",
+      "f-cut-steal"
+     ]
+    },
+    {
+     "id": "f-req-gun3",
+     "title": "Pistola presa in «Stormy Night»",
+     "en": "Gun Taken in 'Stormy Night'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "f-drawgun",
+     "title": "Estrai la pistola",
+     "en": "Draw Gun",
+     "type": "choice",
+     "parents": [
+      "f-spotted",
+      "f-req-gun3"
+     ]
+    },
+    {
+     "id": "f-money",
+     "title": "Prendi i soldi",
+     "en": "Take Money",
+     "type": "choice",
+     "parents": [
+      "f-cg-convince",
+      "f-dontmove",
+      "f-drawgun"
+     ]
+    },
+    {
+     "id": "f-leave-super",
+     "title": "Esci dal supermercato",
+     "en": "Leave Supermarket",
+     "type": "choice",
+     "parents": [
+      "f-money",
+      "f-discreet",
+      "f-hu-giveup",
+      "f-cg-giveup",
+      "f-spotted"
+     ]
+    }
+   ]
+  }
+ ]
+}

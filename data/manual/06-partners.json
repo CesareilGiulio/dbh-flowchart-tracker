@@ -1,0 +1,396 @@
+{
+ "chapter": 6,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "pa-start",
+     "title": "Davanti al bar",
+     "en": "In Front of the Bar",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "pa-enter",
+     "title": "Entra nel Jimmy's Bar",
+     "en": "Enter Jimmy's Bar",
+     "type": "choice",
+     "parents": [
+      "pa-start"
+     ]
+    },
+    {
+     "id": "pa-scan-cust",
+     "title": "Scansiona i volti dei clienti",
+     "en": "Face Scan Customers",
+     "type": "choice",
+     "parents": [
+      "pa-enter"
+     ]
+    },
+    {
+     "id": "pa-scan-hank",
+     "title": "Scansiona il volto del tenente Anderson",
+     "en": "Face Scan Lt. Anderson",
+     "type": "choice",
+     "parents": [
+      "pa-enter"
+     ]
+    },
+    {
+     "id": "pa-talk",
+     "title": "Parla con il tenente Anderson",
+     "en": "Talk to Lt. Anderson",
+     "type": "choice",
+     "parents": [
+      "pa-scan-hank"
+     ]
+    },
+    {
+     "id": "pa-drink",
+     "title": "Offrigli un altro drink",
+     "en": "Buy Him Another Drink",
+     "type": "choice",
+     "parents": [
+      "pa-talk"
+     ]
+    },
+    {
+     "id": "pa-wait",
+     "title": "Aspetta fuori",
+     "en": "Wait Outside",
+     "type": "choice",
+     "parents": [
+      "pa-talk"
+     ]
+    },
+    {
+     "id": "pa-spill",
+     "title": "Rovescia il drink di Hank",
+     "en": "Spill Hank's Drink",
+     "type": "choice",
+     "parents": [
+      "pa-talk"
+     ]
+    },
+    {
+     "id": "pa-scene",
+     "title": "Connor e Hank arrivano sulla scena",
+     "en": "Connor and Hank Arrive at Scene",
+     "type": "checkpoint",
+     "parents": [
+      "pa-drink",
+      "pa-wait",
+      "pa-spill"
+     ]
+    },
+    {
+     "id": "pa-crime",
+     "title": "Scena del crimine",
+     "en": "Crime Scene",
+     "type": "objective",
+     "parents": [
+      "pa-scene"
+     ]
+    },
+    {
+     "id": "pa-flyer",
+     "title": "Esamina il volantino dell'Eden Club",
+     "en": "Examine Eden Club Flyer",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-chair",
+     "title": "Esamina la sedia",
+     "en": "Examine Chair",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-redice",
+     "title": "Analizza il Red Ice",
+     "en": "Analyze Red Ice",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-bat",
+     "title": "Analizza la mazza da baseball",
+     "en": "Analyze Baseball Bat",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-bat-rec",
+     "title": "Ricostruisci l'aggressione con la mazza",
+     "en": "Reconstruct Assault With Bat",
+     "type": "choice",
+     "parents": [
+      "pa-bat"
+     ]
+    },
+    {
+     "id": "pa-body",
+     "title": "Analizza il cadavere di Carlos",
+     "en": "Analyze Carlos' Body",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-body-rec",
+     "title": "Ricostruisci gli ultimi momenti di Carlos",
+     "en": "Reconstruct Carlos' Last Moments",
+     "type": "choice",
+     "parents": [
+      "pa-body"
+     ]
+    },
+    {
+     "id": "pa-blood",
+     "title": "Preleva un campione di sangue",
+     "en": "Sample Blood",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-closet",
+     "title": "Apri l'armadio",
+     "en": "Open Closet",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-mag1",
+     "title": "Leggi «Android Sex»",
+     "en": "Read \"Android Sex\"",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "pa-mag2",
+     "title": "Leggi «Android Spy»",
+     "en": "Read \"Android Spy\"",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "pa-backyard",
+     "title": "Analizza il cortile",
+     "en": "Analyze Backyard",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-writing",
+     "title": "Esamina la scritta",
+     "en": "Investigate Writing",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-knife",
+     "title": "Analizza il coltello",
+     "en": "Analyze Knife",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-missing",
+     "title": "Analizza il coltello mancante",
+     "en": "Analyze Missing Knife",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-walls",
+     "title": "Analizza il sangue sui muri",
+     "en": "Analyze Blood on Walls",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-shower",
+     "title": "Controlla la doccia",
+     "en": "Check Shower",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-statue",
+     "title": "Esamina la statua",
+     "en": "Examine Statue",
+     "type": "choice",
+     "parents": [
+      "pa-shower"
+     ]
+    },
+    {
+     "id": "pa-hankgo",
+     "title": "Hank vuole andarsene",
+     "en": "Hank Wants to Go",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-moretime",
+     "title": "Chiedi più tempo",
+     "en": "Ask for More Time",
+     "type": "choice",
+     "parents": [
+      "pa-hankgo"
+     ]
+    },
+    {
+     "id": "pa-refuses",
+     "title": "Hank rifiuta",
+     "en": "Hank Refuses",
+     "type": "choice",
+     "parents": [
+      "pa-moretime"
+     ]
+    },
+    {
+     "id": "pa-accepts",
+     "title": "Hank accetta",
+     "en": "Hank Accepts",
+     "type": "choice",
+     "parents": [
+      "pa-moretime"
+     ]
+    },
+    {
+     "id": "pa-knows",
+     "title": "Connor sa cos'è successo",
+     "en": "Connor Knows What Happened",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-outoftime",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "pa-crime"
+     ]
+    },
+    {
+     "id": "pa-hankends",
+     "title": "Hank chiude l'indagine",
+     "en": "Hank Ends Investigation",
+     "type": "choice",
+     "parents": [
+      "pa-refuses"
+     ]
+    },
+    {
+     "id": "pa-report",
+     "title": "Fai rapporto al tenente Anderson",
+     "en": "Report to Lt. Anderson",
+     "type": "choice",
+     "parents": [
+      "pa-knows"
+     ]
+    },
+    {
+     "id": "pa-rec",
+     "title": "Ricostruisci il crimine",
+     "en": "Reconstruct the Crime",
+     "type": "choice",
+     "parents": [
+      "pa-report"
+     ]
+    },
+    {
+     "id": "pa-rec-fail",
+     "title": "Ricostruzione del crimine fallita",
+     "en": "Fail to Reconstruct the Crime",
+     "type": "choice",
+     "parents": [
+      "pa-report"
+     ]
+    },
+    {
+     "id": "pa-follow",
+     "title": "Segui il sangue blu fino alla soffitta",
+     "en": "Follow Blue Blood to Attic",
+     "type": "choice",
+     "parents": [
+      "pa-rec"
+     ]
+    },
+    {
+     "id": "pa-attic",
+     "title": "Perquisisci la soffitta",
+     "en": "Search Attic",
+     "type": "choice",
+     "parents": [
+      "pa-follow"
+     ]
+    },
+    {
+     "id": "pa-found",
+     "title": "Deviante trovato",
+     "en": "Found Deviant",
+     "type": "ending",
+     "parents": [
+      "pa-attic"
+     ],
+     "note": "Necessario per sbloccare il capitolo «The Interrogation»."
+    },
+    {
+     "id": "pa-unsolved",
+     "title": "Crimine irrisolto",
+     "en": "Crime Unsolved",
+     "type": "ending",
+     "parents": [
+      "pa-rec-fail",
+      "pa-outoftime",
+      "pa-hankends"
+     ]
+    }
+   ]
+  }
+ ]
+}

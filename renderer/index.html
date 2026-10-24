@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowchart Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <header class="head">
+      <span class="count" id="ovCh">0 / 32</span>
+      <span class="muted">capitoli completati</span>
+    </header>
+    <nav class="filters" id="filters">
+      <button data-f="all" class="on">Tutti</button>
+      <button data-f="C">Connor</button>
+      <button data-f="K">Kara</button>
+      <button data-f="M">Markus</button>
+    </nav>
+    <ol class="chlist" id="chlist"></ol>
+    <footer class="foot">
+      <button id="spoilBtn">Nascondi nomi bloccati</button>
+      <button id="exportBtn">Esporta</button>
+      <button id="importBtn">Importa</button>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+    </footer>
+  </aside>
+
+  <main class="stage" id="stage">
+    <header class="top">
+      <div>
+        <h1 id="chTitle"></h1>
+        <div class="tabs" id="charSel"></div>
+      </div>
+      <div class="pct">
+        <span id="chPct">0%</span>
+        <label>nel gioco <input type="number" min="0" max="100" id="gamePct" placeholder="—"></label>
+      </div>
+    </header>
+    <svg id="svg">
+      <g id="world"><g id="edges"></g><g id="nodes"></g></g>
+    </svg>
+    <div class="empty" id="empty" hidden>Diagramma non ancora disponibile.</div>
+    <div class="info" id="info"></div>
+    <div class="zoom">
+      <button id="zoomOut" aria-label="Riduci">−</button>
+      <button id="fitBtn">Adatta</button>
+      <button id="zoomIn" aria-label="Ingrandisci">+</button>
+    </div>
+  </main>
+</div>
+<script src="chapters.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

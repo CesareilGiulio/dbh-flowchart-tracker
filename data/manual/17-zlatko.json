@@ -1,0 +1,754 @@
+{
+ "chapter": 17,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "z-start",
+     "title": "Cerca aiuto",
+     "en": "Look for Help",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "z-reach",
+     "title": "Raggiungi la casa di Zlatko",
+     "en": "Reach Zlatko's House",
+     "type": "choice",
+     "parents": [
+      "z-start"
+     ]
+    },
+    {
+     "id": "z-enter",
+     "title": "Entra in casa",
+     "en": "Enter the House",
+     "type": "choice",
+     "parents": [
+      "z-reach"
+     ]
+    },
+    {
+     "id": "z-meet",
+     "title": "Incontra Zlatko",
+     "en": "Meet Zlatko",
+     "type": "choice",
+     "parents": [
+      "z-enter"
+     ]
+    },
+    {
+     "id": "z-basement",
+     "title": "Segui Zlatko nel seminterrato",
+     "en": "Follow Zlatko to the Basement",
+     "type": "choice",
+     "parents": [
+      "z-meet"
+     ]
+    },
+    {
+     "id": "z-noises",
+     "title": "Alice è attirata da strani rumori",
+     "en": "Alice Attracted by Odd Noises",
+     "type": "choice",
+     "parents": [
+      "z-basement"
+     ]
+    },
+    {
+     "id": "z-machine",
+     "title": "Entra nel macchinario",
+     "en": "Climb Into the Machine",
+     "type": "choice",
+     "parents": [
+      "z-basement"
+     ]
+    },
+    {
+     "id": "z-beingreset",
+     "title": "Kara viene resettata",
+     "en": "Kara Is Being Reset",
+     "type": "choice",
+     "parents": [
+      "z-machine"
+     ]
+    },
+    {
+     "id": "z-escape",
+     "title": "Fuggi prima del reset",
+     "en": "Escape Before Being Reset",
+     "type": "choice",
+     "parents": [
+      "z-beingreset"
+     ]
+    },
+    {
+     "id": "z-reset",
+     "title": "Kara è resettata",
+     "en": "Kara Is Reset",
+     "type": "choice",
+     "parents": [
+      "z-beingreset"
+     ]
+    },
+    {
+     "id": "z-sneak",
+     "title": "Muoviti di nascosto per la casa",
+     "en": "Sneak Through House",
+     "type": "choice",
+     "parents": [
+      "z-escape"
+     ]
+    },
+    {
+     "id": "z-monsters",
+     "title": "Libera i mostri",
+     "en": "Free Monsters",
+     "type": "choice",
+     "parents": [
+      "z-sneak"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco). Serve per «I mostri tendono un agguato a Zlatko»."
+    },
+    {
+     "id": "z-storage",
+     "title": "Entra nel magazzino",
+     "en": "Enter Storage Room",
+     "type": "choice",
+     "parents": [
+      "z-sneak"
+     ]
+    },
+    {
+     "id": "z-bear",
+     "title": "Libera l'orso",
+     "en": "Free the Bear",
+     "type": "choice",
+     "parents": [
+      "z-storage"
+     ]
+    },
+    {
+     "id": "z-bathroom",
+     "title": "Entra in bagno",
+     "en": "Enter Bathroom",
+     "type": "choice",
+     "parents": [
+      "z-sneak"
+     ]
+    },
+    {
+     "id": "z-loud",
+     "title": "L'androide del bagno fa rumore",
+     "en": "Bathroom Android Is Loud",
+     "type": "choice",
+     "parents": [
+      "z-bathroom"
+     ]
+    },
+    {
+     "id": "z-loud-kill",
+     "title": "Uccidilo",
+     "en": "Kill",
+     "type": "choice",
+     "parents": [
+      "z-loud"
+     ]
+    },
+    {
+     "id": "z-loud-spare",
+     "title": "Risparmialo",
+     "en": "Spare",
+     "type": "choice",
+     "parents": [
+      "z-loud"
+     ]
+    },
+    {
+     "id": "z-outoftime",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "z-sneak"
+     ]
+    },
+    {
+     "id": "z-end-brought",
+     "title": "Luther ha portato Alice da Zlatko",
+     "en": "Luther Brought Alice to Zlatko",
+     "type": "ending",
+     "parents": [
+      "z-outoftime"
+     ]
+    },
+    {
+     "id": "z-obey",
+     "title": "Obbedisci al tuo nuovo padrone",
+     "en": "Obey Your New Master",
+     "type": "choice",
+     "parents": [
+      "z-reset"
+     ]
+    },
+    {
+     "id": "z-luther",
+     "title": "Vai da Luther",
+     "en": "Go See Luther",
+     "type": "choice",
+     "parents": [
+      "z-obey"
+     ]
+    },
+    {
+     "id": "z-tray",
+     "title": "Porta il vassoio a Zlatko",
+     "en": "Bring the Tray to Zlatko",
+     "type": "choice",
+     "parents": [
+      "z-luther"
+     ]
+    },
+    {
+     "id": "z-torso",
+     "title": "Lascia il torso dell'androide",
+     "en": "Drop the Android Torso",
+     "type": "choice",
+     "parents": [
+      "z-tray"
+     ]
+    },
+    {
+     "id": "z-explore",
+     "title": "Esplora la casa per recuperare la memoria",
+     "en": "Explore the House to Recover Memory",
+     "type": "objective",
+     "parents": [
+      "z-torso"
+     ]
+    },
+    {
+     "id": "z-mag1",
+     "title": "Leggi «Arctic Tensions»",
+     "en": "Read \"Arctic Tensions\"",
+     "type": "choice",
+     "parents": [
+      "z-explore",
+      "z-sneak"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "z-mag2",
+     "title": "Leggi «Androids Alter Brain»",
+     "en": "Read \"Androids Alter Brain\"",
+     "type": "choice",
+     "parents": [
+      "z-explore",
+      "z-sneak"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "z-mag3",
+     "title": "Leggi «AX400 on the Run»",
+     "en": "Read \"AX400 on the Run\"",
+     "type": "choice",
+     "parents": [
+      "z-explore",
+      "z-sneak"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "z-cell",
+     "title": "Osserva la cella dei mostri",
+     "en": "Observe Monsters' Cell",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-book",
+     "title": "Ricorda il libro di Alice",
+     "en": "Recall Alice's Book",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-coat",
+     "title": "Ricorda di aver offerto il cappotto",
+     "en": "Recall Offering Coat",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-recall-escape",
+     "title": "Ricorda la fuga",
+     "en": "Recall Escape",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-news",
+     "title": "Vedi il servizio sulla fuga",
+     "en": "See News Flash of Escape",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-kid",
+     "title": "Vedi una bambina dal buco nella porta",
+     "en": "See a Kid Through the Door Hole",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-discussion",
+     "title": "Ricorda la discussione con Zlatko",
+     "en": "Recall Discussion With Zlatko",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-pipe",
+     "title": "Ricorda la pipa del Red Ice di Todd",
+     "en": "Recall Todd's Red Ice Pipe",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-appearance",
+     "title": "Ricorda il cambio d'aspetto",
+     "en": "Recall Changing Appearance",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-fireplace",
+     "title": "Ricorda il camino del rifugio",
+     "en": "Recall Squat Fireplace",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-ra9sym",
+     "title": "Ricorda i simboli rA9",
+     "en": "Recall RA9 Symbols",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-toolong",
+     "title": "Ci metti troppo",
+     "en": "Lose Too Much Time",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-bringsalice",
+     "title": "Luther porta Alice da Zlatko",
+     "en": "Luther Brings Alice to Zlatko",
+     "type": "choice",
+     "parents": [
+      "z-toolong"
+     ]
+    },
+    {
+     "id": "z-end-remained",
+     "title": "Kara è rimasta resettata",
+     "en": "Kara Remained Reset",
+     "type": "ending",
+     "parents": [
+      "z-bringsalice"
+     ]
+    },
+    {
+     "id": "z-enough",
+     "title": "Recupera abbastanza ricordi",
+     "en": "Recollect Enough Memories",
+     "type": "choice",
+     "parents": [
+      "z-explore"
+     ]
+    },
+    {
+     "id": "z-recovered",
+     "title": "Memoria recuperata",
+     "en": "Memory Recovered",
+     "type": "choice",
+     "parents": [
+      "z-enough"
+     ]
+    },
+    {
+     "id": "z-search",
+     "title": "Cerca Alice in casa",
+     "en": "Search House for Alice",
+     "type": "objective",
+     "parents": [
+      "z-recovered",
+      "z-sneak"
+     ]
+    },
+    {
+     "id": "z-embers",
+     "title": "Controlla le braci del camino",
+     "en": "Check Fireplace Embers",
+     "type": "choice",
+     "parents": [
+      "z-search"
+     ]
+    },
+    {
+     "id": "z-tv",
+     "title": "Controlla la TV",
+     "en": "Check TV",
+     "type": "choice",
+     "parents": [
+      "z-search"
+     ]
+    },
+    {
+     "id": "z-shotgun",
+     "title": "Controlla il fucile scarico",
+     "en": "Check Empty Shotgun",
+     "type": "choice",
+     "parents": [
+      "z-search"
+     ]
+    },
+    {
+     "id": "z-ra9",
+     "title": "rA9",
+     "en": "RA9",
+     "type": "choice",
+     "parents": [
+      "z-search"
+     ]
+    },
+    {
+     "id": "z-found",
+     "title": "Alice trovata",
+     "en": "Alice Found",
+     "type": "checkpoint",
+     "parents": [
+      "z-search"
+     ]
+    },
+    {
+     "id": "z-collect",
+     "title": "Luther va a prendere Alice",
+     "en": "Luther Goes to Collect Alice",
+     "type": "choice",
+     "parents": [
+      "z-found"
+     ]
+    },
+    {
+     "id": "z-main",
+     "title": "Entra nella sala principale",
+     "en": "Enter Main Room",
+     "type": "choice",
+     "parents": [
+      "z-collect"
+     ]
+    },
+    {
+     "id": "z-table",
+     "title": "Nasconditi sotto il tavolo",
+     "en": "Hide Under Table",
+     "type": "choice",
+     "parents": [
+      "z-main"
+     ]
+    },
+    {
+     "id": "z-closet1",
+     "title": "Nasconditi nell'armadio",
+     "en": "Hide in Closet",
+     "type": "choice",
+     "parents": [
+      "z-main"
+     ]
+    },
+    {
+     "id": "z-fire",
+     "title": "Dai fuoco alla casa",
+     "en": "Set Fire to House",
+     "type": "choice",
+     "parents": [
+      "z-main"
+     ]
+    },
+    {
+     "id": "z-burning",
+     "title": "La casa va a fuoco",
+     "en": "Burning Down the House",
+     "type": "choice",
+     "parents": [
+      "z-fire"
+     ]
+    },
+    {
+     "id": "z-bedroom",
+     "title": "Entra in camera da letto",
+     "en": "Enter Bedroom",
+     "type": "choice",
+     "parents": [
+      "z-table",
+      "z-closet1"
+     ]
+    },
+    {
+     "id": "z-bed",
+     "title": "Nasconditi sotto il letto",
+     "en": "Hide Under Bed",
+     "type": "choice",
+     "parents": [
+      "z-bedroom"
+     ]
+    },
+    {
+     "id": "z-closet2",
+     "title": "Nasconditi nell'armadio",
+     "en": "Hide in Closet",
+     "type": "choice",
+     "parents": [
+      "z-bedroom"
+     ]
+    },
+    {
+     "id": "z-corridor",
+     "title": "Passa per il corridoio",
+     "en": "Go Through Corridor",
+     "type": "choice",
+     "parents": [
+      "z-bedroom"
+     ]
+    },
+    {
+     "id": "z-thrubath",
+     "title": "Passa per il bagno",
+     "en": "Go Through Bathroom",
+     "type": "choice",
+     "parents": [
+      "z-bedroom"
+     ]
+    },
+    {
+     "id": "z-alerts",
+     "title": "L'androide del bagno avverte Zlatko",
+     "en": "Bathroom Android Alerts Zlatko",
+     "type": "choice",
+     "parents": [
+      "z-thrubath"
+     ]
+    },
+    {
+     "id": "z-al-kill",
+     "title": "Uccidilo",
+     "en": "Kill",
+     "type": "choice",
+     "parents": [
+      "z-alerts"
+     ]
+    },
+    {
+     "id": "z-al-spare",
+     "title": "Risparmialo",
+     "en": "Spare",
+     "type": "choice",
+     "parents": [
+      "z-alerts"
+     ]
+    },
+    {
+     "id": "z-thrustorage",
+     "title": "Passa per il magazzino",
+     "en": "Sneak Through Storage Room",
+     "type": "choice",
+     "parents": [
+      "z-thrubath"
+     ]
+    },
+    {
+     "id": "z-cage",
+     "title": "Apri la gabbia dell'orso",
+     "en": "Open Bear Cage",
+     "type": "choice",
+     "parents": [
+      "z-thrustorage"
+     ]
+    },
+    {
+     "id": "z-closes",
+     "title": "Zlatko si avvicina",
+     "en": "Zlatko Closes In",
+     "type": "choice",
+     "parents": [
+      "z-thrustorage"
+     ]
+    },
+    {
+     "id": "z-hideleave",
+     "title": "Esci dal nascondiglio",
+     "en": "Leave Hiding Spot",
+     "type": "choice",
+     "parents": [
+      "z-closes"
+     ]
+    },
+    {
+     "id": "z-bear1",
+     "title": "L'orso attacca Zlatko e protegge Kara",
+     "en": "Bear Attacks Zlatko and Protects Kara",
+     "type": "choice",
+     "parents": [
+      "z-closes"
+     ]
+    },
+    {
+     "id": "z-spotted",
+     "title": "Kara viene scoperta",
+     "en": "Get Spotted",
+     "type": "choice",
+     "parents": [
+      "z-main",
+      "z-bed",
+      "z-closet2",
+      "z-corridor",
+      "z-thrubath",
+      "z-thrustorage"
+     ]
+    },
+    {
+     "id": "z-chase",
+     "title": "Inizia l'inseguimento",
+     "en": "Chase Started",
+     "type": "choice",
+     "parents": [
+      "z-spotted"
+     ]
+    },
+    {
+     "id": "z-bear2",
+     "title": "L'orso attacca Zlatko e protegge Kara",
+     "en": "Bear Attacks Zlatko and Protects Kara",
+     "type": "choice",
+     "parents": [
+      "z-chase"
+     ]
+    },
+    {
+     "id": "z-end-storage",
+     "title": "Zlatko ha ucciso Kara nel magazzino",
+     "en": "Zlatko Killed Kara in the Storage Room",
+     "type": "ending",
+     "parents": [
+      "z-chase"
+     ]
+    },
+    {
+     "id": "z-end-bathroom",
+     "title": "Zlatko ha ucciso Kara in bagno",
+     "en": "Zlatko Killed Kara in the Bathroom",
+     "type": "ending",
+     "parents": [
+      "z-chase"
+     ]
+    },
+    {
+     "id": "z-stairs",
+     "title": "Kara raggiunge le scale",
+     "en": "Kara Reaches the Stairs",
+     "type": "choice",
+     "parents": [
+      "z-chase",
+      "z-bear2",
+      "z-cage",
+      "z-hideleave",
+      "z-bear1",
+      "z-burning",
+      "z-al-kill",
+      "z-al-spare"
+     ]
+    },
+    {
+     "id": "z-yard",
+     "title": "Kara e Alice fuggono in cortile",
+     "en": "Kara & Alice Escape to the Yard",
+     "type": "choice",
+     "parents": [
+      "z-stairs"
+     ]
+    },
+    {
+     "id": "z-catches",
+     "title": "Zlatko le raggiunge",
+     "en": "Zlatko Catches Up",
+     "type": "choice",
+     "parents": [
+      "z-yard"
+     ]
+    },
+    {
+     "id": "z-lutherkills",
+     "title": "Luther uccide Zlatko",
+     "en": "Luther Kills Zlatko",
+     "type": "choice",
+     "parents": [
+      "z-catches"
+     ]
+    },
+    {
+     "id": "z-ambush",
+     "title": "I mostri tendono un agguato a Zlatko",
+     "en": "The Monsters Ambush Zlatko",
+     "type": "choice",
+     "parents": [
+      "z-catches"
+     ],
+     "note": "Richiede «Libera i mostri»."
+    },
+    {
+     "id": "z-end-luther",
+     "title": "Luther si unisce a Kara e Alice",
+     "en": "Luther Joins Kara & Alice",
+     "type": "ending",
+     "parents": [
+      "z-lutherkills",
+      "z-ambush"
+     ]
+    }
+   ]
+  }
+ ]
+}

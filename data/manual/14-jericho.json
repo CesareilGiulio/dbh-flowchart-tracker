@@ -1,0 +1,280 @@
+{
+ "chapter": 14,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "j-start",
+     "title": "Arrivo a Ferndale",
+     "en": "Arrive at Ferndale",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "j-flash",
+     "title": "Flashback di un altro deviante",
+     "en": "Flashback of Another Deviant",
+     "type": "choice",
+     "parents": [
+      "j-start"
+     ]
+    },
+    {
+     "id": "j-graffiti",
+     "title": "Analizza i graffiti della stazione",
+     "en": "Analyze Station Graffiti",
+     "type": "choice",
+     "parents": [
+      "j-flash"
+     ]
+    },
+    {
+     "id": "j-mag1",
+     "title": "Leggi «On the Run»",
+     "en": "Read \"On the Run\"",
+     "type": "choice",
+     "parents": [
+      "j-graffiti"
+     ],
+     "note": "Rivista. Compare solo se in «On the Run» Connor ha inseguito Kara e Alice."
+    },
+    {
+     "id": "j-mag2",
+     "title": "Leggi «Fortune Teller»",
+     "en": "Read \"Fortune Teller\"",
+     "type": "choice",
+     "parents": [
+      "j-graffiti"
+     ],
+     "note": "Rivista. Compare solo se in «On the Run» Connor non ha inseguito Kara e Alice."
+    },
+    {
+     "id": "j-mag3",
+     "title": "Leggi «Android Astronauts»",
+     "en": "Read \"Android Astronauts\"",
+     "type": "choice",
+     "parents": [
+      "j-graffiti"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "j-exit",
+     "title": "Esci dalla stazione",
+     "en": "Exit the Station",
+     "type": "choice",
+     "parents": [
+      "j-graffiti"
+     ]
+    },
+    {
+     "id": "j-signs",
+     "title": "Segui i simboli",
+     "en": "Follow the Signs",
+     "type": "choice",
+     "parents": [
+      "j-exit"
+     ]
+    },
+    {
+     "id": "j-ask",
+     "title": "Chiedi a un androide la strada per Jericho",
+     "en": "Ask Android the Way to Jericho",
+     "type": "choice",
+     "parents": [
+      "j-exit"
+     ]
+    },
+    {
+     "id": "j-streets",
+     "title": "Lascia le strade",
+     "en": "Leave the Streets",
+     "type": "choice",
+     "parents": [
+      "j-signs",
+      "j-ask"
+     ]
+    },
+    {
+     "id": "j-body1",
+     "title": "Vedi il corpo di un androide",
+     "en": "See Android Body",
+     "type": "choice",
+     "parents": [
+      "j-streets"
+     ],
+     "note": "Nel parcheggio, a sinistra entrando."
+    },
+    {
+     "id": "j-trail",
+     "title": "Prosegui sulle tracce di Jericho",
+     "en": "Continue on the Jericho Trail",
+     "type": "choice",
+     "parents": [
+      "j-streets"
+     ]
+    },
+    {
+     "id": "j-dumpster",
+     "title": "Sali usando il cassonetto",
+     "en": "Use the Dumpster to Climb Up",
+     "type": "choice",
+     "parents": [
+      "j-trail"
+     ]
+    },
+    {
+     "id": "j-roof",
+     "title": "Raggiungi il tetto",
+     "en": "Reach the Roof",
+     "type": "choice",
+     "parents": [
+      "j-dumpster"
+     ]
+    },
+    {
+     "id": "j-body2",
+     "title": "Vedi il corpo di un androide",
+     "en": "See Android Body",
+     "type": "choice",
+     "parents": [
+      "j-roof"
+     ],
+     "note": "Accanto a un container."
+    },
+    {
+     "id": "j-gap",
+     "title": "Supera il dislivello",
+     "en": "Cross the Gap",
+     "type": "choice",
+     "parents": [
+      "j-roof"
+     ]
+    },
+    {
+     "id": "j-door",
+     "title": "Raggiungi la porta",
+     "en": "Reach the Door",
+     "type": "choice",
+     "parents": [
+      "j-gap"
+     ]
+    },
+    {
+     "id": "j-office",
+     "title": "Esplora l'ufficio abbandonato",
+     "en": "Explore Abandoned Office",
+     "type": "choice",
+     "parents": [
+      "j-door"
+     ]
+    },
+    {
+     "id": "j-body3",
+     "title": "Vedi il corpo di un androide",
+     "en": "See Android Body",
+     "type": "choice",
+     "parents": [
+      "j-office"
+     ],
+     "note": "Appoggiato a un pilastro."
+    },
+    {
+     "id": "j-exitright",
+     "title": "Trova l'uscita giusta",
+     "en": "Find the Right Exit",
+     "type": "choice",
+     "parents": [
+      "j-office"
+     ]
+    },
+    {
+     "id": "j-locate",
+     "title": "Individua Jericho",
+     "en": "Locate Jericho",
+     "type": "choice",
+     "parents": [
+      "j-exitright"
+     ]
+    },
+    {
+     "id": "j-bridge",
+     "title": "Attraversa la passerella",
+     "en": "Walk Bridge",
+     "type": "choice",
+     "parents": [
+      "j-locate"
+     ]
+    },
+    {
+     "id": "j-collapse",
+     "title": "La passerella crolla",
+     "en": "Bridge Collapses",
+     "type": "choice",
+     "parents": [
+      "j-bridge"
+     ]
+    },
+    {
+     "id": "j-crane",
+     "title": "Sali sulla gru e salta",
+     "en": "Climb Crane and Jump",
+     "type": "choice",
+     "parents": [
+      "j-locate",
+      "j-collapse"
+     ]
+    },
+    {
+     "id": "j-boat",
+     "title": "Dentro la nave",
+     "en": "Inside the Boat",
+     "type": "checkpoint",
+     "parents": [
+      "j-crane"
+     ]
+    },
+    {
+     "id": "j-flashlight",
+     "title": "Trova una torcia",
+     "en": "Find a Flashlight",
+     "type": "choice",
+     "parents": [
+      "j-boat"
+     ]
+    },
+    {
+     "id": "j-machine",
+     "title": "Entra nella sala macchine",
+     "en": "Enter the Machine Room",
+     "type": "choice",
+     "parents": [
+      "j-flashlight"
+     ]
+    },
+    {
+     "id": "j-catwalk",
+     "title": "Cadi dalla passerella",
+     "en": "Fall Off Catwalk",
+     "type": "choice",
+     "parents": [
+      "j-machine"
+     ]
+    },
+    {
+     "id": "j-end",
+     "title": "Markus ha incontrato la gente di Jericho",
+     "en": "Met People of Jericho",
+     "type": "ending",
+     "parents": [
+      "j-catwalk"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "chapter": 16,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "td-start",
+     "title": "Dentro Jericho",
+     "en": "Inside Jericho",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "td-explore",
+     "title": "Esplora Jericho",
+     "en": "Explore Jericho",
+     "type": "objective",
+     "parents": [
+      "td-start"
+     ]
+    },
+    {
+     "id": "td-dying",
+     "title": "Parla con l'androide morente",
+     "en": "Talk to Dying Android",
+     "type": "choice",
+     "parents": [
+      "td-explore"
+     ]
+    },
+    {
+     "id": "td-josh",
+     "title": "Parla con Josh",
+     "en": "Talk to Josh",
+     "type": "choice",
+     "parents": [
+      "td-explore"
+     ]
+    },
+    {
+     "id": "td-north",
+     "title": "Parla con North",
+     "en": "Talk to North",
+     "type": "choice",
+     "parents": [
+      "td-explore"
+     ]
+    },
+    {
+     "id": "td-damaged",
+     "title": "Parla con l'androide danneggiato",
+     "en": "Talk to Damaged Android",
+     "type": "choice",
+     "parents": [
+      "td-explore"
+     ]
+    },
+    {
+     "id": "td-light",
+     "title": "Sia la luce",
+     "en": "Let There Be Light",
+     "type": "choice",
+     "parents": [
+      "td-explore"
+     ]
+    },
+    {
+     "id": "td-lucy",
+     "title": "Parla con Lucy",
+     "en": "Talk to Lucy",
+     "type": "choice",
+     "parents": [
+      "td-explore"
+     ]
+    },
+    {
+     "id": "td-crate",
+     "title": "Controlla la cassa vuota",
+     "en": "Check Empty Crate",
+     "type": "choice",
+     "parents": [
+      "td-explore"
+     ]
+    },
+    {
+     "id": "td-simon",
+     "title": "Parla con Simon",
+     "en": "Talk to Simon",
+     "type": "choice",
+     "parents": [
+      "td-lucy",
+      "td-crate"
+     ]
+    },
+    {
+     "id": "td-end",
+     "title": "Markus ha escogitato un piano",
+     "en": "Markus Hatched a Plan",
+     "type": "ending",
+     "parents": [
+      "td-simon"
+     ]
+    }
+   ]
+  }
+ ]
+}

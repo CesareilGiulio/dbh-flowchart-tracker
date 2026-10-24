@@ -1,0 +1,372 @@
+{
+ "chapter": 20,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "e-start",
+     "title": "Indaga all'Eden Club",
+     "en": "Investigate Eden Club",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "e-follow",
+     "title": "Segui Hank",
+     "en": "Follow Hank",
+     "type": "choice",
+     "parents": [
+      "e-start"
+     ]
+    },
+    {
+     "id": "e-scene",
+     "title": "Sulla scena del crimine",
+     "en": "On Crime Scene",
+     "type": "choice",
+     "parents": [
+      "e-follow"
+     ]
+    },
+    {
+     "id": "e-briefing",
+     "title": "Ascolta il resoconto",
+     "en": "Listen to Briefing",
+     "type": "choice",
+     "parents": [
+      "e-scene"
+     ]
+    },
+    {
+     "id": "e-clues",
+     "title": "Cerca indizi",
+     "en": "Search for Clues",
+     "type": "objective",
+     "parents": [
+      "e-briefing"
+     ]
+    },
+    {
+     "id": "e-victim",
+     "title": "Esamina la vittima",
+     "en": "Investigate Victim",
+     "type": "choice",
+     "parents": [
+      "e-clues"
+     ]
+    },
+    {
+     "id": "e-android",
+     "title": "Esamina l'androide",
+     "en": "Investigate Android",
+     "type": "choice",
+     "parents": [
+      "e-clues"
+     ]
+    },
+    {
+     "id": "e-repair",
+     "title": "Ripara l'androide",
+     "en": "Repair Android",
+     "type": "choice",
+     "parents": [
+      "e-clues"
+     ]
+    },
+    {
+     "id": "e-talk",
+     "title": "Parla con l'androide",
+     "en": "Talk to Android",
+     "type": "choice",
+     "parents": [
+      "e-repair"
+     ]
+    },
+    {
+     "id": "e-aggr",
+     "title": "Approccio aggressivo",
+     "en": "Aggressive Approach",
+     "type": "choice",
+     "parents": [
+      "e-talk"
+     ]
+    },
+    {
+     "id": "e-calm",
+     "title": "Approccio calmo",
+     "en": "Calm Approach",
+     "type": "choice",
+     "parents": [
+      "e-talk"
+     ]
+    },
+    {
+     "id": "e-leave",
+     "title": "Lascia la scena del crimine",
+     "en": "Leave Crime Scene",
+     "type": "checkpoint",
+     "parents": [
+      "e-aggr",
+      "e-calm"
+     ]
+    },
+    {
+     "id": "e-eyewitness",
+     "title": "Trova un androide testimone",
+     "en": "Find an Android Eyewitness",
+     "type": "choice",
+     "parents": [
+      "e-leave"
+     ]
+    },
+    {
+     "id": "e-giveup1",
+     "title": "Rinuncia",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "e-leave"
+     ]
+    },
+    {
+     "id": "e-askhank",
+     "title": "Chiedi aiuto a Hank",
+     "en": "Ask Hank to Help",
+     "type": "choice",
+     "parents": [
+      "e-eyewitness"
+     ]
+    },
+    {
+     "id": "e-pursue",
+     "title": "Insegui il deviante",
+     "en": "Pursue Deviant",
+     "type": "choice",
+     "parents": [
+      "e-askhank"
+     ]
+    },
+    {
+     "id": "e-reset",
+     "title": "Le memorie degli androidi vengono resettate",
+     "en": "Androids' Memories Are Reset",
+     "type": "choice",
+     "parents": [
+      "e-askhank"
+     ]
+    },
+    {
+     "id": "e-end-fail1",
+     "title": "Missione fallita",
+     "en": "Mission Failed",
+     "type": "ending",
+     "parents": [
+      "e-giveup1",
+      "e-reset"
+     ],
+     "note": "Prima variante: prima del magazzino."
+    },
+    {
+     "id": "e-warehouse",
+     "title": "Entra nel magazzino",
+     "en": "Enter the Warehouse",
+     "type": "checkpoint",
+     "parents": [
+      "e-pursue"
+     ]
+    },
+    {
+     "id": "e-blue",
+     "title": "Cerca il deviante dai capelli blu",
+     "en": "Search for Blue Haired Deviant",
+     "type": "objective",
+     "parents": [
+      "e-warehouse"
+     ]
+    },
+    {
+     "id": "e-mag1",
+     "title": "Leggi «First Immortal»",
+     "en": "Read \"First Immortal\"",
+     "type": "choice",
+     "parents": [
+      "e-blue"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "e-blueblood",
+     "title": "Analizza il sangue blu",
+     "en": "Analyze Blue Blood",
+     "type": "choice",
+     "parents": [
+      "e-blue"
+     ]
+    },
+    {
+     "id": "e-stock",
+     "title": "Esamina gli androidi in magazzino",
+     "en": "Investigate Android Stock",
+     "type": "choice",
+     "parents": [
+      "e-blue"
+     ]
+    },
+    {
+     "id": "e-giveup2",
+     "title": "Rinuncia",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "e-blue"
+     ]
+    },
+    {
+     "id": "e-ra9",
+     "title": "Trova il simbolo rA9",
+     "en": "Find RA9 Symbol",
+     "type": "choice",
+     "parents": [
+      "e-blue"
+     ]
+    },
+    {
+     "id": "e-mag2",
+     "title": "Leggi «New Superpowers»",
+     "en": "Read \"New Superpowers\"",
+     "type": "choice",
+     "parents": [
+      "e-blue"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "e-end-fail2",
+     "title": "Missione fallita",
+     "en": "Mission Failed",
+     "type": "ending",
+     "parents": [
+      "e-giveup2"
+     ],
+     "note": "Seconda variante: nel magazzino."
+    },
+    {
+     "id": "e-bluehair",
+     "title": "Esamina il deviante dai capelli blu",
+     "en": "Investigate Blue Haired Deviant",
+     "type": "choice",
+     "parents": [
+      "e-blue"
+     ]
+    },
+    {
+     "id": "e-attack",
+     "title": "I devianti attaccano",
+     "en": "Deviants Attack",
+     "type": "choice",
+     "parents": [
+      "e-bluehair"
+     ]
+    },
+    {
+     "id": "e-win",
+     "title": "Vinci lo scontro",
+     "en": "Win Fight",
+     "type": "choice",
+     "parents": [
+      "e-attack"
+     ]
+    },
+    {
+     "id": "e-lose",
+     "title": "Perdi lo scontro",
+     "en": "Lose Fight",
+     "type": "choice",
+     "parents": [
+      "e-attack"
+     ]
+    },
+    {
+     "id": "e-shoot",
+     "title": "Spara al deviante",
+     "en": "Shoot Deviant",
+     "type": "choice",
+     "parents": [
+      "e-win"
+     ]
+    },
+    {
+     "id": "e-spare",
+     "title": "Risparmia il deviante",
+     "en": "Spare Deviant",
+     "type": "choice",
+     "parents": [
+      "e-win"
+     ]
+    },
+    {
+     "id": "e-letgo",
+     "title": "Lascia andare i devianti",
+     "en": "Let Deviants Go",
+     "type": "choice",
+     "parents": [
+      "e-lose"
+     ]
+    },
+    {
+     "id": "e-back",
+     "title": "Spara ai devianti alle spalle",
+     "en": "Shoot Deviants in the Back",
+     "type": "choice",
+     "parents": [
+      "e-lose"
+     ]
+    },
+    {
+     "id": "e-herself",
+     "title": "La deviante si uccide con la pistola di Connor",
+     "en": "Deviant Kills Herself With Connor's Gun",
+     "type": "choice",
+     "parents": [
+      "e-shoot"
+     ]
+    },
+    {
+     "id": "e-end-died",
+     "title": "I devianti sono morti",
+     "en": "Deviants Died",
+     "type": "ending",
+     "parents": [
+      "e-herself"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "e-end-escaped",
+     "title": "I devianti sono fuggiti",
+     "en": "Deviants Escaped",
+     "type": "ending",
+     "parents": [
+      "e-spare",
+      "e-letgo"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "e-end-shot",
+     "title": "Connor ha sparato ai devianti",
+     "en": "Connor Shot Deviants",
+     "type": "ending",
+     "parents": [
+      "e-back"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    }
+   ]
+  }
+ ]
+}

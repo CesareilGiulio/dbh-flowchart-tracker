@@ -1,0 +1,317 @@
+{
+ "chapter": 9,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "i-req",
+     "title": "Sospettato trovato in «Partners»",
+     "en": "Suspect Found in 'Partners'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco). Senza questo il capitolo non si gioca."
+    },
+    {
+     "id": "i-start",
+     "title": "Sala osservazione",
+     "en": "Observation Room",
+     "type": "checkpoint",
+     "parents": [
+      "i-req"
+     ]
+    },
+    {
+     "id": "i-room",
+     "title": "Sala interrogatori",
+     "en": "Interrogation Room",
+     "type": "objective",
+     "parents": [
+      "i-start"
+     ]
+    },
+    {
+     "id": "i-android",
+     "title": "Analizza l'androide",
+     "en": "Analyze Android",
+     "type": "choice",
+     "parents": [
+      "i-room"
+     ]
+    },
+    {
+     "id": "i-stress",
+     "title": "Analizza il livello di stress",
+     "en": "Analyze Stress Level",
+     "type": "choice",
+     "parents": [
+      "i-android"
+     ]
+    },
+    {
+     "id": "i-wounds",
+     "title": "Analizza le ferite",
+     "en": "Analyze Wounds",
+     "type": "choice",
+     "parents": [
+      "i-android"
+     ]
+    },
+    {
+     "id": "i-photos",
+     "title": "Esamina le foto",
+     "en": "Review Photos",
+     "type": "choice",
+     "parents": [
+      "i-room"
+     ]
+    },
+    {
+     "id": "i-approach",
+     "title": "Scegli l'approccio",
+     "en": "Choose Approach",
+     "type": "choice",
+     "parents": [
+      "i-room"
+     ]
+    },
+    {
+     "id": "i-probe",
+     "title": "Sonda la memoria",
+     "en": "Probe Memory",
+     "type": "choice",
+     "parents": [
+      "i-approach"
+     ]
+    },
+    {
+     "id": "i-convince",
+     "title": "Convinci",
+     "en": "Convince",
+     "type": "choice",
+     "parents": [
+      "i-approach"
+     ]
+    },
+    {
+     "id": "i-pressure",
+     "title": "Fai pressione",
+     "en": "Pressure",
+     "type": "choice",
+     "parents": [
+      "i-approach"
+     ]
+    },
+    {
+     "id": "i-giveup1",
+     "title": "Rinuncia",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "i-approach"
+     ]
+    },
+    {
+     "id": "i-probe-ok",
+     "title": "Sondaggio riuscito",
+     "en": "Probe Succeeds",
+     "type": "choice",
+     "parents": [
+      "i-probe"
+     ]
+    },
+    {
+     "id": "i-probe-ko",
+     "title": "Resiste al sondaggio",
+     "en": "Resist to Probe",
+     "type": "choice",
+     "parents": [
+      "i-probe"
+     ]
+    },
+    {
+     "id": "i-conv-ok",
+     "title": "Convincimento riuscito",
+     "en": "Convincing Succeeds",
+     "type": "choice",
+     "parents": [
+      "i-convince"
+     ]
+    },
+    {
+     "id": "i-conv-ko",
+     "title": "Convincimento fallito",
+     "en": "Convincing Fails",
+     "type": "choice",
+     "parents": [
+      "i-convince"
+     ]
+    },
+    {
+     "id": "i-maintain",
+     "title": "Mantieni la pressione",
+     "en": "Maintain Pressure",
+     "type": "choice",
+     "parents": [
+      "i-pressure"
+     ]
+    },
+    {
+     "id": "i-giveup2",
+     "title": "Rinuncia",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "i-pressure"
+     ]
+    },
+    {
+     "id": "i-flashback",
+     "title": "Flashback di Carlos",
+     "en": "Carlos Flashback",
+     "type": "choice",
+     "parents": [
+      "i-probe-ok"
+     ]
+    },
+    {
+     "id": "i-confess",
+     "title": "L'androide confessa",
+     "en": "Android Confesses",
+     "type": "choice",
+     "parents": [
+      "i-probe-ok",
+      "i-conv-ok",
+      "i-maintain"
+     ]
+    },
+    {
+     "id": "i-regret",
+     "title": "Esprimi rammarico",
+     "en": "Express Regret",
+     "type": "choice",
+     "parents": [
+      "i-confess"
+     ]
+    },
+    {
+     "id": "i-selfdestruct",
+     "title": "L'androide inizia ad autodistruggersi",
+     "en": "Android Starts Self-Destructing",
+     "type": "choice",
+     "parents": [
+      "i-confess"
+     ]
+    },
+    {
+     "id": "i-donothing",
+     "title": "Non fare nulla",
+     "en": "Do Nothing",
+     "type": "choice",
+     "parents": [
+      "i-selfdestruct"
+     ]
+    },
+    {
+     "id": "i-intervene1",
+     "title": "Intervieni",
+     "en": "Intervene",
+     "type": "choice",
+     "parents": [
+      "i-selfdestruct"
+     ]
+    },
+    {
+     "id": "i-chris",
+     "title": "Chris interviene",
+     "en": "Chris Intervenes",
+     "type": "choice",
+     "parents": [
+      "i-confess",
+      "i-giveup1",
+      "i-probe-ko",
+      "i-conv-ko",
+      "i-giveup2"
+     ]
+    },
+    {
+     "id": "i-giveup3",
+     "title": "Rinuncia",
+     "en": "Give Up",
+     "type": "choice",
+     "parents": [
+      "i-chris"
+     ]
+    },
+    {
+     "id": "i-intervene2",
+     "title": "Intervieni",
+     "en": "Intervene",
+     "type": "choice",
+     "parents": [
+      "i-chris"
+     ]
+    },
+    {
+     "id": "i-shootsconnor",
+     "title": "L'androide spara a Connor",
+     "en": "Android Shoots Connor",
+     "type": "choice",
+     "parents": [
+      "i-giveup3"
+     ]
+    },
+    {
+     "id": "i-trusts",
+     "title": "L'androide si fida di Connor",
+     "en": "Android Trusts Connor",
+     "type": "choice",
+     "parents": [
+      "i-intervene2"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "i-end-head",
+     "title": "L'androide si è distrutto la testa",
+     "en": "Android Smashed His Head",
+     "type": "ending",
+     "parents": [
+      "i-donothing"
+     ]
+    },
+    {
+     "id": "i-end-both",
+     "title": "L'androide ha sparato a Connor e a se stesso",
+     "en": "Android Shot Connor and Itself",
+     "type": "ending",
+     "parents": [
+      "i-intervene1",
+      "i-shootsconnor"
+     ]
+    },
+    {
+     "id": "i-end-itself",
+     "title": "L'androide si è sparato",
+     "en": "Android Shot Itself",
+     "type": "ending",
+     "parents": [
+      "i-giveup3"
+     ]
+    },
+    {
+     "id": "i-end-cell",
+     "title": "L'androide è stato rimandato in cella",
+     "en": "Android Was Sent Back to Its Cell",
+     "type": "ending",
+     "parents": [
+      "i-intervene2"
+     ]
+    }
+   ]
+  }
+ ]
+}

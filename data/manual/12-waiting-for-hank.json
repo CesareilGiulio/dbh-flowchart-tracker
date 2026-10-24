@@ -1,0 +1,259 @@
+{
+ "chapter": 12,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "C",
+   "nodes": [
+    {
+     "id": "w-start",
+     "title": "Nel giardino zen",
+     "en": "In the Zen Garden",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "w-amanda",
+     "title": "Trova Amanda",
+     "en": "Find Amanda",
+     "type": "choice",
+     "parents": [
+      "w-start"
+     ]
+    },
+    {
+     "id": "w-stone",
+     "title": "Trova la pietra magica",
+     "en": "Find Magic Stone",
+     "type": "choice",
+     "parents": [
+      "w-amanda"
+     ]
+    },
+    {
+     "id": "w-graves",
+     "title": "Controlla le tombe",
+     "en": "Check the Graves",
+     "type": "choice",
+     "parents": [
+      "w-amanda"
+     ]
+    },
+    {
+     "id": "w-talk-amanda",
+     "title": "Parla con Amanda",
+     "en": "Talk With Amanda",
+     "type": "choice",
+     "parents": [
+      "w-amanda"
+     ]
+    },
+    {
+     "id": "w-station",
+     "title": "Arrivo alla centrale",
+     "en": "Arrive at Police Station",
+     "type": "checkpoint",
+     "parents": [
+      "w-talk-amanda"
+     ]
+    },
+    {
+     "id": "w-findhank",
+     "title": "Trova il tenente Anderson",
+     "en": "Find Lt. Anderson",
+     "type": "choice",
+     "parents": [
+      "w-station"
+     ]
+    },
+    {
+     "id": "w-wait",
+     "title": "Aspetta Hank",
+     "en": "Wait for Hank",
+     "type": "objective",
+     "parents": [
+      "w-findhank"
+     ]
+    },
+    {
+     "id": "w-req",
+     "title": "Androide salvato in «The Interrogation»",
+     "en": "Android Saved in 'The Interrogation'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "w-explore",
+     "title": "Esplora la centrale",
+     "en": "Explore the Station",
+     "type": "choice",
+     "parents": [
+      "w-wait"
+     ]
+    },
+    {
+     "id": "w-carlos",
+     "title": "Parla con l'androide di Carlos",
+     "en": "Talk With Carlos' Android",
+     "type": "choice",
+     "parents": [
+      "w-explore",
+      "w-req"
+     ]
+    },
+    {
+     "id": "w-selfdestr",
+     "title": "L'androide di Carlos si autodistrugge",
+     "en": "Carlos' Android Self-Destructs",
+     "type": "choice",
+     "parents": [
+      "w-carlos"
+     ],
+     "note": "Evento chiave (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "w-gavin",
+     "title": "Parla con Gavin",
+     "en": "Talk With Gavin",
+     "type": "choice",
+     "parents": [
+      "w-explore"
+     ]
+    },
+    {
+     "id": "w-mag1",
+     "title": "Leggi «Famous Painter Dies»",
+     "en": "Read \"Famous Painter Dies\"",
+     "type": "choice",
+     "parents": [
+      "w-wait"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "w-mag2",
+     "title": "Leggi «Robotic Parenting»",
+     "en": "Read \"Robotic Parenting\"",
+     "type": "choice",
+     "parents": [
+      "w-wait"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "w-mag3",
+     "title": "Leggi «Ivanoff Says \"Niet\"!»",
+     "en": "Read \"Ivanoff Says 'Niet'!\"",
+     "type": "choice",
+     "parents": [
+      "w-wait"
+     ],
+     "note": "Rivista"
+    },
+    {
+     "id": "w-fowler",
+     "title": "Segui Hank nell'ufficio di Fowler",
+     "en": "Follow Hank in Fowler's Office",
+     "type": "choice",
+     "parents": [
+      "w-wait"
+     ]
+    },
+    {
+     "id": "w-desk",
+     "title": "Esamina la scrivania di Hank",
+     "en": "Examine Hank's Desk",
+     "type": "choice",
+     "parents": [
+      "w-wait"
+     ]
+    },
+    {
+     "id": "w-learn",
+     "title": "Scopri qualcosa su Hank",
+     "en": "Learn About Hank",
+     "type": "choice",
+     "parents": [
+      "w-desk"
+     ]
+    },
+    {
+     "id": "w-arrives",
+     "title": "Arriva Hank",
+     "en": "Hank Arrives",
+     "type": "choice",
+     "parents": [
+      "w-findhank"
+     ]
+    },
+    {
+     "id": "w-storms",
+     "title": "Hank se ne va furioso",
+     "en": "Hank Storms Out",
+     "type": "choice",
+     "parents": [
+      "w-arrives"
+     ]
+    },
+    {
+     "id": "w-talkhank",
+     "title": "Parla con Hank",
+     "en": "Talk to Hank",
+     "type": "choice",
+     "parents": [
+      "w-wait",
+      "w-storms"
+     ]
+    },
+    {
+     "id": "w-files",
+     "title": "Esamina i fascicoli",
+     "en": "Examine Files",
+     "type": "choice",
+     "parents": [
+      "w-talkhank"
+     ]
+    },
+    {
+     "id": "w-case",
+     "title": "Parla del caso",
+     "en": "Talk About the Case",
+     "type": "choice",
+     "parents": [
+      "w-files"
+     ]
+    },
+    {
+     "id": "w-mad",
+     "title": "Hank è arrabbiato",
+     "en": "Hank Is Mad",
+     "type": "choice",
+     "parents": [
+      "w-case"
+     ]
+    },
+    {
+     "id": "w-end-lead",
+     "title": "Hank ha una pista",
+     "en": "Hank Got a Lead",
+     "type": "ending",
+     "parents": [
+      "w-mad"
+     ]
+    },
+    {
+     "id": "w-end-lunch",
+     "title": "Hank è andato a pranzo",
+     "en": "Hank Left to Get Lunch",
+     "type": "ending",
+     "parents": [
+      "w-mad"
+     ]
+    }
+   ]
+  }
+ ]
+}

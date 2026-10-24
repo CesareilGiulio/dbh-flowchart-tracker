@@ -1,0 +1,156 @@
+{
+ "chapter": 8,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "M",
+   "nodes": [
+    {
+     "id": "b-start",
+     "title": "Dopo la festa",
+     "en": "After Party",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "b-living",
+     "title": "Entra in soggiorno",
+     "en": "Enter Living Room",
+     "type": "choice",
+     "parents": [
+      "b-start"
+     ]
+    },
+    {
+     "id": "b-whisky",
+     "title": "Versa il whisky",
+     "en": "Pour Whisky",
+     "type": "choice",
+     "parents": [
+      "b-living"
+     ]
+    },
+    {
+     "id": "b-without",
+     "title": "Controlla lo studio senza Carl",
+     "en": "Check Studio Without Carl",
+     "type": "choice",
+     "parents": [
+      "b-whisky"
+     ]
+    },
+    {
+     "id": "b-with",
+     "title": "Controlla lo studio con Carl",
+     "en": "Check Studio With Carl",
+     "type": "choice",
+     "parents": [
+      "b-whisky"
+     ]
+    },
+    {
+     "id": "b-leo",
+     "title": "Affronta Leo",
+     "en": "Confront Leo",
+     "type": "choice",
+     "parents": [
+      "b-without",
+      "b-with"
+     ]
+    },
+    {
+     "id": "b-palace",
+     "title": "Infrangi il palazzo mentale",
+     "en": "Break Mind Palace",
+     "type": "choice",
+     "parents": [
+      "b-leo"
+     ]
+    },
+    {
+     "id": "b-deviant",
+     "title": "Markus diventa deviante",
+     "en": "Markus Becomes Deviant",
+     "type": "choice",
+     "parents": [
+      "b-palace"
+     ]
+    },
+    {
+     "id": "b-obey",
+     "title": "Obbedisci a Carl",
+     "en": "Obey Carl",
+     "type": "choice",
+     "parents": [
+      "b-deviant"
+     ]
+    },
+    {
+     "id": "b-push",
+     "title": "Spingi Leo",
+     "en": "Push Leo",
+     "type": "choice",
+     "parents": [
+      "b-deviant"
+     ]
+    },
+    {
+     "id": "b-heart",
+     "title": "Carl muore d'infarto",
+     "en": "Carl Dies of a Heart Attack",
+     "type": "choice",
+     "parents": [
+      "b-obey"
+     ]
+    },
+    {
+     "id": "b-police1",
+     "title": "Arriva la polizia",
+     "en": "Police Arrive",
+     "type": "choice",
+     "parents": [
+      "b-heart"
+     ]
+    },
+    {
+     "id": "b-hurt",
+     "title": "Leo si ferisce",
+     "en": "Leo Is Hurt",
+     "type": "choice",
+     "parents": [
+      "b-push"
+     ]
+    },
+    {
+     "id": "b-police2",
+     "title": "Arriva la polizia",
+     "en": "Police Arrive",
+     "type": "choice",
+     "parents": [
+      "b-hurt"
+     ]
+    },
+    {
+     "id": "b-end-accused",
+     "title": "Leo ha accusato Markus",
+     "en": "Leo Accused Markus",
+     "type": "ending",
+     "parents": [
+      "b-police1"
+     ]
+    },
+    {
+     "id": "b-end-mistook",
+     "title": "La polizia ha scambiato Markus per l'aggressore",
+     "en": "Police Mistook Markus for the Aggressor",
+     "type": "ending",
+     "parents": [
+      "b-police2"
+     ]
+    }
+   ]
+  }
+ ]
+}

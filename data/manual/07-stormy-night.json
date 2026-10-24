@@ -1,0 +1,679 @@
+{
+ "chapter": 7,
+ "rev": "manual-1",
+ "source": "Struttura trascritta dal diagramma del gioco; nomi italiani tradotti, da verificare",
+ "sections": [
+  {
+   "name": "",
+   "char": "K",
+   "nodes": [
+    {
+     "id": "t-start",
+     "title": "La cena è pronta",
+     "en": "Dinner's Ready",
+     "type": "checkpoint",
+     "parents": []
+    },
+    {
+     "id": "t-wait",
+     "title": "Servi Todd e Alice",
+     "en": "Wait on Todd & Alice",
+     "type": "choice",
+     "parents": [
+      "t-start"
+     ]
+    },
+    {
+     "id": "t-mad",
+     "title": "Todd si arrabbia",
+     "en": "Todd Gets Mad",
+     "type": "checkpoint",
+     "parents": [
+      "t-wait"
+     ]
+    },
+    {
+     "id": "t-break",
+     "title": "Infrangi la programmazione",
+     "en": "Break Programming",
+     "type": "choice",
+     "parents": [
+      "t-mad"
+     ]
+    },
+    {
+     "id": "t-deviant",
+     "title": "Kara diventa deviante",
+     "en": "Kara Becomes Deviant",
+     "type": "choice",
+     "parents": [
+      "t-break"
+     ]
+    },
+    {
+     "id": "t-nodeviant",
+     "title": "Kara non diventa deviante",
+     "en": "Kara Fails to Become Deviant",
+     "type": "choice",
+     "parents": [
+      "t-mad"
+     ]
+    },
+    {
+     "id": "t-slow",
+     "title": "Kara è troppo lenta",
+     "en": "Kara Is Too Slow",
+     "type": "choice",
+     "parents": [
+      "t-mad"
+     ]
+    },
+    {
+     "id": "t-end-alice",
+     "title": "Todd uccide Alice",
+     "en": "Todd Kills Alice",
+     "type": "ending",
+     "parents": [
+      "t-nodeviant",
+      "t-slow"
+     ]
+    },
+    {
+     "id": "t-way-down",
+     "title": "Kara ostacola Todd al piano di sotto",
+     "en": "Kara Is in Todd's Way Downstairs",
+     "type": "choice",
+     "parents": [
+      "t-deviant"
+     ]
+    },
+    {
+     "id": "t-reason-down",
+     "title": "Ragiona con Todd",
+     "en": "Reason With Todd",
+     "type": "choice",
+     "parents": [
+      "t-deviant"
+     ],
+     "note": "Al piano di sotto."
+    },
+    {
+     "id": "t-shove-down",
+     "title": "Todd spinge via Kara al piano di sotto",
+     "en": "Todd Shoves Kara Downstairs",
+     "type": "choice",
+     "parents": [
+      "t-way-down",
+      "t-reason-down"
+     ]
+    },
+    {
+     "id": "t-todd-up",
+     "title": "Todd sale al piano di sopra",
+     "en": "Todd Goes Upstairs",
+     "type": "choice",
+     "parents": [
+      "t-shove-down"
+     ]
+    },
+    {
+     "id": "t-upstairs",
+     "title": "Sali al piano di sopra",
+     "en": "Go Upstairs",
+     "type": "choice",
+     "parents": [
+      "t-deviant"
+     ]
+    },
+    {
+     "id": "t-way-up",
+     "title": "Kara ostacola Todd al piano di sopra",
+     "en": "Kara Is in Todd's Way Upstairs",
+     "type": "choice",
+     "parents": [
+      "t-upstairs"
+     ]
+    },
+    {
+     "id": "t-reason-up",
+     "title": "Ragiona con Todd",
+     "en": "Reason With Todd",
+     "type": "choice",
+     "parents": [
+      "t-upstairs"
+     ],
+     "note": "Al piano di sopra."
+    },
+    {
+     "id": "t-shove-up",
+     "title": "Todd spinge via Kara al piano di sopra",
+     "en": "Todd Shoves Kara Upstairs",
+     "type": "choice",
+     "parents": [
+      "t-way-up",
+      "t-reason-up"
+     ]
+    },
+    {
+     "id": "t-before",
+     "title": "Raggiungi Alice prima di Todd",
+     "en": "Get to Alice Before Todd",
+     "type": "choice",
+     "parents": [
+      "t-upstairs"
+     ]
+    },
+    {
+     "id": "t-runaway",
+     "title": "Scappa",
+     "en": "Run Away",
+     "type": "choice",
+     "parents": [
+      "t-before"
+     ]
+    },
+    {
+     "id": "t-hide-fail",
+     "title": "Non riesci a nasconderti",
+     "en": "Fail to Hide",
+     "type": "choice",
+     "parents": [
+      "t-runaway"
+     ]
+    },
+    {
+     "id": "t-hide",
+     "title": "Nasconditi nel corridoio",
+     "en": "Hide in Corridor",
+     "type": "choice",
+     "parents": [
+      "t-runaway"
+     ]
+    },
+    {
+     "id": "t-coming",
+     "title": "Todd sta arrivando",
+     "en": "Todd Is Coming",
+     "type": "choice",
+     "parents": [
+      "t-before"
+     ]
+    },
+    {
+     "id": "t-lock",
+     "title": "Chiudi la porta a chiave",
+     "en": "Lock Door",
+     "type": "choice",
+     "parents": [
+      "t-before"
+     ]
+    },
+    {
+     "id": "t-outoftime",
+     "title": "Tempo scaduto",
+     "en": "Out of Time",
+     "type": "choice",
+     "parents": [
+      "t-coming",
+      "t-lock"
+     ]
+    },
+    {
+     "id": "t-breaksin",
+     "title": "Todd sfonda la porta della camera",
+     "en": "Todd Breaks Into Bedroom",
+     "type": "choice",
+     "parents": [
+      "t-outoftime"
+     ]
+    },
+    {
+     "id": "t-lamp",
+     "title": "Afferra la lampada",
+     "en": "Grab Lamp",
+     "type": "choice",
+     "parents": [
+      "t-lock"
+     ]
+    },
+    {
+     "id": "t-talk",
+     "title": "Parla con Alice",
+     "en": "Talk to Alice",
+     "type": "choice",
+     "parents": [
+      "t-lock"
+     ]
+    },
+    {
+     "id": "t-req-way",
+     "title": "Via di fuga vista in «A New Home»",
+     "en": "Way Out Seen in 'A New Home'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "t-window",
+     "title": "Apri la finestra",
+     "en": "Open Window",
+     "type": "choice",
+     "parents": [
+      "t-lock",
+      "t-req-way"
+     ]
+    },
+    {
+     "id": "t-face",
+     "title": "Affronta Todd",
+     "en": "Face Todd",
+     "type": "choice",
+     "parents": [
+      "t-window"
+     ]
+    },
+    {
+     "id": "t-goout",
+     "title": "Esci",
+     "en": "Go Out",
+     "type": "choice",
+     "parents": [
+      "t-window"
+     ]
+    },
+    {
+     "id": "t-win-fail",
+     "title": "Fuga dalla finestra fallita",
+     "en": "Fail to Escape by Window",
+     "type": "choice",
+     "parents": [
+      "t-goout"
+     ]
+    },
+    {
+     "id": "t-win-ok",
+     "title": "Fuggi dalla finestra",
+     "en": "Escape by Window",
+     "type": "choice",
+     "parents": [
+      "t-goout"
+     ]
+    },
+    {
+     "id": "t-takesalice",
+     "title": "Todd porta Alice in camera sua",
+     "en": "Todd Takes Alice to Her Room",
+     "type": "choice",
+     "parents": [
+      "t-hide-fail"
+     ]
+    },
+    {
+     "id": "t-req-gun",
+     "title": "Pistola vista in «A New Home»",
+     "en": "Gun Seen in 'A New Home'",
+     "type": "choice",
+     "parents": [],
+     "note": "Requisito da un capitolo precedente (evidenziato in giallo nel gioco)."
+    },
+    {
+     "id": "t-takegun",
+     "title": "Prendi la pistola",
+     "en": "Take Gun",
+     "type": "choice",
+     "parents": [
+      "t-req-gun"
+     ]
+    },
+    {
+     "id": "t-after",
+     "title": "Raggiungi Alice dopo Todd",
+     "en": "Get to Alice After Todd",
+     "type": "choice",
+     "parents": [
+      "t-todd-up",
+      "t-shove-up",
+      "t-takesalice"
+     ]
+    },
+    {
+     "id": "t-threaten",
+     "title": "Minaccia con la pistola",
+     "en": "Threaten With Gun",
+     "type": "choice",
+     "parents": [
+      "t-after",
+      "t-takegun"
+     ]
+    },
+    {
+     "id": "t-defend",
+     "title": "Difendi Alice",
+     "en": "Defend Alice",
+     "type": "choice",
+     "parents": [
+      "t-after",
+      "t-breaksin",
+      "t-face"
+     ]
+    },
+    {
+     "id": "t-karakills",
+     "title": "Kara uccide Todd",
+     "en": "Kara Kills Todd",
+     "type": "choice",
+     "parents": [
+      "t-threaten"
+     ]
+    },
+    {
+     "id": "t-alicekills",
+     "title": "Alice uccide Todd",
+     "en": "Alice Kills Todd",
+     "type": "choice",
+     "parents": [
+      "t-threaten"
+     ]
+    },
+    {
+     "id": "t-stun",
+     "title": "Stordisci Todd",
+     "en": "Stun Todd",
+     "type": "choice",
+     "parents": [
+      "t-defend"
+     ]
+    },
+    {
+     "id": "t-door-gun",
+     "title": "Apri la porta d'ingresso",
+     "en": "Open Front Door",
+     "type": "choice",
+     "parents": [
+      "t-karakills",
+      "t-alicekills"
+     ]
+    },
+    {
+     "id": "t-bus-gun",
+     "title": "Corri all'autobus",
+     "en": "Run to the Bus",
+     "type": "choice",
+     "parents": [
+      "t-door-gun"
+     ]
+    },
+    {
+     "id": "t-end-karashot",
+     "title": "Kara ha sparato a Todd",
+     "en": "Kara Shot Todd",
+     "type": "ending",
+     "parents": [
+      "t-bus-gun"
+     ]
+    },
+    {
+     "id": "t-end-aliceshot",
+     "title": "Alice ha sparato a Todd",
+     "en": "Alice Shot Todd",
+     "type": "ending",
+     "parents": [
+      "t-bus-gun"
+     ]
+    },
+    {
+     "id": "t-leave",
+     "title": "Esci dalla stanza",
+     "en": "Leave the Room",
+     "type": "choice",
+     "parents": [
+      "t-stun"
+     ]
+    },
+    {
+     "id": "t-chases",
+     "title": "Todd insegue Kara",
+     "en": "Todd Chases Kara",
+     "type": "choice",
+     "parents": [
+      "t-leave"
+     ]
+    },
+    {
+     "id": "t-catches",
+     "title": "Todd le raggiunge",
+     "en": "Todd Catches Them",
+     "type": "choice",
+     "parents": [
+      "t-chases"
+     ]
+    },
+    {
+     "id": "t-end-corridor",
+     "title": "Todd ha distrutto Kara nel corridoio",
+     "en": "Todd Broke Kara in the Corridor",
+     "type": "ending",
+     "parents": [
+      "t-catches"
+     ]
+    },
+    {
+     "id": "t-c-try",
+     "title": "Prova la porta d'ingresso",
+     "en": "Try Front Door",
+     "type": "choice",
+     "parents": [
+      "t-chases"
+     ]
+    },
+    {
+     "id": "t-c-back",
+     "title": "Corri in cortile",
+     "en": "Run to Backyard",
+     "type": "choice",
+     "parents": [
+      "t-chases"
+     ]
+    },
+    {
+     "id": "t-c-open",
+     "title": "Apri la porta d'ingresso",
+     "en": "Open Front Door",
+     "type": "choice",
+     "parents": [
+      "t-c-try"
+     ]
+    },
+    {
+     "id": "t-c-openfail",
+     "title": "Non riesci ad aprire la porta d'ingresso",
+     "en": "Fail to Open Front Door",
+     "type": "choice",
+     "parents": [
+      "t-c-try"
+     ]
+    },
+    {
+     "id": "t-realizes",
+     "title": "Todd si accorge che Kara e Alice sono sparite",
+     "en": "Todd Realizes Kara and Alice Are Gone",
+     "type": "choice",
+     "parents": [
+      "t-hide",
+      "t-win-ok"
+     ]
+    },
+    {
+     "id": "t-r-back",
+     "title": "Corri in cortile",
+     "en": "Run to Backyard",
+     "type": "choice",
+     "parents": [
+      "t-realizes"
+     ]
+    },
+    {
+     "id": "t-r-try",
+     "title": "Prova la porta d'ingresso",
+     "en": "Try Front Door",
+     "type": "choice",
+     "parents": [
+      "t-realizes"
+     ]
+    },
+    {
+     "id": "t-r-openfail",
+     "title": "Non riesci ad aprire la porta d'ingresso",
+     "en": "Fail to Open Front Door",
+     "type": "choice",
+     "parents": [
+      "t-r-try"
+     ]
+    },
+    {
+     "id": "t-r-open",
+     "title": "Apri la porta d'ingresso",
+     "en": "Open Front Door",
+     "type": "choice",
+     "parents": [
+      "t-r-try"
+     ]
+    },
+    {
+     "id": "t-r-bus",
+     "title": "Corri all'autobus",
+     "en": "Run to the Bus",
+     "type": "choice",
+     "parents": [
+      "t-r-back",
+      "t-r-open"
+     ]
+    },
+    {
+     "id": "t-r-miss",
+     "title": "Perdi l'autobus",
+     "en": "Miss Bus",
+     "type": "choice",
+     "parents": [
+      "t-r-bus"
+     ]
+    },
+    {
+     "id": "t-r-catch",
+     "title": "Prendi l'autobus",
+     "en": "Catch Bus",
+     "type": "choice",
+     "parents": [
+      "t-r-bus"
+     ]
+    },
+    {
+     "id": "t-end-evaded",
+     "title": "Kara e Alice sono sfuggite a Todd",
+     "en": "Kara & Alice Evaded Todd",
+     "type": "ending",
+     "parents": [
+      "t-r-catch"
+     ]
+    },
+    {
+     "id": "t-fight",
+     "title": "Combatti al piano di sotto",
+     "en": "Fight Downstairs",
+     "type": "choice",
+     "parents": [
+      "t-c-back",
+      "t-c-openfail",
+      "t-r-openfail"
+     ]
+    },
+    {
+     "id": "t-escape",
+     "title": "Sfuggi a Todd",
+     "en": "Escape From Todd",
+     "type": "choice",
+     "parents": [
+      "t-fight"
+     ]
+    },
+    {
+     "id": "t-toddwins",
+     "title": "Todd vince lo scontro",
+     "en": "Todd Wins Fight",
+     "type": "choice",
+     "parents": [
+      "t-fight"
+     ]
+    },
+    {
+     "id": "t-end-downstairs",
+     "title": "Todd ha distrutto Kara al piano di sotto",
+     "en": "Todd Broke Kara Downstairs",
+     "type": "ending",
+     "parents": [
+      "t-toddwins"
+     ]
+    },
+    {
+     "id": "t-yard",
+     "title": "Fuggi dal cortile",
+     "en": "Escape via Yard",
+     "type": "choice",
+     "parents": [
+      "t-escape"
+     ]
+    },
+    {
+     "id": "t-yard-fail",
+     "title": "Fuga fallita",
+     "en": "Fail to Escape",
+     "type": "choice",
+     "parents": [
+      "t-escape"
+     ]
+    },
+    {
+     "id": "t-catch",
+     "title": "Prendi l'autobus",
+     "en": "Catch Bus",
+     "type": "choice",
+     "parents": [
+      "t-yard",
+      "t-c-open"
+     ]
+    },
+    {
+     "id": "t-miss",
+     "title": "Perdi l'autobus",
+     "en": "Miss Bus",
+     "type": "choice",
+     "parents": [
+      "t-yard",
+      "t-c-open"
+     ]
+    },
+    {
+     "id": "t-end-fought",
+     "title": "Kara e Alice si sono aperte la strada",
+     "en": "Kara & Alice Fought Their Way Out",
+     "type": "ending",
+     "parents": [
+      "t-catch"
+     ]
+    },
+    {
+     "id": "t-end-outside",
+     "title": "Todd ha distrutto Kara all'esterno",
+     "en": "Todd Broke Kara Outside",
+     "type": "ending",
+     "parents": [
+      "t-win-fail",
+      "t-miss",
+      "t-r-miss",
+      "t-yard-fail"
+     ]
+    }
+   ]
+  }
+ ]
+}
